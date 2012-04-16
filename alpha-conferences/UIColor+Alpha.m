@@ -18,4 +18,9 @@
 }
 
 
++ (UIColor *)navigationBarTintColour {
+    return [UIColor colorWithRed:255.0 green:0.0 blue:0.0 alpha:1.0];
+}
+
+
 @end

@@ -14,7 +14,14 @@
 		7E401F11153C18FD00DA78D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F10153C18FD00DA78D2 /* main.m */; };
 		7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F14153C18FD00DA78D2 /* AppDelegate.m */; };
 		7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */; };
-		7E401F41153C1BED00DA78D2 /* ProgrammeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */; };
+		7E401F44153C235800DA78D2 /* ProgrammeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F43153C235800DA78D2 /* ProgrammeController.m */; };
+		7E401F4C153C557300DA78D2 /* AlphaPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F4B153C557300DA78D2 /* AlphaPager.m */; };
+		7E401F55153C587400DA78D2 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F51153C587400DA78D2 /* left-arrow.png */; };
+		7E401F56153C587400DA78D2 /* left-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F52153C587400DA78D2 /* left-arrow@2x.png */; };
+		7E401F57153C587400DA78D2 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F53153C587400DA78D2 /* right-arrow.png */; };
+		7E401F58153C587400DA78D2 /* right-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F54153C587400DA78D2 /* right-arrow@2x.png */; };
+		7E401F5B153C5AEE00DA78D2 /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F5A153C5AEE00DA78D2 /* CGUtils.m */; };
+		7E401F5F153C799600DA78D2 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F5E153C799600DA78D2 /* SessionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +37,20 @@
 		7E401F14153C18FD00DA78D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Alpha.h"; sourceTree = "<group>"; };
 		7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Alpha.m"; sourceTree = "<group>"; };
-		7E401F3F153C1BED00DA78D2 /* ProgrammeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeViewController.h; sourceTree = "<group>"; };
-		7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeViewController.m; sourceTree = "<group>"; };
+		7E401F42153C235800DA78D2 /* ProgrammeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeController.h; sourceTree = "<group>"; };
+		7E401F43153C235800DA78D2 /* ProgrammeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeController.m; sourceTree = "<group>"; };
+		7E401F46153C24D800DA78D2 /* TemplateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateTableViewController.h; sourceTree = "<group>"; };
+		7E401F47153C24D800DA78D2 /* TemplateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateTableViewController.m; sourceTree = "<group>"; };
+		7E401F4A153C557300DA78D2 /* AlphaPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaPager.h; sourceTree = "<group>"; };
+		7E401F4B153C557300DA78D2 /* AlphaPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaPager.m; sourceTree = "<group>"; };
+		7E401F51153C587400DA78D2 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
+		7E401F52153C587400DA78D2 /* left-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow@2x.png"; sourceTree = "<group>"; };
+		7E401F53153C587400DA78D2 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
+		7E401F54153C587400DA78D2 /* right-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow@2x.png"; sourceTree = "<group>"; };
+		7E401F59153C5AEE00DA78D2 /* CGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGUtils.h; sourceTree = "<group>"; };
+		7E401F5A153C5AEE00DA78D2 /* CGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGUtils.m; sourceTree = "<group>"; };
+		7E401F5D153C799600DA78D2 /* SessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionCell.h; sourceTree = "<group>"; };
+		7E401F5E153C799600DA78D2 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +103,8 @@
 				7E401F13153C18FD00DA78D2 /* AppDelegate.h */,
 				7E401F14153C18FD00DA78D2 /* AppDelegate.m */,
 				7E401F0B153C18FD00DA78D2 /* Supporting Files */,
+				7E401F4E153C57F300DA78D2 /* Images */,
+				7E401F45153C24A200DA78D2 /* Templates */,
 			);
 			path = "alpha-conferences";
 			sourceTree = "<group>";
@@ -102,6 +123,8 @@
 		7E401F35153C1B0400DA78D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7E401F59153C5AEE00DA78D2 /* CGUtils.h */,
+				7E401F5A153C5AEE00DA78D2 /* CGUtils.m */,
 				7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */,
 				7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */,
 			);
@@ -111,6 +134,8 @@
 		7E401F3D153C1B8F00DA78D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E401F5C153C796400DA78D2 /* SessionCell */,
+				7E401F4D153C557700DA78D2 /* Pager */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -118,10 +143,48 @@
 		7E401F3E153C1BCC00DA78D2 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
-				7E401F3F153C1BED00DA78D2 /* ProgrammeViewController.h */,
-				7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */,
+				7E401F42153C235800DA78D2 /* ProgrammeController.h */,
+				7E401F43153C235800DA78D2 /* ProgrammeController.m */,
 			);
 			name = Programme;
+			sourceTree = "<group>";
+		};
+		7E401F45153C24A200DA78D2 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F46153C24D800DA78D2 /* TemplateTableViewController.h */,
+				7E401F47153C24D800DA78D2 /* TemplateTableViewController.m */,
+			);
+			name = Templates;
+			sourceTree = "<group>";
+		};
+		7E401F4D153C557700DA78D2 /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F4A153C557300DA78D2 /* AlphaPager.h */,
+				7E401F4B153C557300DA78D2 /* AlphaPager.m */,
+			);
+			name = Pager;
+			sourceTree = "<group>";
+		};
+		7E401F4E153C57F300DA78D2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F51153C587400DA78D2 /* left-arrow.png */,
+				7E401F52153C587400DA78D2 /* left-arrow@2x.png */,
+				7E401F53153C587400DA78D2 /* right-arrow.png */,
+				7E401F54153C587400DA78D2 /* right-arrow@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		7E401F5C153C796400DA78D2 /* SessionCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F5D153C799600DA78D2 /* SessionCell.h */,
+				7E401F5E153C799600DA78D2 /* SessionCell.m */,
+			);
+			name = SessionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E401F0F153C18FD00DA78D2 /* InfoPlist.strings in Resources */,
+				7E401F55153C587400DA78D2 /* left-arrow.png in Resources */,
+				7E401F56153C587400DA78D2 /* left-arrow@2x.png in Resources */,
+				7E401F57153C587400DA78D2 /* right-arrow.png in Resources */,
+				7E401F58153C587400DA78D2 /* right-arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +256,10 @@
 				7E401F11153C18FD00DA78D2 /* main.m in Sources */,
 				7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */,
 				7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */,
-				7E401F41153C1BED00DA78D2 /* ProgrammeViewController.m in Sources */,
+				7E401F44153C235800DA78D2 /* ProgrammeController.m in Sources */,
+				7E401F4C153C557300DA78D2 /* AlphaPager.m in Sources */,
+				7E401F5B153C5AEE00DA78D2 /* CGUtils.m in Sources */,
+				7E401F5F153C799600DA78D2 /* SessionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

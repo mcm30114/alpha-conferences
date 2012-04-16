@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProgrammeController.h"
 
 @implementation AppDelegate
 
@@ -16,12 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
     
     NSMutableArray *tabControllers = [NSMutableArray  array];
     
+    ProgrammeController *programmeController = [[ProgrammeController alloc] init];
+    programmeController.title = @"Programme";
+    UINavigationController *programmeNavController = [[UINavigationController alloc] initWithRootViewController:programmeController];
+    programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     
+    [tabControllers addObject:programmeNavController];
     
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    tabController.viewControllers = tabControllers;
+    self.tabBarController = tabController;
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

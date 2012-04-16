@@ -13,4 +13,7 @@
 // utility method to create a UIColor object from a hexadecimal colour code
 + (UIColor *)colorWithHex:(int)colorHex;
 
+// tint colour for all UINavigationBar objects
++ (UIColor *)navigationBarTintColour;
+
 @end
