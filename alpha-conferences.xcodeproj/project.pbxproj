@@ -13,14 +13,8 @@
 		7E401F0F153C18FD00DA78D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F0D153C18FD00DA78D2 /* InfoPlist.strings */; };
 		7E401F11153C18FD00DA78D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F10153C18FD00DA78D2 /* main.m */; };
 		7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F14153C18FD00DA78D2 /* AppDelegate.m */; };
-		7E401F18153C18FD00DA78D2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F17153C18FD00DA78D2 /* FirstViewController.m */; };
-		7E401F1A153C18FD00DA78D2 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F19153C18FD00DA78D2 /* first.png */; };
-		7E401F1C153C18FD00DA78D2 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F1B153C18FD00DA78D2 /* first@2x.png */; };
-		7E401F1F153C18FD00DA78D2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F1E153C18FD00DA78D2 /* SecondViewController.m */; };
-		7E401F21153C18FD00DA78D2 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F20153C18FD00DA78D2 /* second.png */; };
-		7E401F23153C18FD00DA78D2 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F22153C18FD00DA78D2 /* second@2x.png */; };
-		7E401F26153C18FD00DA78D2 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F24153C18FD00DA78D2 /* FirstViewController.xib */; };
-		7E401F29153C18FD00DA78D2 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F27153C18FD00DA78D2 /* SecondViewController.xib */; };
+		7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */; };
+		7E401F41153C1BED00DA78D2 /* ProgrammeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,16 +28,10 @@
 		7E401F12153C18FD00DA78D2 /* alpha-conferences-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "alpha-conferences-Prefix.pch"; sourceTree = "<group>"; };
 		7E401F13153C18FD00DA78D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E401F14153C18FD00DA78D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7E401F16153C18FD00DA78D2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		7E401F17153C18FD00DA78D2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		7E401F19153C18FD00DA78D2 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		7E401F1B153C18FD00DA78D2 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		7E401F1D153C18FD00DA78D2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		7E401F1E153C18FD00DA78D2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		7E401F20153C18FD00DA78D2 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		7E401F22153C18FD00DA78D2 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		7E401F25153C18FD00DA78D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController.xib; sourceTree = "<group>"; };
-		7E401F28153C18FD00DA78D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Alpha.h"; sourceTree = "<group>"; };
+		7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Alpha.m"; sourceTree = "<group>"; };
+		7E401F3F153C1BED00DA78D2 /* ProgrammeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeViewController.h; sourceTree = "<group>"; };
+		7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,18 +78,11 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				7E401F3E153C1BCC00DA78D2 /* Programme */,
+				7E401F3D153C1B8F00DA78D2 /* Views */,
+				7E401F35153C1B0400DA78D2 /* Classes */,
 				7E401F13153C18FD00DA78D2 /* AppDelegate.h */,
 				7E401F14153C18FD00DA78D2 /* AppDelegate.m */,
-				7E401F16153C18FD00DA78D2 /* FirstViewController.h */,
-				7E401F17153C18FD00DA78D2 /* FirstViewController.m */,
-				7E401F19153C18FD00DA78D2 /* first.png */,
-				7E401F1B153C18FD00DA78D2 /* first@2x.png */,
-				7E401F1D153C18FD00DA78D2 /* SecondViewController.h */,
-				7E401F1E153C18FD00DA78D2 /* SecondViewController.m */,
-				7E401F20153C18FD00DA78D2 /* second.png */,
-				7E401F22153C18FD00DA78D2 /* second@2x.png */,
-				7E401F24153C18FD00DA78D2 /* FirstViewController.xib */,
-				7E401F27153C18FD00DA78D2 /* SecondViewController.xib */,
 				7E401F0B153C18FD00DA78D2 /* Supporting Files */,
 			);
 			path = "alpha-conferences";
@@ -116,6 +97,31 @@
 				7E401F12153C18FD00DA78D2 /* alpha-conferences-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E401F35153C1B0400DA78D2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */,
+				7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		7E401F3D153C1B8F00DA78D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7E401F3E153C1BCC00DA78D2 /* Programme */ = {
+			isa = PBXGroup;
+			children = (
+				7E401F3F153C1BED00DA78D2 /* ProgrammeViewController.h */,
+				7E401F40153C1BED00DA78D2 /* ProgrammeViewController.m */,
+			);
+			name = Programme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +151,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Brightec Ltd";
 			};
 			buildConfigurationList = 7E401EFA153C18FC00DA78D2 /* Build configuration list for PBXProject "alpha-conferences" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -169,12 +176,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E401F0F153C18FD00DA78D2 /* InfoPlist.strings in Resources */,
-				7E401F1A153C18FD00DA78D2 /* first.png in Resources */,
-				7E401F1C153C18FD00DA78D2 /* first@2x.png in Resources */,
-				7E401F21153C18FD00DA78D2 /* second.png in Resources */,
-				7E401F23153C18FD00DA78D2 /* second@2x.png in Resources */,
-				7E401F26153C18FD00DA78D2 /* FirstViewController.xib in Resources */,
-				7E401F29153C18FD00DA78D2 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +188,8 @@
 			files = (
 				7E401F11153C18FD00DA78D2 /* main.m in Sources */,
 				7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */,
-				7E401F18153C18FD00DA78D2 /* FirstViewController.m in Sources */,
-				7E401F1F153C18FD00DA78D2 /* SecondViewController.m in Sources */,
+				7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */,
+				7E401F41153C1BED00DA78D2 /* ProgrammeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,22 +202,6 @@
 				7E401F0E153C18FD00DA78D2 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		7E401F24153C18FD00DA78D2 /* FirstViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E401F25153C18FD00DA78D2 /* en */,
-			);
-			name = FirstViewController.xib;
-			sourceTree = "<group>";
-		};
-		7E401F27153C18FD00DA78D2 /* SecondViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E401F28153C18FD00DA78D2 /* en */,
-			);
-			name = SecondViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -242,7 +227,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -260,7 +245,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -289,6 +274,38 @@
 			};
 			name = Release;
 		};
+		7E401F2F153C19C000DA78D2 /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad-Hoc";
+		};
+		7E401F30153C19C000DA78D2 /* Ad-Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "alpha-conferences/alpha-conferences-Prefix.pch";
+				INFOPLIST_FILE = "alpha-conferences/alpha-conferences-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad-Hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -297,6 +314,7 @@
 			buildConfigurations = (
 				7E401F2A153C18FD00DA78D2 /* Debug */,
 				7E401F2B153C18FD00DA78D2 /* Release */,
+				7E401F2F153C19C000DA78D2 /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -306,6 +324,7 @@
 			buildConfigurations = (
 				7E401F2D153C18FD00DA78D2 /* Debug */,
 				7E401F2E153C18FD00DA78D2 /* Release */,
+				7E401F30153C19C000DA78D2 /* Ad-Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
