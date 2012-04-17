@@ -38,6 +38,7 @@
         // next button
         UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
         nextButton.frame = CGRectMake(self.bounds.size.width-26, 14, 13, 16);
+        nextButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         [nextButton setImage:[UIImage imageNamed:@"right-arrow.png"] forState:UIControlStateNormal];
         [nextButton addTarget:self action:@selector(nextPage) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:nextButton];
@@ -46,6 +47,7 @@
         // prev button
         UIButton *prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
         prevButton.frame = CGRectMake(10, 14, 13, 16);
+        prevButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;        
         [prevButton setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
         [prevButton addTarget:self action:@selector(prevPage) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:prevButton];
@@ -61,6 +63,7 @@
         titleLabel.center = self.center;
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.opaque = NO;
+        titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:titleLabel];
         self.titleLabel = titleLabel;
         [self gotoPageAtIndex:self.pageIndex];

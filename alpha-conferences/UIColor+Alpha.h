@@ -16,4 +16,8 @@
 // tint colour for all UINavigationBar objects
 + (UIColor *)navigationBarTintColour;
 
+// default table cell colour
++ (UIColor *)tableCellTitleColour;
++ (UIColor *)tableSubTitleColour;
+
 @end

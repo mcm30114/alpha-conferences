@@ -23,4 +23,14 @@
 }
 
 
++ (UIColor *)tableCellTitleColour {
+    return [UIColor blackColor];
+}
+
+
++ (UIColor *)tableSubTitleColour {
+    return [UIColor grayColor];
+}
+
+
 @end

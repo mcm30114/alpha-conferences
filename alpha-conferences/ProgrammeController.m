@@ -148,12 +148,17 @@
     }
     
     NSDictionary *rowData = [[[[[self.data objectAtIndex:self.pager.pageIndex] objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [rowData objectForKey:@"session_name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]];
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.barColour = (UIColor *)[rowData objectForKey:@"session_colour"];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
-    cell.detailTextLabel.textColor = [UIColor grayColor];
+    
+    cell.textLabel.text = [rowData objectForKey:@"session_name"];
+    cell.textLabel.font = [UIFont tableCellTitleFont];
+    cell.textLabel.textColor = [UIColor tableCellTitleColour];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]];
+    cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
+    cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
     
     return cell;
 }
@@ -171,11 +176,11 @@
     NSString *title = (NSString *)[rowData objectForKey:@"session_name"];
     NSString *subTitle = [NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]];
     
-    CGSize titleSize = [title sizeWithFont:[UIFont systemFontOfSize:16.0] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeTailTruncation];
+    CGSize titleSize = [title sizeWithFont:[UIFont tableCellTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeTailTruncation];
     height += titleSize.height;
     
     if (subTitle.length > 0) {
-        CGSize subTitleSize = [subTitle sizeWithFont:[UIFont systemFontOfSize:12.0] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeWordWrap];        
+        CGSize subTitleSize = [subTitle sizeWithFont:[UIFont tableCellSubTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeWordWrap];        
         height += subTitleSize.height + 10;
     }
     

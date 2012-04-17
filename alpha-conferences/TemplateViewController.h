@@ -1,5 +1,5 @@
 //
-//  TemplateTableViewController.h
+//  TemplateViewController.h
 //  alpha-conferences
 //
 //  Created by Cameron Cooke on 16/04/2012.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
+@interface TemplateViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@interface TemplateTableViewController : UITableViewController
 @end
