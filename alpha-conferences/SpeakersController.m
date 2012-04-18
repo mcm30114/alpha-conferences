@@ -8,6 +8,7 @@
 
 #import "SpeakersController.h"
 #import "SpeakerDetailController.h"
+#import "AlphaCell.h"
 
 
 @interface SpeakersController ()
@@ -113,9 +114,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithImageLeft reuseIdentifier:cellIdentifier];
     }
     
     NSDictionary *rowData = [[[[self.data objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
@@ -125,10 +126,14 @@
     cell.textLabel.text = [rowData objectForKey:@"cell_title"];
     cell.textLabel.font = [UIFont tableCellTitleFont];
     cell.textLabel.textColor = [UIColor tableCellTitleColour];
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 0;    
     
     cell.detailTextLabel.text = [rowData objectForKey:@"cell_sub_title"];
     cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
     cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
+    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.detailTextLabel.numberOfLines = 0;    
     
     cell.imageView.image = [rowData objectForKey:@"cell_image"];
     
@@ -142,21 +147,15 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 0.0;
     
-    NSDictionary *rowData = [[[[self.data objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString *title = (NSString *)[rowData objectForKey:@"cell_title"];
-    NSString *subTitle = (NSString *)[rowData objectForKey:@"cell_sub_title"];
-    
-    CGSize titleSize = [title sizeWithFont:[UIFont tableCellTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeTailTruncation];
-    height += titleSize.height;
-    
-    if (subTitle.length > 0) {
-        CGSize subTitleSize = [subTitle sizeWithFont:[UIFont tableCellSubTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeWordWrap];        
-        height += subTitleSize.height + 10;
-    }
-    
-    return MAX(height, self.tableView.rowHeight);
+    NSDictionary *rowData = [[[[self.data objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];    
+
+    return [AlphaCell heightForRowWithTableView:self.tableView 
+                     tableViewCellAccessoryType:UITableViewCellAccessoryDisclosureIndicator 
+                        alphaTableViewCellStyle:AlphaTableViewCellWithImageLeft
+                                  textLabelText:[rowData objectForKey:@"cell_title"] 
+                            detailTextLabelText:[rowData objectForKey:@"cell_sub_title"] 
+                                 imageViewImage:[rowData objectForKey:@"cell_image"]];    
 }
 
 

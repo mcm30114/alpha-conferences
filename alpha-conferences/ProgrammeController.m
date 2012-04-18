@@ -9,6 +9,7 @@
 #import "ProgrammeController.h"
 #import "AlphaCell.h"
 #import "Model.h"
+#import "SeminarOptionsController.h"
 
 
 @interface ProgrammeController ()
@@ -189,6 +190,10 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    SeminarOptionsController *controller = [[SeminarOptionsController alloc] init];
+    controller.title = @"Seminar Options";
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 

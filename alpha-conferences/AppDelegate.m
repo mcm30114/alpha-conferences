@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "ProgrammeController.h"
 #import "SpeakersController.h"
-#import "SpeakerDetailController.h"
 
 @implementation AppDelegate
 
@@ -36,17 +35,9 @@
     speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:speakersNavController]; 
     
-    // speaker
-    SpeakerDetailController *speakerController = [[SpeakerDetailController alloc] init];
-    speakerController.title = @"alias or name";
-    UINavigationController *speakerNavController = [[UINavigationController alloc] initWithRootViewController:speakerController];
-    speakerNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-    [tabControllers addObject:speakerNavController];      
-    
     
     UITabBarController *tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = tabControllers;
-    tabController.selectedIndex = 2;
     self.tabBarController = tabController;
     
     self.window.rootViewController = self.tabBarController;

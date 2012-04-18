@@ -25,8 +25,9 @@
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
 		7E349414153EF381009E332C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349413153EF381009E332C /* QuartzCore.framework */; };
 		7E349416153EF38D009E332C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349415153EF38D009E332C /* libxml2.dylib */; };
-		7E349417153EF606009E332C /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E34940B153EF2FF009E332C /* libDTCoreText.a */; };
 		7E34941D153EF8EA009E332C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E34941C153EF8EA009E332C /* CoreText.framework */; };
+		7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E34940B153EF2FF009E332C /* libDTCoreText.a */; };
+		7E349426153F1446009E332C /* SeminarOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E349425153F1446009E332C /* SeminarOptionsController.m */; };
 		7E401F05153C18FD00DA78D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F04153C18FD00DA78D2 /* UIKit.framework */; };
 		7E401F07153C18FD00DA78D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F06153C18FD00DA78D2 /* Foundation.framework */; };
 		7E401F09153C18FD00DA78D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F08153C18FD00DA78D2 /* CoreGraphics.framework */; };
@@ -121,6 +122,8 @@
 		7E349413153EF381009E332C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E349415153EF38D009E332C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7E34941C153EF8EA009E332C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		7E349424153F1446009E332C /* SeminarOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeminarOptionsController.h; sourceTree = "<group>"; };
+		7E349425153F1446009E332C /* SeminarOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeminarOptionsController.m; sourceTree = "<group>"; };
 		7E401F00153C18FD00DA78D2 /* alpha-conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alpha-conferences.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E401F04153C18FD00DA78D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E401F06153C18FD00DA78D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,8 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */,
 				7E34941D153EF8EA009E332C /* CoreText.framework in Frameworks */,
-				7E349417153EF606009E332C /* libDTCoreText.a in Frameworks */,
 				7E349416153EF38D009E332C /* libxml2.dylib in Frameworks */,
 				7E349414153EF381009E332C /* QuartzCore.framework in Frameworks */,
 				7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */,
@@ -226,6 +229,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7E349423153F1413009E332C /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sessions;
+			sourceTree = "<group>";
+		};
 		7E401EF5153C18FC00DA78D2 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 				03C32DA2153EB9C100E1B734 /* Model */,
 				7E264E9B153D6D650094626B /* Speakers */,
 				7E401F3E153C1BCC00DA78D2 /* Programme */,
+				7E349423153F1413009E332C /* Sessions */,
 				7E401F3D153C1B8F00DA78D2 /* Views */,
 				7E401F35153C1B0400DA78D2 /* Classes */,
 				7E401F13153C18FD00DA78D2 /* AppDelegate.h */,
@@ -313,6 +324,8 @@
 		7E401F3E153C1BCC00DA78D2 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
+				7E349424153F1446009E332C /* SeminarOptionsController.h */,
+				7E349425153F1446009E332C /* SeminarOptionsController.m */,
 				7E401F42153C235800DA78D2 /* ProgrammeController.h */,
 				7E401F43153C235800DA78D2 /* ProgrammeController.m */,
 			);
@@ -492,6 +505,7 @@
 				03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */,
 				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,
 				03C32DCE153EBAD300E1B734 /* Venue.m in Sources */,
+				7E349426153F1446009E332C /* SeminarOptionsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

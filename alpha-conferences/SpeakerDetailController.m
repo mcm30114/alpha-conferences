@@ -42,7 +42,7 @@
         speaker.alias = @"Andy Emerton (alias)";
         speaker.twitterUsername = @"twitter";
         speaker.websiteUrl = @"http://www.brightec.co.uk";
-        speaker.biography = @"<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Vivamus pulvinar felis et ipsum vestibulum viverra. Suspendisse pulvinar diam suscipit mi convallis at scelerisque justo pretium. Cras ultricies pretium metus vel rhoncus. Phasellus posuere scelerisque urna in blandit. Nulla orci nisl, auctor nec tristique vitae, sollicitudin sit amet mi. Proin et erat nisl.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar felis et ipsum vestibulum viverra. Suspendisse pulvinar diam suscipit mi convallis at scelerisque justo pretium. Cras ultricies pretium metus vel rhoncus. Phasellus posuere scelerisque urna in blandit. Nulla orci nisl, auctor nec tristique vitae, sollicitudin sit amet mi. Proin et erat nisl.</p>";
+        speaker.biography = @"<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Vivamus pulvinar felis et ipsum vestibulum viverra. Suspendisse pulvinar diam suscipit mi convallis at scelerisque justo pretium. Cras ultricies pretium metus vel rhoncus. Phasellus posuere scelerisque urna in blandit. Nulla orci nisl, auctor nec <i><u>tristique</u></i> vitae, sollicitudin sit amet mi. Proin et erat nisl.</p>";
         speaker.position = @"Speakers position";
         self.speaker = speaker;
     }
@@ -62,6 +62,22 @@
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     self.view = tableView;
     self.tableView = tableView;
+    
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
+    footerView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    self.tableView.tableFooterView = footerView;
+    
+    UIButton *websiteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [websiteButton setTitle:@"View website" forState:UIControlStateNormal];
+    websiteButton.frame = CGRectMake(10, 10, ((footerView.bounds.size.width / 2) - 15), 44);
+    websiteButton.enabled = self.speaker.websiteUrl.length > 0;
+    [footerView addSubview:websiteButton];
+    
+    UIButton *twitterButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [twitterButton setTitle:@"Follow on Twitter" forState:UIControlStateNormal];
+    twitterButton.frame = CGRectMake((footerView.bounds.size.width / 2) + 5, 10, ((footerView.bounds.size.width / 2) - 15), 44);
+    twitterButton.enabled = self.speaker.twitterUsername.length > 0;
+    [footerView addSubview:twitterButton];    
 }
 
 
@@ -87,6 +103,31 @@
 
 
 #pragma mark - Table view data source
+
+
+
+- (DTAttributedTextCell *)prepareAttributedTextCellWithIndexPath:(NSIndexPath *)indexPath tableView:(UITableView *)tableView  {
+    NSString *cellIdentifier = @"AttributedCell";
+    
+    DTAttributedTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone];
+        cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    }    
+    
+    if (indexPath.section == BIO_SECTION_INDEX && indexPath.row == 0) {
+        
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:1.0], NSTextSizeMultiplierDocumentOption, @"Helvetica", DTDefaultFontFamily,  @"blue", DTDefaultLinkColor, nil];         
+        NSData *data = [self.speaker.biography dataUsingEncoding:NSUTF8StringEncoding];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:nil];
+        [cell setAttributedString:string];
+    }
+    else {
+        [cell setHTMLString:@""];
+    }
+    
+    return cell;
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -133,19 +174,7 @@
             
         case BIO_SECTION_INDEX: {
             
-            NSString *cellIdentifier = @"BioCell";
-            
-            AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-            if (cell == nil) {
-                cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellNormal reuseIdentifier:cellIdentifier];
-            }
-            
-            cell.textLabel.text = self.speaker.biography;
-            cell.textLabel.font = [UIFont tableCellTitleFont];
-            cell.textLabel.textColor = [UIColor tableCellTitleColour];            
-            cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-            cell.textLabel.numberOfLines = 0;
-            
+            DTAttributedTextCell *cell = [self prepareAttributedTextCellWithIndexPath:indexPath tableView:tableView];            
             return cell;            
             
             break;
@@ -178,37 +207,41 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCellAccessoryType accessoryType = UITableViewCellAccessoryNone;
-    if (indexPath.section == SESSIONS_SECTION_INDEX) {
-        accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (indexPath.section == BIO_SECTION_INDEX) {
+        DTAttributedTextCell *cell = [self prepareAttributedTextCellWithIndexPath:indexPath tableView:tableView];
+        return [cell requiredRowHeightInTableView:tableView];
+    }    
+    else {
+        
+        UITableViewCellAccessoryType accessoryType = UITableViewCellAccessoryNone;
+        if (indexPath.section == SESSIONS_SECTION_INDEX) {
+            accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        
+        AlphaTableViewCellStyle alphaCellStyle = AlphaTableViewCellNormal;
+        if (indexPath.section == HEADER_SECTION_INDEX) {
+            accessoryType = AlphaTableViewCellWithImageRight;
+        }   
+        
+        NSString *cellTitle;
+        NSString *cellSubTitle;
+        UIImage *cellImage;
+        if (indexPath.section == HEADER_SECTION_INDEX) {
+            cellTitle = [self speakerName];
+            cellSubTitle = self.speaker.position;
+            cellImage = [UIImage imageNamed:@"cell-image.png"];
+        }
+        else if (indexPath.section == SESSIONS_SECTION_INDEX) {
+            cellTitle = [NSString stringWithFormat:@"View sessions with %@", [self speakerName]];
+        }
+        
+        return [AlphaCell heightForRowWithTableView:self.tableView 
+                         tableViewCellAccessoryType:accessoryType 
+                            alphaTableViewCellStyle:alphaCellStyle
+                                      textLabelText:cellTitle 
+                                detailTextLabelText:cellSubTitle 
+                                     imageViewImage:cellImage];        
     }
-    
-    AlphaTableViewCellStyle alphaCellStyle = AlphaTableViewCellNormal;
-    if (indexPath.section == HEADER_SECTION_INDEX) {
-        accessoryType = AlphaTableViewCellWithImageRight;
-    }   
-    
-    NSString *cellTitle;
-    NSString *cellSubTitle;
-    UIImage *cellImage;
-    if (indexPath.section == HEADER_SECTION_INDEX) {
-        cellTitle = [self speakerName];
-        cellSubTitle = self.speaker.position;
-        cellImage = [UIImage imageNamed:@"cell-image.png"];
-    }
-    else if (indexPath.section == BIO_SECTION_INDEX) {
-        cellTitle = self.speaker.biography;        
-    }
-    else if (indexPath.section == SESSIONS_SECTION_INDEX) {
-        cellTitle = [NSString stringWithFormat:@"View sessions with %@", [self speakerName]];
-    }
-    
-    return [AlphaCell heightForRowWithTableView:self.tableView 
-                     tableViewCellAccessoryType:accessoryType 
-            alphaTableViewCellStyle:alphaCellStyle
-                                  textLabelText:cellTitle 
-                            detailTextLabelText:cellSubTitle 
-                                 imageViewImage:cellImage];
 }
 
 
