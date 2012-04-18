@@ -163,7 +163,6 @@
             cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
             cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];            
             cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-            cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
             cell.detailTextLabel.numberOfLines = 0;            
             
             cell.imageView.image = [rowData objectForKey:@"cell_image"];
@@ -232,8 +231,14 @@
         accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    AlphaTableViewCellStyle alphaCellStyle = AlphaTableViewCellWithImageLeft;
+    if (indexPath.section == 3) {
+        accessoryType = AlphaTableViewCellWithImageRight;
+    }    
+    
     return [AlphaCell heightForRowWithTableView:self.tableView 
                      tableViewCellAccessoryType:accessoryType 
+            alphaTableViewCellStyle:alphaCellStyle
                                   textLabelText:[rowData objectForKey:@"cell_title"] 
                             detailTextLabelText:[rowData objectForKey:@"cell_sub_title"] 
                                  imageViewImage:[rowData objectForKey:@"cell_image"]];

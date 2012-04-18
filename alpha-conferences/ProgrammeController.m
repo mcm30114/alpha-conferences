@@ -7,7 +7,7 @@
 //
 
 #import "ProgrammeController.h"
-#import "SessionCell.h"
+#import "AlphaCell.h"
 
 
 @interface ProgrammeController ()
@@ -29,9 +29,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+        
+        
         // dummy datasource
         NSMutableDictionary *row1section1 = [NSMutableDictionary dictionary];
-        [row1section1 setObject:@"session.name" forKey:@"session_name"];
+        [row1section1 setObject:@"session.name sjfkj dsjfh dskjfh djf dskfh sdkfjhd skhkd" forKey:@"session_name"];
         [row1section1 setObject:@"session.start_datetime" forKey:@"session_start_datetime"];
         [row1section1 setObject:@"session.end_datetime" forKey:@"session_end_datetime"];        
         [row1section1 setObject:[UIColor redColor] forKey:@"session_colour"];        
@@ -142,9 +144,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"Cell";
     
-    SessionCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[SessionCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithColourBar reuseIdentifier:cellIdentifier];
     }
     
     NSDictionary *rowData = [[[[[self.data objectAtIndex:self.pager.pageIndex] objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
@@ -155,10 +157,14 @@
     cell.textLabel.text = [rowData objectForKey:@"session_name"];
     cell.textLabel.font = [UIFont tableCellTitleFont];
     cell.textLabel.textColor = [UIColor tableCellTitleColour];
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 0;
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]];
     cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
     cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
+    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.detailTextLabel.numberOfLines = 0;    
     
     return cell;
 }
@@ -170,21 +176,13 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 0.0;
-        
     NSDictionary *rowData = [[[[[self.data objectAtIndex:self.pager.pageIndex] objectForKey:@"sections"] objectAtIndex:indexPath.section] objectForKey:@"rows"] objectAtIndex:indexPath.row];
-    NSString *title = (NSString *)[rowData objectForKey:@"session_name"];
-    NSString *subTitle = [NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]];
     
-    CGSize titleSize = [title sizeWithFont:[UIFont tableCellTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeTailTruncation];
-    height += titleSize.height;
-    
-    if (subTitle.length > 0) {
-        CGSize subTitleSize = [subTitle sizeWithFont:[UIFont tableCellSubTitleFont] constrainedToSize:CGSizeMake(280, 999) lineBreakMode:UILineBreakModeWordWrap];        
-        height += subTitleSize.height + 10;
-    }
-    
-    return MAX(height, self.tableView.rowHeight);
+    return [AlphaCell heightForRowWithTableView:tableView tableViewCellAccessoryType:UITableViewCellAccessoryDisclosureIndicator 
+                        alphaTableViewCellStyle:AlphaTableViewCellWithColourBar 
+                                  textLabelText:[rowData objectForKey:@"session_name"] 
+                            detailTextLabelText:[NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]] 
+                                 imageViewImage:nil];    
 }
 
 

@@ -10,14 +10,17 @@
 
 typedef enum {
     AlphaTableViewCellWithImageLeft,
-    AlphaTableViewCellWithImageRight    
+    AlphaTableViewCellWithImageRight,    
+    AlphaTableViewCellWithColourBar
 } AlphaTableViewCellStyle;
 
 
 @interface AlphaCell : UITableViewCell
 
+@property (nonatomic, strong) UIColor *barColour;
+
 - (id)initWithStyle:(AlphaTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
-+ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewImage:(UIImage *)imageViewImage;
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType alphaTableViewCellStyle:(AlphaTableViewCellStyle)style textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewImage:(UIImage *)imageViewImage;
 
 @end
