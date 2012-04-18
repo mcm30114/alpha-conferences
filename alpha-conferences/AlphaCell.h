@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
+    AlphaTableViewCellNormal,
     AlphaTableViewCellWithImageLeft,
     AlphaTableViewCellWithImageRight,    
     AlphaTableViewCellWithColourBar

@@ -8,6 +8,7 @@
 
 #import "ProgrammeController.h"
 #import "AlphaCell.h"
+#import "Model.h"
 
 
 @interface ProgrammeController ()
@@ -28,8 +29,6 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-        
         
         // dummy datasource
         NSMutableDictionary *row1section1 = [NSMutableDictionary dictionary];

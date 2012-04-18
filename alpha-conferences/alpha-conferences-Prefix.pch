@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import "UIColor+Alpha.h"
     #import "UIFont+Alpha.h"
+    #import "DTCoreText.h"
 #endif

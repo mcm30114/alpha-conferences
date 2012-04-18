@@ -10,6 +10,4 @@
 
 @interface SpeakerDetailController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-- (NSDictionary *)dataForIndexPath:(NSIndexPath *)indexPath;
-
 @end

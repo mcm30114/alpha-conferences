@@ -20,5 +20,6 @@
 #import "SpecialOffer.h"
 #import "Stream.h"
 #import "Venue.h"
+#import "Speaker.h"
 
 #endif

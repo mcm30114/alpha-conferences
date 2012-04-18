@@ -116,8 +116,11 @@
     
     if (detailTextLabelText.length > 0) {
         CGSize subTitleSize = [detailTextLabelText sizeWithFont:[UIFont tableCellSubTitleFont] constrainedToSize:CGSizeMake(labelMaxWidth, 999) lineBreakMode:UILineBreakModeWordWrap];        
-        height += subTitleSize.height + 10;
+        height += subTitleSize.height;
     }
+    
+    // add extra margin above and below
+    height += CELL_MARGIN;
     
     // make sure the cell accommodates the image and is no smaller than the default row height
     height = MAX(MAX(height, tableView.rowHeight), imageViewImage.size.height + (CELL_MARGIN * 2));
