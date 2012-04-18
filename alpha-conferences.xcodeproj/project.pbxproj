@@ -69,6 +69,7 @@
 		03C32DBE153EBAD200E1B734 /* Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stream.m; sourceTree = "<group>"; };
 		03C32DBF153EBAD200E1B734 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
 		03C32DC0153EBAD200E1B734 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		03C32E0B153EC4D200E1B734 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = "../../../../../Users/erik/src/alpha-conferences-cam/alpha-conferences/Model.h"; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03C32E0B153EC4D200E1B734 /* Model.h */,
 				03C32DA4153EBAD200E1B734 /* Alert.h */,
 				03C32DA5153EBAD200E1B734 /* Alert.m */,
 				03C32DA6153EBAD200E1B734 /* Conference.h */,
