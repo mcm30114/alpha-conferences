@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
+		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
+		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
+		03C32DC5153EBAD300E1B734 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DAE153EBAD200E1B734 /* FAQ.m */; };
+		03C32DC6153EBAD300E1B734 /* NSDictionary+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB0153EBAD200E1B734 /* NSDictionary+Alpha.m */; };
+		03C32DC7153EBAD300E1B734 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB2153EBAD200E1B734 /* Room.m */; };
+		03C32DC8153EBAD300E1B734 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB4153EBAD200E1B734 /* Session.m */; };
+		03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB6153EBAD200E1B734 /* SessionGroup.m */; };
+		03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB8153EBAD200E1B734 /* SessionType.m */; };
+		03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBA153EBAD200E1B734 /* Speaker.m */; };
+		03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBC153EBAD200E1B734 /* SpecialOffer.m */; };
+		03C32DCD153EBAD300E1B734 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBE153EBAD200E1B734 /* Stream.m */; };
+		03C32DCE153EBAD300E1B734 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DC0153EBAD200E1B734 /* Venue.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E401F05153C18FD00DA78D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F04153C18FD00DA78D2 /* UIKit.framework */; };
@@ -30,6 +43,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
+		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
+		03C32DA7153EBAD200E1B734 /* Conference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conference.m; sourceTree = "<group>"; };
+		03C32DA8153EBAD200E1B734 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		03C32DA9153EBAD200E1B734 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		03C32DAD153EBAD200E1B734 /* FAQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQ.h; sourceTree = "<group>"; };
+		03C32DAE153EBAD200E1B734 /* FAQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQ.m; sourceTree = "<group>"; };
+		03C32DAF153EBAD200E1B734 /* NSDictionary+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Alpha.h"; sourceTree = "<group>"; };
+		03C32DB0153EBAD200E1B734 /* NSDictionary+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Alpha.m"; sourceTree = "<group>"; };
+		03C32DB1153EBAD200E1B734 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		03C32DB2153EBAD200E1B734 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		03C32DB3153EBAD200E1B734 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		03C32DB4153EBAD200E1B734 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		03C32DB5153EBAD200E1B734 /* SessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionGroup.h; sourceTree = "<group>"; };
+		03C32DB6153EBAD200E1B734 /* SessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionGroup.m; sourceTree = "<group>"; };
+		03C32DB7153EBAD200E1B734 /* SessionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionType.h; sourceTree = "<group>"; };
+		03C32DB8153EBAD200E1B734 /* SessionType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionType.m; sourceTree = "<group>"; };
+		03C32DB9153EBAD200E1B734 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
+		03C32DBA153EBAD200E1B734 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		03C32DBB153EBAD200E1B734 /* SpecialOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialOffer.h; sourceTree = "<group>"; };
+		03C32DBC153EBAD200E1B734 /* SpecialOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialOffer.m; sourceTree = "<group>"; };
+		03C32DBD153EBAD200E1B734 /* Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stream.h; sourceTree = "<group>"; };
+		03C32DBE153EBAD200E1B734 /* Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stream.m; sourceTree = "<group>"; };
+		03C32DBF153EBAD200E1B734 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		03C32DC0153EBAD200E1B734 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -81,6 +120,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03C32DA2153EB9C100E1B734 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03C32DA4153EBAD200E1B734 /* Alert.h */,
+				03C32DA5153EBAD200E1B734 /* Alert.m */,
+				03C32DA6153EBAD200E1B734 /* Conference.h */,
+				03C32DA7153EBAD200E1B734 /* Conference.m */,
+				03C32DA8153EBAD200E1B734 /* Day.h */,
+				03C32DA9153EBAD200E1B734 /* Day.m */,
+				03C32DAD153EBAD200E1B734 /* FAQ.h */,
+				03C32DAE153EBAD200E1B734 /* FAQ.m */,
+				03C32DB1153EBAD200E1B734 /* Room.h */,
+				03C32DB2153EBAD200E1B734 /* Room.m */,
+				03C32DB3153EBAD200E1B734 /* Session.h */,
+				03C32DB4153EBAD200E1B734 /* Session.m */,
+				03C32DB5153EBAD200E1B734 /* SessionGroup.h */,
+				03C32DB6153EBAD200E1B734 /* SessionGroup.m */,
+				03C32DB7153EBAD200E1B734 /* SessionType.h */,
+				03C32DB8153EBAD200E1B734 /* SessionType.m */,
+				03C32DB9153EBAD200E1B734 /* Speaker.h */,
+				03C32DBA153EBAD200E1B734 /* Speaker.m */,
+				03C32DBB153EBAD200E1B734 /* SpecialOffer.h */,
+				03C32DBC153EBAD200E1B734 /* SpecialOffer.m */,
+				03C32DBD153EBAD200E1B734 /* Stream.h */,
+				03C32DBE153EBAD200E1B734 /* Stream.m */,
+				03C32DBF153EBAD200E1B734 /* Venue.h */,
+				03C32DC0153EBAD200E1B734 /* Venue.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +192,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03C32DA2153EB9C100E1B734 /* Model */,
 				7E264E9B153D6D650094626B /* Speakers */,
 				7E401F3E153C1BCC00DA78D2 /* Programme */,
 				7E401F3D153C1B8F00DA78D2 /* Views */,
@@ -155,6 +226,8 @@
 				7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */,
 				7E264E98153D6AB60094626B /* UIFont+Alpha.h */,
 				7E264E99153D6AB60094626B /* UIFont+Alpha.m */,
+				03C32DAF153EBAD200E1B734 /* NSDictionary+Alpha.h */,
+				03C32DB0153EBAD200E1B734 /* NSDictionary+Alpha.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -304,6 +377,19 @@
 				7E264E9E153D6D860094626B /* SpeakersController.m in Sources */,
 				7EF49FE1153DA67C0038ECBB /* SpeakerDetailController.m in Sources */,
 				7EF49FE5153DAD8B0038ECBB /* AlphaCell.m in Sources */,
+				03C32DC1153EBAD300E1B734 /* Alert.m in Sources */,
+				03C32DC2153EBAD300E1B734 /* Conference.m in Sources */,
+				03C32DC3153EBAD300E1B734 /* Day.m in Sources */,
+				03C32DC5153EBAD300E1B734 /* FAQ.m in Sources */,
+				03C32DC6153EBAD300E1B734 /* NSDictionary+Alpha.m in Sources */,
+				03C32DC7153EBAD300E1B734 /* Room.m in Sources */,
+				03C32DC8153EBAD300E1B734 /* Session.m in Sources */,
+				03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */,
+				03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */,
+				03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */,
+				03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */,
+				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,
+				03C32DCE153EBAD300E1B734 /* Venue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
