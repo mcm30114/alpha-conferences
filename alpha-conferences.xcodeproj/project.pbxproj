@@ -29,6 +29,8 @@
 		03C32DCE153EBAD300E1B734 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DC0153EBAD200E1B734 /* Venue.m */; };
 		03CC45281540812800737AD1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45271540812800737AD1 /* Constants.m */; };
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
+		03CC45331540893400737AD1 /* FAQDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45321540893400737AD1 /* FAQDetail.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -140,6 +142,10 @@
 		03CC45271540812800737AD1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Constants.m"; sourceTree = "<group>"; };
 		03CC452A154081C000737AD1 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = "../../../../Users/erik/src/alpha-conferences/JSONKit/JSONKit.h"; sourceTree = "<group>"; };
 		03CC452B154081C000737AD1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = "../../../../Users/erik/src/alpha-conferences/JSONKit/JSONKit.m"; sourceTree = "<group>"; };
+		03CC452E1540882C00737AD1 /* FAQList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQList.h; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQList.h"; sourceTree = "<group>"; };
+		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQList.m"; sourceTree = "<group>"; };
+		03CC45311540893400737AD1 /* FAQDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQDetail.h; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQDetail.h"; sourceTree = "<group>"; };
+		03CC45321540893400737AD1 /* FAQDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQDetail.m; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQDetail.m"; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -279,6 +285,18 @@
 			name = JSONKit;
 			sourceTree = "<group>";
 		};
+		03CC452D1540880700737AD1 /* FAQs */ = {
+			isa = PBXGroup;
+			children = (
+				03CC452E1540882C00737AD1 /* FAQList.h */,
+				03CC452F1540882C00737AD1 /* FAQList.m */,
+				03CC45311540893400737AD1 /* FAQDetail.h */,
+				03CC45321540893400737AD1 /* FAQDetail.m */,
+			);
+			name = FAQs;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +370,7 @@
 				7E401F3E153C1BCC00DA78D2 /* Programme */,
 				7E349423153F1413009E332C /* Sessions */,
 				034A50541540679900ADB1C2 /* Venues */,
+				03CC452D1540880700737AD1 /* FAQs */,
 				7E401F3D153C1B8F00DA78D2 /* Views */,
 				7E401F35153C1B0400DA78D2 /* Classes */,
 				03CC45261540804500737AD1 /* Constants.h */,
@@ -594,6 +613,8 @@
 				034A507215407CF600ADB1C2 /* DataStore.m in Sources */,
 				03CC45281540812800737AD1 /* Constants.m in Sources */,
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
+				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
+				03CC45331540893400737AD1 /* FAQDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -204,6 +204,10 @@ static DataStore *latestAvailableInstance = nil;
     return venues.allValues;
 }
 
+-(NSArray *)faqs {
+    return faqs.allValues;
+}
+
 -(Speaker *)speakerWithId:(NSInteger)speakerId {
     return [speakers objectForIntegerKey:speakerId];
 }

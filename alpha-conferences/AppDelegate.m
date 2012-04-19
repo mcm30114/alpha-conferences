@@ -11,6 +11,7 @@
 #import "SpeakersController.h"
 #import "StandardController.h"
 #import "VenueListModel.h"
+#import "FAQList.h"
 #import "DataStore.h"
 
 
@@ -45,7 +46,14 @@
     UINavigationController *mapsNavController = [[UINavigationController alloc] initWithRootViewController:mapsController];
     mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:mapsNavController];
-
+    
+    // faqs
+    StandardController *faqsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    faqsController.model = [[FAQList alloc] init];
+    UINavigationController *faqsNavController = [[UINavigationController alloc] initWithRootViewController:faqsController];
+    faqsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:faqsNavController];
+    
     UITabBarController *tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = tabControllers;
     self.tabBarController = tabController;

@@ -19,6 +19,7 @@
 -(NSArray *)speakers;
 -(NSArray *)days;
 -(NSArray *)venues;
+-(NSArray *)faqs;
 
 -(Speaker *)speakerWithId:(NSInteger)speakerId;
 -(Session *)sessionWithId:(NSInteger)sessionId;
