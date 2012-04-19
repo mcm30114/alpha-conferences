@@ -25,6 +25,12 @@
 @synthesize strings = _strings;
 @synthesize pageIndex = _pageIndex;
 @synthesize delegate = _delegate;
+@synthesize dataSource = _dataSource;
+
+
+- (id)initWithFrame:(CGRect)frame {
+    return [self initWithStrings:[NSArray arrayWithObject:@""] frame:frame];
+}
 
 
 - (id)initWithStrings:(NSArray *)strings frame:(CGRect)frame {
@@ -110,6 +116,25 @@
     if ([(id)self.delegate respondsToSelector:@selector(alphaPager:didChangePageWithIndex:)]) {
         [self.delegate alphaPager:self didChangePageWithIndex:index];
     }
+}
+
+
+- (void)reloadData {
+    if (self.dataSource) {
+        NSInteger count = [self.dataSource numberOfTitlesInAlphaPager:self];
+        NSMutableArray *a = [NSMutableArray arrayWithCapacity:count];
+        for (NSInteger x=0; x<count; x++) {
+            NSString *title = [self.dataSource alphaPager:self titleForPageAtIndex:x];
+            if (!title) {
+                title = @"";
+            }
+            [a addObject:title];
+        }
+        self.strings = a;
+    } else {
+        self.strings = [NSArray arrayWithObject:@""];
+    }
+    [self gotoPageAtIndex:0];
 }
 
 

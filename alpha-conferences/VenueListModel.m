@@ -37,26 +37,6 @@
     return self;
 }
 
--(NSInteger)numberOfPages {
-    return 1;
-}
-
-
--(NSString *)pageTitleForPage:(NSInteger)page {
-    return nil;
-}
-
-
--(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 1;
-}
-
-
--(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
-    return nil;
-}
-
-
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
     return venues.count;
 }
@@ -71,7 +51,7 @@
     r.style = AlphaTableViewCellNormal;
     
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:YES];
         childController.model = [[VenueDetailModel alloc] initWithVenue:v];
         [controller.navigationController pushViewController:childController animated:YES];
     };

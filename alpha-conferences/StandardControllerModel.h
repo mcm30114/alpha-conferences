@@ -11,6 +11,9 @@
 
 @protocol StandardControllerModel <NSObject>
 
+
+@optional
+
 -(NSInteger)numberOfPages;
 
 -(NSString *)pageTitleForPage:(NSInteger)page;
@@ -18,6 +21,9 @@
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page;
 
 -(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section;
+
+
+@required
 
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section;
 

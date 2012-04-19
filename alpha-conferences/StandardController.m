@@ -20,6 +20,7 @@
 }
 
 @property (nonatomic, unsafe_unretained) UITableView *tableView;
+@property (nonatomic, unsafe_unretained) AlphaPager *pager;
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 
@@ -30,6 +31,7 @@
 @implementation StandardController
 
 @synthesize tableView = _tableView;
+@synthesize pager = _pager;
 @synthesize model = _model;
 
 
@@ -54,12 +56,12 @@
     
     CGFloat y = 0;
     if (showPager) {
-        NSArray *strings = [NSArray arrayWithObjects:@"A",@"B",@"C",nil];
-        AlphaPager *pager = [[AlphaPager alloc] initWithStrings:strings frame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+        AlphaPager *pager = [[AlphaPager alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+        pager.dataSource = self;
         pager.delegate = self;
         pager.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [rootView addSubview:pager];      
-        //    self.pager = pager;
+        self.pager = pager;
         y += pager.frame.size.height;
     }
     
@@ -87,6 +89,7 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     self.tableView = nil;
+    self.pager = nil;
 }
 
 
@@ -106,7 +109,11 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.model numberOfSectionsInPage:selectedPage];
+    if ([self.model respondsToSelector:@selector(numberOfSectionsInPage:)]) {
+        return [self.model numberOfSectionsInPage:selectedPage];
+    } else {
+        return 1;
+    }
 }
 
 
@@ -208,6 +215,27 @@
         } else {
             NSLog(@"alphaRow does not have an onSelected block");
         }
+    }
+}
+
+
+#pragma mark - AlphaPagerDataSource methods
+
+
+- (NSInteger)numberOfTitlesInAlphaPager:(AlphaPager *)alphaPager {
+    if ([self.model respondsToSelector:@selector(numberOfPages)]) {
+        return [self.model numberOfPages];
+    } else {
+        return 0;
+    }
+}
+
+
+- (NSString *)alphaPager:(AlphaPager *)alphaPager titleForPageAtIndex:(NSInteger)index {
+    if ([self.model respondsToSelector:@selector(pageTitleForPage:)]) {
+        return [self.model pageTitleForPage:index];
+    } else {
+        return nil;
     }
 }
 

@@ -33,23 +33,8 @@
 }
 
 
--(NSInteger)numberOfPages {
-    return 1;
-}
-
-
--(NSString *)pageTitleForPage:(NSInteger)page {
-    return nil;
-}
-
-
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
     return 3;
-}
-
-
--(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
-    return nil;
 }
 
 

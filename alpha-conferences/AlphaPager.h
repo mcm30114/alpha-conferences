@@ -9,18 +9,28 @@
 #import <UIKit/UIKit.h>
 
 @protocol AlphaPagerDelegate;
+@protocol AlphaPagerDataSource;
+
 
 @interface AlphaPager : UIView
 
 @property (nonatomic, unsafe_unretained) UILabel *titleLabel;
 @property (nonatomic) NSInteger pageIndex;
 @property (nonatomic, unsafe_unretained) id<AlphaPagerDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<AlphaPagerDataSource> dataSource;
 
-- (id)initWithStrings:(NSArray *)strings frame:(CGRect)frame;
+- (id)initWithFrame:(CGRect)frame;
+- (id)initWithStrings:(NSArray *)strings frame:(CGRect)frame; // deprecated
 - (void)nextPage;
 - (void)prevPage;
 - (void)gotoPageAtIndex:(NSInteger)index;
+- (void)reloadData;
 
+@end
+
+@protocol AlphaPagerDataSource
+- (NSInteger)numberOfTitlesInAlphaPager:(AlphaPager *)alphaPager;
+- (NSString *)alphaPager:(AlphaPager *)alphaPager titleForPageAtIndex:(NSInteger)index;
 @end
 
 @protocol AlphaPagerDelegate

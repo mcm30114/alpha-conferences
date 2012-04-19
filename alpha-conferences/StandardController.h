@@ -11,7 +11,7 @@
 #import "StandardControllerModel.h"
 
 
-@interface StandardController : UIViewController <UITableViewDataSource, UITableViewDelegate, AlphaPagerDelegate>
+@interface StandardController : UIViewController <UITableViewDataSource, UITableViewDelegate, AlphaPagerDataSource, AlphaPagerDelegate>
 
 @property (nonatomic, strong) id<StandardControllerModel> model;
 
