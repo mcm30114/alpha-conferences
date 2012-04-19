@@ -16,5 +16,6 @@
 @synthesize accessoryType;
 @synthesize style;
 @synthesize image;
+@synthesize onSelected;
 
 @end

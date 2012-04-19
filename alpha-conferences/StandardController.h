@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) id<StandardControllerModel> model;
 
+- (id)initWithStyle:(UITableViewStyle)style pager:(BOOL)pager;
+
 @end

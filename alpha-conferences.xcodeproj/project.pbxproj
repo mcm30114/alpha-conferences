@@ -11,6 +11,8 @@
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
 		034A50531540665400ADB1C2 /* ButtonBarRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50521540665400ADB1C2 /* ButtonBarRow.m */; };
+		034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A5056154067BE00ADB1C2 /* VenueListModel.m */; };
+		034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A505915406AF000ADB1C2 /* VenueDetailModel.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -99,6 +101,10 @@
 		034A504F154065DD00ADB1C2 /* RichTextRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextRow.m; sourceTree = "<group>"; };
 		034A50511540665400ADB1C2 /* ButtonBarRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonBarRow.h; sourceTree = "<group>"; };
 		034A50521540665400ADB1C2 /* ButtonBarRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonBarRow.m; sourceTree = "<group>"; };
+		034A5055154067BE00ADB1C2 /* VenueListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueListModel.h; sourceTree = "<group>"; };
+		034A5056154067BE00ADB1C2 /* VenueListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueListModel.m; sourceTree = "<group>"; };
+		034A505815406AF000ADB1C2 /* VenueDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailModel.h; sourceTree = "<group>"; };
+		034A505915406AF000ADB1C2 /* VenueDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailModel.m; sourceTree = "<group>"; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
@@ -203,6 +209,17 @@
 			name = StandardController;
 			sourceTree = "<group>";
 		};
+		034A50541540679900ADB1C2 /* Venues */ = {
+			isa = PBXGroup;
+			children = (
+				034A5055154067BE00ADB1C2 /* VenueListModel.h */,
+				034A5056154067BE00ADB1C2 /* VenueListModel.m */,
+				034A505815406AF000ADB1C2 /* VenueDetailModel.h */,
+				034A505915406AF000ADB1C2 /* VenueDetailModel.m */,
+			);
+			name = Venues;
+			sourceTree = "<group>";
+		};
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +322,7 @@
 				7E264E9B153D6D650094626B /* Speakers */,
 				7E401F3E153C1BCC00DA78D2 /* Programme */,
 				7E349423153F1413009E332C /* Sessions */,
+				034A50541540679900ADB1C2 /* Venues */,
 				7E401F3D153C1B8F00DA78D2 /* Views */,
 				7E401F35153C1B0400DA78D2 /* Classes */,
 				7E401F13153C18FD00DA78D2 /* AppDelegate.h */,
@@ -540,6 +558,8 @@
 				034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */,
 				034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */,
 				034A50531540665400ADB1C2 /* ButtonBarRow.m in Sources */,
+				034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */,
+				034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

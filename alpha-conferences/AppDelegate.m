@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "ProgrammeController.h"
 #import "SpeakersController.h"
+#import "StandardController.h"
+#import "VenueListModel.h"
+
 
 @implementation AppDelegate
 
@@ -35,6 +38,12 @@
     speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:speakersNavController]; 
     
+    // maps
+    StandardController *mapsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    mapsController.model = [[VenueListModel alloc] init];
+    UINavigationController *mapsNavController = [[UINavigationController alloc] initWithRootViewController:mapsController];
+    mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:mapsNavController];
     
     UITabBarController *tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = tabControllers;

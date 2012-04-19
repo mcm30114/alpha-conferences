@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "AlphaCell.h"
 
+@class StandardController;
+
 
 @interface AlphaRow : NSObject
 
@@ -17,5 +19,7 @@
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
 @property (nonatomic) AlphaTableViewCellStyle style;
 @property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, copy) void (^onSelected)(StandardController *controller);
 
 @end

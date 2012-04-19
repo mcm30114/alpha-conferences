@@ -13,10 +13,13 @@
 #import "ButtonBarRow.h"
 
 
-@interface StandardController ()
+@interface StandardController () {
+    UITableViewStyle tableViewStyle;
+    BOOL showPager;
+    NSInteger selectedPage;
+}
 
 @property (nonatomic, unsafe_unretained) UITableView *tableView;
-@property (nonatomic) NSInteger selectedPage;
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 
@@ -28,12 +31,13 @@
 
 @synthesize tableView = _tableView;
 @synthesize model = _model;
-@synthesize selectedPage = _selectedPage;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.selectedPage = 0;
+- (id)initWithStyle:(UITableViewStyle)style pager:(BOOL)pager {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        tableViewStyle = style;
+        showPager = pager;
+        selectedPage = 0;
     }
     return self;
 }
@@ -48,15 +52,19 @@
     rootView.backgroundColor = [UIColor whiteColor];
     self.view = rootView;
     
-    NSArray *strings = [NSArray arrayWithObjects:@"A",@"B",@"C",nil];
-    AlphaPager *pager = [[AlphaPager alloc] initWithStrings:strings frame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
-    pager.delegate = self;
-    pager.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [rootView addSubview:pager];      
-    //    self.pager = pager;
+    CGFloat y = 0;
+    if (showPager) {
+        NSArray *strings = [NSArray arrayWithObjects:@"A",@"B",@"C",nil];
+        AlphaPager *pager = [[AlphaPager alloc] initWithStrings:strings frame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+        pager.delegate = self;
+        pager.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        [rootView addSubview:pager];      
+        //    self.pager = pager;
+        y += pager.frame.size.height;
+    }
     
-    CGRect tableViewFrame = pager ? CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-pager.frame.size.height) : CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height); 
-    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:UITableViewStylePlain];    
+    CGRect tableViewFrame = CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height-y); 
+    UITableView *tableView = [[UITableView alloc] initWithFrame:tableViewFrame style:tableViewStyle];    
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
@@ -98,17 +106,17 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.model numberOfSectionsInPage:self.selectedPage];
+    return [self.model numberOfSectionsInPage:selectedPage];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.model numberOfRowsInPage:self.selectedPage section:section];
+    return [self.model numberOfRowsInPage:selectedPage section:section];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    id row = [self.model rowForPage:self.selectedPage section:indexPath.section row:indexPath.row];
+    id row = [self.model rowForPage:selectedPage section:indexPath.section row:indexPath.row];
     
     if ([row isKindOfClass:[AlphaRow class]]) {
         
@@ -127,6 +135,7 @@
         cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
         cell.detailTextLabel.numberOfLines = 0;
         
+        cell.accessoryType = alphaRow.accessoryType;
         cell.imageView.image = alphaRow.image;
         
         return cell;
@@ -152,6 +161,7 @@
         return cell;
         
     } else {
+        NSLog(@"don't know how to get a cell for page %d, section %d, row %d", selectedPage, indexPath.section, indexPath.row);
         return nil;
     }
 }
@@ -161,7 +171,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    id row = [self.model rowForPage:self.selectedPage section:indexPath.section row:indexPath.row];
+    id row = [self.model rowForPage:selectedPage section:indexPath.section row:indexPath.row];
     
     if ([row isKindOfClass:[AlphaRow class]]) {
         
@@ -187,11 +197,26 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id row = [self.model rowForPage:selectedPage section:indexPath.section row:indexPath.row];
+
+    if ([row isKindOfClass:[AlphaRow class]]) {
+        AlphaRow *alphaRow = row;
+        if (alphaRow.onSelected) {
+            NSLog(@"alphaRow has an onSelected block");
+            alphaRow.onSelected(self);
+        } else {
+            NSLog(@"alphaRow does not have an onSelected block");
+        }
+    }
+}
+
+
 #pragma mark - AlphaPagerDelegate methods
 
 
 - (void)alphaPager:(AlphaPager *)alphaPager didChangePageWithIndex:(NSInteger)index {
-    self.selectedPage = index;
+    selectedPage = index;
     [self.tableView reloadData];
 }
 
