@@ -11,6 +11,8 @@
 #import "Venue.h"
 #import "StandardController.h"
 #import "VenueDetailModel.h"
+#import "Constants.h"
+#import "DataStore.h"
 
 
 @interface VenueListModel () {
@@ -23,19 +25,6 @@
 
 @implementation VenueListModel
 
-
--(id)init {
-    if (self = [super init]) {
-        Venue *v0 = [[Venue alloc] init];
-        v0.name = @"The O2";
-        v0.details = @"<p>hello world</p>";
-        Venue *v1 = [[Venue alloc] init];
-        v1.name = @"Wembley Stadium";
-        v1.details = @"<p>hello wembley</p>";
-        venues = [NSArray arrayWithObjects:v0, v1, nil];
-    }
-    return self;
-}
 
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
     return venues.count;
@@ -51,11 +40,16 @@
     r.style = AlphaTableViewCellNormal;
     
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:YES];
+        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
         childController.model = [[VenueDetailModel alloc] initWithVenue:v];
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;
+}
+
+
+-(void)reloadData {
+    venues = [DataStore latestAvailableInstance].venues;
 }
 
 

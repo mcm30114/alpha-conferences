@@ -14,6 +14,8 @@
 
 @optional
 
+-(void)reloadData;
+
 -(NSInteger)numberOfPages;
 
 -(NSString *)pageTitleForPage:(NSInteger)page;

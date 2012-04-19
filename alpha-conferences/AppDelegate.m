@@ -11,6 +11,7 @@
 #import "SpeakersController.h"
 #import "StandardController.h"
 #import "VenueListModel.h"
+#import "DataStore.h"
 
 
 @implementation AppDelegate
@@ -44,13 +45,14 @@
     UINavigationController *mapsNavController = [[UINavigationController alloc] initWithRootViewController:mapsController];
     mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:mapsNavController];
-    
+
     UITabBarController *tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = tabControllers;
     self.tabBarController = tabController;
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    [DataStore refresh];
     return YES;
 }
 

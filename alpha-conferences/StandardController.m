@@ -11,6 +11,7 @@
 #import "AlphaRow.h"
 #import "RichTextRow.h"
 #import "ButtonBarRow.h"
+#import "Constants.h"
 
 
 @interface StandardController () {
@@ -24,6 +25,8 @@
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 
+- (void)dataWasUpdated:(NSNotification *)n;
+
 @end
 
 
@@ -35,11 +38,21 @@
 @synthesize model = _model;
 
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style pager:(BOOL)pager {
     if (self = [super initWithNibName:nil bundle:nil]) {
         tableViewStyle = style;
         showPager = pager;
         selectedPage = 0;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dataWasUpdated:)
+                                                     name:NOTIFICATION_DATA
+                                                   object:nil];
     }
     return self;
 }
@@ -274,6 +287,15 @@
     }
     
     return cell;
+}
+
+
+- (void)dataWasUpdated:(NSNotification *)notification {
+    if ([self.model respondsToSelector:@selector(reloadData)]) {
+        [self.model reloadData];
+        [self.tableView reloadData];
+        [self.pager reloadData];
+    }
 }
 
 
