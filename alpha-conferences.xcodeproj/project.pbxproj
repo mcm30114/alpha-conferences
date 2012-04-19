@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
+		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
+		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
+		034A50531540665400ADB1C2 /* ButtonBarRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50521540665400ADB1C2 /* ButtonBarRow.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -86,6 +90,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardController.h; sourceTree = "<group>"; };
+		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardController.m; sourceTree = "<group>"; };
+		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardControllerModel.h; sourceTree = "<group>"; };
+		034A504B1540653C00ADB1C2 /* AlphaRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaRow.h; sourceTree = "<group>"; };
+		034A504C1540653C00ADB1C2 /* AlphaRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaRow.m; sourceTree = "<group>"; };
+		034A504E154065DD00ADB1C2 /* RichTextRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextRow.h; sourceTree = "<group>"; };
+		034A504F154065DD00ADB1C2 /* RichTextRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextRow.m; sourceTree = "<group>"; };
+		034A50511540665400ADB1C2 /* ButtonBarRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonBarRow.h; sourceTree = "<group>"; };
+		034A50521540665400ADB1C2 /* ButtonBarRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonBarRow.m; sourceTree = "<group>"; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conference.h; sourceTree = "<group>"; };
@@ -174,6 +187,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034A50461540635200ADB1C2 /* StandardController */ = {
+			isa = PBXGroup;
+			children = (
+				034A50471540637D00ADB1C2 /* StandardController.h */,
+				034A50481540637D00ADB1C2 /* StandardController.m */,
+				034A50491540637D00ADB1C2 /* StandardControllerModel.h */,
+				034A50511540665400ADB1C2 /* ButtonBarRow.h */,
+				034A50521540665400ADB1C2 /* ButtonBarRow.m */,
+				034A504E154065DD00ADB1C2 /* RichTextRow.h */,
+				034A504F154065DD00ADB1C2 /* RichTextRow.m */,
+				034A504B1540653C00ADB1C2 /* AlphaRow.h */,
+				034A504C1540653C00ADB1C2 /* AlphaRow.m */,
+			);
+			name = StandardController;
+			sourceTree = "<group>";
+		};
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +300,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				034A50461540635200ADB1C2 /* StandardController */,
 				03C32DA2153EB9C100E1B734 /* Model */,
 				7E264E9B153D6D650094626B /* Speakers */,
 				7E401F3E153C1BCC00DA78D2 /* Programme */,
@@ -506,6 +536,10 @@
 				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,
 				03C32DCE153EBAD300E1B734 /* Venue.m in Sources */,
 				7E349426153F1446009E332C /* SeminarOptionsController.m in Sources */,
+				034A504A1540637D00ADB1C2 /* StandardController.m in Sources */,
+				034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */,
+				034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */,
+				034A50531540665400ADB1C2 /* ButtonBarRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
