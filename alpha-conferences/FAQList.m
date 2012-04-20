@@ -39,6 +39,7 @@
     
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+        childController.title = f.question;
         childController.model = [[FAQDetail alloc] initWithFAQ:f];
         [controller.navigationController pushViewController:childController animated:YES];
     };
