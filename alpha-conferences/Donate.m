@@ -15,7 +15,7 @@
 
 
 @interface Donate () {
-    NSMutableArray *rows;
+    NSMutableArray *items;
 }
 
 @end
@@ -27,36 +27,41 @@
 
 -(void)reloadData {
     Conference *c = [DataStore latestAvailableInstance].conference;
-    rows = [NSMutableArray array];
+    items = [NSMutableArray array];
     
     // description row
     if (c.donationDescription) {
-        [rows addObject:[[RichTextRow alloc] initWithHTML:c.donationDescription]];
+        [items addObject:[[RichTextRow alloc] initWithHTML:c.donationDescription]];
     }
 
     // donate via sms row
     if (c.donationTelephoneNumber.length > 0) {
         ButtonBarRow *smsRow = [[ButtonBarRow alloc] init];
         smsRow.button1Title = [NSString stringWithFormat:@"Text %@ with the amount you want to give", c.donationTelephoneNumber];
-        [rows addObject:smsRow];
+        [items addObject:smsRow];
     }
     
     // donate online row
     if (c.donationURL.length > 0) {
         ButtonBarRow *websiteRow = [[ButtonBarRow alloc] init];
         websiteRow.button1Title = @"Donate online";
-        [rows addObject:websiteRow];
+        [items addObject:websiteRow];
     }
 }
 
 
+-(NSInteger)numberOfSectionsInPage:(NSInteger)page {
+    return items.count;
+}
+
+
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
-    return rows.count;
+    return 1;
 }
 
 
 -(id)rowForPage:(NSInteger)page section:(NSInteger)section row:(NSInteger)row {
-    return [rows objectAtIndex:row];
+    return [items objectAtIndex:section];
 }
 
 
