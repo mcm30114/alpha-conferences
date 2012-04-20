@@ -14,6 +14,7 @@
 
 +(ResourceCache *)defaultResourceCache;
 
+// a placeholder image is returned, the real one is passed to the onComplete block
 -(UIImage *)imageForResource:(Resource *)resource onComplete:(void (^)(UIImage *))onComplete;
 
 @end
