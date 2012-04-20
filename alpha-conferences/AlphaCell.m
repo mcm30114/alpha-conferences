@@ -44,8 +44,8 @@
     [super layoutSubviews];
     
     // debug colour
-    self.textLabel.backgroundColor = [UIColor redColor];
-    self.detailTextLabel.backgroundColor = [UIColor greenColor];
+    //self.textLabel.backgroundColor = [UIColor redColor];
+    //self.detailTextLabel.backgroundColor = [UIColor greenColor];
     
     // calculate the available width for label minus the image/colour bar
     CGFloat labelMaxWidth = self.contentView.bounds.size.width - (self.imageView.frame.size.width + (CELL_MARGIN * 2));        
