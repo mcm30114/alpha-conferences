@@ -61,6 +61,7 @@
             speakerRow.detailText = speaker.position;
             speakerRow.onSelected = ^(StandardController *controller) {
                 StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                childController.title = speaker.displayName;
                 childController.model = [[SpeakerDetail alloc] initWithSpeaker:speaker];
                 [controller.navigationController pushViewController:childController animated:YES];
             };
@@ -78,6 +79,10 @@
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
     return sections.count;
+}
+
+-(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
+    return ((SessionDetailSection *)[sections objectAtIndex:section]).title;
 }
 
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
