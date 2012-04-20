@@ -159,31 +159,22 @@
         
         cell.accessoryType = alphaRow.accessoryType;
         cell.imageView.image = alphaRow.image;
+
+        if (alphaRow.onSelected == nil) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         
         return cell;
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         
         DTAttributedTextCell *cell = [self prepareAttributedTextCellWithMetadata:(RichTextRow *)row tableView:tableView];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
     } else if ([row isKindOfClass:[ButtonBarRow class]]) {
         
-//        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-//        cell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
-//        cell.backgroundView.backgroundColor = [UIColor clearColor];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-//        ButtonBarRow *buttonBar = row;
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//        [button addTarget:self action:@selector(handleButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-//        [button setTitle:buttonBar.title forState:UIControlStateNormal];
-//        button.frame = CGRectMake(0, 0, cell.contentView.bounds.size.width, cell.contentView.bounds.size.height);
-//        button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        [cell.contentView addSubview:button];
-//        return cell;
         return [[ButtonCell alloc] initWithButtonBarRow:(ButtonBarRow *)row];
-        
         
     } else {
         NSLog(@"don't know how to get a cell for page %d, section %d, row %d", selectedPage, indexPath.section, indexPath.row);
