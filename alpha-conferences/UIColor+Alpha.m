@@ -10,7 +10,7 @@
 
 @implementation UIColor (Alpha)
 
-+ (UIColor *)colorWithHex:(int)colorHex {
++ (UIColor *)colorWithHex:(NSUInteger)colorHex {
     return [UIColor colorWithRed:((colorHex>>24)&0xFF)/255.0
                            green:((colorHex>>16)&0xFF)/255.0
                             blue:((colorHex>>8)&0xFF)/255.0

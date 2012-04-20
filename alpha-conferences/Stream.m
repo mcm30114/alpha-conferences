@@ -8,6 +8,7 @@
 
 #import "Stream.h"
 #import "NSDictionary+Alpha.h"
+#import "UIColor+Alpha.h"
 
 
 @implementation Stream
@@ -23,7 +24,13 @@
         self.streamId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
         self.name = [dictionary objectForKey:@"name"];
-        self.color = [UIColor redColor];
+        
+        NSUInteger c = 0;
+        NSString *str = [NSString stringWithFormat:@"%@ff", [dictionary stringForKey:@"colour"]];
+        NSScanner *scanner = [NSScanner scannerWithString:str];
+        [scanner scanHexInt:&c];
+        self.color = [UIColor colorWithHex:c];
+        
     }
     return self;
 }
