@@ -11,6 +11,8 @@
 
 #define CONFERENCE_ID 1
 
+extern NSString* const CONFERENCE_TITLE;
+
 extern NSString* const NOTIFICATION_DATA;
 extern NSString* const NOTIFICATION_FILE;
 

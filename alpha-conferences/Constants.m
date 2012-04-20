@@ -8,5 +8,7 @@
 
 #import "Constants.h"
 
+NSString* const CONFERENCE_TITLE = @"HTB Leadership Conference";
+
 NSString* const NOTIFICATION_DATA = @"NOTIFICATION_DATA";
 NSString* const NOTIFICATION_FILE = @"NOTIFICATION_FILE";

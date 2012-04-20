@@ -20,6 +20,7 @@
 #import "Donate.h"
 #import "SpecialOfferList.h"
 #import "DataStore.h"
+#import "Constants.h"
 
 
 @implementation AppDelegate
@@ -37,8 +38,9 @@
     // home
     StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     homeController.model = [[Home alloc] init];
-    homeController.title = @"Home";
+    homeController.title = CONFERENCE_TITLE;
     UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
+    homeNavController.tabBarItem.title = @"Home";
     homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:homeNavController]; 
     
