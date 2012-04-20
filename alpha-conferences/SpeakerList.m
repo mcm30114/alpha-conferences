@@ -78,6 +78,7 @@
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+        childController.title = s.displayName;
         childController.model = [[SpeakerDetail alloc] initWithSpeaker:s];
         [controller.navigationController pushViewController:childController animated:YES];
     };
