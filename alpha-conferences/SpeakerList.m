@@ -76,6 +76,7 @@
     r.text = s.displayName;
     r.detailText = s.position;
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    r.imageResource = [Resource resourceWithKey:s.imageKey type:ResourceTypeSpeakerImageSmall];
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
         childController.title = s.displayName;

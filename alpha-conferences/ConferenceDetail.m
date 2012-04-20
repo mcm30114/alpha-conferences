@@ -32,7 +32,7 @@
         AlphaRow *imageRow = [[AlphaRow alloc] init];
         imageRow.style = AlphaTableViewCellWithImageRight;
         imageRow.text = @"image to go here";
-        imageRow.image = [UIImage imageNamed:@"cell-image.png"];
+        imageRow.imageResource = [Resource resourceWithKey:c.imageKey type:ResourceTypeConferenceImageSmall];
         [rows addObject:imageRow];
         
         // description row

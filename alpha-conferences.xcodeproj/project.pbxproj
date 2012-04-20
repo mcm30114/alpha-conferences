@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032A8B6A1541F5AE001B55DF /* blank-50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B661541F5AE001B55DF /* blank-50x50.png */; };
+		032A8B6B1541F5AE001B55DF /* blank-75x75.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B671541F5AE001B55DF /* blank-75x75.png */; };
+		032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B681541F5AE001B55DF /* blank-100x100.png */; };
+		032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B691541F5AE001B55DF /* blank-320x120.png */; };
 		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
@@ -46,6 +50,8 @@
 		03CC45601541884500737AD1 /* SessionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455F1541884400737AD1 /* SessionDetail.m */; };
 		03CC45631541946700737AD1 /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45621541946700737AD1 /* ButtonCell.m */; };
 		03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */; };
+		03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCE9D1541EB2900F70B00 /* Resource.m */; };
+		03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCEA01541EC4E00F70B00 /* ResourceCache.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -112,6 +118,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032A8B661541F5AE001B55DF /* blank-50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-50x50.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-50x50.png"; sourceTree = "<group>"; };
+		032A8B671541F5AE001B55DF /* blank-75x75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-75x75.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-75x75.png"; sourceTree = "<group>"; };
+		032A8B681541F5AE001B55DF /* blank-100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-100x100.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-100x100.png"; sourceTree = "<group>"; };
+		032A8B691541F5AE001B55DF /* blank-320x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-320x120.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-320x120.png"; sourceTree = "<group>"; };
 		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardController.h; sourceTree = "<group>"; };
 		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardController.m; sourceTree = "<group>"; };
 		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardControllerModel.h; sourceTree = "<group>"; };
@@ -191,6 +201,10 @@
 		03CC45621541946700737AD1 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonCell.m; path = "/Users/erik/src/alpha-conferences/alpha-conferences/ButtonCell.m"; sourceTree = "<absolute>"; };
 		03CC45681541B0DF00737AD1 /* NSDateFormatter+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDateFormatter+Alpha.h"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/NSDateFormatter+Alpha.h"; sourceTree = "<group>"; };
 		03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+Alpha.m"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/NSDateFormatter+Alpha.m"; sourceTree = "<group>"; };
+		03EBCE9C1541EB2900F70B00 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Resource.h"; sourceTree = "<group>"; };
+		03EBCE9D1541EB2900F70B00 /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Resource.m"; sourceTree = "<group>"; };
+		03EBCE9F1541EC4E00F70B00 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceCache.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ResourceCache.h"; sourceTree = "<group>"; };
+		03EBCEA01541EC4E00F70B00 /* ResourceCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceCache.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ResourceCache.m"; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -388,6 +402,17 @@
 			name = ButtonCell;
 			sourceTree = "<group>";
 		};
+		03EBCE9B1541EB0500F70B00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03EBCE9C1541EB2900F70B00 /* Resource.h */,
+				03EBCE9D1541EB2900F70B00 /* Resource.m */,
+				03EBCE9F1541EC4E00F70B00 /* ResourceCache.h */,
+				03EBCEA01541EC4E00F70B00 /* ResourceCache.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +483,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
 				034A50461540635200ADB1C2 /* StandardController */,
 				03C32DA2153EB9C100E1B734 /* Model */,
@@ -558,6 +584,10 @@
 		7E401F4E153C57F300DA78D2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				032A8B661541F5AE001B55DF /* blank-50x50.png */,
+				032A8B671541F5AE001B55DF /* blank-75x75.png */,
+				032A8B681541F5AE001B55DF /* blank-100x100.png */,
+				032A8B691541F5AE001B55DF /* blank-320x120.png */,
 				7EF49FDD153D77410038ECBB /* cell-image.png */,
 				7E401F51153C587400DA78D2 /* left-arrow.png */,
 				7E401F52153C587400DA78D2 /* left-arrow@2x.png */,
@@ -677,6 +707,10 @@
 				7E401F57153C587400DA78D2 /* right-arrow.png in Resources */,
 				7E401F58153C587400DA78D2 /* right-arrow@2x.png in Resources */,
 				7EF49FDE153D77410038ECBB /* cell-image.png in Resources */,
+				032A8B6A1541F5AE001B55DF /* blank-50x50.png in Resources */,
+				032A8B6B1541F5AE001B55DF /* blank-75x75.png in Resources */,
+				032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */,
+				032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +771,8 @@
 				03CC45601541884500737AD1 /* SessionDetail.m in Sources */,
 				03CC45631541946700737AD1 /* ButtonCell.m in Sources */,
 				03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */,
+				03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */,
+				03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

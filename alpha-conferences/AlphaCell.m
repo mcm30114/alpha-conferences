@@ -91,7 +91,7 @@
 }
 
 
-+ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType alphaTableViewCellStyle:(AlphaTableViewCellStyle)style textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewImage:(UIImage *)imageViewImage {
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType alphaTableViewCellStyle:(AlphaTableViewCellStyle)style textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewSize:(CGSize)imageViewSize {
     
     CGFloat height = 0.0;
     
@@ -100,7 +100,7 @@
 
     
     // maximum width that a label can be
-    CGFloat labelMaxWidth = (tableView.frame.size.width - (imageViewImage.size.width + (CELL_MARGIN * 2) + (OUTER_MARGIN * 2)));
+    CGFloat labelMaxWidth = (tableView.frame.size.width - (imageViewSize.width + (CELL_MARGIN * 2) + (OUTER_MARGIN * 2)));
     
     // if cell is AlphaTableViewCellWithColourBar style then adjust label width to accomodate for the colour bar
     if (style == AlphaTableViewCellWithColourBar) {
@@ -124,7 +124,7 @@
     height += CELL_MARGIN;
     
     // make sure the cell accommodates the image and is no smaller than the default row height
-    height = MAX(MAX(height, tableView.rowHeight), imageViewImage.size.height + (CELL_MARGIN * 2));
+    height = MAX(MAX(height, tableView.rowHeight), imageViewSize.height + (CELL_MARGIN * 2));
     
     return height;    
 }

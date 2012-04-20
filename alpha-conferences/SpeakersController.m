@@ -155,7 +155,7 @@
                         alphaTableViewCellStyle:AlphaTableViewCellWithImageLeft
                                   textLabelText:[rowData objectForKey:@"cell_title"] 
                             detailTextLabelText:[rowData objectForKey:@"cell_sub_title"] 
-                                 imageViewImage:[rowData objectForKey:@"cell_image"]];    
+                                  imageViewSize:((UIImage *)[rowData objectForKey:@"cell_image"]).size];    
 }
 
 

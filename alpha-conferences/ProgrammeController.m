@@ -182,7 +182,7 @@
                         alphaTableViewCellStyle:AlphaTableViewCellWithColourBar 
                                   textLabelText:[rowData objectForKey:@"session_name"] 
                             detailTextLabelText:[NSString stringWithFormat:@"%@, %@", [rowData objectForKey:@"session_start_datetime"], [rowData objectForKey:@"session_end_datetime"]] 
-                                 imageViewImage:nil];    
+                                  imageViewSize:CGSizeZero];    
 }
 
 

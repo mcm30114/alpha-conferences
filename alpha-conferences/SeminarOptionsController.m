@@ -142,7 +142,7 @@
                         alphaTableViewCellStyle:AlphaTableViewCellWithColourBar 
                                   textLabelText:[rowData objectForKey:@"title"] 
                             detailTextLabelText:[rowData objectForKey:@"sub_title"] 
-                                 imageViewImage:nil];    
+                                  imageViewSize:CGSizeZero];    
 }
 
 

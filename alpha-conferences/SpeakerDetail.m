@@ -60,7 +60,7 @@
         r.style = AlphaTableViewCellWithImageRight;
         r.text = self.speaker.displayName;
         r.detailText = self.speaker.position;
-        r.image = [UIImage imageNamed:@"cell-image.png"];
+        r.imageResource = [Resource resourceWithKey:self.speaker.imageKey type:ResourceTypeSpeakerImageSmall];
         return r;
     }
     else if (section == 1 && row == 0) {

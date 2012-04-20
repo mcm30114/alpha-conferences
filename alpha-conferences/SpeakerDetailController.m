@@ -240,7 +240,7 @@
                             alphaTableViewCellStyle:alphaCellStyle
                                       textLabelText:cellTitle 
                                 detailTextLabelText:cellSubTitle 
-                                     imageViewImage:cellImage];        
+                                      imageViewSize:cellImage.size];        
     }
 }
 

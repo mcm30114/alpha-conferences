@@ -13,6 +13,7 @@
 #import "ButtonBarRow.h"
 #import "Constants.h"
 #import "ButtonCell.h"
+#import "ResourceCache.h"
 
 
 @interface StandardController () {
@@ -158,8 +159,13 @@
         cell.detailTextLabel.numberOfLines = 0;
         
         cell.accessoryType = alphaRow.accessoryType;
-        cell.imageView.image = alphaRow.image;
         cell.barColour = alphaRow.barColour;
+        
+        if (alphaRow.imageResource) {
+            cell.imageView.image = [[ResourceCache defaultResourceCache] imageForResource:alphaRow.imageResource onComplete:^(UIImage *image) {
+                cell.imageView.image = image;
+            }];
+        }
 
         if (alphaRow.onSelected == nil) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -211,12 +217,13 @@
     if ([row isKindOfClass:[AlphaRow class]]) {
         
         AlphaRow *alphaRow = row;
+        CGSize imageViewSize = alphaRow.imageResource ? alphaRow.imageResource.size : CGSizeZero;
         return [AlphaCell heightForRowWithTableView:self.tableView
                          tableViewCellAccessoryType:alphaRow.accessoryType
                             alphaTableViewCellStyle:alphaRow.style
                                       textLabelText:alphaRow.text
                                 detailTextLabelText:alphaRow.detailText
-                                     imageViewImage:alphaRow.image];
+                                      imageViewSize:imageViewSize];
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         

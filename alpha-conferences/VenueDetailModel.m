@@ -58,7 +58,7 @@
         r.style = AlphaTableViewCellWithImageRight;
         r.text = self.venue.name;
         r.detailText = self.venue.address;
-        r.image = [UIImage imageNamed:@"cell-image.png"];
+        r.imageResource = [[Resource alloc] initWithKey:self.venue.imageKey type:ResourceTypeVenueImageSmall];
         return r;
     }
 //    else if (section == 1 && row == 0) {

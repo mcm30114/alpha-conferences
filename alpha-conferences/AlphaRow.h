@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AlphaCell.h"
+#import "Resource.h"
 
 @class StandardController;
 
@@ -18,7 +19,7 @@
 @property (nonatomic, strong) NSString *detailText;
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
 @property (nonatomic) AlphaTableViewCellStyle style;
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) Resource *imageResource;
 @property (nonatomic, strong) UIColor *barColour;
 
 @property (nonatomic, copy) void (^onSelected)(StandardController *controller);

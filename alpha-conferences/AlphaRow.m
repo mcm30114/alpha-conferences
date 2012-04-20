@@ -15,7 +15,7 @@
 @synthesize detailText;
 @synthesize accessoryType;
 @synthesize style;
-@synthesize image;
+@synthesize imageResource;
 @synthesize barColour;
 @synthesize onSelected;
 
