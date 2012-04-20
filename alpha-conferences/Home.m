@@ -8,6 +8,7 @@
 
 #import "Home.h"
 #import "AlphaRow.h"
+#import "ImageRow.h"
 #import "RichTextRow.h"
 #import "StandardController.h"
 #import "DataStore.h"
@@ -29,11 +30,7 @@
     rows = [NSMutableArray array];
     
     // image row
-    AlphaRow *imageRow = [[AlphaRow alloc] init];
-    imageRow.style = AlphaTableViewCellWithImageRight;
-    imageRow.text = @"image to go here";
-    imageRow.imageResource = [Resource resourceWithKey:c.imageKey type:ResourceTypeConferenceImageSmall];
-    [rows addObject:imageRow];
+    [rows addObject:[[ImageRow alloc] initWithResource:[Resource resourceWithKey:c.imageKey type:ResourceTypeConferenceImageSmall]]];
     
     // description row
     if (c.text) {

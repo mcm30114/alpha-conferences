@@ -11,6 +11,7 @@
 		032A8B6B1541F5AE001B55DF /* blank-75x75.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B671541F5AE001B55DF /* blank-75x75.png */; };
 		032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B681541F5AE001B55DF /* blank-100x100.png */; };
 		032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B691541F5AE001B55DF /* blank-320x120.png */; };
+		032A8B71154200CB001B55DF /* ImageRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A8B70154200CB001B55DF /* ImageRow.m */; };
 		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
@@ -122,6 +123,8 @@
 		032A8B671541F5AE001B55DF /* blank-75x75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-75x75.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-75x75.png"; sourceTree = "<group>"; };
 		032A8B681541F5AE001B55DF /* blank-100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-100x100.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-100x100.png"; sourceTree = "<group>"; };
 		032A8B691541F5AE001B55DF /* blank-320x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-320x120.png"; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/blank-320x120.png"; sourceTree = "<group>"; };
+		032A8B6F154200CB001B55DF /* ImageRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRow.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ImageRow.h"; sourceTree = "<group>"; };
+		032A8B70154200CB001B55DF /* ImageRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRow.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ImageRow.m"; sourceTree = "<group>"; };
 		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardController.h; sourceTree = "<group>"; };
 		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardController.m; sourceTree = "<group>"; };
 		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardControllerModel.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				034A504F154065DD00ADB1C2 /* RichTextRow.m */,
 				034A504B1540653C00ADB1C2 /* AlphaRow.h */,
 				034A504C1540653C00ADB1C2 /* AlphaRow.m */,
+				032A8B6F154200CB001B55DF /* ImageRow.h */,
+				032A8B70154200CB001B55DF /* ImageRow.m */,
 			);
 			name = StandardController;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */,
 				03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */,
 				03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */,
+				032A8B71154200CB001B55DF /* ImageRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

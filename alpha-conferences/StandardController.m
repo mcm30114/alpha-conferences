@@ -11,6 +11,7 @@
 #import "AlphaRow.h"
 #import "RichTextRow.h"
 #import "ButtonBarRow.h"
+#import "ImageRow.h"
 #import "Constants.h"
 #import "ButtonCell.h"
 #import "ResourceCache.h"
@@ -183,6 +184,19 @@
         
         return [[ButtonCell alloc] initWithButtonBarRow:(ButtonBarRow *)row];
         
+    } else if ([row isKindOfClass:[ImageRow class]]) {
+        
+        // for some reason, we can't make the original cell imageView be full width
+        Resource *resource = ((ImageRow *)row).resource;
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, resource.size.width, resource.size.height)];
+        imageView.autoresizingMask = UIViewAutoresizingNone;
+        imageView.image = [[ResourceCache defaultResourceCache] imageForResource:resource onComplete:^(UIImage *image) {
+            imageView.image = image;
+        }];
+        [cell.contentView addSubview:imageView];
+        return cell;
+        
     } else {
         NSLog(@"don't know how to get a cell for page %d, section %d, row %d", selectedPage, indexPath.section, indexPath.row);
         return nil;
@@ -233,6 +247,9 @@
     } else if ([row isKindOfClass:[ButtonBarRow class]]) {
         return 44.0;
         
+    } else if ([row isKindOfClass:[ImageRow class]]) {
+        return ((ImageRow *)row).resource.size.height;
+
     } else {
         return 44.0;
     }
