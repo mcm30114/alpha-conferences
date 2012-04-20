@@ -16,6 +16,7 @@
 @synthesize accessoryType;
 @synthesize style;
 @synthesize image;
+@synthesize barColour;
 @synthesize onSelected;
 
 @end

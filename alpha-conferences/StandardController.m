@@ -143,7 +143,7 @@
     if ([row isKindOfClass:[AlphaRow class]]) {
         
         AlphaRow *alphaRow = row;
-        AlphaCell *cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithImageRight reuseIdentifier:nil];
+        AlphaCell *cell = [[AlphaCell alloc] initWithStyle:alphaRow.style reuseIdentifier:nil];
         
         cell.textLabel.text = alphaRow.text;
         cell.textLabel.font = [UIFont tableCellTitleFont];
@@ -159,6 +159,7 @@
         
         cell.accessoryType = alphaRow.accessoryType;
         cell.imageView.image = alphaRow.image;
+        cell.barColour = alphaRow.barColour;
 
         if (alphaRow.onSelected == nil) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
