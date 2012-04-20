@@ -229,6 +229,16 @@ static DataStore *latestAvailableInstance = nil;
     return specialOffers.allValues;
 }
 
+-(NSArray *)sessionsWithDayId:(NSInteger)dayId {
+    NSMutableArray *a = [NSMutableArray array];
+    for (Session *s in sessions.allValues) {
+        if (s.dayId == dayId) {
+            [a addObject:s];
+        }
+    }
+    return a;
+}
+
 -(Speaker *)speakerWithId:(NSInteger)speakerId {
     return [speakers objectForIntegerKey:speakerId];
 }

@@ -23,6 +23,7 @@
 -(NSArray *)otherConferences;
 -(NSArray *)alerts;
 -(NSArray *)specialOffers;
+-(NSArray *)sessionsWithDayId:(NSInteger)dayId;
 
 -(Speaker *)speakerWithId:(NSInteger)speakerId;
 -(Session *)sessionWithId:(NSInteger)sessionId;

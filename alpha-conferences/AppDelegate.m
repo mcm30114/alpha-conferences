@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Home.h"
+#import "Programme.h"
 #import "ProgrammeController.h"
 #import "SpeakerList.h"
 #import "SpeakersController.h"
@@ -32,28 +33,36 @@
     
     NSMutableArray *tabControllers = [NSMutableArray  array];
     
-    // home
-    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-    homeController.model = [[Home alloc] init];
-    homeController.title = @"Home";
-    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
-    homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-    [tabControllers addObject:homeNavController]; 
-    
-    // speakers
-    StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-    speakersController.model = [[SpeakerList alloc] init];
-    speakersController.title = @"Speakers";
-    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
-    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-    [tabControllers addObject:speakersNavController]; 
-    
+//    // home
+//    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+//    homeController.model = [[Home alloc] init];
+//    homeController.title = @"Home";
+//    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
+//    homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+//    [tabControllers addObject:homeNavController]; 
+//    
+//    // speakers
+//    StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+//    speakersController.model = [[SpeakerList alloc] init];
+//    speakersController.title = @"Speakers";
+//    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
+//    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+//    [tabControllers addObject:speakersNavController]; 
+
     // programme
-    ProgrammeController *programmeController = [[ProgrammeController alloc] init];
+    StandardController *programmeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:YES];
+    programmeController.model = [[Programme alloc] init];
     programmeController.title = @"Programme";
     UINavigationController *programmeNavController = [[UINavigationController alloc] initWithRootViewController:programmeController];
     programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:programmeNavController];
+    
+    // programme (old)
+//    ProgrammeController *programmeController = [[ProgrammeController alloc] init];
+//    programmeController.title = @"Programme";
+//    UINavigationController *programmeNavController = [[UINavigationController alloc] initWithRootViewController:programmeController];
+//    programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+//    [tabControllers addObject:programmeNavController];
     
     // speakers (old)
 //    SpeakersController *speakersController = [[SpeakersController alloc] init];

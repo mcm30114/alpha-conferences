@@ -41,6 +41,7 @@
 		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
 		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
 		03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4553154162F100737AD1 /* SpecialOfferDetail.m */; };
+		03CC45571541664800737AD1 /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45561541664800737AD1 /* Programme.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -176,6 +177,8 @@
 		03CC4550154161EC00737AD1 /* SpecialOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferList.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferList.m"; sourceTree = "<group>"; };
 		03CC4552154162F100737AD1 /* SpecialOfferDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferDetail.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferDetail.h"; sourceTree = "<group>"; };
 		03CC4553154162F100737AD1 /* SpecialOfferDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferDetail.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferDetail.m"; sourceTree = "<group>"; };
+		03CC45551541664800737AD1 /* Programme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Programme.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Programme.h"; sourceTree = "<group>"; };
+		03CC45561541664800737AD1 /* Programme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Programme.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Programme.m"; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -500,6 +503,8 @@
 				7E349425153F1446009E332C /* SeminarOptionsController.m */,
 				7E401F42153C235800DA78D2 /* ProgrammeController.h */,
 				7E401F43153C235800DA78D2 /* ProgrammeController.m */,
+				03CC45551541664800737AD1 /* Programme.h */,
+				03CC45561541664800737AD1 /* Programme.m */,
 			);
 			name = Programme;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
 				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
 				03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */,
+				03CC45571541664800737AD1 /* Programme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
