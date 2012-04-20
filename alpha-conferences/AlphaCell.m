@@ -79,11 +79,12 @@
         
         CGRect detailTextLabelFrame = self.detailTextLabel.frame;
         detailTextLabelFrame.origin.x += self.colourBar.frame.size.width;
-        detailTextLabelFrame.size.width -= self.colourBar.frame.size.width;        
-        
-        if (detailTextLabelFrame.size.width > labelMaxWidth) {
-            detailTextLabelFrame.size.width -= self.colourBar.frame.size.width;            
-        }        
+        detailTextLabelFrame.size.width = labelMaxWidth;
+//        detailTextLabelFrame.size.width -= self.colourBar.frame.size.width;        
+//        
+//        if (detailTextLabelFrame.size.width > labelMaxWidth) {
+//            detailTextLabelFrame.size.width -= self.colourBar.frame.size.width;            
+//        }        
         
         self.detailTextLabel.frame = detailTextLabelFrame; 
     }
