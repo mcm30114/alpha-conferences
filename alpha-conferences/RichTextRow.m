@@ -11,6 +11,15 @@
 
 @implementation RichTextRow
 
-@synthesize html;
+@synthesize html = _html;
+
+
+- (id)initWithHTML:(NSString *)html {
+    if (self = [super init]) {
+        self.html = html;
+    }
+    return self;
+}
+
 
 @end

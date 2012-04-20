@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSString *html;
 
+- (id)initWithHTML:(NSString *)html;
+
 @end
