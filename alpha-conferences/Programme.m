@@ -74,6 +74,7 @@
                     AlphaRow *alphaRow = [[AlphaRow alloc] init];
                     alphaRow.style = AlphaTableViewCellWithColourBar;
                     alphaRow.text = s.name;
+                    alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     alphaRow.detailText = s.programmeDetailText;
                     alphaRow.barColour = s.stream.color;
                     alphaRow.onSelected = ^(StandardController *controller) {
