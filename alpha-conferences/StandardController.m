@@ -187,6 +187,15 @@
 }
 
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ([self.model respondsToSelector:@selector(sectionTitleForPage:section:)]) {
+        return [self.model sectionTitleForPage:selectedPage section:section];
+    } else {
+        return nil;
+    }
+}
+
+
 #pragma mark - UITableViewDelegate methods
 
 
