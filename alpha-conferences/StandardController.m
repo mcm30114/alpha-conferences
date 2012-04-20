@@ -196,6 +196,15 @@
 }
 
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if ([self.model respondsToSelector:@selector(sectionIndexTitlesForPage:)]) {
+        return [self.model sectionIndexTitlesForPage:selectedPage];
+    } else {
+        return nil;
+    }
+}
+
+
 #pragma mark - UITableViewDelegate methods
 
 

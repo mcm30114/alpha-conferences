@@ -24,6 +24,8 @@
 
 -(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section;
 
+-(NSArray *)sectionIndexTitlesForPage:(NSInteger)page;
+
 
 @required
 
