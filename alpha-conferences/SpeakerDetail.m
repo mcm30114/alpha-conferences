@@ -65,14 +65,19 @@
     }
     else if (section == 1 && row == 0) {
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.button1Title = @"Website";
-        r.onButton1Selected = ^() {
-            NSLog(@"you want the website of %@", self.speaker.displayName);
-        };
-        r.button2Title = @"Twitter";
-//        r.onButton2Selected = ^() {
-//            NSLog(@"you want the twitter feed of %@", self.speaker.displayName);
-//        };
+        r.button1Title = @"Visit website";
+        if (self.speaker.websiteUrl.length > 0) {
+            r.onButton1Selected = ^() {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.websiteUrl]];
+            };
+        }
+        r.button2Title = @"Follow on Twitter";
+        if (self.speaker.twitterUsername.length > 0) {
+            r.onButton2Selected = ^() {
+                NSString *twitterUrl = [NSString stringWithFormat:@"http://mobile.twitter.com/%@", self.speaker.twitterUsername];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:twitterUrl]];
+            };
+        }
         return r;
     }
     else if (section == 2 && row == 0) {
