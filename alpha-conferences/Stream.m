@@ -25,11 +25,15 @@
         self.active = [dictionary activeFlag];
         self.name = [dictionary objectForKey:@"name"];
         
-        NSUInteger c = 0;
-        NSString *str = [NSString stringWithFormat:@"%@ff", [dictionary stringForKey:@"colour"]];
-        NSScanner *scanner = [NSScanner scannerWithString:str];
-        [scanner scanHexInt:&c];
-        self.color = [UIColor colorWithHex:c];
+        NSString *colourStr = [dictionary stringForKey:@"colour"];
+        if (colourStr.length > 0) {
+            NSUInteger c = 0;
+            NSScanner *scanner = [NSScanner scannerWithString:[colourStr stringByAppendingString:@"ff"]];
+            [scanner scanHexInt:&c];
+            self.color = [UIColor colorWithHex:c];
+        } else {
+            self.color = [UIColor lightGrayColor];
+        }
         
     }
     return self;

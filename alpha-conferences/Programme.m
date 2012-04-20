@@ -90,7 +90,8 @@
             // if there are any hidden sessions, show a link
             if (hiddenSessionsInSlot.count > 0) {
                 AlphaRow *alphaRow = [[AlphaRow alloc] init];
-                alphaRow.style = AlphaTableViewCellNormal;
+                alphaRow.style = AlphaTableViewCellWithColourBar;
+                alphaRow.barColour = [UIColor lightGrayColor];
                 alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 alphaRow.text = @"View seminar options available";
                 alphaRow.onSelected = ^(StandardController *controller) {
