@@ -41,6 +41,7 @@
     
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+        childController.title = v.name;
         childController.model = [[VenueDetailModel alloc] initWithVenue:v];
         [controller.navigationController pushViewController:childController animated:YES];
     };
