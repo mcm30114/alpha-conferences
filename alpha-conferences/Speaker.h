@@ -23,4 +23,9 @@
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 
+-(NSString *)displayName;
+-(NSString *)indexLetter;
+
+-(NSComparisonResult)compare:(Speaker *)aSpeaker;
+
 @end
