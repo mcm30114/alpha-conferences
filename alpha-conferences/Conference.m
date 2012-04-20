@@ -20,7 +20,9 @@
 @synthesize endDate;
 @synthesize imageKey;
 @synthesize bookingURL;
-
+@synthesize donationURL;
+@synthesize donationDescription;
+@synthesize donationTelephoneNumber;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary {
     if (self = [super init]) {
@@ -32,6 +34,9 @@
         self.endDate = [dictionary objectForKey:@"end_date"];
         self.imageKey = [dictionary objectForKey:@"image_key"];
         self.bookingURL = [dictionary objectForKey:@"booking_url"];
+        self.donationURL = [dictionary stringForKey:@"donation_url"];
+        self.donationDescription = [dictionary stringForKey:@"donation_description"];
+        self.donationTelephoneNumber = [dictionary stringForKey:@"donation_telephone_number"];
     }
     return self;
 }

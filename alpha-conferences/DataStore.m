@@ -174,6 +174,15 @@ static DataStore *latestAvailableInstance = nil;
             }
         }
         
+        // alerts
+        alerts = [NSMutableDictionary dictionary];
+        for (NSMutableDictionary *d in [body objectForKey:@"alerts"]) {
+            Alert *a = [[Alert alloc] initWithDictionary:d];
+            if (a.active) {
+                [alerts setObject:a forIntegerKey:a.alertId];
+            }
+        }
+        
         // conferences
         otherConferences = [NSMutableDictionary dictionary];
         for (NSDictionary *d in [body objectForKey:@"other_conferences"]) {
@@ -206,6 +215,18 @@ static DataStore *latestAvailableInstance = nil;
 
 -(NSArray *)faqs {
     return faqs.allValues;
+}
+
+-(NSArray *)otherConferences {
+    return otherConferences.allValues;
+}
+
+-(NSArray *)alerts {
+    return alerts.allValues;
+}
+
+-(NSArray *)specialOffers {
+    return specialOffers.allValues;
 }
 
 -(Speaker *)speakerWithId:(NSInteger)speakerId {

@@ -7,11 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "Home.h"
 #import "ProgrammeController.h"
+#import "SpeakerList.h"
 #import "SpeakersController.h"
 #import "StandardController.h"
 #import "VenueListModel.h"
 #import "FAQList.h"
+#import "AlertList.h"
+#import "OtherEvents.h"
+#import "Donate.h"
+#import "SpecialOfferList.h"
 #import "DataStore.h"
 
 
@@ -26,6 +32,22 @@
     
     NSMutableArray *tabControllers = [NSMutableArray  array];
     
+    // home
+    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    homeController.model = [[Home alloc] init];
+    homeController.title = @"Home";
+    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
+    homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:homeNavController]; 
+    
+    // speakers
+    StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    speakersController.model = [[SpeakerList alloc] init];
+    speakersController.title = @"Speakers";
+    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
+    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:speakersNavController]; 
+    
     // programme
     ProgrammeController *programmeController = [[ProgrammeController alloc] init];
     programmeController.title = @"Programme";
@@ -33,28 +55,63 @@
     programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:programmeNavController];
     
-    // speakers
-    SpeakersController *speakersController = [[SpeakersController alloc] init];
-    speakersController.title = @"Speakers";
-    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
-    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-    [tabControllers addObject:speakersNavController]; 
+    // speakers (old)
+//    SpeakersController *speakersController = [[SpeakersController alloc] init];
+//    speakersController.title = @"Speakers";
+//    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
+//    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+//    [tabControllers addObject:speakersNavController]; 
     
     // maps
     StandardController *mapsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     mapsController.model = [[VenueListModel alloc] init];
+    mapsController.title = @"Maps";
     UINavigationController *mapsNavController = [[UINavigationController alloc] initWithRootViewController:mapsController];
     mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:mapsNavController];
+
+    // donate
+    StandardController *donateController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+    donateController.model = [[Donate alloc] init];
+    donateController.title = @"Donate";
+    UINavigationController *donateNavController = [[UINavigationController alloc] initWithRootViewController:donateController];
+    donateNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:donateNavController];
+    
+    // alerts
+    StandardController *alertsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    alertsController.model = [[AlertList alloc] init];
+    alertsController.title = @"Alerts";
+    UINavigationController *alertsNavController = [[UINavigationController alloc] initWithRootViewController:alertsController];
+    alertsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:alertsNavController];
     
     // faqs
     StandardController *faqsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     faqsController.model = [[FAQList alloc] init];
+    faqsController.title = @"FAQs";
     UINavigationController *faqsNavController = [[UINavigationController alloc] initWithRootViewController:faqsController];
     faqsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:faqsNavController];
     
+    // other events
+    StandardController *otherEventsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    otherEventsController.title = @"Other events";
+    otherEventsController.model = [[OtherEvents alloc] init];
+    UINavigationController *otherEventsNavController = [[UINavigationController alloc] initWithRootViewController:otherEventsController];
+    otherEventsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:otherEventsNavController];
+    
+    // special offers
+    StandardController *offersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    offersController.title = @"Special offers";
+    offersController.model = [[SpecialOfferList alloc] init];
+    UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
+    offersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:offersNavController];
+    
     UITabBarController *tabController = [[UITabBarController alloc] init];
+    tabController.moreNavigationController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     tabController.viewControllers = tabControllers;
     self.tabBarController = tabController;
     

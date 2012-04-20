@@ -31,6 +31,16 @@
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
 		03CC45331540893400737AD1 /* FAQDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45321540893400737AD1 /* FAQDetail.m */; };
+		03CC453715408E6600737AD1 /* OtherEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453615408E6600737AD1 /* OtherEvents.m */; };
+		03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45391540911F00737AD1 /* ConferenceDetail.m */; };
+		03CC453D154141E400737AD1 /* SpeakerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453C154141E400737AD1 /* SpeakerList.m */; };
+		03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453F1541561400737AD1 /* SpeakerDetail.m */; };
+		03CC4543154158C800737AD1 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4542154158C700737AD1 /* Home.m */; };
+		03CC454715415C2F00737AD1 /* AlertList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454615415C2F00737AD1 /* AlertList.m */; };
+		03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454915415CDD00737AD1 /* AlertDetail.m */; };
+		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
+		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
+		03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4553154162F100737AD1 /* SpecialOfferDetail.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -146,6 +156,26 @@
 		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQList.m"; sourceTree = "<group>"; };
 		03CC45311540893400737AD1 /* FAQDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQDetail.h; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQDetail.h"; sourceTree = "<group>"; };
 		03CC45321540893400737AD1 /* FAQDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQDetail.m; path = "../../../../Users/erik/src/alpha-conferences/alpha-conferences/FAQDetail.m"; sourceTree = "<group>"; };
+		03CC453515408E6600737AD1 /* OtherEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherEvents.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/OtherEvents.h"; sourceTree = "<group>"; };
+		03CC453615408E6600737AD1 /* OtherEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherEvents.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/OtherEvents.m"; sourceTree = "<group>"; };
+		03CC45381540911F00737AD1 /* ConferenceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConferenceDetail.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ConferenceDetail.h"; sourceTree = "<group>"; };
+		03CC45391540911F00737AD1 /* ConferenceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConferenceDetail.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/ConferenceDetail.m"; sourceTree = "<group>"; };
+		03CC453B154141E400737AD1 /* SpeakerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerList.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpeakerList.h"; sourceTree = "<group>"; };
+		03CC453C154141E400737AD1 /* SpeakerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerList.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpeakerList.m"; sourceTree = "<group>"; };
+		03CC453E1541561400737AD1 /* SpeakerDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerDetail.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpeakerDetail.h"; sourceTree = "<group>"; };
+		03CC453F1541561400737AD1 /* SpeakerDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetail.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpeakerDetail.m"; sourceTree = "<group>"; };
+		03CC4541154158C700737AD1 /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Home.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Home.h"; sourceTree = "<group>"; };
+		03CC4542154158C700737AD1 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Home.m"; sourceTree = "<group>"; };
+		03CC454515415C2F00737AD1 /* AlertList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertList.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/AlertList.h"; sourceTree = "<group>"; };
+		03CC454615415C2F00737AD1 /* AlertList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertList.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/AlertList.m"; sourceTree = "<group>"; };
+		03CC454815415CDD00737AD1 /* AlertDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertDetail.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/AlertDetail.h"; sourceTree = "<group>"; };
+		03CC454915415CDD00737AD1 /* AlertDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertDetail.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/AlertDetail.m"; sourceTree = "<group>"; };
+		03CC454B15415EE700737AD1 /* Donate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Donate.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Donate.h"; sourceTree = "<group>"; };
+		03CC454C15415EE800737AD1 /* Donate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Donate.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/Donate.m"; sourceTree = "<group>"; };
+		03CC454F154161EC00737AD1 /* SpecialOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferList.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferList.h"; sourceTree = "<group>"; };
+		03CC4550154161EC00737AD1 /* SpecialOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferList.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferList.m"; sourceTree = "<group>"; };
+		03CC4552154162F100737AD1 /* SpecialOfferDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferDetail.h; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferDetail.h"; sourceTree = "<group>"; };
+		03CC4553154162F100737AD1 /* SpecialOfferDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferDetail.m; path = "../../../../../Users/erik/src/alpha-conferences/alpha-conferences/SpecialOfferDetail.m"; sourceTree = "<group>"; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Alpha.h"; sourceTree = "<group>"; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Alpha.m"; sourceTree = "<group>"; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakersController.h; sourceTree = "<group>"; };
@@ -297,6 +327,43 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		03CC453415408E2900737AD1 /* Conference */ = {
+			isa = PBXGroup;
+			children = (
+				03CC453515408E6600737AD1 /* OtherEvents.h */,
+				03CC453615408E6600737AD1 /* OtherEvents.m */,
+				03CC45381540911F00737AD1 /* ConferenceDetail.h */,
+				03CC45391540911F00737AD1 /* ConferenceDetail.m */,
+				03CC4541154158C700737AD1 /* Home.h */,
+				03CC4542154158C700737AD1 /* Home.m */,
+				03CC454B15415EE700737AD1 /* Donate.h */,
+				03CC454C15415EE800737AD1 /* Donate.m */,
+			);
+			name = Conference;
+			sourceTree = "<group>";
+		};
+		03CC454415415C0A00737AD1 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				03CC454515415C2F00737AD1 /* AlertList.h */,
+				03CC454615415C2F00737AD1 /* AlertList.m */,
+				03CC454815415CDD00737AD1 /* AlertDetail.h */,
+				03CC454915415CDD00737AD1 /* AlertDetail.m */,
+			);
+			name = Alerts;
+			sourceTree = "<group>";
+		};
+		03CC454E154161C900737AD1 /* SpecialOffers */ = {
+			isa = PBXGroup;
+			children = (
+				03CC454F154161EC00737AD1 /* SpecialOfferList.h */,
+				03CC4550154161EC00737AD1 /* SpecialOfferList.m */,
+				03CC4552154162F100737AD1 /* SpecialOfferDetail.h */,
+				03CC4553154162F100737AD1 /* SpecialOfferDetail.m */,
+			);
+			name = SpecialOffers;
+			sourceTree = "<group>";
+		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +371,10 @@
 				7E264E9D153D6D860094626B /* SpeakersController.m */,
 				7EF49FDF153DA67C0038ECBB /* SpeakerDetailController.h */,
 				7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */,
+				03CC453B154141E400737AD1 /* SpeakerList.h */,
+				03CC453C154141E400737AD1 /* SpeakerList.m */,
+				03CC453E1541561400737AD1 /* SpeakerDetail.h */,
+				03CC453F1541561400737AD1 /* SpeakerDetail.m */,
 			);
 			name = Speakers;
 			sourceTree = "<group>";
@@ -371,6 +442,9 @@
 				7E349423153F1413009E332C /* Sessions */,
 				034A50541540679900ADB1C2 /* Venues */,
 				03CC452D1540880700737AD1 /* FAQs */,
+				03CC453415408E2900737AD1 /* Conference */,
+				03CC454415415C0A00737AD1 /* Alerts */,
+				03CC454E154161C900737AD1 /* SpecialOffers */,
 				7E401F3D153C1B8F00DA78D2 /* Views */,
 				7E401F35153C1B0400DA78D2 /* Classes */,
 				03CC45261540804500737AD1 /* Constants.h */,
@@ -615,6 +689,16 @@
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
 				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
 				03CC45331540893400737AD1 /* FAQDetail.m in Sources */,
+				03CC453715408E6600737AD1 /* OtherEvents.m in Sources */,
+				03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */,
+				03CC453D154141E400737AD1 /* SpeakerList.m in Sources */,
+				03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */,
+				03CC4543154158C800737AD1 /* Home.m in Sources */,
+				03CC454715415C2F00737AD1 /* AlertList.m in Sources */,
+				03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */,
+				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
+				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
+				03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

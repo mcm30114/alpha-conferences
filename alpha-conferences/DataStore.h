@@ -20,6 +20,9 @@
 -(NSArray *)days;
 -(NSArray *)venues;
 -(NSArray *)faqs;
+-(NSArray *)otherConferences;
+-(NSArray *)alerts;
+-(NSArray *)specialOffers;
 
 -(Speaker *)speakerWithId:(NSInteger)speakerId;
 -(Session *)sessionWithId:(NSInteger)sessionId;

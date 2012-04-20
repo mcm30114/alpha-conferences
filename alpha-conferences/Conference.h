@@ -18,6 +18,9 @@
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSString *imageKey;
 @property (nonatomic, strong) NSString *bookingURL;
+@property (nonatomic, strong) NSString *donationURL;
+@property (nonatomic, strong) NSString *donationDescription;
+@property (nonatomic, strong) NSString *donationTelephoneNumber;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 
