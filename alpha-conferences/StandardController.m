@@ -76,6 +76,7 @@
         pager.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [rootView addSubview:pager];      
         self.pager = pager;
+        [pager reloadData];
         y += pager.frame.size.height;
     }
     
