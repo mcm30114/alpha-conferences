@@ -19,6 +19,8 @@
 
 -(UIImage *)placeholderImageForResource:(Resource *)resource;
 
+-(NSString *)cachePathForResource:(Resource *)resource;
+
 @end
 
 
@@ -49,14 +51,29 @@ static ResourceCache *_defaultResourceCache = nil;
 
 -(UIImage *)imageForResource:(Resource *)resource onComplete:(void (^)(UIImage *))onComplete {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        NSURL *url = [self urlForResource:resource];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *realImage = [UIImage imageWithData:data];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        NSData *realData = nil;
+        NSString *fullPath = [self cachePathForResource:resource];
         
-        if (data) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+            realData = [NSData dataWithContentsOfFile:fullPath];
+            
+        } else {
+            // doesn't exist on disk, so get it from network
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            NSURL *url = [self urlForResource:resource];
+            realData = [NSData dataWithContentsOfURL:url];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            if (realData) {
+                // save the data to a file
+                NSError *err;
+                [[NSFileManager defaultManager] createDirectoryAtPath:[fullPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&err];
+                [realData writeToFile:fullPath atomically:YES];
+            }
+        }
+
+        if (realData) {
+            UIImage *realImage = [UIImage imageWithData:realData];
             dispatch_async(dispatch_get_main_queue(), ^{
                 onComplete(realImage);
             });
@@ -110,6 +127,11 @@ static ResourceCache *_defaultResourceCache = nil;
         default:
             return nil;
     }
+}
+
+
+-(NSString *)cachePathForResource:(Resource *)resource {
+    return [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%d", resource.key, resource.type]];
 }
 
 
