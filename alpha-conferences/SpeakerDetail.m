@@ -43,7 +43,7 @@
         case 0:
             return 1;
         case 1:
-            return 2;
+            return 1;
         case 2:
             return 1;
         case 3:
@@ -65,12 +65,14 @@
     }
     else if (section == 1 && row == 0) {
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.title = @"Website";
-        return r;
-    }
-    else if (section == 1 && row == 1) {
-        ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.title = @"Twitter";
+        r.button1Title = @"Website";
+        r.onButton1Selected = ^() {
+            NSLog(@"you want the website of %@", self.speaker.displayName);
+        };
+        r.button2Title = @"Twitter";
+//        r.onButton2Selected = ^() {
+//            NSLog(@"you want the twitter feed of %@", self.speaker.displayName);
+//        };
         return r;
     }
     else if (section == 2 && row == 0) {
@@ -78,7 +80,7 @@
         r.html = self.speaker.biography;
         return r;
     }
-//    else if (section == 3 && row == 0) {
+//    else if (section == 2 && row == 0) {
 //        AlphaRow *r = [[AlphaRow alloc] init];
 //        r.style = AlphaTableViewCellNormal;
 //        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];

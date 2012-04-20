@@ -37,7 +37,7 @@
         [sections addObject:top];
         
         ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
-        buttons.title = @"Bookmark";
+        buttons.button1Title = @"Bookmark";
         SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
         [buttonSection.rows addObject:buttons];
         [sections addObject:buttonSection];

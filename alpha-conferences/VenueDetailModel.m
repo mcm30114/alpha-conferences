@@ -63,7 +63,7 @@
     }
     else if (section == 1 && row == 0) {
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.title = @"View on Map";
+        r.button1Title = @"View on Map";
         return r;
     }
     else if (section == 2 && row == 0) {

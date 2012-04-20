@@ -59,9 +59,10 @@
     return [sectionTitles objectAtIndex:section];
 }
 
--(NSArray *)sectionIndexTitlesForPage:(NSInteger)page {
-    return sectionTitles;
-}
+// disabled for now as AlphaCell doesn't take the section index into account when calculating required size
+//-(NSArray *)sectionIndexTitlesForPage:(NSInteger)page {
+//    return sectionTitles;
+//}
 
 
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
@@ -73,6 +74,7 @@
     Speaker *s = [((NSArray *)[sectionRows objectAtIndex:section]) objectAtIndex:row];
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = s.displayName;
+    r.detailText = s.position;
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];

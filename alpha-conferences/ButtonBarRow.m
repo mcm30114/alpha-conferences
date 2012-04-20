@@ -11,6 +11,9 @@
 
 @implementation ButtonBarRow
 
-@synthesize title;
+@synthesize button1Title;
+@synthesize onButton1Selected;
+@synthesize button2Title;
+@synthesize onButton2Selected;
 
 @end

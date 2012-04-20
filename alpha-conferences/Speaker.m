@@ -37,13 +37,13 @@
     if (self = [super init]) {
         self.speakerId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
-        self.firstName = [dictionary objectForKey:@"first_name"];
-        self.lastName = [dictionary objectForKey:@"last_name"];
-        self.biography = [dictionary objectForKey:@"biography"];
-        self.position = [dictionary objectForKey:@"position"];
-        self.imageKey = [dictionary objectForKey:@"image_key"];
-        self.twitterUsername = [dictionary objectForKey:@"twitter_username"];
-        self.websiteUrl = [dictionary objectForKey:@"website_url"];
+        self.firstName = [dictionary stringForKey:@"first_name"];
+        self.lastName = [dictionary stringForKey:@"last_name"];
+        self.biography = [dictionary stringForKey:@"biography"];
+        self.position = [dictionary stringForKey:@"position"];
+        self.imageKey = [dictionary stringForKey:@"image_key"];
+        self.twitterUsername = [dictionary stringForKey:@"twitter_username"];
+        self.websiteUrl = [dictionary stringForKey:@"website_url"];
         self.alias = [dictionary stringForKey:@"alias"];
         self.sortableName = [NSString stringWithFormat:@"%@ %@", [self.lastName lowercaseString], [self.firstName lowercaseString]];
     }

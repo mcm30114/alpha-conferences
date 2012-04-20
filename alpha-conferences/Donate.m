@@ -37,14 +37,14 @@
     // donate via sms row
     if (c.donationTelephoneNumber.length > 0) {
         ButtonBarRow *smsRow = [[ButtonBarRow alloc] init];
-        smsRow.title = [NSString stringWithFormat:@"Text %@ with the amount you want to give", c.donationTelephoneNumber];
+        smsRow.button1Title = [NSString stringWithFormat:@"Text %@ with the amount you want to give", c.donationTelephoneNumber];
         [rows addObject:smsRow];
     }
     
     // donate online row
     if (c.donationURL.length > 0) {
         ButtonBarRow *websiteRow = [[ButtonBarRow alloc] init];
-        websiteRow.title = @"Donate online";
+        websiteRow.button1Title = @"Donate online";
         [rows addObject:websiteRow];
     }
 }
