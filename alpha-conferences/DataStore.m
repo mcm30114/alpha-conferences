@@ -239,6 +239,10 @@ static DataStore *latestAvailableInstance = nil;
     return a;
 }
 
+-(Stream *)streamWithId:(NSInteger)streamId {
+    return [streams objectForIntegerKey:streamId];
+}
+
 -(Speaker *)speakerWithId:(NSInteger)speakerId {
     return [speakers objectForIntegerKey:speakerId];
 }

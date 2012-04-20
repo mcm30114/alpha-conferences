@@ -10,6 +10,8 @@
 #import "DataStore.h"
 #import "NSDictionary+Alpha.h"
 #import "AlphaRow.h"
+#import "SeminarOptions.h"
+#import "StandardController.h"
 
 
 @interface Programme ()
@@ -80,7 +82,9 @@
                 alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 alphaRow.text = @"View seminar options available";
                 alphaRow.onSelected = ^(StandardController *controller) {
-                    NSLog(@"view seminar options: %@", hiddenSessionsInSlot);
+                    StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+                    childController.model = [[SeminarOptions alloc] initWithSessions:hiddenSessionsInSlot dataStore:data];
+                    [controller.navigationController pushViewController:childController animated:YES];
                 };
                 [ps.rows addObject:alphaRow];
             }
