@@ -49,7 +49,6 @@
 
 -(void)reloadData {
     alerts = [DataStore latestAvailableInstance].alerts;
-    NSLog(@"alerts are now %@", alerts);
 }
 
 
