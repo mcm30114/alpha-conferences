@@ -6,6 +6,11 @@
 @implementation NSDictionary (Alpha)
 
 
+-(NSString *)stringForKey:(id)key {
+    id value = [self objectForKey:key];
+    return [value isKindOfClass:[NSString class]] ? (NSString *)value : nil;
+}
+
 -(NSInteger)integerForKey:(id)key {
     return ((NSNumber *)[self objectForKey:key]).intValue;
 }

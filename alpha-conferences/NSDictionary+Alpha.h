@@ -5,6 +5,7 @@
 
 @interface NSDictionary (Alpha)
 
+-(NSString *)stringForKey:(id)key;
 -(NSInteger)integerForKey:(id)key;
 -(float)floatForKey:(id)key;
 -(NSDate *)dateForKey:(id)key;
