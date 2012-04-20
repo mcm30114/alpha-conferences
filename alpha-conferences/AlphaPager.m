@@ -131,10 +131,10 @@
             [a addObject:title];
         }
         self.strings = a;
-    } else {
-        self.strings = [NSArray arrayWithObject:@""];
     }
-    [self gotoPageAtIndex:0];
+    if (self.strings.count > 0) {
+        [self gotoPageAtIndex:0];
+    }
 }
 
 
