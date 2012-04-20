@@ -52,6 +52,7 @@
                 alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 alphaRow.onSelected = ^(StandardController *controller) {
                     StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                    childController.title = s.name;
                     childController.model = [[SessionDetail alloc] initWithSession:s data:dataStore];
                     [controller.navigationController pushViewController:childController animated:YES];
                 };
