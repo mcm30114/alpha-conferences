@@ -34,7 +34,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 3;
+    return 2;
 }
 
 
@@ -42,9 +42,9 @@
     switch (section) {
         case 0:
             return 1;
+//        case 1:
+//            return 1;
         case 1:
-            return 1;
-        case 2:
             return 1;
         default:
             return 0;
@@ -57,16 +57,16 @@
         AlphaRow *r = [[AlphaRow alloc] init];
         r.style = AlphaTableViewCellWithImageRight;
         r.text = self.venue.name;
-        r.detailText = @"address to go here";
+        r.detailText = self.venue.address;
         r.image = [UIImage imageNamed:@"cell-image.png"];
         return r;
     }
+//    else if (section == 1 && row == 0) {
+//        ButtonBarRow *r = [[ButtonBarRow alloc] init];
+//        r.button1Title = @"View on Map";
+//        return r;
+//    }
     else if (section == 1 && row == 0) {
-        ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.button1Title = @"View on Map";
-        return r;
-    }
-    else if (section == 2 && row == 0) {
         RichTextRow *r = [[RichTextRow alloc] init];
         r.html = self.venue.details;
         return r;

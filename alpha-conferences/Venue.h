@@ -26,4 +26,6 @@
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 
+-(NSString *)address;
+
 @end
