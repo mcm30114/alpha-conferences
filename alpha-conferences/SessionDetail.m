@@ -32,15 +32,16 @@
         AlphaRow *titleRow = [[AlphaRow alloc] init];
         titleRow.style = AlphaTableViewCellWithImageRight;
         titleRow.text = session.name;
+        titleRow.detailText = [session detailDetailTextWithData:data];
         SessionDetailSection *top = [[SessionDetailSection alloc] init];
         [top.rows addObject:titleRow];
         [sections addObject:top];
         
-        ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
-        buttons.button1Title = @"Bookmark";
-        SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
-        [buttonSection.rows addObject:buttons];
-        [sections addObject:buttonSection];
+//        ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
+//        buttons.button1Title = @"Bookmark";
+//        SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
+//        [buttonSection.rows addObject:buttons];
+//        [sections addObject:buttonSection];
         
         if (session.text.length > 0) {
             SessionDetailSection *descriptionSection = [[SessionDetailSection alloc] init];

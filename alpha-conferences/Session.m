@@ -8,6 +8,8 @@
 
 #import "Session.h"
 #import "NSDictionary+Alpha.h"
+#import "DataStore.h"
+#import "NSDateFormatter+Alpha.h"
 
 
 @implementation Session
@@ -42,6 +44,47 @@
         self.speakerIds = [dictionary objectForKey:@"speakers"];
     }
     return self;
+}
+
+
+-(NSString *)programmeDetailTextWithData:(DataStore *)data {
+    NSMutableString *str = [NSMutableString string];
+    
+    Room *room = [data roomWithId:self.roomId];
+    Venue *venue = [data venueWithId:room.venueId];
+    if (venue) {
+        [str appendString:venue.name];
+    }
+    
+    Speaker *speaker = [data speakerWithId:((NSNumber *)[self.speakerIds objectAtIndex:0]).intValue];
+    if (speaker) {
+        if (str.length > 0) [str appendString:@" - "];
+        [str appendString:speaker.displayName];
+    }
+    
+    if (str.length > 0) [str appendString:@"\n"];
+    
+    NSDateFormatter *f = [NSDateFormatter timeFormatter];
+    [str appendFormat:@"%@ - %@", [f stringFromDate:self.startDateTime], [f stringFromDate:self.endDateTime]];
+    return str;
+}
+
+
+-(NSString *)detailDetailTextWithData:(DataStore *)data {
+    NSMutableString *str = [NSMutableString string];
+    
+    Room *room = [data roomWithId:self.roomId];
+    Venue *venue = [data venueWithId:room.venueId];
+    if (venue) {
+        [str appendString:venue.name];
+    }
+    
+    if (str.length > 0) [str appendString:@"\n"];
+    
+    NSDateFormatter *df = [NSDateFormatter mediumDateFormatter];
+    NSDateFormatter *tf = [NSDateFormatter timeFormatter];
+    [str appendFormat:@"%@ - %@, %@", [tf stringFromDate:self.startDateTime], [tf stringFromDate:self.endDateTime], [df stringFromDate:self.startDateTime]];
+    return str;
 }
 
 

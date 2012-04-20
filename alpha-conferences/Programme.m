@@ -13,6 +13,9 @@
 #import "SeminarOptions.h"
 #import "StandardController.h"
 #import "SessionDetail.h"
+#import "NSDateFormatter+Alpha.h"
+#import "Room.h"
+#import "Venue.h"
 
 
 @interface Programme ()
@@ -67,10 +70,11 @@
                 if (s.sessionTypeId == 2) {
                     [hiddenSessionsInSlot addObject:s];
                 } else {
+
                     AlphaRow *alphaRow = [[AlphaRow alloc] init];
                     alphaRow.style = AlphaTableViewCellWithColourBar;
                     alphaRow.text = s.name;
-                    alphaRow.detailText = [NSString stringWithFormat:@"type %d, %@ - %@", s.sessionTypeId, s.startDateTime, s.endDateTime];
+                    alphaRow.detailText = [s programmeDetailTextWithData:data];
                     alphaRow.onSelected = ^(StandardController *controller) {
                         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                         childController.model = [[SessionDetail alloc] initWithSession:s data:data];
@@ -89,6 +93,7 @@
                 alphaRow.text = @"View seminar options available";
                 alphaRow.onSelected = ^(StandardController *controller) {
                     StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+                    childController.title = @"Seminar options";
                     childController.model = [[SeminarOptions alloc] initWithSessions:hiddenSessionsInSlot dataStore:data];
                     [controller.navigationController pushViewController:childController animated:YES];
                 };
@@ -110,7 +115,7 @@
 
 -(NSString *)pageTitleForPage:(NSInteger)page {
     ProgrammePage *pp = [self.pages objectAtIndex:page];
-    return pp.day.date.description;
+    return [[NSDateFormatter longDateFormatter] stringFromDate:pp.day.date];
 }
 
 
@@ -123,7 +128,7 @@
 -(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
     ProgrammePage *pp = [self.pages objectAtIndex:page];
     ProgrammeSection *ps = [pp.sections objectAtIndex:section];
-    return ps.time.description;
+    return [[NSDateFormatter timeFormatter] stringFromDate:ps.time];
 }
 
 

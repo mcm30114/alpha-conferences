@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class DataStore;
+
 
 @interface Session : NSObject
 
@@ -24,6 +26,12 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSArray *speakerIds;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;
+-(id)initWithDictionary:(NSDictionary *)dictionary;;
+
+// suitable for showing on Programme and SeminarOptions screens
+-(NSString *)programmeDetailTextWithData:(DataStore *)data;
+
+// suitable for showing on SessionDetail screen
+-(NSString *)detailDetailTextWithData:(DataStore *)data;
 
 @end

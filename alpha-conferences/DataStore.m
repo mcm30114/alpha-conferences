@@ -251,5 +251,13 @@ static DataStore *latestAvailableInstance = nil;
     return [sessions objectForIntegerKey:sessionId];
 }
 
+-(Room *)roomWithId:(NSInteger)roomId {
+    return [rooms objectForIntegerKey:roomId];
+}
+
+-(Venue *)venueWithId:(NSInteger)venueId {
+    return [venues objectForIntegerKey:venueId];
+}
+
 
 @end

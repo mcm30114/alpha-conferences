@@ -28,5 +28,7 @@
 -(Stream *)streamWithId:(NSInteger)streamId;
 -(Speaker *)speakerWithId:(NSInteger)speakerId;
 -(Session *)sessionWithId:(NSInteger)sessionId;
+-(Room *)roomWithId:(NSInteger)roomId;
+-(Venue *)venueWithId:(NSInteger)venueId;
 
 @end
