@@ -74,7 +74,8 @@
                     AlphaRow *alphaRow = [[AlphaRow alloc] init];
                     alphaRow.style = AlphaTableViewCellWithColourBar;
                     alphaRow.text = s.name;
-                    alphaRow.detailText = [s programmeDetailTextWithData:data];
+                    alphaRow.detailText = s.programmeDetailText;
+                    alphaRow.barColour = s.stream.color;
                     alphaRow.onSelected = ^(StandardController *controller) {
                         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                         childController.title = s.name;

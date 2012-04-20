@@ -123,7 +123,7 @@ static DataStore *latestAvailableInstance = nil;
         // rooms
         rooms = [NSMutableDictionary dictionary];
         for (NSDictionary *d in [body objectForKey:@"rooms"]) {
-            Room *r = [[Room alloc] initWithDictionary:d];
+            Room *r = [[Room alloc] initWithDictionary:d data:self];
             if (r.active) {
                 [rooms setObject:r forIntegerKey:r.roomId];
             }
@@ -159,7 +159,7 @@ static DataStore *latestAvailableInstance = nil;
         // sessions
         sessions = [NSMutableDictionary dictionary];
         for (NSMutableDictionary *d in [body objectForKey:@"sessions"]) {
-            Session *s = [[Session alloc] initWithDictionary:d];
+            Session *s = [[Session alloc] initWithDictionary:d data:self];
             if (s.active) {
                 [sessions setObject:s forIntegerKey:s.sessionId];
             }

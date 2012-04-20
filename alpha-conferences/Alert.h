@@ -13,7 +13,6 @@
 
 @property (nonatomic) NSInteger alertId;
 @property (nonatomic) BOOL active;
-@property (nonatomic) NSInteger conferenceId;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSDate *dateTime;

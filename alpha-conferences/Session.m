@@ -10,6 +10,16 @@
 #import "NSDictionary+Alpha.h"
 #import "DataStore.h"
 #import "NSDateFormatter+Alpha.h"
+#import "DataStore.h"
+
+
+@interface Session () {
+    @private
+    __unsafe_unretained DataStore *data;
+}
+
+@end
+
 
 
 @implementation Session
@@ -28,8 +38,9 @@
 @synthesize speakerIds;
 
 
--(id)initWithDictionary:(NSDictionary *)dictionary {
+-(id)initWithDictionary:(NSDictionary *)dictionary data:(DataStore *)d {
     if (self = [super init]) {
+        data = d;
         self.sessionId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
         self.dayId = [dictionary integerForKey:@"day"];
@@ -47,11 +58,20 @@
 }
 
 
--(NSString *)programmeDetailTextWithData:(DataStore *)data {
+-(Room *)room {
+    return [data roomWithId:self.roomId];
+}
+
+
+-(Stream *)stream {
+    return [data streamWithId:self.streamId];
+}
+
+
+-(NSString *)programmeDetailText {
     NSMutableString *str = [NSMutableString string];
     
-    Room *room = [data roomWithId:self.roomId];
-    Venue *venue = [data venueWithId:room.venueId];
+    Venue *venue = self.room.venue;
     if (venue) {
         [str appendString:venue.name];
     }
@@ -70,13 +90,16 @@
 }
 
 
--(NSString *)detailDetailTextWithData:(DataStore *)data {
+-(NSString *)detailDetailText {
     NSMutableString *str = [NSMutableString string];
     
-    Room *room = [data roomWithId:self.roomId];
-    Venue *venue = [data venueWithId:room.venueId];
-    if (venue) {
-        [str appendString:venue.name];
+    Venue *venue = self.room.venue;
+    if (self.room) {
+        if (venue) {
+            [str appendString:venue.name];
+        }
+        if (str.length > 0) [str appendString:@", "];
+        [str appendString:self.room.name];
     }
     
     if (str.length > 0) [str appendString:@"\n"];

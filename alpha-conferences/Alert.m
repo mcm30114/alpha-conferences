@@ -14,7 +14,6 @@
 
 @synthesize alertId;
 @synthesize active;
-@synthesize conferenceId;
 @synthesize title;
 @synthesize message;
 @synthesize dateTime;
@@ -24,7 +23,6 @@
     if (self = [super init]) {
         self.alertId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
-        self.conferenceId = [dictionary integerForKey:@"conference"];
         self.title = [dictionary objectForKey:@"title"];
         self.message = [dictionary objectForKey:@"message"];
         self.dateTime = [dictionary objectForKey:@"date_time"];

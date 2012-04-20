@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Venue.h"
+
+@class DataStore;
 
 
 @interface Room : NSObject
@@ -16,6 +19,8 @@
 @property (nonatomic) NSInteger venueId;
 @property (nonatomic, strong) NSString *name;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;
+-(id)initWithDictionary:(NSDictionary *)dictionary data:(DataStore *)data;
+
+-(Venue *)venue;
 
 @end

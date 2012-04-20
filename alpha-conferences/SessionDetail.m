@@ -32,7 +32,7 @@
         AlphaRow *titleRow = [[AlphaRow alloc] init];
         titleRow.style = AlphaTableViewCellWithImageRight;
         titleRow.text = session.name;
-        titleRow.detailText = [session detailDetailTextWithData:data];
+        titleRow.detailText = session.detailDetailText;
         SessionDetailSection *top = [[SessionDetailSection alloc] init];
         [top.rows addObject:titleRow];
         [sections addObject:top];

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Room.h"
+#import "Stream.h"
 
 @class DataStore;
 
@@ -26,12 +28,15 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSArray *speakerIds;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;;
+-(id)initWithDictionary:(NSDictionary *)dictionary data:(DataStore *)data;
+
+-(Room *)room;
+-(Stream *)stream;
 
 // suitable for showing on Programme and SeminarOptions screens
--(NSString *)programmeDetailTextWithData:(DataStore *)data;
+-(NSString *)programmeDetailText;
 
 // suitable for showing on SessionDetail screen
--(NSString *)detailDetailTextWithData:(DataStore *)data;
+-(NSString *)detailDetailText;
 
 @end
