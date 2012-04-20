@@ -70,6 +70,12 @@
 }
 
 
+-(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
+    SeminarOptionsSection *ss = [sections objectAtIndex:section];
+    return ss.stream.name;
+}
+
+
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
     SeminarOptionsSection *ss = [sections objectAtIndex:section];
     return ss.rows.count;
