@@ -30,24 +30,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NSTimeZone.defaultTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
     
     NSMutableArray *tabControllers = [NSMutableArray  array];
     
-//    // home
-//    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-//    homeController.model = [[Home alloc] init];
-//    homeController.title = @"Home";
-//    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
-//    homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-//    [tabControllers addObject:homeNavController]; 
-//    
-//    // speakers
-//    StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-//    speakersController.model = [[SpeakerList alloc] init];
-//    speakersController.title = @"Speakers";
-//    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
-//    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-//    [tabControllers addObject:speakersNavController]; 
+    // home
+    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    homeController.model = [[Home alloc] init];
+    homeController.title = @"Home";
+    UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
+    homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:homeNavController]; 
+    
+    // speakers
+    StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+    speakersController.model = [[SpeakerList alloc] init];
+    speakersController.title = @"Speakers";
+    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
+    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:speakersNavController]; 
 
     // programme
     StandardController *programmeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:YES];
