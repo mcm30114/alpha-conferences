@@ -30,8 +30,8 @@
         self.active = [dictionary activeFlag];
         self.name = [dictionary objectForKey:@"name"];
         self.text = [dictionary objectForKey:@"description"];
-        self.startDate = [dictionary objectForKey:@"start_date"];
-        self.endDate = [dictionary objectForKey:@"end_date"];
+        self.startDate = [dictionary dateForKey:@"start_date"];
+        self.endDate = [dictionary dateForKey:@"end_date"];
         self.imageKey = [dictionary objectForKey:@"image_key"];
         self.bookingURL = [dictionary objectForKey:@"booking_url"];
         self.donationURL = [dictionary stringForKey:@"donation_url"];

@@ -11,6 +11,7 @@
 #import "DataStore.h"
 #import "StandardController.h"
 #import "ConferenceDetail.h"
+#import "NSDateFormatter+Alpha.h"
 
 
 @interface OtherEvents () {
@@ -36,9 +37,10 @@
 
 -(id)rowForPage:(NSInteger)page section:(NSInteger)section row:(NSInteger)row {
     Conference *c = [conferences objectAtIndex:row];
+    NSDateFormatter *f = [NSDateFormatter mediumDateFormatter];
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = c.name;
-    r.detailText = [NSString stringWithFormat:@"%@ - %@", c.startDate, c.endDate];
+    r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
         childController.model = [[ConferenceDetail alloc] initWithConference:c];
