@@ -12,6 +12,7 @@
 #import "AlphaRow.h"
 #import "SeminarOptions.h"
 #import "StandardController.h"
+#import "SessionDetail.h"
 
 
 @interface Programme ()
@@ -70,6 +71,11 @@
                     alphaRow.style = AlphaTableViewCellWithColourBar;
                     alphaRow.text = s.name;
                     alphaRow.detailText = [NSString stringWithFormat:@"type %d, %@ - %@", s.sessionTypeId, s.startDateTime, s.endDateTime];
+                    alphaRow.onSelected = ^(StandardController *controller) {
+                        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                        childController.model = [[SessionDetail alloc] initWithSession:s data:data];
+                        [controller.navigationController pushViewController:childController animated:YES];
+                    };
                     [ps.rows addObject:alphaRow];
                 }
                 

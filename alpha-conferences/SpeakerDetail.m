@@ -34,7 +34,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 4;
+    return 3;
 }
 
 
@@ -78,13 +78,13 @@
         r.html = self.speaker.biography;
         return r;
     }
-    else if (section == 3 && row == 0) {
-        AlphaRow *r = [[AlphaRow alloc] init];
-        r.style = AlphaTableViewCellNormal;
-        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];
-        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        return r;
-    }
+//    else if (section == 3 && row == 0) {
+//        AlphaRow *r = [[AlphaRow alloc] init];
+//        r.style = AlphaTableViewCellNormal;
+//        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];
+//        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        return r;
+//    }
     else {
         return nil;
     }

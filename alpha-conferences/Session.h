@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSDate *startDateTime;
 @property (nonatomic, strong) NSDate *endDateTime;
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSArray *speakerIds;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 

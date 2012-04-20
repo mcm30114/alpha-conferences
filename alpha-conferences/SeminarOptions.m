@@ -9,6 +9,8 @@
 #import "SeminarOptions.h"
 #import "NSDictionary+Alpha.h"
 #import "AlphaRow.h"
+#import "StandardController.h"
+#import "SessionDetail.h"
 
 
 @interface SeminarOptions () {
@@ -47,6 +49,11 @@
                 alphaRow.style = AlphaTableViewCellWithColourBar;
                 alphaRow.text = s.name;
                 alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                alphaRow.onSelected = ^(StandardController *controller) {
+                    StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                    childController.model = [[SessionDetail alloc] initWithSession:s data:dataStore];
+                    [controller.navigationController pushViewController:childController animated:YES];
+                };
                 [section.rows addObject:alphaRow];
             }
         }

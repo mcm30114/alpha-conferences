@@ -23,6 +23,7 @@
 @synthesize startDateTime;
 @synthesize endDateTime;
 @synthesize text;
+@synthesize speakerIds;
 
 
 -(id)initWithDictionary:(NSDictionary *)dictionary {
@@ -38,6 +39,7 @@
         self.startDateTime = [dictionary dateForKey:@"start_datetime"];
         self.endDateTime = [dictionary dateForKey:@"end_datetime"];
         self.text = [dictionary objectForKey:@"description"];
+        self.speakerIds = [dictionary objectForKey:@"speakers"];
     }
     return self;
 }
