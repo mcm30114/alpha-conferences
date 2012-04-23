@@ -10,6 +10,8 @@
 #import "AlphaRow.h"
 #import "ButtonBarRow.h"
 #import "RichTextRow.h"
+#import "StandardController.h"
+#import "FloorplanController.h"
 
 
 @interface VenueDetailModel ()
@@ -34,7 +36,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 2;
+    return 3;
 }
 
 
@@ -42,9 +44,9 @@
     switch (section) {
         case 0:
             return 1;
-//        case 1:
-//            return 1;
         case 1:
+            return 1;
+        case 2:
             return 1;
         default:
             return 0;
@@ -61,12 +63,20 @@
         r.imageResource = [[Resource alloc] initWithKey:self.venue.imageKey type:ResourceTypeVenueImageSmall];
         return r;
     }
-//    else if (section == 1 && row == 0) {
-//        ButtonBarRow *r = [[ButtonBarRow alloc] init];
-//        r.button1Title = @"View on Map";
-//        return r;
-//    }
     else if (section == 1 && row == 0) {
+        AlphaRow *r = [[AlphaRow alloc] init];
+        r.style = AlphaTableViewCellNormal;
+        r.text = @"View floorplan";
+        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        r.onSelected = ^(StandardController *controller) {
+            Resource *r = [Resource resourceWithKey:self.venue.floorplanKey type:ResourceTypeVenueFloorplan];
+            FloorplanController *childController = [[FloorplanController alloc] initWithResource:r];
+            childController.title = @"Floorplan";
+            [controller.navigationController pushViewController:childController animated:YES];
+        };
+        return r;
+    }
+    else if (section == 2 && row == 0) {
         RichTextRow *r = [[RichTextRow alloc] init];
         r.html = self.venue.details;
         return r;

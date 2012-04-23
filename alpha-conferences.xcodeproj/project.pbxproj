@@ -53,6 +53,7 @@
 		03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */; };
 		03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCE9D1541EB2900F70B00 /* Resource.m */; };
 		03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCEA01541EC4E00F70B00 /* ResourceCache.m */; };
+		03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -208,6 +209,8 @@
 		03EBCE9D1541EB2900F70B00 /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = "alpha-conferences/Resource.m"; sourceTree = SOURCE_ROOT; };
 		03EBCE9F1541EC4E00F70B00 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceCache.h; path = "alpha-conferences/ResourceCache.h"; sourceTree = SOURCE_ROOT; };
 		03EBCEA01541EC4E00F70B00 /* ResourceCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceCache.m; path = "alpha-conferences/ResourceCache.m"; sourceTree = SOURCE_ROOT; };
+		03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorplanController.h; path = "alpha-conferences/FloorplanController.h"; sourceTree = SOURCE_ROOT; };
+		03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorplanController.m; path = "alpha-conferences/FloorplanController.m"; sourceTree = SOURCE_ROOT; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+Alpha.h"; path = "alpha-conferences/UIFont+Alpha.h"; sourceTree = SOURCE_ROOT; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+Alpha.m"; path = "alpha-conferences/UIFont+Alpha.m"; sourceTree = SOURCE_ROOT; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersController.h; path = "alpha-conferences/SpeakersController.h"; sourceTree = SOURCE_ROOT; };
@@ -425,6 +428,15 @@
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
 		};
+		03F1CEFD15454A3200AC6EF6 /* Floorplan */ = {
+			isa = PBXGroup;
+			children = (
+				03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */,
+				03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */,
+			);
+			name = Floorplan;
+			sourceTree = "<group>";
+		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +501,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03F1CEFD15454A3200AC6EF6 /* Floorplan */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
 				034A50461540635200ADB1C2 /* StandardController */,
@@ -781,6 +794,7 @@
 				03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */,
 				03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */,
 				032A8B71154200CB001B55DF /* ImageRow.m in Sources */,
+				03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
