@@ -43,7 +43,7 @@
         
         // next button
         UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        nextButton.frame = CGRectMake(self.bounds.size.width-26, 14, 13, 16);
+        nextButton.frame = CGRectMake(self.bounds.size.width-44, 0, 44, 44);
         nextButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         [nextButton setImage:[UIImage imageNamed:@"right-arrow.png"] forState:UIControlStateNormal];
         [nextButton addTarget:self action:@selector(nextPage) forControlEvents:UIControlEventTouchUpInside];
@@ -52,7 +52,7 @@
         
         // prev button
         UIButton *prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        prevButton.frame = CGRectMake(10, 14, 13, 16);
+        prevButton.frame = CGRectMake(0, 0, 44, 44);
         prevButton.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;        
         [prevButton setImage:[UIImage imageNamed:@"left-arrow.png"] forState:UIControlStateNormal];
         [prevButton addTarget:self action:@selector(prevPage) forControlEvents:UIControlEventTouchUpInside];
