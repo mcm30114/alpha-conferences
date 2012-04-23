@@ -98,6 +98,8 @@
 		B70A862E15457D2C009E5A56 /* special-offers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861A15457D2C009E5A56 /* special-offers@2x.png */; };
 		B70A862F15457D2C009E5A56 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861B15457D2C009E5A56 /* twitter.png */; };
 		B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861C15457D2C009E5A56 /* twitter@2x.png */; };
+		B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A864515459228009E5A56 /* iPhoneIcon.png */; };
+		B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +291,8 @@
 		B70A861A15457D2C009E5A56 /* special-offers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "special-offers@2x.png"; path = "alpha-conferences/special-offers@2x.png"; sourceTree = SOURCE_ROOT; };
 		B70A861B15457D2C009E5A56 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = "alpha-conferences/twitter.png"; sourceTree = SOURCE_ROOT; };
 		B70A861C15457D2C009E5A56 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "alpha-conferences/twitter@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A864515459228009E5A56 /* iPhoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneIcon.png; path = "alpha-conferences/iPhoneIcon.png"; sourceTree = SOURCE_ROOT; };
+		B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneIcon@2x.png"; path = "alpha-conferences/iPhoneIcon@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -631,6 +635,8 @@
 		7E401F4E153C57F300DA78D2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */,
+				B70A864515459228009E5A56 /* iPhoneIcon.png */,
 				B70A860915457D2C009E5A56 /* alerts.png */,
 				B70A860A15457D2C009E5A56 /* alerts@2x.png */,
 				B70A860B15457D2C009E5A56 /* donate.png */,
@@ -798,6 +804,8 @@
 				B70A862E15457D2C009E5A56 /* special-offers@2x.png in Resources */,
 				B70A862F15457D2C009E5A56 /* twitter.png in Resources */,
 				B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */,
+				B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */,
+				B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
