@@ -13,6 +13,7 @@
     @private
     UIButton *button1;
     UIButton *button2;
+    __unsafe_unretained UIViewController *controller;
 }
 
 @property (nonatomic, copy) void (^onButton1Selected)();
@@ -30,8 +31,9 @@
 @synthesize onButton2Selected = _onButton2Selected;
 
 
-- (id)initWithButtonBarRow:(ButtonBarRow *)metadata {
+- (id)initWithButtonBarRow:(ButtonBarRow *)metadata controller:(UIViewController *)c {
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil]) {
+        controller = c;
         
         self.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         self.backgroundView.backgroundColor = [UIColor clearColor];
@@ -77,11 +79,11 @@
 - (void)handleButtonTap:(id)sender {
     if (sender == button1) {
         if (self.onButton1Selected) {
-            self.onButton1Selected();
+            self.onButton1Selected(controller);
         }
     } else if (sender == button2) {
         if (self.onButton2Selected) {
-            self.onButton2Selected();
+            self.onButton2Selected(controller);
         }
     }
 }

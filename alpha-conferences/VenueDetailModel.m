@@ -36,7 +36,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 3;
+    return 4;
 }
 
 
@@ -47,6 +47,8 @@
         case 1:
             return 1;
         case 2:
+            return 1;
+        case 3:
             return 1;
         default:
             return 0;
@@ -64,11 +66,17 @@
         return r;
     }
     else if (section == 1 && row == 0) {
-        AlphaRow *r = [[AlphaRow alloc] init];
-        r.style = AlphaTableViewCellNormal;
-        r.text = @"View floorplan";
-        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        r.onSelected = ^(StandardController *controller) {
+        ButtonBarRow *r = [[ButtonBarRow alloc] init];
+        r.button1Title = @"View map";
+        r.onButton1Selected = ^(UIViewController *controller) {
+            NSString *url = [NSString stringWithFormat:@"http://maps.google.co.uk?q=%@@%f,%f",
+                             [self.venue.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                             self.venue.latitude,
+                             self.venue.longitude];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        };
+        r.button2Title = @"View floorplan";
+        r.onButton2Selected = ^(UIViewController *controller) {
             Resource *r = [Resource resourceWithKey:self.venue.floorplanKey type:ResourceTypeVenueFloorplan];
             FloorplanController *childController = [[FloorplanController alloc] initWithResource:r];
             childController.title = @"Floorplan";
@@ -76,7 +84,7 @@
         };
         return r;
     }
-    else if (section == 2 && row == 0) {
+    else if (section == 3 && row == 0) {
         RichTextRow *r = [[RichTextRow alloc] init];
         r.html = self.venue.details;
         return r;
