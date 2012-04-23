@@ -299,6 +299,8 @@
 				034A5056154067BE00ADB1C2 /* VenueListModel.m */,
 				034A505815406AF000ADB1C2 /* VenueDetailModel.h */,
 				034A505915406AF000ADB1C2 /* VenueDetailModel.m */,
+				03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */,
+				03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */,
 			);
 			name = Venues;
 			path = "alpha-conferences";
@@ -428,15 +430,6 @@
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
 		};
-		03F1CEFD15454A3200AC6EF6 /* Floorplan */ = {
-			isa = PBXGroup;
-			children = (
-				03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */,
-				03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */,
-			);
-			name = Floorplan;
-			sourceTree = "<group>";
-		};
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,7 +494,6 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
-				03F1CEFD15454A3200AC6EF6 /* Floorplan */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
 				034A50461540635200ADB1C2 /* StandardController */,
