@@ -37,7 +37,7 @@
     // donate via sms row
     if (c.donationTelephoneNumber.length > 0) {
         ButtonBarRow *smsRow = [[ButtonBarRow alloc] init];
-        smsRow.button1Title = [NSString stringWithFormat:@"Text %@ with the amount you want to give", c.donationTelephoneNumber];
+        smsRow.button1Title = [NSString stringWithFormat:@"Text %@", c.donationTelephoneNumber];
         [items addObject:smsRow];
     }
     
