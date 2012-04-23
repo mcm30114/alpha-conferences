@@ -41,6 +41,7 @@
     homeController.title = CONFERENCE_TITLE;
     UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
     homeNavController.tabBarItem.title = @"Home";
+    homeNavController.tabBarItem.image = [UIImage imageNamed:@"home.png"];
     homeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:homeNavController]; 
     
@@ -48,6 +49,7 @@
     StandardController *speakersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     speakersController.model = [[SpeakerList alloc] init];
     speakersController.title = @"Speakers";
+    speakersController.tabBarItem.image = [UIImage imageNamed:@"speakers.png"];
     UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
     speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:speakersNavController]; 
@@ -56,28 +58,16 @@
     StandardController *programmeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:YES];
     programmeController.model = [[Programme alloc] init];
     programmeController.title = @"Programme";
+    programmeController.tabBarItem.image = [UIImage imageNamed:@"programme.png"];
     UINavigationController *programmeNavController = [[UINavigationController alloc] initWithRootViewController:programmeController];
     programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:programmeNavController];
-    
-    // programme (old)
-//    ProgrammeController *programmeController = [[ProgrammeController alloc] init];
-//    programmeController.title = @"Programme";
-//    UINavigationController *programmeNavController = [[UINavigationController alloc] initWithRootViewController:programmeController];
-//    programmeNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-//    [tabControllers addObject:programmeNavController];
-    
-    // speakers (old)
-//    SpeakersController *speakersController = [[SpeakersController alloc] init];
-//    speakersController.title = @"Speakers";
-//    UINavigationController *speakersNavController = [[UINavigationController alloc] initWithRootViewController:speakersController];
-//    speakersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
-//    [tabControllers addObject:speakersNavController]; 
     
     // maps
     StandardController *mapsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     mapsController.model = [[VenueListModel alloc] init];
     mapsController.title = @"Maps";
+    mapsController.tabBarItem.image = [UIImage imageNamed:@"maps.png"];
     UINavigationController *mapsNavController = [[UINavigationController alloc] initWithRootViewController:mapsController];
     mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:mapsNavController];
@@ -86,6 +76,7 @@
     StandardController *donateController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
     donateController.model = [[Donate alloc] init];
     donateController.title = @"Donate";
+    donateController.tabBarItem.image = [UIImage imageNamed:@"donate.png"];
     UINavigationController *donateNavController = [[UINavigationController alloc] initWithRootViewController:donateController];
     donateNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:donateNavController];
@@ -94,6 +85,7 @@
     StandardController *alertsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     alertsController.model = [[AlertList alloc] init];
     alertsController.title = @"Alerts";
+    alertsController.tabBarItem.image = [UIImage imageNamed:@"alerts.png"];
     UINavigationController *alertsNavController = [[UINavigationController alloc] initWithRootViewController:alertsController];
     alertsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:alertsNavController];
@@ -102,6 +94,7 @@
     StandardController *faqsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     faqsController.model = [[FAQList alloc] init];
     faqsController.title = @"FAQs";
+    faqsController.tabBarItem.image = [UIImage imageNamed:@"faqs.png"];
     UINavigationController *faqsNavController = [[UINavigationController alloc] initWithRootViewController:faqsController];
     faqsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:faqsNavController];
@@ -109,6 +102,7 @@
     // other events
     StandardController *otherEventsController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     otherEventsController.title = @"Other events";
+    otherEventsController.tabBarItem.image = [UIImage imageNamed:@"other-events.png"];
     otherEventsController.model = [[OtherEvents alloc] init];
     UINavigationController *otherEventsNavController = [[UINavigationController alloc] initWithRootViewController:otherEventsController];
     otherEventsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
@@ -117,6 +111,7 @@
     // special offers
     StandardController *offersController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
     offersController.title = @"Special offers";
+    offersController.tabBarItem.image = [UIImage imageNamed:@"special-offers.png"];
     offersController.model = [[SpecialOfferList alloc] init];
     UINavigationController *offersNavController = [[UINavigationController alloc] initWithRootViewController:offersController];
     offersNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
