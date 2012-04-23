@@ -40,17 +40,14 @@
 		03CC45281540812800737AD1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45271540812800737AD1 /* Constants.m */; };
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
-		03CC45331540893400737AD1 /* FAQDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45321540893400737AD1 /* FAQDetail.m */; };
 		03CC453715408E6600737AD1 /* OtherEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453615408E6600737AD1 /* OtherEvents.m */; };
 		03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45391540911F00737AD1 /* ConferenceDetail.m */; };
 		03CC453D154141E400737AD1 /* SpeakerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453C154141E400737AD1 /* SpeakerList.m */; };
 		03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453F1541561400737AD1 /* SpeakerDetail.m */; };
 		03CC4543154158C800737AD1 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4542154158C700737AD1 /* Home.m */; };
 		03CC454715415C2F00737AD1 /* AlertList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454615415C2F00737AD1 /* AlertList.m */; };
-		03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454915415CDD00737AD1 /* AlertDetail.m */; };
 		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
 		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
-		03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4553154162F100737AD1 /* SpecialOfferDetail.m */; };
 		03CC45571541664800737AD1 /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45561541664800737AD1 /* Programme.m */; };
 		03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455C15417CE100737AD1 /* SeminarOptions.m */; };
 		03CC45601541884500737AD1 /* SessionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455F1541884400737AD1 /* SessionDetail.m */; };
@@ -186,8 +183,6 @@
 		03CC452B154081C000737AD1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		03CC452E1540882C00737AD1 /* FAQList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQList.h; path = "alpha-conferences/FAQList.h"; sourceTree = SOURCE_ROOT; };
 		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "alpha-conferences/FAQList.m"; sourceTree = SOURCE_ROOT; };
-		03CC45311540893400737AD1 /* FAQDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQDetail.h; path = "alpha-conferences/FAQDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC45321540893400737AD1 /* FAQDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQDetail.m; path = "alpha-conferences/FAQDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC453515408E6600737AD1 /* OtherEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherEvents.h; path = "alpha-conferences/OtherEvents.h"; sourceTree = SOURCE_ROOT; };
 		03CC453615408E6600737AD1 /* OtherEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherEvents.m; path = "alpha-conferences/OtherEvents.m"; sourceTree = SOURCE_ROOT; };
 		03CC45381540911F00737AD1 /* ConferenceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConferenceDetail.h; path = "alpha-conferences/ConferenceDetail.h"; sourceTree = SOURCE_ROOT; };
@@ -200,14 +195,10 @@
 		03CC4542154158C700737AD1 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "alpha-conferences/Home.m"; sourceTree = SOURCE_ROOT; };
 		03CC454515415C2F00737AD1 /* AlertList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertList.h; path = "alpha-conferences/AlertList.h"; sourceTree = SOURCE_ROOT; };
 		03CC454615415C2F00737AD1 /* AlertList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertList.m; path = "alpha-conferences/AlertList.m"; sourceTree = SOURCE_ROOT; };
-		03CC454815415CDD00737AD1 /* AlertDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertDetail.h; path = "alpha-conferences/AlertDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC454915415CDD00737AD1 /* AlertDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertDetail.m; path = "alpha-conferences/AlertDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC454B15415EE700737AD1 /* Donate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Donate.h; path = "alpha-conferences/Donate.h"; sourceTree = SOURCE_ROOT; };
 		03CC454C15415EE800737AD1 /* Donate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Donate.m; path = "alpha-conferences/Donate.m"; sourceTree = SOURCE_ROOT; };
 		03CC454F154161EC00737AD1 /* SpecialOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferList.h; path = "alpha-conferences/SpecialOfferList.h"; sourceTree = SOURCE_ROOT; };
 		03CC4550154161EC00737AD1 /* SpecialOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferList.m; path = "alpha-conferences/SpecialOfferList.m"; sourceTree = SOURCE_ROOT; };
-		03CC4552154162F100737AD1 /* SpecialOfferDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferDetail.h; path = "alpha-conferences/SpecialOfferDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC4553154162F100737AD1 /* SpecialOfferDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferDetail.m; path = "alpha-conferences/SpecialOfferDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC45551541664800737AD1 /* Programme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Programme.h; path = "alpha-conferences/Programme.h"; sourceTree = SOURCE_ROOT; };
 		03CC45561541664800737AD1 /* Programme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Programme.m; path = "alpha-conferences/Programme.m"; sourceTree = SOURCE_ROOT; };
 		03CC455B15417CE100737AD1 /* SeminarOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeminarOptions.h; path = "alpha-conferences/SeminarOptions.h"; sourceTree = SOURCE_ROOT; };
@@ -398,8 +389,6 @@
 			children = (
 				03CC452E1540882C00737AD1 /* FAQList.h */,
 				03CC452F1540882C00737AD1 /* FAQList.m */,
-				03CC45311540893400737AD1 /* FAQDetail.h */,
-				03CC45321540893400737AD1 /* FAQDetail.m */,
 			);
 			name = FAQs;
 			sourceTree = SOURCE_ROOT;
@@ -425,8 +414,6 @@
 			children = (
 				03CC454515415C2F00737AD1 /* AlertList.h */,
 				03CC454615415C2F00737AD1 /* AlertList.m */,
-				03CC454815415CDD00737AD1 /* AlertDetail.h */,
-				03CC454915415CDD00737AD1 /* AlertDetail.m */,
 			);
 			name = Alerts;
 			path = "alpha-conferences";
@@ -437,8 +424,6 @@
 			children = (
 				03CC454F154161EC00737AD1 /* SpecialOfferList.h */,
 				03CC4550154161EC00737AD1 /* SpecialOfferList.m */,
-				03CC4552154162F100737AD1 /* SpecialOfferDetail.h */,
-				03CC4553154162F100737AD1 /* SpecialOfferDetail.m */,
 			);
 			name = SpecialOffers;
 			path = "alpha-conferences";
@@ -806,17 +791,14 @@
 				03CC45281540812800737AD1 /* Constants.m in Sources */,
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
 				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
-				03CC45331540893400737AD1 /* FAQDetail.m in Sources */,
 				03CC453715408E6600737AD1 /* OtherEvents.m in Sources */,
 				03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */,
 				03CC453D154141E400737AD1 /* SpeakerList.m in Sources */,
 				03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */,
 				03CC4543154158C800737AD1 /* Home.m in Sources */,
 				03CC454715415C2F00737AD1 /* AlertList.m in Sources */,
-				03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */,
 				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
 				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
-				03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */,
 				03CC45571541664800737AD1 /* Programme.m in Sources */,
 				03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */,
 				03CC45601541884500737AD1 /* SessionDetail.m in Sources */,

@@ -11,7 +11,7 @@
 #import "AlphaRow.h"
 #import "StandardController.h"
 #import "SpecialOffer.h"
-#import "SpecialOfferDetail.h"
+#import "PageViewController.h"
 
 
 @interface SpecialOfferList () {
@@ -39,8 +39,8 @@
     r.style = AlphaTableViewCellNormal;
     
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-        childController.model = [[SpecialOfferDetail alloc] initWithSpecialOffer:offer];
+        PageViewController *childController = [[PageViewController alloc] initWithPageTitle:offer.title pageContent:offer.html];
+        childController.title = offer.title;
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;
