@@ -36,7 +36,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 4;
+    return 3;
 }
 
 
@@ -47,8 +47,6 @@
         case 1:
             return 1;
         case 2:
-            return 1;
-        case 3:
             return 1;
         default:
             return 0;
@@ -84,7 +82,7 @@
         };
         return r;
     }
-    else if (section == 3 && row == 0) {
+    else if (section == 2 && row == 0) {
         RichTextRow *r = [[RichTextRow alloc] init];
         r.html = self.venue.details;
         return r;
