@@ -12,6 +12,8 @@
 		032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B681541F5AE001B55DF /* blank-100x100.png */; };
 		032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B691541F5AE001B55DF /* blank-320x120.png */; };
 		032A8B71154200CB001B55DF /* ImageRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A8B70154200CB001B55DF /* ImageRow.m */; };
+		033442B91545701D00562EEC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033442B81545701D00562EEC /* MapController.m */; };
+		033442BB154570CC00562EEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033442BA154570CC00562EEC /* MapKit.framework */; };
 		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
@@ -19,6 +21,8 @@
 		034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A5056154067BE00ADB1C2 /* VenueListModel.m */; };
 		034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A505915406AF000ADB1C2 /* VenueDetailModel.m */; };
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
+		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
+		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -126,6 +130,9 @@
 		032A8B691541F5AE001B55DF /* blank-320x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-320x120.png"; path = "alpha-conferences/blank-320x120.png"; sourceTree = SOURCE_ROOT; };
 		032A8B6F154200CB001B55DF /* ImageRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRow.h; path = "alpha-conferences/ImageRow.h"; sourceTree = SOURCE_ROOT; };
 		032A8B70154200CB001B55DF /* ImageRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRow.m; path = "alpha-conferences/ImageRow.m"; sourceTree = SOURCE_ROOT; };
+		033442B71545701D00562EEC /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "alpha-conferences/MapController.h"; sourceTree = SOURCE_ROOT; };
+		033442B81545701D00562EEC /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "alpha-conferences/MapController.m"; sourceTree = SOURCE_ROOT; };
+		033442BA154570CC00562EEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardController.h; path = "alpha-conferences/StandardController.h"; sourceTree = SOURCE_ROOT; };
 		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardController.m; path = "alpha-conferences/StandardController.m"; sourceTree = SOURCE_ROOT; };
 		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardControllerModel.h; path = "alpha-conferences/StandardControllerModel.h"; sourceTree = SOURCE_ROOT; };
@@ -141,6 +148,9 @@
 		034A505915406AF000ADB1C2 /* VenueDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueDetailModel.m; path = "alpha-conferences/VenueDetailModel.m"; sourceTree = SOURCE_ROOT; };
 		034A507015407CF600ADB1C2 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataStore.h; path = "alpha-conferences/DataStore.h"; sourceTree = SOURCE_ROOT; };
 		034A507115407CF600ADB1C2 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataStore.m; path = "alpha-conferences/DataStore.m"; sourceTree = SOURCE_ROOT; };
+		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
+		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
+		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = "alpha-conferences/Alert.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conference.h; path = "alpha-conferences/Conference.h"; sourceTree = SOURCE_ROOT; };
@@ -259,6 +269,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */,
+				033442BB154570CC00562EEC /* MapKit.framework in Frameworks */,
 				7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */,
 				7E34941D153EF8EA009E332C /* CoreText.framework in Frameworks */,
 				7E349416153EF38D009E332C /* libxml2.dylib in Frameworks */,
@@ -273,6 +285,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033442B61545700C00562EEC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				039848A815457A2D00151128 /* Pin.h */,
+				039848A915457A2D00151128 /* Pin.m */,
+				033442B71545701D00562EEC /* MapController.h */,
+				033442B81545701D00562EEC /* MapController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		034A50461540635200ADB1C2 /* StandardController */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +503,8 @@
 		7E401F03153C18FD00DA78D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				039848AB15457AFF00151128 /* CoreLocation.framework */,
+				033442BA154570CC00562EEC /* MapKit.framework */,
 				7E34941C153EF8EA009E332C /* CoreText.framework */,
 				7E349415153EF38D009E332C /* libxml2.dylib */,
 				7E349413153EF381009E332C /* QuartzCore.framework */,
@@ -494,6 +519,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				033442B61545700C00562EEC /* Map */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
 				034A50461540635200ADB1C2 /* StandardController */,
@@ -787,6 +813,8 @@
 				03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */,
 				032A8B71154200CB001B55DF /* ImageRow.m in Sources */,
 				03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */,
+				033442B91545701D00562EEC /* MapController.m in Sources */,
+				039848AA15457A2D00151128 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
