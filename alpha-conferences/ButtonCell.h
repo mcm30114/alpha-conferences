@@ -14,6 +14,6 @@
 
 @interface ButtonCell : UITableViewCell
 
-- (id)initWithButtonBarRow:(ButtonBarRow *)metadata;
+- (id)initWithButtonBarRow:(ButtonBarRow *)metadata controller:(UIViewController *)controller;
 
 @end

@@ -27,6 +27,7 @@
 
 -(id)initWithConference:(Conference *)c {
     if (self = [super init]) {
+        conference = c;
         rows = [NSMutableArray array];
         
         // image row

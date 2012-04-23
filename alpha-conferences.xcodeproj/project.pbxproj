@@ -12,6 +12,8 @@
 		032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B681541F5AE001B55DF /* blank-100x100.png */; };
 		032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B691541F5AE001B55DF /* blank-320x120.png */; };
 		032A8B71154200CB001B55DF /* ImageRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A8B70154200CB001B55DF /* ImageRow.m */; };
+		033442B91545701D00562EEC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033442B81545701D00562EEC /* MapController.m */; };
+		033442BB154570CC00562EEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033442BA154570CC00562EEC /* MapKit.framework */; };
 		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
@@ -19,6 +21,9 @@
 		034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A5056154067BE00ADB1C2 /* VenueListModel.m */; };
 		034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A505915406AF000ADB1C2 /* VenueDetailModel.m */; };
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
+		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
+		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
+		03BC116D15459AAF0097B896 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC116C15459AAF0097B896 /* PageViewController.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -35,17 +40,14 @@
 		03CC45281540812800737AD1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45271540812800737AD1 /* Constants.m */; };
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
-		03CC45331540893400737AD1 /* FAQDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45321540893400737AD1 /* FAQDetail.m */; };
 		03CC453715408E6600737AD1 /* OtherEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453615408E6600737AD1 /* OtherEvents.m */; };
 		03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45391540911F00737AD1 /* ConferenceDetail.m */; };
 		03CC453D154141E400737AD1 /* SpeakerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453C154141E400737AD1 /* SpeakerList.m */; };
 		03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453F1541561400737AD1 /* SpeakerDetail.m */; };
 		03CC4543154158C800737AD1 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4542154158C700737AD1 /* Home.m */; };
 		03CC454715415C2F00737AD1 /* AlertList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454615415C2F00737AD1 /* AlertList.m */; };
-		03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454915415CDD00737AD1 /* AlertDetail.m */; };
 		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
 		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
-		03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4553154162F100737AD1 /* SpecialOfferDetail.m */; };
 		03CC45571541664800737AD1 /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45561541664800737AD1 /* Programme.m */; };
 		03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455C15417CE100737AD1 /* SeminarOptions.m */; };
 		03CC45601541884500737AD1 /* SessionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455F1541884400737AD1 /* SessionDetail.m */; };
@@ -53,6 +55,7 @@
 		03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */; };
 		03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCE9D1541EB2900F70B00 /* Resource.m */; };
 		03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCEA01541EC4E00F70B00 /* ResourceCache.m */; };
+		03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
 		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
@@ -147,6 +150,9 @@
 		032A8B691541F5AE001B55DF /* blank-320x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-320x120.png"; path = "alpha-conferences/blank-320x120.png"; sourceTree = SOURCE_ROOT; };
 		032A8B6F154200CB001B55DF /* ImageRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRow.h; path = "alpha-conferences/ImageRow.h"; sourceTree = SOURCE_ROOT; };
 		032A8B70154200CB001B55DF /* ImageRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRow.m; path = "alpha-conferences/ImageRow.m"; sourceTree = SOURCE_ROOT; };
+		033442B71545701D00562EEC /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "alpha-conferences/MapController.h"; sourceTree = SOURCE_ROOT; };
+		033442B81545701D00562EEC /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "alpha-conferences/MapController.m"; sourceTree = SOURCE_ROOT; };
+		033442BA154570CC00562EEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardController.h; path = "alpha-conferences/StandardController.h"; sourceTree = SOURCE_ROOT; };
 		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardController.m; path = "alpha-conferences/StandardController.m"; sourceTree = SOURCE_ROOT; };
 		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardControllerModel.h; path = "alpha-conferences/StandardControllerModel.h"; sourceTree = SOURCE_ROOT; };
@@ -162,6 +168,11 @@
 		034A505915406AF000ADB1C2 /* VenueDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueDetailModel.m; path = "alpha-conferences/VenueDetailModel.m"; sourceTree = SOURCE_ROOT; };
 		034A507015407CF600ADB1C2 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataStore.h; path = "alpha-conferences/DataStore.h"; sourceTree = SOURCE_ROOT; };
 		034A507115407CF600ADB1C2 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataStore.m; path = "alpha-conferences/DataStore.m"; sourceTree = SOURCE_ROOT; };
+		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
+		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
+		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		03BC116B15459AAF0097B896 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = "alpha-conferences/PageViewController.h"; sourceTree = SOURCE_ROOT; };
+		03BC116C15459AAF0097B896 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = "alpha-conferences/PageViewController.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = "alpha-conferences/Alert.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conference.h; path = "alpha-conferences/Conference.h"; sourceTree = SOURCE_ROOT; };
@@ -194,8 +205,6 @@
 		03CC452B154081C000737AD1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		03CC452E1540882C00737AD1 /* FAQList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQList.h; path = "alpha-conferences/FAQList.h"; sourceTree = SOURCE_ROOT; };
 		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "alpha-conferences/FAQList.m"; sourceTree = SOURCE_ROOT; };
-		03CC45311540893400737AD1 /* FAQDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQDetail.h; path = "alpha-conferences/FAQDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC45321540893400737AD1 /* FAQDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQDetail.m; path = "alpha-conferences/FAQDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC453515408E6600737AD1 /* OtherEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherEvents.h; path = "alpha-conferences/OtherEvents.h"; sourceTree = SOURCE_ROOT; };
 		03CC453615408E6600737AD1 /* OtherEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherEvents.m; path = "alpha-conferences/OtherEvents.m"; sourceTree = SOURCE_ROOT; };
 		03CC45381540911F00737AD1 /* ConferenceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConferenceDetail.h; path = "alpha-conferences/ConferenceDetail.h"; sourceTree = SOURCE_ROOT; };
@@ -208,14 +217,10 @@
 		03CC4542154158C700737AD1 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "alpha-conferences/Home.m"; sourceTree = SOURCE_ROOT; };
 		03CC454515415C2F00737AD1 /* AlertList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertList.h; path = "alpha-conferences/AlertList.h"; sourceTree = SOURCE_ROOT; };
 		03CC454615415C2F00737AD1 /* AlertList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertList.m; path = "alpha-conferences/AlertList.m"; sourceTree = SOURCE_ROOT; };
-		03CC454815415CDD00737AD1 /* AlertDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertDetail.h; path = "alpha-conferences/AlertDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC454915415CDD00737AD1 /* AlertDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertDetail.m; path = "alpha-conferences/AlertDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC454B15415EE700737AD1 /* Donate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Donate.h; path = "alpha-conferences/Donate.h"; sourceTree = SOURCE_ROOT; };
 		03CC454C15415EE800737AD1 /* Donate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Donate.m; path = "alpha-conferences/Donate.m"; sourceTree = SOURCE_ROOT; };
 		03CC454F154161EC00737AD1 /* SpecialOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferList.h; path = "alpha-conferences/SpecialOfferList.h"; sourceTree = SOURCE_ROOT; };
 		03CC4550154161EC00737AD1 /* SpecialOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferList.m; path = "alpha-conferences/SpecialOfferList.m"; sourceTree = SOURCE_ROOT; };
-		03CC4552154162F100737AD1 /* SpecialOfferDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferDetail.h; path = "alpha-conferences/SpecialOfferDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC4553154162F100737AD1 /* SpecialOfferDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferDetail.m; path = "alpha-conferences/SpecialOfferDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC45551541664800737AD1 /* Programme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Programme.h; path = "alpha-conferences/Programme.h"; sourceTree = SOURCE_ROOT; };
 		03CC45561541664800737AD1 /* Programme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Programme.m; path = "alpha-conferences/Programme.m"; sourceTree = SOURCE_ROOT; };
 		03CC455B15417CE100737AD1 /* SeminarOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeminarOptions.h; path = "alpha-conferences/SeminarOptions.h"; sourceTree = SOURCE_ROOT; };
@@ -230,6 +235,8 @@
 		03EBCE9D1541EB2900F70B00 /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = "alpha-conferences/Resource.m"; sourceTree = SOURCE_ROOT; };
 		03EBCE9F1541EC4E00F70B00 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceCache.h; path = "alpha-conferences/ResourceCache.h"; sourceTree = SOURCE_ROOT; };
 		03EBCEA01541EC4E00F70B00 /* ResourceCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResourceCache.m; path = "alpha-conferences/ResourceCache.m"; sourceTree = SOURCE_ROOT; };
+		03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FloorplanController.h; path = "alpha-conferences/FloorplanController.h"; sourceTree = SOURCE_ROOT; };
+		03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorplanController.m; path = "alpha-conferences/FloorplanController.m"; sourceTree = SOURCE_ROOT; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+Alpha.h"; path = "alpha-conferences/UIFont+Alpha.h"; sourceTree = SOURCE_ROOT; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+Alpha.m"; path = "alpha-conferences/UIFont+Alpha.m"; sourceTree = SOURCE_ROOT; };
 		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersController.h; path = "alpha-conferences/SpeakersController.h"; sourceTree = SOURCE_ROOT; };
@@ -300,6 +307,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */,
+				033442BB154570CC00562EEC /* MapKit.framework in Frameworks */,
 				7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */,
 				7E34941D153EF8EA009E332C /* CoreText.framework in Frameworks */,
 				7E349416153EF38D009E332C /* libxml2.dylib in Frameworks */,
@@ -314,6 +323,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033442B61545700C00562EEC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				039848A815457A2D00151128 /* Pin.h */,
+				039848A915457A2D00151128 /* Pin.m */,
+				033442B71545701D00562EEC /* MapController.h */,
+				033442B81545701D00562EEC /* MapController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		034A50461540635200ADB1C2 /* StandardController */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +360,8 @@
 				034A5056154067BE00ADB1C2 /* VenueListModel.m */,
 				034A505815406AF000ADB1C2 /* VenueDetailModel.h */,
 				034A505915406AF000ADB1C2 /* VenueDetailModel.m */,
+				03F1CEFE15454A5300AC6EF6 /* FloorplanController.h */,
+				03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */,
 			);
 			name = Venues;
 			path = "alpha-conferences";
@@ -354,6 +376,15 @@
 			name = DataStore;
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
+		};
+		03BC116A15459A870097B896 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				03BC116B15459AAF0097B896 /* PageViewController.h */,
+				03BC116C15459AAF0097B896 /* PageViewController.m */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
 		};
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
@@ -402,8 +433,6 @@
 			children = (
 				03CC452E1540882C00737AD1 /* FAQList.h */,
 				03CC452F1540882C00737AD1 /* FAQList.m */,
-				03CC45311540893400737AD1 /* FAQDetail.h */,
-				03CC45321540893400737AD1 /* FAQDetail.m */,
 			);
 			name = FAQs;
 			sourceTree = SOURCE_ROOT;
@@ -429,8 +458,6 @@
 			children = (
 				03CC454515415C2F00737AD1 /* AlertList.h */,
 				03CC454615415C2F00737AD1 /* AlertList.m */,
-				03CC454815415CDD00737AD1 /* AlertDetail.h */,
-				03CC454915415CDD00737AD1 /* AlertDetail.m */,
 			);
 			name = Alerts;
 			path = "alpha-conferences";
@@ -441,8 +468,6 @@
 			children = (
 				03CC454F154161EC00737AD1 /* SpecialOfferList.h */,
 				03CC4550154161EC00737AD1 /* SpecialOfferList.m */,
-				03CC4552154162F100737AD1 /* SpecialOfferDetail.h */,
-				03CC4553154162F100737AD1 /* SpecialOfferDetail.m */,
 			);
 			name = SpecialOffers;
 			path = "alpha-conferences";
@@ -519,6 +544,8 @@
 		7E401F03153C18FD00DA78D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				039848AB15457AFF00151128 /* CoreLocation.framework */,
+				033442BA154570CC00562EEC /* MapKit.framework */,
 				7E34941C153EF8EA009E332C /* CoreText.framework */,
 				7E349415153EF38D009E332C /* libxml2.dylib */,
 				7E349413153EF381009E332C /* QuartzCore.framework */,
@@ -533,6 +560,8 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03BC116A15459A870097B896 /* PageView */,
+				033442B61545700C00562EEC /* Map */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
 				034A50461540635200ADB1C2 /* StandardController */,
@@ -850,17 +879,14 @@
 				03CC45281540812800737AD1 /* Constants.m in Sources */,
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
 				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
-				03CC45331540893400737AD1 /* FAQDetail.m in Sources */,
 				03CC453715408E6600737AD1 /* OtherEvents.m in Sources */,
 				03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */,
 				03CC453D154141E400737AD1 /* SpeakerList.m in Sources */,
 				03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */,
 				03CC4543154158C800737AD1 /* Home.m in Sources */,
 				03CC454715415C2F00737AD1 /* AlertList.m in Sources */,
-				03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */,
 				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
 				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
-				03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */,
 				03CC45571541664800737AD1 /* Programme.m in Sources */,
 				03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */,
 				03CC45601541884500737AD1 /* SessionDetail.m in Sources */,
@@ -869,6 +895,10 @@
 				03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */,
 				03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */,
 				032A8B71154200CB001B55DF /* ImageRow.m in Sources */,
+				03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */,
+				033442B91545701D00562EEC /* MapController.m in Sources */,
+				039848AA15457A2D00151128 /* Pin.m in Sources */,
+				03BC116D15459AAF0097B896 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

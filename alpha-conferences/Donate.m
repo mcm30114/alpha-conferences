@@ -38,10 +38,9 @@
     if (c.donationTelephoneNumber.length > 0) {
         ButtonBarRow *smsRow = [[ButtonBarRow alloc] init];
         smsRow.button1Title = [NSString stringWithFormat:@"Text %@", c.donationTelephoneNumber];
-        smsRow.onButton1Selected = ^() {
+        smsRow.onButton1Selected = ^(UIViewController *controller) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", c.donationTelephoneNumber]]];
         };
-
         [items addObject:smsRow];
     }
     
@@ -49,10 +48,9 @@
     if (c.donationURL.length > 0) {
         ButtonBarRow *websiteRow = [[ButtonBarRow alloc] init];
         websiteRow.button1Title = @"Donate Online";
-        websiteRow.onButton1Selected = ^() {
+        websiteRow.onButton1Selected = ^(UIViewController *controller) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:c.donationURL]];
         };
-
         [items addObject:websiteRow];
     }
 }

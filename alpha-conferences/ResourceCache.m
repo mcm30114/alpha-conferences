@@ -15,10 +15,9 @@
     BOOL retina;
 }
 
+-(NSData *)synchronousDataForResource:(Resource *)resource;
 -(NSURL *)urlForResource:(Resource *)resource;
-
 -(UIImage *)placeholderImageForResource:(Resource *)resource;
-
 -(NSString *)cachePathForResource:(Resource *)resource;
 
 @end
@@ -51,27 +50,7 @@ static ResourceCache *_defaultResourceCache = nil;
 
 -(UIImage *)imageForResource:(Resource *)resource onComplete:(void (^)(UIImage *))onComplete {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *realData = nil;
-        NSString *fullPath = [self cachePathForResource:resource];
-        
-        if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
-            realData = [NSData dataWithContentsOfFile:fullPath];
-            
-        } else {
-            // doesn't exist on disk, so get it from network
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-            NSURL *url = [self urlForResource:resource];
-            realData = [NSData dataWithContentsOfURL:url];
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            
-            if (realData) {
-                // save the data to a file
-                NSError *err;
-                [[NSFileManager defaultManager] createDirectoryAtPath:[fullPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&err];
-                [realData writeToFile:fullPath atomically:YES];
-            }
-        }
-
+        NSData *realData = [self synchronousDataForResource:resource];
         if (realData) {
             UIImage *realImage = [UIImage imageWithData:realData];
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -79,8 +58,46 @@ static ResourceCache *_defaultResourceCache = nil;
             });
         }
     });
-    
     return [self placeholderImageForResource:resource];
+}
+
+
+-(void)dataForResource:(Resource *)resource onComplete:(void (^)(NSData *))onComplete {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [self synchronousDataForResource:resource];
+        if (data) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                onComplete(data);
+            });
+        }
+    });
+}
+
+
+// internal
+-(NSData *)synchronousDataForResource:(Resource *)resource {
+    NSData *data = nil;
+    NSString *fullPath = [self cachePathForResource:resource];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+        data = [NSData dataWithContentsOfFile:fullPath];
+        
+    } else {
+        // doesn't exist on disk, so get it from network
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        NSURL *url = [self urlForResource:resource];
+        data = [NSData dataWithContentsOfURL:url];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        if (data) {
+            // save the data to a file
+            NSError *err;
+            [[NSFileManager defaultManager] createDirectoryAtPath:[fullPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&err];
+            [data writeToFile:fullPath atomically:YES];
+        }
+    }
+    
+    return data;
 }
 
 

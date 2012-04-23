@@ -12,9 +12,9 @@
 @interface ButtonBarRow : NSObject
 
 @property (nonatomic, strong) NSString *button1Title;
-@property (nonatomic, copy) void (^onButton1Selected)();
+@property (nonatomic, copy) void (^onButton1Selected)(UIViewController *controller);
 
 @property (nonatomic, strong) NSString *button2Title;
-@property (nonatomic, copy) void (^onButton2Selected)();
+@property (nonatomic, copy) void (^onButton2Selected)(UIViewController *controller);
 
 @end

@@ -182,7 +182,7 @@
         
     } else if ([row isKindOfClass:[ButtonBarRow class]]) {
         
-        return [[ButtonCell alloc] initWithButtonBarRow:(ButtonBarRow *)row];
+        return [[ButtonCell alloc] initWithButtonBarRow:(ButtonBarRow *)row controller:self];
         
     } else if ([row isKindOfClass:[ImageRow class]]) {
         
