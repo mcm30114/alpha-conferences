@@ -45,12 +45,14 @@
         button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button1 setTitle:metadata.button1Title forState:UIControlStateNormal];
         [button1 addTarget:self action:@selector(handleButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+        [button1 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
         button1.enabled = (metadata.onButton1Selected != nil);
         
         if (metadata.button2Title) {
             button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [button2 setTitle:metadata.button2Title forState:UIControlStateNormal];
             [button2 addTarget:self action:@selector(handleButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+            [button2 setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
             button2.enabled = (metadata.onButton2Selected != nil);
         } else {
             button2 = nil;
