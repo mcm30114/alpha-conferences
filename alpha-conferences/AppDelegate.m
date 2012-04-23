@@ -126,13 +126,19 @@
     tabController.moreNavigationController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     tabController.viewControllers = tabControllers;
     self.tabBarController = tabController;
-    
+    self.tabBarController.delegate = self;
+  
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     [DataStore refresh];
     return YES;
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController willBeginCustomizingViewControllers:(NSArray *)viewControllers {
+  id modalViewCtrl = [[[tabBarController view] subviews] objectAtIndex:1];  
+  if([modalViewCtrl isKindOfClass:NSClassFromString(@"UITabBarCustomizeView")] == YES)
+    ((UINavigationBar*)[[modalViewCtrl subviews] objectAtIndex:0]).tintColor = [UIColor navigationBarTintColour];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
