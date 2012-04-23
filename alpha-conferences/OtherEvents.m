@@ -43,6 +43,7 @@
     r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+        childController.title = c.name;
         childController.model = [[ConferenceDetail alloc] initWithConference:c];
         [controller.navigationController pushViewController:childController animated:YES];
     };
