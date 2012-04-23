@@ -23,6 +23,7 @@
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
 		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
 		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
+		03BC116D15459AAF0097B896 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC116C15459AAF0097B896 /* PageViewController.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -151,6 +152,8 @@
 		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
 		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
 		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		03BC116B15459AAF0097B896 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = "alpha-conferences/PageViewController.h"; sourceTree = SOURCE_ROOT; };
+		03BC116C15459AAF0097B896 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = "alpha-conferences/PageViewController.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = "alpha-conferences/Alert.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conference.h; path = "alpha-conferences/Conference.h"; sourceTree = SOURCE_ROOT; };
@@ -339,6 +342,15 @@
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
 		};
+		03BC116A15459A870097B896 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				03BC116B15459AAF0097B896 /* PageViewController.h */,
+				03BC116C15459AAF0097B896 /* PageViewController.m */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
+		};
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +531,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03BC116A15459A870097B896 /* PageView */,
 				033442B61545700C00562EEC /* Map */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
@@ -815,6 +828,7 @@
 				03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */,
 				033442B91545701D00562EEC /* MapController.m in Sources */,
 				039848AA15457A2D00151128 /* Pin.m in Sources */,
+				03BC116D15459AAF0097B896 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
