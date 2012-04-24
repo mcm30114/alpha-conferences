@@ -13,12 +13,22 @@
 @class DataStore;
 
 
+typedef enum {
+    SessionTypeNone = 0,
+    SessionTypeMain = 1,
+    SessiontypeSeminarOption = 2,
+    SessionTypeSeminarSlot = 3,
+    SessionTypeBreak = 4,
+    SessionTypeAdmin = 5
+} SessionType;
+
+
 @interface Session : NSObject
 
 @property (nonatomic) NSInteger sessionId;
 @property (nonatomic) BOOL active;
 @property (nonatomic) NSInteger dayId;
-@property (nonatomic) NSInteger sessionTypeId;
+@property (nonatomic) SessionType type;
 @property (nonatomic) NSInteger roomId;
 @property (nonatomic) NSInteger streamId;
 @property (nonatomic) NSInteger sessionGroupId;

@@ -1,5 +1,5 @@
 //
-//  SessionType.h
+//  SessionTypeInfo.h
 //  AlphaConferences
 //
 //  Created by Erik Erskine on 17/04/2012.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SessionType : NSObject
+@interface SessionTypeInfo : NSObject
 
 @property (nonatomic) NSInteger sessionTypeId;
 @property (nonatomic) BOOL active;

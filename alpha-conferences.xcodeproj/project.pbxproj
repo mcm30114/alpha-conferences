@@ -33,7 +33,7 @@
 		03C32DC7153EBAD300E1B734 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB2153EBAD200E1B734 /* Room.m */; };
 		03C32DC8153EBAD300E1B734 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB4153EBAD200E1B734 /* Session.m */; };
 		03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB6153EBAD200E1B734 /* SessionGroup.m */; };
-		03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB8153EBAD200E1B734 /* SessionType.m */; };
+		03C32DCA153EBAD300E1B734 /* SessionTypeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */; };
 		03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBA153EBAD200E1B734 /* Speaker.m */; };
 		03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBC153EBAD200E1B734 /* SpecialOffer.m */; };
 		03C32DCD153EBAD300E1B734 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBE153EBAD200E1B734 /* Stream.m */; };
@@ -190,8 +190,8 @@
 		03C32DB4153EBAD200E1B734 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = "alpha-conferences/Session.m"; sourceTree = SOURCE_ROOT; };
 		03C32DB5153EBAD200E1B734 /* SessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionGroup.h; path = "alpha-conferences/SessionGroup.h"; sourceTree = SOURCE_ROOT; };
 		03C32DB6153EBAD200E1B734 /* SessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionGroup.m; path = "alpha-conferences/SessionGroup.m"; sourceTree = SOURCE_ROOT; };
-		03C32DB7153EBAD200E1B734 /* SessionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionType.h; path = "alpha-conferences/SessionType.h"; sourceTree = SOURCE_ROOT; };
-		03C32DB8153EBAD200E1B734 /* SessionType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionType.m; path = "alpha-conferences/SessionType.m"; sourceTree = SOURCE_ROOT; };
+		03C32DB7153EBAD200E1B734 /* SessionTypeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionTypeInfo.h; path = "alpha-conferences/SessionTypeInfo.h"; sourceTree = SOURCE_ROOT; };
+		03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionTypeInfo.m; path = "alpha-conferences/SessionTypeInfo.m"; sourceTree = SOURCE_ROOT; };
 		03C32DB9153EBAD200E1B734 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = "alpha-conferences/Speaker.h"; sourceTree = SOURCE_ROOT; };
 		03C32DBA153EBAD200E1B734 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = "alpha-conferences/Speaker.m"; sourceTree = SOURCE_ROOT; };
 		03C32DBB153EBAD200E1B734 /* SpecialOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOffer.h; path = "alpha-conferences/SpecialOffer.h"; sourceTree = SOURCE_ROOT; };
@@ -401,8 +401,8 @@
 				03C32DB4153EBAD200E1B734 /* Session.m */,
 				03C32DB5153EBAD200E1B734 /* SessionGroup.h */,
 				03C32DB6153EBAD200E1B734 /* SessionGroup.m */,
-				03C32DB7153EBAD200E1B734 /* SessionType.h */,
-				03C32DB8153EBAD200E1B734 /* SessionType.m */,
+				03C32DB7153EBAD200E1B734 /* SessionTypeInfo.h */,
+				03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */,
 				03C32DB9153EBAD200E1B734 /* Speaker.h */,
 				03C32DBA153EBAD200E1B734 /* Speaker.m */,
 				03C32DBB153EBAD200E1B734 /* SpecialOffer.h */,
@@ -858,7 +858,7 @@
 				03C32DC7153EBAD300E1B734 /* Room.m in Sources */,
 				03C32DC8153EBAD300E1B734 /* Session.m in Sources */,
 				03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */,
-				03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */,
+				03C32DCA153EBAD300E1B734 /* SessionTypeInfo.m in Sources */,
 				03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */,
 				03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */,
 				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,

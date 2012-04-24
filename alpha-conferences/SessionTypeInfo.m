@@ -1,16 +1,16 @@
 //
-//  SessionType.m
+//  SessionTypeInfo.m
 //  AlphaConferences
 //
 //  Created by Erik Erskine on 17/04/2012.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SessionType.h"
+#import "SessionTypeInfo.h"
 #import "NSDictionary+Alpha.h"
 
 
-@implementation SessionType
+@implementation SessionTypeInfo
 
 @synthesize sessionTypeId;
 @synthesize active;

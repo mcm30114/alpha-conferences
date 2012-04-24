@@ -16,7 +16,7 @@
 #import "Room.h"
 #import "Session.h"
 #import "SessionGroup.h"
-#import "SessionType.h"
+#import "SessionTypeInfo.h"
 #import "SpecialOffer.h"
 #import "Stream.h"
 #import "Venue.h"
