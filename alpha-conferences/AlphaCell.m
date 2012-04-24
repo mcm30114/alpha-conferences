@@ -48,7 +48,6 @@
                 UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
                 imageView.clipsToBounds = YES;
                 imageView.autoresizingMask = UIViewAutoresizingNone;
-//                imageView.contentMode = UIViewContentModeScaleAspectFit;
                 [self.contentView addSubview:imageView];
                 self.cellImageView = imageView;
             }
@@ -80,7 +79,8 @@
     }
     
     // calculate the available width for label minus the image/colour bar
-    CGFloat labelMaxWidth = self.contentView.bounds.size.width - (self.cellImageView.frame.size.width + (CELL_MARGIN * 3));        
+    int numberOfMargins = (self.cellImageView.image ? 3 : 2);
+    CGFloat labelMaxWidth = self.contentView.bounds.size.width - (self.cellImageView.frame.size.width + (CELL_MARGIN * numberOfMargins));        
     if (self.cellStyle == AlphaTableViewCellWithColourBar) {
         labelMaxWidth -= self.colourBar.frame.size.width;
     }
@@ -98,7 +98,11 @@
     if (CGRectGetWidth(detailTextLabelFrame) > labelMaxWidth) {
         CGSize detailTextLabelNewSize = [self.detailTextLabel.text sizeWithFont:[UIFont tableCellSubTitleFont] constrainedToSize:CGSizeMake(labelMaxWidth, 999) lineBreakMode:self.detailTextLabel.lineBreakMode];            
         detailTextLabelFrame.size = detailTextLabelNewSize;
-    }      
+    } 
+    
+    // adjust vertical centering of views
+    textLabelFrame.origin.y = CGRectGetMidY(self.contentView.bounds) - ((textLabelFrame.size.height + detailTextLabelFrame.size.height) / 2);
+    detailTextLabelFrame.origin.y = textLabelFrame.origin.y + textLabelFrame.size.height;
     
     // adjust position of views if nessassary
     if (self.cellStyle == AlphaTableViewCellWithImageRight) {
@@ -118,7 +122,7 @@
         NSLog(@"-------------------------");
         NSLog(@"contentView: h=%f", self.contentView.frame.size.height);
         NSLog(@"labelMaxWidth: %f", labelMaxWidth);
-        NSLog(@"UIImage size: w=%f, h=%f", self.imageView.image.size.width, self.imageView.image.size.height);
+        NSLog(@"UIImage size: w=%f, h=%f", self.cellImageView.image.size.width, self.cellImageView.image.size.height);
         NSLog(@"textLabelFrame: x=%f, y=%f, w=%f, h=%f", textLabelFrame.origin.x, textLabelFrame.origin.y, textLabelFrame.size.width, textLabelFrame.size.height);
         NSLog(@"detailTextLabelFrame: x=%f, y=%f, w=%f, h=%f", detailTextLabelFrame.origin.x, detailTextLabelFrame.origin.y, detailTextLabelFrame.size.width, detailTextLabelFrame.size.height);
         NSLog(@"cellImageViewFrame: x=%f, y=%f, w=%f, h=%f", cellImageViewFrame.origin.x, cellImageViewFrame.origin.y, cellImageViewFrame.size.width, cellImageViewFrame.size.height); 
@@ -133,14 +137,15 @@
 
 + (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType alphaTableViewCellStyle:(AlphaTableViewCellStyle)style textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewSize:(CGSize)imageViewSize {
     
-    CGFloat height = 0.0;
+    CGFloat height = CELL_MARGIN;
     
     // left and right margin between cell and tableview
     CGFloat OUTER_MARGIN = (tableView.style == UITableViewStyleGrouped ? 10.0 : 0.0);
 
     
     // maximum width that a label can be
-    CGFloat labelMaxWidth = (tableView.frame.size.width - (imageViewSize.width + (CELL_MARGIN * 3) + (OUTER_MARGIN * 2)));
+    int numberOfMargins = (imageViewSize.width > 0 ? 3 : 2);
+    CGFloat labelMaxWidth = (tableView.frame.size.width - (imageViewSize.width + (CELL_MARGIN * numberOfMargins) + (OUTER_MARGIN * 2)));
     
     // if cell is AlphaTableViewCellWithColourBar style then adjust label width to accomodate for the colour bar
     if (style == AlphaTableViewCellWithColourBar) {
@@ -160,16 +165,16 @@
         height += subTitleSize.height;
     }
     
-    // add extra margin above and below
+    // add extra margin below
     height += CELL_MARGIN;
     
     // make sure the cell accommodates the image and is no smaller than the default row height
     height = MAX(MAX(height, tableView.rowHeight), imageViewSize.height + (CELL_MARGIN * 2));
     
-    NSLog(@"Calculated Cell Height: %f", height);
-    NSLog(@"Calculated labelMaxWidth: %f", labelMaxWidth);
-    NSLog(@"-------------------------");
-    NSLog(@"***");
+//    NSLog(@"Calculated Cell Height: %f", height);
+//    NSLog(@"Calculated labelMaxWidth: %f", labelMaxWidth);
+//    NSLog(@"-------------------------");
+//    NSLog(@"***");
     
     return height;    
 }

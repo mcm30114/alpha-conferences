@@ -146,7 +146,7 @@
         
         AlphaRow *alphaRow = row;
         AlphaCell *cell = [[AlphaCell alloc] initWithStyle:alphaRow.style reuseIdentifier:nil];
-        cell.debugMode = YES;
+//        cell.debugMode = YES;
         
         cell.textLabel.text = alphaRow.text;
         cell.textLabel.font = [UIFont tableCellTitleFont];
