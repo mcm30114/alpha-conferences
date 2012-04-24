@@ -31,4 +31,11 @@
 }
 
 
++(NSDateFormatter *)twitterFormatter {
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    f.dateFormat = @"d MMMM - H:mm";
+    return f;
+}
+
+
 @end

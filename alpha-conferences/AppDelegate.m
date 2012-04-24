@@ -21,12 +21,15 @@
 #import "DataStore.h"
 #import "Constants.h"
 #import "HomeController.h"
+#import "TwitterFeed.h"
+#import "TwitterController.h"
 
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
+@synthesize refreshTimer = _refreshTimer;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -71,6 +74,14 @@
     mapsNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
     [tabControllers addObject:mapsNavController];
 
+    // twitter
+    TwitterController *twitterController = [[TwitterController alloc] initWithNibName:nil bundle:nil];
+    twitterController.title = @"Live Twitter Stream";
+    twitterController.tabBarItem.image = [UIImage imageNamed:@"twitter.png"];
+    UINavigationController *twitterNavController = [[UINavigationController alloc] initWithRootViewController:twitterController];
+    twitterNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+    [tabControllers addObject:twitterNavController];
+    
     // donate
     StandardController *donateController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
     donateController.model = [[Donate alloc] init];
@@ -127,7 +138,6 @@
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
-    [DataStore refresh];
     return YES;
 }
 
@@ -137,9 +147,9 @@
     ((UINavigationBar*)[[modalViewCtrl subviews] objectAtIndex:0]).tintColor = [UIColor navigationBarTintColour];
 }
 
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [self.refreshTimer invalidate];
 }
 
 
@@ -155,8 +165,10 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    self.refreshTimer = [NSTimer timerWithTimeInterval:TWITTER_REFRESH_INTERVAL target:[TwitterFeed class] selector:@selector(refresh) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.refreshTimer forMode:NSDefaultRunLoopMode];
     [DataStore refresh];
+    [TwitterFeed refresh];
 }
 
 
