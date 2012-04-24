@@ -141,7 +141,7 @@ static DataStore *latestAvailableInstance = nil;
         // session types
         sessionTypes = [NSMutableDictionary dictionary];
         for (NSDictionary *d in [body objectForKey:@"session_types"]) {
-            SessionType *st = [[SessionType alloc] initWithDictionary:d];
+            SessionTypeInfo *st = [[SessionTypeInfo alloc] initWithDictionary:d];
             if (st.active) {
                 [sessionTypes setObject:st forIntegerKey:st.sessionTypeId];
             }

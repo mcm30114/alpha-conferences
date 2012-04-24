@@ -10,7 +10,7 @@
 #import "DataStore.h"
 #import "AlphaRow.h"
 #import "StandardController.h"
-#import "FAQDetail.h"
+#import "PageViewController.h"
 
 
 @interface FAQList () {
@@ -38,9 +38,8 @@
     r.style = AlphaTableViewCellNormal;
     
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+        PageViewController *childController = [[PageViewController alloc] initWithPageTitle:f.question pageContent:f.answer];
         childController.title = f.question;
-        childController.model = [[FAQDetail alloc] initWithFAQ:f];
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;

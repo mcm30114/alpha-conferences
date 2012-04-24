@@ -67,7 +67,7 @@
             for (Session *s in [sessionsKeyedByHour objectForKey:time]) {
                 
                 // seminars are held back, and are shown by a child controller
-                if (s.sessionTypeId == 2) {
+                if (s.type == SessiontypeSeminarOption) {
                     [hiddenSessionsInSlot addObject:s];
                 } else {
 
@@ -77,12 +77,16 @@
                     alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     alphaRow.detailText = s.programmeDetailText;
                     alphaRow.barColour = s.stream.color;
-                    alphaRow.onSelected = ^(StandardController *controller) {
-                        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
-                        childController.title = s.name;
-                        childController.model = [[SessionDetail alloc] initWithSession:s data:data];
-                        [controller.navigationController pushViewController:childController animated:YES];
-                    };
+                    
+                    if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
+                        alphaRow.onSelected = ^(StandardController *controller) {
+                            StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                            childController.title = s.name;
+                            childController.model = [[SessionDetail alloc] initWithSession:s data:data];
+                            [controller.navigationController pushViewController:childController animated:YES];
+                        };
+                    }
+                    
                     [ps.rows addObject:alphaRow];
                 }
                 

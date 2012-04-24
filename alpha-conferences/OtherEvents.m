@@ -10,8 +10,8 @@
 #import "AlphaRow.h"
 #import "DataStore.h"
 #import "StandardController.h"
-#import "ConferenceDetail.h"
 #import "NSDateFormatter+Alpha.h"
+#import "HomeController.h"
 
 
 @interface OtherEvents () {
@@ -40,10 +40,11 @@
     NSDateFormatter *f = [NSDateFormatter mediumDateFormatter];
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = c.name;
+    r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-        childController.model = [[ConferenceDetail alloc] initWithConference:c];
+        HomeController *childController = [[HomeController alloc] initWithConference:c];
+        childController.title = c.name;
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;

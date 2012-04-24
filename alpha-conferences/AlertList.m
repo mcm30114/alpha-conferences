@@ -11,7 +11,7 @@
 #import "AlphaRow.h"
 #import "StandardController.h"
 #import "Alert.h"
-#import "AlertDetail.h"
+#import "PageViewController.h"
 
 
 @interface AlertList () {
@@ -39,8 +39,8 @@
     r.style = AlphaTableViewCellNormal;
     
     r.onSelected = ^(StandardController *controller) {
-        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
-        childController.model = [[AlertDetail alloc] initWithAlert:a];
+        PageViewController *childController = [[PageViewController alloc] initWithPageTitle:a.title pageContent:a.message];
+        childController.title = a.title;
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;

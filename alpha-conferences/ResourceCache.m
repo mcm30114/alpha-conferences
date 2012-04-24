@@ -53,6 +53,9 @@ static ResourceCache *_defaultResourceCache = nil;
         NSData *realData = [self synchronousDataForResource:resource];
         if (realData) {
             UIImage *realImage = [UIImage imageWithData:realData];
+            if (retina) {
+                realImage = [UIImage imageWithCGImage:realImage.CGImage scale:2.0 orientation:realImage.imageOrientation];
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 onComplete(realImage);
             });

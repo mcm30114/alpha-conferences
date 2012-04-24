@@ -23,6 +23,8 @@
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
 		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
 		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
+		039DA0691545B92300FDD3FF /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DA0681545B92300FDD3FF /* HomeController.m */; };
+		03BC116D15459AAF0097B896 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC116C15459AAF0097B896 /* PageViewController.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
 		03C32DC3153EBAD300E1B734 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA9153EBAD200E1B734 /* Day.m */; };
@@ -31,7 +33,7 @@
 		03C32DC7153EBAD300E1B734 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB2153EBAD200E1B734 /* Room.m */; };
 		03C32DC8153EBAD300E1B734 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB4153EBAD200E1B734 /* Session.m */; };
 		03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB6153EBAD200E1B734 /* SessionGroup.m */; };
-		03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB8153EBAD200E1B734 /* SessionType.m */; };
+		03C32DCA153EBAD300E1B734 /* SessionTypeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */; };
 		03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBA153EBAD200E1B734 /* Speaker.m */; };
 		03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBC153EBAD200E1B734 /* SpecialOffer.m */; };
 		03C32DCD153EBAD300E1B734 /* Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DBE153EBAD200E1B734 /* Stream.m */; };
@@ -39,17 +41,12 @@
 		03CC45281540812800737AD1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45271540812800737AD1 /* Constants.m */; };
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
-		03CC45331540893400737AD1 /* FAQDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45321540893400737AD1 /* FAQDetail.m */; };
 		03CC453715408E6600737AD1 /* OtherEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453615408E6600737AD1 /* OtherEvents.m */; };
-		03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45391540911F00737AD1 /* ConferenceDetail.m */; };
 		03CC453D154141E400737AD1 /* SpeakerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453C154141E400737AD1 /* SpeakerList.m */; };
 		03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453F1541561400737AD1 /* SpeakerDetail.m */; };
-		03CC4543154158C800737AD1 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4542154158C700737AD1 /* Home.m */; };
 		03CC454715415C2F00737AD1 /* AlertList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454615415C2F00737AD1 /* AlertList.m */; };
-		03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454915415CDD00737AD1 /* AlertDetail.m */; };
 		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
 		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
-		03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4553154162F100737AD1 /* SpecialOfferDetail.m */; };
 		03CC45571541664800737AD1 /* Programme.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45561541664800737AD1 /* Programme.m */; };
 		03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455C15417CE100737AD1 /* SeminarOptions.m */; };
 		03CC45601541884500737AD1 /* SessionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455F1541884400737AD1 /* SessionDetail.m */; };
@@ -87,6 +84,28 @@
 		7EF49FDE153D77410038ECBB /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF49FDD153D77410038ECBB /* cell-image.png */; };
 		7EF49FE1153DA67C0038ECBB /* SpeakerDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */; };
 		7EF49FE5153DAD8B0038ECBB /* AlphaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE4153DAD8B0038ECBB /* AlphaCell.m */; };
+		B70A861D15457D2C009E5A56 /* alerts.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860915457D2C009E5A56 /* alerts.png */; };
+		B70A861E15457D2C009E5A56 /* alerts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860A15457D2C009E5A56 /* alerts@2x.png */; };
+		B70A861F15457D2C009E5A56 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860B15457D2C009E5A56 /* donate.png */; };
+		B70A862015457D2C009E5A56 /* donate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860C15457D2C009E5A56 /* donate@2x.png */; };
+		B70A862115457D2C009E5A56 /* faqs.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860D15457D2C009E5A56 /* faqs.png */; };
+		B70A862215457D2C009E5A56 /* faqs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860E15457D2C009E5A56 /* faqs@2x.png */; };
+		B70A862315457D2C009E5A56 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860F15457D2C009E5A56 /* home.png */; };
+		B70A862415457D2C009E5A56 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861015457D2C009E5A56 /* home@2x.png */; };
+		B70A862515457D2C009E5A56 /* maps.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861115457D2C009E5A56 /* maps.png */; };
+		B70A862615457D2C009E5A56 /* maps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861215457D2C009E5A56 /* maps@2x.png */; };
+		B70A862715457D2C009E5A56 /* other-events.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861315457D2C009E5A56 /* other-events.png */; };
+		B70A862815457D2C009E5A56 /* other-events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861415457D2C009E5A56 /* other-events@2x.png */; };
+		B70A862915457D2C009E5A56 /* programme.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861515457D2C009E5A56 /* programme.png */; };
+		B70A862A15457D2C009E5A56 /* programme@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861615457D2C009E5A56 /* programme@2x.png */; };
+		B70A862B15457D2C009E5A56 /* speakers.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861715457D2C009E5A56 /* speakers.png */; };
+		B70A862C15457D2C009E5A56 /* speakers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861815457D2C009E5A56 /* speakers@2x.png */; };
+		B70A862D15457D2C009E5A56 /* special-offers.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861915457D2C009E5A56 /* special-offers.png */; };
+		B70A862E15457D2C009E5A56 /* special-offers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861A15457D2C009E5A56 /* special-offers@2x.png */; };
+		B70A862F15457D2C009E5A56 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861B15457D2C009E5A56 /* twitter.png */; };
+		B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861C15457D2C009E5A56 /* twitter@2x.png */; };
+		B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A864515459228009E5A56 /* iPhoneIcon.png */; };
+		B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +174,10 @@
 		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
 		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
 		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		039DA0671545B92300FDD3FF /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = "alpha-conferences/HomeController.h"; sourceTree = SOURCE_ROOT; };
+		039DA0681545B92300FDD3FF /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = "alpha-conferences/HomeController.m"; sourceTree = SOURCE_ROOT; };
+		03BC116B15459AAF0097B896 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = "alpha-conferences/PageViewController.h"; sourceTree = SOURCE_ROOT; };
+		03BC116C15459AAF0097B896 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = "alpha-conferences/PageViewController.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
 		03C32DA5153EBAD200E1B734 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = "alpha-conferences/Alert.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA6153EBAD200E1B734 /* Conference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Conference.h; path = "alpha-conferences/Conference.h"; sourceTree = SOURCE_ROOT; };
@@ -171,8 +194,8 @@
 		03C32DB4153EBAD200E1B734 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Session.m; path = "alpha-conferences/Session.m"; sourceTree = SOURCE_ROOT; };
 		03C32DB5153EBAD200E1B734 /* SessionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionGroup.h; path = "alpha-conferences/SessionGroup.h"; sourceTree = SOURCE_ROOT; };
 		03C32DB6153EBAD200E1B734 /* SessionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionGroup.m; path = "alpha-conferences/SessionGroup.m"; sourceTree = SOURCE_ROOT; };
-		03C32DB7153EBAD200E1B734 /* SessionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionType.h; path = "alpha-conferences/SessionType.h"; sourceTree = SOURCE_ROOT; };
-		03C32DB8153EBAD200E1B734 /* SessionType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionType.m; path = "alpha-conferences/SessionType.m"; sourceTree = SOURCE_ROOT; };
+		03C32DB7153EBAD200E1B734 /* SessionTypeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionTypeInfo.h; path = "alpha-conferences/SessionTypeInfo.h"; sourceTree = SOURCE_ROOT; };
+		03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionTypeInfo.m; path = "alpha-conferences/SessionTypeInfo.m"; sourceTree = SOURCE_ROOT; };
 		03C32DB9153EBAD200E1B734 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Speaker.h; path = "alpha-conferences/Speaker.h"; sourceTree = SOURCE_ROOT; };
 		03C32DBA153EBAD200E1B734 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Speaker.m; path = "alpha-conferences/Speaker.m"; sourceTree = SOURCE_ROOT; };
 		03C32DBB153EBAD200E1B734 /* SpecialOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOffer.h; path = "alpha-conferences/SpecialOffer.h"; sourceTree = SOURCE_ROOT; };
@@ -187,28 +210,18 @@
 		03CC452B154081C000737AD1 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		03CC452E1540882C00737AD1 /* FAQList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQList.h; path = "alpha-conferences/FAQList.h"; sourceTree = SOURCE_ROOT; };
 		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "alpha-conferences/FAQList.m"; sourceTree = SOURCE_ROOT; };
-		03CC45311540893400737AD1 /* FAQDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAQDetail.h; path = "alpha-conferences/FAQDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC45321540893400737AD1 /* FAQDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQDetail.m; path = "alpha-conferences/FAQDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC453515408E6600737AD1 /* OtherEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherEvents.h; path = "alpha-conferences/OtherEvents.h"; sourceTree = SOURCE_ROOT; };
 		03CC453615408E6600737AD1 /* OtherEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherEvents.m; path = "alpha-conferences/OtherEvents.m"; sourceTree = SOURCE_ROOT; };
-		03CC45381540911F00737AD1 /* ConferenceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConferenceDetail.h; path = "alpha-conferences/ConferenceDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC45391540911F00737AD1 /* ConferenceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConferenceDetail.m; path = "alpha-conferences/ConferenceDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC453B154141E400737AD1 /* SpeakerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerList.h; path = "alpha-conferences/SpeakerList.h"; sourceTree = SOURCE_ROOT; };
 		03CC453C154141E400737AD1 /* SpeakerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerList.m; path = "alpha-conferences/SpeakerList.m"; sourceTree = SOURCE_ROOT; };
 		03CC453E1541561400737AD1 /* SpeakerDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerDetail.h; path = "alpha-conferences/SpeakerDetail.h"; sourceTree = SOURCE_ROOT; };
 		03CC453F1541561400737AD1 /* SpeakerDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetail.m; path = "alpha-conferences/SpeakerDetail.m"; sourceTree = SOURCE_ROOT; };
-		03CC4541154158C700737AD1 /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Home.h; path = "alpha-conferences/Home.h"; sourceTree = SOURCE_ROOT; };
-		03CC4542154158C700737AD1 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "alpha-conferences/Home.m"; sourceTree = SOURCE_ROOT; };
 		03CC454515415C2F00737AD1 /* AlertList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertList.h; path = "alpha-conferences/AlertList.h"; sourceTree = SOURCE_ROOT; };
 		03CC454615415C2F00737AD1 /* AlertList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertList.m; path = "alpha-conferences/AlertList.m"; sourceTree = SOURCE_ROOT; };
-		03CC454815415CDD00737AD1 /* AlertDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertDetail.h; path = "alpha-conferences/AlertDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC454915415CDD00737AD1 /* AlertDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertDetail.m; path = "alpha-conferences/AlertDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC454B15415EE700737AD1 /* Donate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Donate.h; path = "alpha-conferences/Donate.h"; sourceTree = SOURCE_ROOT; };
 		03CC454C15415EE800737AD1 /* Donate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Donate.m; path = "alpha-conferences/Donate.m"; sourceTree = SOURCE_ROOT; };
 		03CC454F154161EC00737AD1 /* SpecialOfferList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferList.h; path = "alpha-conferences/SpecialOfferList.h"; sourceTree = SOURCE_ROOT; };
 		03CC4550154161EC00737AD1 /* SpecialOfferList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferList.m; path = "alpha-conferences/SpecialOfferList.m"; sourceTree = SOURCE_ROOT; };
-		03CC4552154162F100737AD1 /* SpecialOfferDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecialOfferDetail.h; path = "alpha-conferences/SpecialOfferDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC4553154162F100737AD1 /* SpecialOfferDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecialOfferDetail.m; path = "alpha-conferences/SpecialOfferDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC45551541664800737AD1 /* Programme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Programme.h; path = "alpha-conferences/Programme.h"; sourceTree = SOURCE_ROOT; };
 		03CC45561541664800737AD1 /* Programme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Programme.m; path = "alpha-conferences/Programme.m"; sourceTree = SOURCE_ROOT; };
 		03CC455B15417CE100737AD1 /* SeminarOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeminarOptions.h; path = "alpha-conferences/SeminarOptions.h"; sourceTree = SOURCE_ROOT; };
@@ -270,6 +283,28 @@
 		7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetailController.m; path = "alpha-conferences/SpeakerDetailController.m"; sourceTree = SOURCE_ROOT; };
 		7EF49FE3153DAD8B0038ECBB /* AlphaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaCell.h; sourceTree = "<group>"; };
 		7EF49FE4153DAD8B0038ECBB /* AlphaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaCell.m; sourceTree = "<group>"; };
+		B70A860915457D2C009E5A56 /* alerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alerts.png; path = "alpha-conferences/alerts.png"; sourceTree = SOURCE_ROOT; };
+		B70A860A15457D2C009E5A56 /* alerts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "alerts@2x.png"; path = "alpha-conferences/alerts@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A860B15457D2C009E5A56 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donate.png; path = "alpha-conferences/donate.png"; sourceTree = SOURCE_ROOT; };
+		B70A860C15457D2C009E5A56 /* donate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "donate@2x.png"; path = "alpha-conferences/donate@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A860D15457D2C009E5A56 /* faqs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = faqs.png; path = "alpha-conferences/faqs.png"; sourceTree = SOURCE_ROOT; };
+		B70A860E15457D2C009E5A56 /* faqs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "faqs@2x.png"; path = "alpha-conferences/faqs@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A860F15457D2C009E5A56 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = "alpha-conferences/home.png"; sourceTree = SOURCE_ROOT; };
+		B70A861015457D2C009E5A56 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home@2x.png"; path = "alpha-conferences/home@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861115457D2C009E5A56 /* maps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maps.png; path = "alpha-conferences/maps.png"; sourceTree = SOURCE_ROOT; };
+		B70A861215457D2C009E5A56 /* maps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maps@2x.png"; path = "alpha-conferences/maps@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861315457D2C009E5A56 /* other-events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "other-events.png"; path = "alpha-conferences/other-events.png"; sourceTree = SOURCE_ROOT; };
+		B70A861415457D2C009E5A56 /* other-events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "other-events@2x.png"; path = "alpha-conferences/other-events@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861515457D2C009E5A56 /* programme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = programme.png; path = "alpha-conferences/programme.png"; sourceTree = SOURCE_ROOT; };
+		B70A861615457D2C009E5A56 /* programme@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "programme@2x.png"; path = "alpha-conferences/programme@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861715457D2C009E5A56 /* speakers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speakers.png; path = "alpha-conferences/speakers.png"; sourceTree = SOURCE_ROOT; };
+		B70A861815457D2C009E5A56 /* speakers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "speakers@2x.png"; path = "alpha-conferences/speakers@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861915457D2C009E5A56 /* special-offers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "special-offers.png"; path = "alpha-conferences/special-offers.png"; sourceTree = SOURCE_ROOT; };
+		B70A861A15457D2C009E5A56 /* special-offers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "special-offers@2x.png"; path = "alpha-conferences/special-offers@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A861B15457D2C009E5A56 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = "alpha-conferences/twitter.png"; sourceTree = SOURCE_ROOT; };
+		B70A861C15457D2C009E5A56 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "alpha-conferences/twitter@2x.png"; sourceTree = SOURCE_ROOT; };
+		B70A864515459228009E5A56 /* iPhoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneIcon.png; path = "alpha-conferences/iPhoneIcon.png"; sourceTree = SOURCE_ROOT; };
+		B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneIcon@2x.png"; path = "alpha-conferences/iPhoneIcon@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +382,15 @@
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
 		};
+		03BC116A15459A870097B896 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				03BC116B15459AAF0097B896 /* PageViewController.h */,
+				03BC116C15459AAF0097B896 /* PageViewController.m */,
+			);
+			name = PageView;
+			sourceTree = "<group>";
+		};
 		03C32DA2153EB9C100E1B734 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,8 +409,8 @@
 				03C32DB4153EBAD200E1B734 /* Session.m */,
 				03C32DB5153EBAD200E1B734 /* SessionGroup.h */,
 				03C32DB6153EBAD200E1B734 /* SessionGroup.m */,
-				03C32DB7153EBAD200E1B734 /* SessionType.h */,
-				03C32DB8153EBAD200E1B734 /* SessionType.m */,
+				03C32DB7153EBAD200E1B734 /* SessionTypeInfo.h */,
+				03C32DB8153EBAD200E1B734 /* SessionTypeInfo.m */,
 				03C32DB9153EBAD200E1B734 /* Speaker.h */,
 				03C32DBA153EBAD200E1B734 /* Speaker.m */,
 				03C32DBB153EBAD200E1B734 /* SpecialOffer.h */,
@@ -394,8 +438,6 @@
 			children = (
 				03CC452E1540882C00737AD1 /* FAQList.h */,
 				03CC452F1540882C00737AD1 /* FAQList.m */,
-				03CC45311540893400737AD1 /* FAQDetail.h */,
-				03CC45321540893400737AD1 /* FAQDetail.m */,
 			);
 			name = FAQs;
 			sourceTree = SOURCE_ROOT;
@@ -403,12 +445,10 @@
 		03CC453415408E2900737AD1 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				039DA0671545B92300FDD3FF /* HomeController.h */,
+				039DA0681545B92300FDD3FF /* HomeController.m */,
 				03CC453515408E6600737AD1 /* OtherEvents.h */,
 				03CC453615408E6600737AD1 /* OtherEvents.m */,
-				03CC45381540911F00737AD1 /* ConferenceDetail.h */,
-				03CC45391540911F00737AD1 /* ConferenceDetail.m */,
-				03CC4541154158C700737AD1 /* Home.h */,
-				03CC4542154158C700737AD1 /* Home.m */,
 				03CC454B15415EE700737AD1 /* Donate.h */,
 				03CC454C15415EE800737AD1 /* Donate.m */,
 			);
@@ -421,8 +461,6 @@
 			children = (
 				03CC454515415C2F00737AD1 /* AlertList.h */,
 				03CC454615415C2F00737AD1 /* AlertList.m */,
-				03CC454815415CDD00737AD1 /* AlertDetail.h */,
-				03CC454915415CDD00737AD1 /* AlertDetail.m */,
 			);
 			name = Alerts;
 			path = "alpha-conferences";
@@ -433,8 +471,6 @@
 			children = (
 				03CC454F154161EC00737AD1 /* SpecialOfferList.h */,
 				03CC4550154161EC00737AD1 /* SpecialOfferList.m */,
-				03CC4552154162F100737AD1 /* SpecialOfferDetail.h */,
-				03CC4553154162F100737AD1 /* SpecialOfferDetail.m */,
 			);
 			name = SpecialOffers;
 			path = "alpha-conferences";
@@ -527,6 +563,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				03BC116A15459A870097B896 /* PageView */,
 				033442B61545700C00562EEC /* Map */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
 				034A506F15407CE900ADB1C2 /* DataStore */,
@@ -634,6 +671,28 @@
 				7E4AA4761545BE44004D198D /* blank-75x75@2x.png */,
 				7E4AA4771545BE44004D198D /* blank-100x100@2x.png */,
 				7E4AA4781545BE44004D198D /* blank-320x120@2x.png */,
+				B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */,
+				B70A864515459228009E5A56 /* iPhoneIcon.png */,
+				B70A860915457D2C009E5A56 /* alerts.png */,
+				B70A860A15457D2C009E5A56 /* alerts@2x.png */,
+				B70A860B15457D2C009E5A56 /* donate.png */,
+				B70A860C15457D2C009E5A56 /* donate@2x.png */,
+				B70A860D15457D2C009E5A56 /* faqs.png */,
+				B70A860E15457D2C009E5A56 /* faqs@2x.png */,
+				B70A860F15457D2C009E5A56 /* home.png */,
+				B70A861015457D2C009E5A56 /* home@2x.png */,
+				B70A861115457D2C009E5A56 /* maps.png */,
+				B70A861215457D2C009E5A56 /* maps@2x.png */,
+				B70A861315457D2C009E5A56 /* other-events.png */,
+				B70A861415457D2C009E5A56 /* other-events@2x.png */,
+				B70A861515457D2C009E5A56 /* programme.png */,
+				B70A861615457D2C009E5A56 /* programme@2x.png */,
+				B70A861715457D2C009E5A56 /* speakers.png */,
+				B70A861815457D2C009E5A56 /* speakers@2x.png */,
+				B70A861915457D2C009E5A56 /* special-offers.png */,
+				B70A861A15457D2C009E5A56 /* special-offers@2x.png */,
+				B70A861B15457D2C009E5A56 /* twitter.png */,
+				B70A861C15457D2C009E5A56 /* twitter@2x.png */,
 				032A8B661541F5AE001B55DF /* blank-50x50.png */,
 				032A8B671541F5AE001B55DF /* blank-75x75.png */,
 				032A8B681541F5AE001B55DF /* blank-100x100.png */,
@@ -765,6 +824,28 @@
 				7E4AA47A1545BE44004D198D /* blank-75x75@2x.png in Resources */,
 				7E4AA47B1545BE44004D198D /* blank-100x100@2x.png in Resources */,
 				7E4AA47C1545BE44004D198D /* blank-320x120@2x.png in Resources */,
+				B70A861D15457D2C009E5A56 /* alerts.png in Resources */,
+				B70A861E15457D2C009E5A56 /* alerts@2x.png in Resources */,
+				B70A861F15457D2C009E5A56 /* donate.png in Resources */,
+				B70A862015457D2C009E5A56 /* donate@2x.png in Resources */,
+				B70A862115457D2C009E5A56 /* faqs.png in Resources */,
+				B70A862215457D2C009E5A56 /* faqs@2x.png in Resources */,
+				B70A862315457D2C009E5A56 /* home.png in Resources */,
+				B70A862415457D2C009E5A56 /* home@2x.png in Resources */,
+				B70A862515457D2C009E5A56 /* maps.png in Resources */,
+				B70A862615457D2C009E5A56 /* maps@2x.png in Resources */,
+				B70A862715457D2C009E5A56 /* other-events.png in Resources */,
+				B70A862815457D2C009E5A56 /* other-events@2x.png in Resources */,
+				B70A862915457D2C009E5A56 /* programme.png in Resources */,
+				B70A862A15457D2C009E5A56 /* programme@2x.png in Resources */,
+				B70A862B15457D2C009E5A56 /* speakers.png in Resources */,
+				B70A862C15457D2C009E5A56 /* speakers@2x.png in Resources */,
+				B70A862D15457D2C009E5A56 /* special-offers.png in Resources */,
+				B70A862E15457D2C009E5A56 /* special-offers@2x.png in Resources */,
+				B70A862F15457D2C009E5A56 /* twitter.png in Resources */,
+				B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */,
+				B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */,
+				B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,7 +874,7 @@
 				03C32DC7153EBAD300E1B734 /* Room.m in Sources */,
 				03C32DC8153EBAD300E1B734 /* Session.m in Sources */,
 				03C32DC9153EBAD300E1B734 /* SessionGroup.m in Sources */,
-				03C32DCA153EBAD300E1B734 /* SessionType.m in Sources */,
+				03C32DCA153EBAD300E1B734 /* SessionTypeInfo.m in Sources */,
 				03C32DCB153EBAD300E1B734 /* Speaker.m in Sources */,
 				03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */,
 				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,
@@ -809,17 +890,12 @@
 				03CC45281540812800737AD1 /* Constants.m in Sources */,
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
 				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
-				03CC45331540893400737AD1 /* FAQDetail.m in Sources */,
 				03CC453715408E6600737AD1 /* OtherEvents.m in Sources */,
-				03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */,
 				03CC453D154141E400737AD1 /* SpeakerList.m in Sources */,
 				03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */,
-				03CC4543154158C800737AD1 /* Home.m in Sources */,
 				03CC454715415C2F00737AD1 /* AlertList.m in Sources */,
-				03CC454A15415CDD00737AD1 /* AlertDetail.m in Sources */,
 				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
 				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
-				03CC4554154162F100737AD1 /* SpecialOfferDetail.m in Sources */,
 				03CC45571541664800737AD1 /* Programme.m in Sources */,
 				03CC455D15417CE100737AD1 /* SeminarOptions.m in Sources */,
 				03CC45601541884500737AD1 /* SessionDetail.m in Sources */,
@@ -831,6 +907,8 @@
 				03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */,
 				033442B91545701D00562EEC /* MapController.m in Sources */,
 				039848AA15457A2D00151128 /* Pin.m in Sources */,
+				03BC116D15459AAF0097B896 /* PageViewController.m in Sources */,
+				039DA0691545B92300FDD3FF /* HomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

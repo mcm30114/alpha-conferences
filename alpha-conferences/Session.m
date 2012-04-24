@@ -27,7 +27,7 @@
 @synthesize sessionId;
 @synthesize active;
 @synthesize dayId;
-@synthesize sessionTypeId;
+@synthesize type;
 @synthesize roomId;
 @synthesize streamId;
 @synthesize sessionGroupId;
@@ -44,7 +44,7 @@
         self.sessionId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
         self.dayId = [dictionary integerForKey:@"day"];
-        self.sessionTypeId = [dictionary integerForKey:@"session_type"];
+        self.type = [dictionary integerForKey:@"session_type"];
         self.roomId = [dictionary integerForKey:@"room"];
         self.streamId = [dictionary integerForKey:@"stream"];
         self.sessionGroupId = [dictionary integerForKey:@"session_group"];
