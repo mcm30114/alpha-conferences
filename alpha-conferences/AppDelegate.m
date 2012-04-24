@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Home.h"
 #import "Programme.h"
 #import "ProgrammeController.h"
 #import "SpeakerList.h"
@@ -21,6 +20,7 @@
 #import "SpecialOfferList.h"
 #import "DataStore.h"
 #import "Constants.h"
+#import "HomeController.h"
 
 
 @implementation AppDelegate
@@ -34,10 +34,9 @@
     NSTimeZone.defaultTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
     
     NSMutableArray *tabControllers = [NSMutableArray  array];
-    
+
     // home
-    StandardController *homeController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-    homeController.model = [[Home alloc] init];
+    HomeController *homeController = [[HomeController alloc] initForHome];
     homeController.title = CONFERENCE_TITLE;
     UINavigationController *homeNavController = [[UINavigationController alloc] initWithRootViewController:homeController];
     homeNavController.tabBarItem.title = @"Home";

@@ -23,6 +23,7 @@
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
 		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
 		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
+		039DA0691545B92300FDD3FF /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DA0681545B92300FDD3FF /* HomeController.m */; };
 		03BC116D15459AAF0097B896 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC116C15459AAF0097B896 /* PageViewController.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
@@ -41,10 +42,8 @@
 		03CC452C154081C000737AD1 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452B154081C000737AD1 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		03CC45301540882C00737AD1 /* FAQList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC452F1540882C00737AD1 /* FAQList.m */; };
 		03CC453715408E6600737AD1 /* OtherEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453615408E6600737AD1 /* OtherEvents.m */; };
-		03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45391540911F00737AD1 /* ConferenceDetail.m */; };
 		03CC453D154141E400737AD1 /* SpeakerList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453C154141E400737AD1 /* SpeakerList.m */; };
 		03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC453F1541561400737AD1 /* SpeakerDetail.m */; };
-		03CC4543154158C800737AD1 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4542154158C700737AD1 /* Home.m */; };
 		03CC454715415C2F00737AD1 /* AlertList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454615415C2F00737AD1 /* AlertList.m */; };
 		03CC454D15415EE800737AD1 /* Donate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC454C15415EE800737AD1 /* Donate.m */; };
 		03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC4550154161EC00737AD1 /* SpecialOfferList.m */; };
@@ -171,6 +170,8 @@
 		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
 		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
 		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		039DA0671545B92300FDD3FF /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = "alpha-conferences/HomeController.h"; sourceTree = SOURCE_ROOT; };
+		039DA0681545B92300FDD3FF /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = "alpha-conferences/HomeController.m"; sourceTree = SOURCE_ROOT; };
 		03BC116B15459AAF0097B896 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = "alpha-conferences/PageViewController.h"; sourceTree = SOURCE_ROOT; };
 		03BC116C15459AAF0097B896 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = "alpha-conferences/PageViewController.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
@@ -207,14 +208,10 @@
 		03CC452F1540882C00737AD1 /* FAQList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAQList.m; path = "alpha-conferences/FAQList.m"; sourceTree = SOURCE_ROOT; };
 		03CC453515408E6600737AD1 /* OtherEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherEvents.h; path = "alpha-conferences/OtherEvents.h"; sourceTree = SOURCE_ROOT; };
 		03CC453615408E6600737AD1 /* OtherEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherEvents.m; path = "alpha-conferences/OtherEvents.m"; sourceTree = SOURCE_ROOT; };
-		03CC45381540911F00737AD1 /* ConferenceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConferenceDetail.h; path = "alpha-conferences/ConferenceDetail.h"; sourceTree = SOURCE_ROOT; };
-		03CC45391540911F00737AD1 /* ConferenceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConferenceDetail.m; path = "alpha-conferences/ConferenceDetail.m"; sourceTree = SOURCE_ROOT; };
 		03CC453B154141E400737AD1 /* SpeakerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerList.h; path = "alpha-conferences/SpeakerList.h"; sourceTree = SOURCE_ROOT; };
 		03CC453C154141E400737AD1 /* SpeakerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerList.m; path = "alpha-conferences/SpeakerList.m"; sourceTree = SOURCE_ROOT; };
 		03CC453E1541561400737AD1 /* SpeakerDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerDetail.h; path = "alpha-conferences/SpeakerDetail.h"; sourceTree = SOURCE_ROOT; };
 		03CC453F1541561400737AD1 /* SpeakerDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetail.m; path = "alpha-conferences/SpeakerDetail.m"; sourceTree = SOURCE_ROOT; };
-		03CC4541154158C700737AD1 /* Home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Home.h; path = "alpha-conferences/Home.h"; sourceTree = SOURCE_ROOT; };
-		03CC4542154158C700737AD1 /* Home.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Home.m; path = "alpha-conferences/Home.m"; sourceTree = SOURCE_ROOT; };
 		03CC454515415C2F00737AD1 /* AlertList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertList.h; path = "alpha-conferences/AlertList.h"; sourceTree = SOURCE_ROOT; };
 		03CC454615415C2F00737AD1 /* AlertList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertList.m; path = "alpha-conferences/AlertList.m"; sourceTree = SOURCE_ROOT; };
 		03CC454B15415EE700737AD1 /* Donate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Donate.h; path = "alpha-conferences/Donate.h"; sourceTree = SOURCE_ROOT; };
@@ -440,12 +437,10 @@
 		03CC453415408E2900737AD1 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				039DA0671545B92300FDD3FF /* HomeController.h */,
+				039DA0681545B92300FDD3FF /* HomeController.m */,
 				03CC453515408E6600737AD1 /* OtherEvents.h */,
 				03CC453615408E6600737AD1 /* OtherEvents.m */,
-				03CC45381540911F00737AD1 /* ConferenceDetail.h */,
-				03CC45391540911F00737AD1 /* ConferenceDetail.m */,
-				03CC4541154158C700737AD1 /* Home.h */,
-				03CC4542154158C700737AD1 /* Home.m */,
 				03CC454B15415EE700737AD1 /* Donate.h */,
 				03CC454C15415EE800737AD1 /* Donate.m */,
 			);
@@ -880,10 +875,8 @@
 				03CC452C154081C000737AD1 /* JSONKit.m in Sources */,
 				03CC45301540882C00737AD1 /* FAQList.m in Sources */,
 				03CC453715408E6600737AD1 /* OtherEvents.m in Sources */,
-				03CC453A1540911F00737AD1 /* ConferenceDetail.m in Sources */,
 				03CC453D154141E400737AD1 /* SpeakerList.m in Sources */,
 				03CC45401541561400737AD1 /* SpeakerDetail.m in Sources */,
-				03CC4543154158C800737AD1 /* Home.m in Sources */,
 				03CC454715415C2F00737AD1 /* AlertList.m in Sources */,
 				03CC454D15415EE800737AD1 /* Donate.m in Sources */,
 				03CC4551154161EC00737AD1 /* SpecialOfferList.m in Sources */,
@@ -899,6 +892,7 @@
 				033442B91545701D00562EEC /* MapController.m in Sources */,
 				039848AA15457A2D00151128 /* Pin.m in Sources */,
 				03BC116D15459AAF0097B896 /* PageViewController.m in Sources */,
+				039DA0691545B92300FDD3FF /* HomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
