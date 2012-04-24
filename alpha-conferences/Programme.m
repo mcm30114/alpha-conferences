@@ -35,6 +35,9 @@
 
 -(void)reloadData {
     DataStore *data = [DataStore latestAvailableInstance];
+    if (data.days.count == 0) {
+        return;
+    }
     
     self.pages = [NSMutableArray array];
     self.pagesKeyedByDayId = [NSMutableDictionary dictionary];

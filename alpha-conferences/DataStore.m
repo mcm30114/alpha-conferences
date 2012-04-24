@@ -69,11 +69,9 @@ static DataStore *latestAvailableInstance = nil;
 
         NSError *err = nil;
         NSData *raw = [NSData dataWithContentsOfURL:url options:0 error:&err];
-        NSDictionary *main = [[JSONDecoder decoder] objectWithData:raw];
-        
-        NSString *status = [main objectForKey:@"status"];
-        if (![status isEqualToString:@"ok"]) {
-            NSLog(@"fail");
+        NSDictionary *main = nil;
+        if (raw) {
+            main = [[JSONDecoder decoder] objectWithData:raw];
         }
         
         NSDictionary *body = [main objectForKey:@"body"];
