@@ -40,6 +40,7 @@
     NSDateFormatter *f = [NSDateFormatter mediumDateFormatter];
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = c.name;
+    r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
     r.onSelected = ^(StandardController *controller) {
         HomeController *childController = [[HomeController alloc] initWithConference:c];
