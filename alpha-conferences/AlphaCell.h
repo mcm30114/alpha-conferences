@@ -19,6 +19,8 @@ typedef enum {
 @interface AlphaCell : UITableViewCell
 
 @property (nonatomic, strong) UIColor *barColour;
+@property (nonatomic, unsafe_unretained) UIImageView *cellImageView;
+@property (nonatomic) BOOL debugMode;
 
 - (id)initWithStyle:(AlphaTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 

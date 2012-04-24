@@ -146,6 +146,7 @@
         
         AlphaRow *alphaRow = row;
         AlphaCell *cell = [[AlphaCell alloc] initWithStyle:alphaRow.style reuseIdentifier:nil];
+        cell.debugMode = YES;
         
         cell.textLabel.text = alphaRow.text;
         cell.textLabel.font = [UIFont tableCellTitleFont];
@@ -163,8 +164,8 @@
         cell.barColour = alphaRow.barColour;
         
         if (alphaRow.imageResource) {
-            cell.imageView.image = [[ResourceCache defaultResourceCache] imageForResource:alphaRow.imageResource onComplete:^(UIImage *image) {
-                cell.imageView.image = image;
+            cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:alphaRow.imageResource onComplete:^(UIImage *image) {
+                cell.cellImageView.image = image;
             }];
         }
 

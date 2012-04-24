@@ -75,6 +75,7 @@
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = s.displayName;
     r.detailText = s.position;
+    r.style = AlphaTableViewCellWithImageLeft;
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.imageResource = [Resource resourceWithKey:s.imageKey type:ResourceTypeSpeakerImageSmall];
     r.onSelected = ^(StandardController *controller) {
