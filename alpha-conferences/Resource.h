@@ -18,7 +18,8 @@ typedef enum {
     ResourceTypeVenueImageSmall = 30,
     ResourceTypeVenueImageMedium = 31,
     ResourceTypeVenueImageLarge = 32,
-    ResourceTypeVenueFloorplan = 40
+    ResourceTypeVenueFloorplan = 40,
+    ResourceTypeTwitterAvatar = 50
 } ResourceType;
 
 

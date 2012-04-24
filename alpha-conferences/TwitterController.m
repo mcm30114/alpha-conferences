@@ -10,6 +10,7 @@
 #import "AlphaRow.h"
 #import "Constants.h"
 #import "TwitterFeed.h"
+#import "ResourceCache.h"
 
 
 @interface TwitterController () {
@@ -92,6 +93,10 @@
     cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
     cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.detailTextLabel.numberOfLines = 0;
+    
+    cell.imageView.image = [[ResourceCache defaultResourceCache] imageForResource:tweet.avatarResource onComplete:^(UIImage *image) {
+        cell.imageView.image = image;
+    }];
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;

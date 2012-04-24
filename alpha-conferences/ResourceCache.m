@@ -20,6 +20,8 @@
 -(UIImage *)placeholderImageForResource:(Resource *)resource;
 -(NSString *)cachePathForResource:(Resource *)resource;
 
++(UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size scale:(CGFloat)scale;
+
 @end
 
 
@@ -125,6 +127,10 @@ static ResourceCache *_defaultResourceCache = nil;
             return [NSURL URLWithString:[NSString stringWithFormat:@"venues/%@/%d.jpg", resource.key, (retina ? 200 : 100)] relativeToURL:baseURL];
         case ResourceTypeVenueFloorplan:
             return [NSURL URLWithString:[NSString stringWithFormat:@"venues/%@.pdf", resource.key] relativeToURL:baseURL];
+        case ResourceTypeTwitterAvatar:
+            return [NSURL URLWithString:[NSString stringWithFormat:@"http://api.twitter.com/1/users/profile_image?screen_name=%@&size=%@",
+                                         [resource.key stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                                         (retina ? @"bigger" : @"normal")]];
         default:
             return nil;
     }
@@ -144,9 +150,24 @@ static ResourceCache *_defaultResourceCache = nil;
         case ResourceTypeSpeakerImageLarge:
         case ResourceTypeVenueImageLarge:
             return [UIImage imageNamed:@"blank-100x100.png"];
+        case ResourceTypeTwitterAvatar:
+            return retina ? [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(73, 73) scale:2.0] : [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(48, 48) scale:1.0];
         default:
             return nil;
     }
+}
+
+
+// utilty method - move to UIImage category?
++(UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size scale:(CGFloat)scale {
+    CGRect r = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(r.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, r);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return [UIImage imageWithCGImage:image.CGImage scale:scale orientation:image.imageOrientation];
 }
 
 

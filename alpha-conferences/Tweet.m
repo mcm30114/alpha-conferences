@@ -42,7 +42,6 @@
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.dateFormat = @"EEE, d MMM yyyy HH:mm:ss Z";
         self.createdAt = [df dateFromString:[dictionary stringForKey:@"created_at"]];
-        NSLog(@"createdAt = %@ (%@)", createdAt, [dictionary stringForKey:@"created_at"]);
         
     }
     return self;
@@ -61,6 +60,11 @@
 
 - (NSURL *)URL {
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.twitter.com/%@/status/%@", fromUser, tweetIdStr]];
+}
+
+
+- (Resource *)avatarResource {
+    return [Resource resourceWithKey:self.fromUser type:ResourceTypeTwitterAvatar];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Resource.h"
 
 
 @interface Tweet : NSObject
@@ -16,5 +17,6 @@
 - (NSString *)displayName;
 - (NSString *)displayText;
 - (NSURL *)URL;
+- (Resource *)avatarResource;
 
 @end
