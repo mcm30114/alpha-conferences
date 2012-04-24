@@ -11,9 +11,14 @@
 
 #define CONFERENCE_ID 1
 
+#define TWITTER_REFRESH_INTERVAL 60
+
 extern NSString* const CONFERENCE_TITLE;
 
 extern NSString* const NOTIFICATION_DATA;
 extern NSString* const NOTIFICATION_FILE;
+extern NSString* const NOTIFICATION_TWITTER;
+
+extern NSString* const TWITTER_SEARCH_TERM;
 
 #endif

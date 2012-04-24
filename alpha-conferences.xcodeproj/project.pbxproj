@@ -21,9 +21,12 @@
 		034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A5056154067BE00ADB1C2 /* VenueListModel.m */; };
 		034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A505915406AF000ADB1C2 /* VenueDetailModel.m */; };
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
+		036F0EEF1546AC3C00647B47 /* TwitterFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F0EEE1546AC3C00647B47 /* TwitterFeed.m */; };
+		036F0EF21546B16900647B47 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F0EF11546B16900647B47 /* Tweet.m */; };
 		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
 		039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039848AB15457AFF00151128 /* CoreLocation.framework */; };
 		039DA0691545B92300FDD3FF /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 039DA0681545B92300FDD3FF /* HomeController.m */; };
+		03ACBC261546D20C00E62E9F /* TwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ACBC251546D20C00E62E9F /* TwitterController.m */; };
 		03BC116D15459AAF0097B896 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03BC116C15459AAF0097B896 /* PageViewController.m */; };
 		03C32DC1153EBAD300E1B734 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA5153EBAD200E1B734 /* Alert.m */; };
 		03C32DC2153EBAD300E1B734 /* Conference.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C32DA7153EBAD200E1B734 /* Conference.m */; };
@@ -171,11 +174,17 @@
 		034A505915406AF000ADB1C2 /* VenueDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueDetailModel.m; path = "alpha-conferences/VenueDetailModel.m"; sourceTree = SOURCE_ROOT; };
 		034A507015407CF600ADB1C2 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataStore.h; path = "alpha-conferences/DataStore.h"; sourceTree = SOURCE_ROOT; };
 		034A507115407CF600ADB1C2 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataStore.m; path = "alpha-conferences/DataStore.m"; sourceTree = SOURCE_ROOT; };
+		036F0EED1546AC3C00647B47 /* TwitterFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterFeed.h; path = "alpha-conferences/TwitterFeed.h"; sourceTree = SOURCE_ROOT; };
+		036F0EEE1546AC3C00647B47 /* TwitterFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterFeed.m; path = "alpha-conferences/TwitterFeed.m"; sourceTree = SOURCE_ROOT; };
+		036F0EF01546B16900647B47 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tweet.h; path = "alpha-conferences/Tweet.h"; sourceTree = SOURCE_ROOT; };
+		036F0EF11546B16900647B47 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tweet.m; path = "alpha-conferences/Tweet.m"; sourceTree = SOURCE_ROOT; };
 		039848A815457A2D00151128 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = "alpha-conferences/Pin.h"; sourceTree = SOURCE_ROOT; };
 		039848A915457A2D00151128 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = "alpha-conferences/Pin.m"; sourceTree = SOURCE_ROOT; };
 		039848AB15457AFF00151128 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		039DA0671545B92300FDD3FF /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeController.h; path = "alpha-conferences/HomeController.h"; sourceTree = SOURCE_ROOT; };
 		039DA0681545B92300FDD3FF /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeController.m; path = "alpha-conferences/HomeController.m"; sourceTree = SOURCE_ROOT; };
+		03ACBC241546D20C00E62E9F /* TwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterController.h; path = "alpha-conferences/TwitterController.h"; sourceTree = SOURCE_ROOT; };
+		03ACBC251546D20C00E62E9F /* TwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterController.m; path = "alpha-conferences/TwitterController.m"; sourceTree = SOURCE_ROOT; };
 		03BC116B15459AAF0097B896 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = "alpha-conferences/PageViewController.h"; sourceTree = SOURCE_ROOT; };
 		03BC116C15459AAF0097B896 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = "alpha-conferences/PageViewController.m"; sourceTree = SOURCE_ROOT; };
 		03C32DA4153EBAD200E1B734 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = "alpha-conferences/Alert.h"; sourceTree = SOURCE_ROOT; };
@@ -382,6 +391,19 @@
 			path = "alpha-conferences";
 			sourceTree = SOURCE_ROOT;
 		};
+		036F0EEC1546AC1B00647B47 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				036F0EED1546AC3C00647B47 /* TwitterFeed.h */,
+				036F0EEE1546AC3C00647B47 /* TwitterFeed.m */,
+				036F0EF01546B16900647B47 /* Tweet.h */,
+				036F0EF11546B16900647B47 /* Tweet.m */,
+				03ACBC241546D20C00E62E9F /* TwitterController.h */,
+				03ACBC251546D20C00E62E9F /* TwitterController.m */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
 		03BC116A15459A870097B896 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +585,7 @@
 		7E401F0A153C18FD00DA78D2 /* alpha-conferences */ = {
 			isa = PBXGroup;
 			children = (
+				036F0EEC1546AC1B00647B47 /* Twitter */,
 				03BC116A15459A870097B896 /* PageView */,
 				033442B61545700C00562EEC /* Map */,
 				03EBCE9B1541EB0500F70B00 /* Resources */,
@@ -909,6 +932,9 @@
 				039848AA15457A2D00151128 /* Pin.m in Sources */,
 				03BC116D15459AAF0097B896 /* PageViewController.m in Sources */,
 				039DA0691545B92300FDD3FF /* HomeController.m in Sources */,
+				036F0EEF1546AC3C00647B47 /* TwitterFeed.m in Sources */,
+				036F0EF21546B16900647B47 /* Tweet.m in Sources */,
+				03ACBC261546D20C00E62E9F /* TwitterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,6 @@
 +(NSDateFormatter *)longDateFormatter;
 +(NSDateFormatter *)mediumDateFormatter;
 +(NSDateFormatter *)timeFormatter;
++(NSDateFormatter *)twitterFormatter;
 
 @end

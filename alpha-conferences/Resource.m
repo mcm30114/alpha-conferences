@@ -42,6 +42,8 @@
         case ResourceTypeSpeakerImageLarge:
         case ResourceTypeVenueImageLarge:
             return CGSizeMake(100, 100);
+        case ResourceTypeTwitterAvatar:
+            return CGSizeMake(48, 48);
         default:
             return CGSizeZero;
     }

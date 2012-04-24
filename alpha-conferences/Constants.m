@@ -12,3 +12,6 @@ NSString* const CONFERENCE_TITLE = @"HTB Leadership Conference";
 
 NSString* const NOTIFICATION_DATA = @"NOTIFICATION_DATA";
 NSString* const NOTIFICATION_FILE = @"NOTIFICATION_FILE";
+NSString* const NOTIFICATION_TWITTER = @"NOTIFICATION_TWITTER";
+
+NSString* const TWITTER_SEARCH_TERM = @"#htbleadershipconf";
