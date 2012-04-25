@@ -31,5 +31,6 @@
 -(Session *)sessionWithId:(NSInteger)sessionId;
 -(Room *)roomWithId:(NSInteger)roomId;
 -(Venue *)venueWithId:(NSInteger)venueId;
+-(Alert *)alertWithId:(NSInteger)alertId;
 
 @end

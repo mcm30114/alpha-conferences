@@ -11,6 +11,11 @@
 
 @interface PageViewController : UIViewController <UIWebViewDelegate>
 
+@property (nonatomic, strong) NSString *pageTitle;
+@property (nonatomic, strong) NSString *pageContent;
+
 - (id)initWithPageTitle:(NSString *)pageTitle pageContent:(NSString *)pageContent;
+
+- (void)refresh;
 
 @end

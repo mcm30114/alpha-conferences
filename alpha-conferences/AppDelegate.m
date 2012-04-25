@@ -23,6 +23,7 @@
 #import "HomeController.h"
 #import "TwitterFeed.h"
 #import "TwitterController.h"
+#import "AlertPopupController.h"
 
 
 @implementation AppDelegate
@@ -284,13 +285,18 @@
 #endif
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-  NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-  if([title isEqualToString:@"Read more"])
-  {
-    // SEND USER TO ALERTS VIEW
-  }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([title isEqualToString:@"Read more"]) {
+        // SEND USER TO ALERTS VIEW
+        AlertPopupController *popupController = [[AlertPopupController alloc] initWithAlertId:1];
+        popupController.title = @"Alert";
+        UINavigationController *popupNavController = [[UINavigationController alloc] initWithRootViewController:popupController];
+        popupNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
+        [self.tabBarController presentModalViewController:popupNavController animated:YES];
+    }
 }
+
 
 @end

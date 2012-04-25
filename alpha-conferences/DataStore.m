@@ -283,5 +283,9 @@ static DataStore *latestAvailableInstance = nil;
     return [venues objectForIntegerKey:venueId];
 }
 
+-(Alert *)alertWithId:(NSInteger)alertId {
+    return [alerts objectForIntegerKey:alertId];
+}
+
 
 @end
