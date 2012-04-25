@@ -13,7 +13,6 @@
 
 @interface Tweet ()
 
-@property (nonatomic, strong) NSString *tweetIdStr;
 @property (nonatomic, strong) NSString *fromUser;
 @property (nonatomic, strong) NSString *fromUserName;
 @property (nonatomic, strong) NSString *text;

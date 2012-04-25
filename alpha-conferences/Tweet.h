@@ -12,6 +12,8 @@
 
 @interface Tweet : NSObject
 
+@property (nonatomic, strong) NSString *tweetIdStr;
+
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 - (NSString *)displayName;
