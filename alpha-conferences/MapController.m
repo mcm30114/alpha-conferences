@@ -54,8 +54,10 @@
     [super viewDidAppear:animated];
 
     MKMapView *mapView = (MKMapView *)self.view;
-    for (Venue *v in venues) {
-        [mapView addAnnotation:[[Pin alloc] initWithVenue:v]];
+    if ([mapView.annotations count] == 0) {  
+      for (Venue *v in venues) {
+          [mapView addAnnotation:[[Pin alloc] initWithVenue:v]];
+      }
     }
 }
 
