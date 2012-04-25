@@ -29,7 +29,7 @@
     __strong NSMutableDictionary *otherConferences;
 }
 
--(id)initWithContentsOfURL:(NSURL *)url;
+-(id)initWithData:(NSData *)data;
 
 @end
 
@@ -50,30 +50,46 @@ static DataStore *latestAvailableInstance = nil;
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://acs.alpha.org/api/rest/v1/conferences/getObjects/%d/0", CONFERENCE_ID]];
-        DataStore *ds = [[DataStore alloc] initWithContentsOfURL:url];
+        NSData *data = [NSData dataWithContentsOfURL:url];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"data.json"];
         
-        if (ds) {
+        if (data != nil) {
+            // save file to documents directory
+            [data writeToFile:path atomically:YES];
+        } else {
+            // no data was downloaded, try to read it from file
+            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+                data = [NSData dataWithContentsOfFile:path];
+            }
+        }
+        
+        if (data) {
+            // if there is some data then parse it and notify delegates
+            DataStore *ds = [[DataStore alloc] initWithData:data];
             latestAvailableInstance = ds;
-            // notify delegates in main thread
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_DATA object:ds];
             });
+        } else {
+            // if there is no data at all show an alert
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+                                                            message:@"Sorry, content could not be downloaded."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
     });
 }
 
 
--(id)initWithContentsOfURL:(NSURL *)url {
+-(id)initWithData:(NSData *)data {
     if (self = [super init]) {
 
-        NSError *err = nil;
-        NSData *raw = [NSData dataWithContentsOfURL:url options:0 error:&err];
-        NSDictionary *main = nil;
-        if (raw) {
-            main = [[JSONDecoder decoder] objectWithData:raw];
-        }
-        
+        NSDictionary *main = [[JSONDecoder decoder] objectWithData:data];
         NSDictionary *body = [main objectForKey:@"body"];
         
         // conference
