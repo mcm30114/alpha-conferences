@@ -23,7 +23,6 @@
 #import "HomeController.h"
 #import "TwitterFeed.h"
 #import "TwitterController.h"
-#import "AlertPopupController.h"
 
 
 @implementation AppDelegate
@@ -31,6 +30,7 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize refreshTimer = _refreshTimer;
+@synthesize alertViewController = _alertViewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -274,8 +274,9 @@
     NSString *alert = [apsInfo objectForKey:@"alert"];
     NSNumber *alertId = [userInfo objectForKey:@"alertId"];
     
-    NSLog(@"Alert Identifer: %@", alertId);
-  
+    self.alertViewController = [[AlertPopupController alloc] initWithAlertId:[alertId integerValue]];
+    self.alertViewController.title = @"Alert";
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Conference Alert"
                                                         message:alert
                                                        delegate:self
@@ -285,14 +286,10 @@
 #endif
 }
 
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     if ([title isEqualToString:@"Read more"]) {
-        // SEND USER TO ALERTS VIEW
-        AlertPopupController *popupController = [[AlertPopupController alloc] initWithAlertId:1];
-        popupController.title = @"Alert";
-        UINavigationController *popupNavController = [[UINavigationController alloc] initWithRootViewController:popupController];
+        UINavigationController *popupNavController = [[UINavigationController alloc] initWithRootViewController:self.alertViewController];
         popupNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];
         [self.tabBarController presentModalViewController:popupNavController animated:YES];
     }
