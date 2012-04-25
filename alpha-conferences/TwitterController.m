@@ -77,7 +77,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static NSString *cellIdentifier = @"TwitterCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithImageLeft reuseIdentifier:cellIdentifier];
     }
@@ -94,8 +94,8 @@
     cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.detailTextLabel.numberOfLines = 0;
     
-    cell.imageView.image = [[ResourceCache defaultResourceCache] imageForResource:tweet.avatarResource onComplete:^(UIImage *image) {
-        cell.imageView.image = image;
+    cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:tweet.avatarResource onComplete:^(UIImage *image) {
+        cell.cellImageView.image = image;
     }];
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
