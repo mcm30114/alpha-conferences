@@ -7,15 +7,7 @@
 //
 
 #import "PageViewController.h"
-
-
-@interface PageViewController ()
-
-@property (nonatomic, strong, readonly) NSString *pageTitle;
-@property (nonatomic, strong, readonly) NSString *pageContent;
-
-@end
-
+#import "UIColor+Alpha.h"
 
 
 @implementation PageViewController
@@ -48,12 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIWebView *wv = (UIWebView *)self.view;
-    NSString *css = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pageview" ofType:@"css"]
-                                              encoding:NSUTF8StringEncoding
-                                                 error:nil];
-    NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html><html><head><style type='text/css'>%@</style><body><h1>%@</h1>%@</body></html>", css, self.pageTitle, self.pageContent];
-    [wv loadHTMLString:html baseURL:nil];
+    [self refresh];
 }
 
 
@@ -65,6 +52,19 @@
     else {
         return YES;
     }
+}
+
+
+- (void)refresh {
+    UIWebView *wv = (UIWebView *)self.view;
+    NSString *css = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pageview" ofType:@"css"]
+                                              encoding:NSUTF8StringEncoding
+                                                 error:nil];
+    NSString *html = [NSString stringWithFormat:@"<!DOCTYPE html><html><head><style type='text/css'>%@</style><body><h1>%@</h1>%@</body></html>",
+                      css,
+                      (self.pageTitle ? self.pageTitle : @""),
+                      (self.pageContent ? self.pageContent : @"")];
+    [wv loadHTMLString:html baseURL:nil];
 }
 
 

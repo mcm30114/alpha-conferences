@@ -24,11 +24,13 @@
 -(NSArray *)alerts;
 -(NSArray *)specialOffers;
 -(NSArray *)sessionsWithDayId:(NSInteger)dayId;
+-(NSArray *)sessionsWithGroupId:(NSInteger)sessionGroupId type:(SessionType)type;
 
 -(Stream *)streamWithId:(NSInteger)streamId;
 -(Speaker *)speakerWithId:(NSInteger)speakerId;
 -(Session *)sessionWithId:(NSInteger)sessionId;
 -(Room *)roomWithId:(NSInteger)roomId;
 -(Venue *)venueWithId:(NSInteger)venueId;
+-(Alert *)alertWithId:(NSInteger)alertId;
 
 @end

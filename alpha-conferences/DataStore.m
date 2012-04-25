@@ -253,6 +253,16 @@ static DataStore *latestAvailableInstance = nil;
     return a;
 }
 
+-(NSArray *)sessionsWithGroupId:(NSInteger)sessionGroupId type:(SessionType)type {
+    NSMutableArray *a = [NSMutableArray array];
+    for (Session *s in sessions.allValues) {
+        if (s.sessionGroupId == sessionGroupId && s.type == type) {
+            [a addObject:s];
+        }
+    }
+    return a;
+}
+
 -(Stream *)streamWithId:(NSInteger)streamId {
     return [streams objectForIntegerKey:streamId];
 }
@@ -271,6 +281,10 @@ static DataStore *latestAvailableInstance = nil;
 
 -(Venue *)venueWithId:(NSInteger)venueId {
     return [venues objectForIntegerKey:venueId];
+}
+
+-(Alert *)alertWithId:(NSInteger)alertId {
+    return [alerts objectForIntegerKey:alertId];
 }
 
 
