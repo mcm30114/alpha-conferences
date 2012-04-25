@@ -11,6 +11,7 @@
 #import "DataStore.h"
 #import "NSDateFormatter+Alpha.h"
 #import "DataStore.h"
+#import "Session.h"
 
 
 @interface Session () {
@@ -108,6 +109,12 @@
     NSDateFormatter *tf = [NSDateFormatter timeFormatter];
     [str appendFormat:@"%@ - %@, %@", [tf stringFromDate:self.startDateTime], [tf stringFromDate:self.endDateTime], [df stringFromDate:self.startDateTime]];
     return str;
+}
+
+
+-(UIColor *)color {
+    UIColor *streamColor = self.stream.color;
+    return streamColor ? streamColor : [UIColor colorWithSessionType:self.type];
 }
 
 

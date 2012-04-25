@@ -69,19 +69,23 @@
             
             for (Session *s in [sessionsKeyedByHour objectForKey:time]) {
                 
-                // seminars are held back, and are shown by a child controller
-                if (s.type == SessiontypeSeminarOption) {
+                if (s.type == SessionTypeSeminarOption) {
+                    // seminars are held back, and are shown by a child controller
                     [hiddenSessionsInSlot addObject:s];
-                } else {
-
+                }
+                else if (s.type == SessionTypeSeminarSlot) {
+                    // seminar slot is not shown until then end
+                }
+                else {
+                    // all other sessions
                     AlphaRow *alphaRow = [[AlphaRow alloc] init];
                     alphaRow.style = AlphaTableViewCellWithColourBar;
                     alphaRow.text = s.name;
-                    alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                     alphaRow.detailText = s.programmeDetailText;
-                    alphaRow.barColour = s.stream.color;
+                    alphaRow.barColour = s.color;
                     
                     if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
+                        alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                         alphaRow.onSelected = ^(StandardController *controller) {
                             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                             childController.title = s.name;
@@ -99,7 +103,7 @@
             if (hiddenSessionsInSlot.count > 0) {
                 AlphaRow *alphaRow = [[AlphaRow alloc] init];
                 alphaRow.style = AlphaTableViewCellWithColourBar;
-                alphaRow.barColour = [UIColor lightGrayColor];
+                alphaRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
                 alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 alphaRow.text = @"View seminar options available";
                 alphaRow.onSelected = ^(StandardController *controller) {

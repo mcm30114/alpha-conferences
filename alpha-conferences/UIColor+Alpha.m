@@ -33,4 +33,18 @@
 }
 
 
++ (UIColor *)colorWithSessionType:(SessionType)type {
+    switch (type) {
+        case SessionTypeAdmin:
+            return [UIColor lightGrayColor];
+        case SessionTypeSeminarSlot:
+            return [UIColor lightGrayColor];
+        case SessionTypeBreak:
+            return [UIColor lightGrayColor];
+        default:
+            return [UIColor lightGrayColor];
+    }
+}
+
+
 @end

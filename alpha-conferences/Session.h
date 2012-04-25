@@ -16,7 +16,7 @@
 typedef enum {
     SessionTypeNone = 0,
     SessionTypeMain = 1,
-    SessiontypeSeminarOption = 2,
+    SessionTypeSeminarOption = 2,
     SessionTypeSeminarSlot = 3,
     SessionTypeBreak = 4,
     SessionTypeAdmin = 5
@@ -48,5 +48,7 @@ typedef enum {
 
 // suitable for showing on SessionDetail screen
 -(NSString *)detailDetailText;
+
+-(UIColor *)color;
 
 @end
