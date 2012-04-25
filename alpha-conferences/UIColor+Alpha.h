@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Session.h"
 
 @interface UIColor (Alpha)
 
@@ -19,5 +20,7 @@
 // default table cell colour
 + (UIColor *)tableCellTitleColour;
 + (UIColor *)tableSubTitleColour;
+
++ (UIColor *)colorWithSessionType:(SessionType)type;
 
 @end

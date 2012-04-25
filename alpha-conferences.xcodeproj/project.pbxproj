@@ -21,6 +21,7 @@
 		034A5057154067BE00ADB1C2 /* VenueListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A5056154067BE00ADB1C2 /* VenueListModel.m */; };
 		034A505A15406AF000ADB1C2 /* VenueDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A505915406AF000ADB1C2 /* VenueDetailModel.m */; };
 		034A507215407CF600ADB1C2 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A507115407CF600ADB1C2 /* DataStore.m */; };
+		036D88681548136B00C02A9A /* pageview.css in Resources */ = {isa = PBXBuildFile; fileRef = 036D88671548136B00C02A9A /* pageview.css */; };
 		036F0EEF1546AC3C00647B47 /* TwitterFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F0EEE1546AC3C00647B47 /* TwitterFeed.m */; };
 		036F0EF21546B16900647B47 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 036F0EF11546B16900647B47 /* Tweet.m */; };
 		039848AA15457A2D00151128 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 039848A915457A2D00151128 /* Pin.m */; };
@@ -175,6 +176,7 @@
 		034A505915406AF000ADB1C2 /* VenueDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueDetailModel.m; path = "alpha-conferences/VenueDetailModel.m"; sourceTree = SOURCE_ROOT; };
 		034A507015407CF600ADB1C2 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataStore.h; path = "alpha-conferences/DataStore.h"; sourceTree = SOURCE_ROOT; };
 		034A507115407CF600ADB1C2 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataStore.m; path = "alpha-conferences/DataStore.m"; sourceTree = SOURCE_ROOT; };
+		036D88671548136B00C02A9A /* pageview.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = pageview.css; path = "alpha-conferences/pageview.css"; sourceTree = SOURCE_ROOT; };
 		036F0EED1546AC3C00647B47 /* TwitterFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterFeed.h; path = "alpha-conferences/TwitterFeed.h"; sourceTree = SOURCE_ROOT; };
 		036F0EEE1546AC3C00647B47 /* TwitterFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterFeed.m; path = "alpha-conferences/TwitterFeed.m"; sourceTree = SOURCE_ROOT; };
 		036F0EF01546B16900647B47 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tweet.h; path = "alpha-conferences/Tweet.h"; sourceTree = SOURCE_ROOT; };
@@ -622,6 +624,7 @@
 				7E401F0D153C18FD00DA78D2 /* InfoPlist.strings */,
 				7E401F10153C18FD00DA78D2 /* main.m */,
 				7E401F12153C18FD00DA78D2 /* alpha-conferences-Prefix.pch */,
+				036D88671548136B00C02A9A /* pageview.css */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -882,6 +885,7 @@
 				B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */,
 				B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */,
 				B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */,
+				036D88681548136B00C02A9A /* pageview.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #import "StandardController.h"
 #import "Alert.h"
 #import "PageViewController.h"
+#import "NSDateFormatter+Alpha.h"
 
 
 @interface AlertList () {
@@ -35,6 +36,9 @@
 
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = a.title;
+    r.detailText = [NSString stringWithFormat:@"%@ - %@",
+                    [[NSDateFormatter timeFormatter] stringFromDate:a.dateTime],
+                    [[NSDateFormatter mediumDateFormatter] stringFromDate:a.dateTime]];
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     r.style = AlphaTableViewCellNormal;
     

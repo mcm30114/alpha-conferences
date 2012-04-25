@@ -76,7 +76,7 @@
 
     // twitter
     TwitterController *twitterController = [[TwitterController alloc] initWithNibName:nil bundle:nil];
-    twitterController.title = @"Live Twitter Stream";
+    twitterController.title = @"Twitter Stream";
     twitterController.tabBarItem.image = [UIImage imageNamed:@"twitter.png"];
     UINavigationController *twitterNavController = [[UINavigationController alloc] initWithRootViewController:twitterController];
     twitterNavController.navigationBar.tintColor = [UIColor navigationBarTintColour];

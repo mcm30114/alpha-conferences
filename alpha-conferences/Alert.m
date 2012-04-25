@@ -23,9 +23,9 @@
     if (self = [super init]) {
         self.alertId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
-        self.title = [dictionary objectForKey:@"title"];
-        self.message = [dictionary objectForKey:@"message"];
-        self.dateTime = [dictionary objectForKey:@"date_time"];
+        self.title = [dictionary stringForKey:@"title"];
+        self.message = [dictionary stringForKey:@"message"];
+        self.dateTime = [dictionary dateForKey:@"sent_datetime"];
     }
     return self;
 }
