@@ -129,9 +129,9 @@
     }
     
     // set frames
-    self.textLabel.frame = textLabelFrame;
-    self.detailTextLabel.frame = detailTextLabelFrame;
-    self.cellImageView.frame = cellImageViewFrame;
+    self.textLabel.frame = CGRectIntegral(textLabelFrame);
+    self.detailTextLabel.frame = CGRectIntegral(detailTextLabelFrame);
+    self.cellImageView.frame = CGRectIntegral(cellImageViewFrame);
 }
 
 
