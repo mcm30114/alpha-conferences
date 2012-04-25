@@ -24,6 +24,7 @@
 -(NSArray *)alerts;
 -(NSArray *)specialOffers;
 -(NSArray *)sessionsWithDayId:(NSInteger)dayId;
+-(NSArray *)sessionsWithGroupId:(NSInteger)sessionGroupId type:(SessionType)type;
 
 -(Stream *)streamWithId:(NSInteger)streamId;
 -(Speaker *)speakerWithId:(NSInteger)speakerId;

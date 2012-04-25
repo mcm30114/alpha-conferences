@@ -65,16 +65,25 @@
         for (NSDate *time in sessionTimes) {
             ProgrammeSection *ps = [[ProgrammeSection alloc] initWithTime:time];
 
-            NSMutableArray *hiddenSessionsInSlot = [NSMutableArray array];
-            
             for (Session *s in [sessionsKeyedByHour objectForKey:time]) {
                 
                 if (s.type == SessionTypeSeminarOption) {
-                    // seminars are held back, and are shown by a child controller
-                    [hiddenSessionsInSlot addObject:s];
+                    // seminars are not shown here
                 }
                 else if (s.type == SessionTypeSeminarSlot) {
-                    // seminar slot is not shown until then end
+                    // seminar slot
+                    AlphaRow *alphaRow = [[AlphaRow alloc] init];
+                    alphaRow.style = AlphaTableViewCellWithColourBar;
+                    alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    alphaRow.text = @"View seminar options available";
+                    alphaRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
+                    alphaRow.onSelected = ^(StandardController *controller) {
+                        StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+                        childController.title = @"Seminar options";
+                        childController.model = [[SeminarOptions alloc] initWithSessions:[data sessionsWithGroupId:s.sessionGroupId type:SessionTypeSeminarOption] dataStore:data];
+                        [controller.navigationController pushViewController:childController animated:YES];
+                    };
+                    [ps.rows addObject:alphaRow];
                 }
                 else {
                     // all other sessions
@@ -99,22 +108,6 @@
                 
             }
             
-            // if there are any hidden sessions, show a link
-            if (hiddenSessionsInSlot.count > 0) {
-                AlphaRow *alphaRow = [[AlphaRow alloc] init];
-                alphaRow.style = AlphaTableViewCellWithColourBar;
-                alphaRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
-                alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                alphaRow.text = @"View seminar options available";
-                alphaRow.onSelected = ^(StandardController *controller) {
-                    StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-                    childController.title = @"Seminar options";
-                    childController.model = [[SeminarOptions alloc] initWithSessions:hiddenSessionsInSlot dataStore:data];
-                    [controller.navigationController pushViewController:childController animated:YES];
-                };
-                [ps.rows addObject:alphaRow];
-            }
-                
             [pp.sections addObject:ps];
         }
         
