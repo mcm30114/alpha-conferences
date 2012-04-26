@@ -30,5 +30,17 @@
     return self;
 }
 
+- (NSComparisonResult)compare:(Alert *)otherObject {
+  NSInteger sort = [self.dateTime compare:otherObject.dateTime];
+  
+  if (sort == NSOrderedAscending) {
+    sort = NSOrderedDescending;
+  }
+  else if (sort == NSOrderedDescending) {
+    sort = NSOrderedAscending;
+  }
+  
+  return sort;
+}
 
 @end

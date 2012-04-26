@@ -52,7 +52,7 @@
 
 
 -(void)reloadData {
-    alerts = [DataStore latestAvailableInstance].alerts;
+  alerts = [[DataStore latestAvailableInstance].alerts sortedArrayUsingSelector:@selector(compare:)];
 }
 
 
