@@ -56,7 +56,7 @@ static ResourceCache *_defaultResourceCache = nil;
         if (realData) {
             UIImage *realImage = [UIImage imageWithData:realData];
             if (retina) {
-                realImage = [UIImage imageWithCGImage:realImage.CGImage scale:2.0 orientation:realImage.imageOrientation];
+                realImage = [UIImage imageWithCGImage:realImage.CGImage scale:resource.retinaScale orientation:realImage.imageOrientation];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 onComplete(realImage);
@@ -151,7 +151,7 @@ static ResourceCache *_defaultResourceCache = nil;
         case ResourceTypeVenueImageLarge:
             return [UIImage imageNamed:@"blank-100x100.png"];
         case ResourceTypeTwitterAvatar:
-            return retina ? [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(73, 73) scale:2.0] : [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(48, 48) scale:1.0];
+            return retina ? [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(73, 73) scale:73.0/48.0] : [ResourceCache imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(48, 48) scale:1.0];
         default:
             return nil;
     }

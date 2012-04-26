@@ -17,6 +17,7 @@
 #import "ButtonCell.h"
 #import "ResourceCache.h"
 #import "LabelTextProperties.h"
+#import "ProgrammeCell.h"
 
 
 @interface StandardController () {
@@ -29,6 +30,8 @@
 @property (nonatomic, unsafe_unretained) AlphaPager *pager;
 @property (nonatomic, strong) LabelTextProperties *textLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *programmeSpeakerTextLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *programmeTimeTextLabelProperties;
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 - (void)dataWasUpdated:(NSNotification *)n;
@@ -44,6 +47,8 @@
 @synthesize model = _model;
 @synthesize textLabelProperties;
 @synthesize detailTextLabelProperties;
+@synthesize programmeSpeakerTextLabelProperties;
+@synthesize programmeTimeTextLabelProperties;
 
 
 - (void)dealloc {
@@ -60,6 +65,8 @@
         // set default styles for cells
         self.textLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellTitleFont] textColour:[UIColor tableCellTitleColour] lineBreakMode:UILineBreakModeWordWrap];
         self.detailTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.programmeSpeakerTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.programmeTimeTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11] textColour:[UIColor grayColor] lineBreakMode:UILineBreakModeWordWrap];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(dataWasUpdated:)
@@ -152,8 +159,7 @@
     id row = [self.model rowForPage:selectedPage section:indexPath.section row:indexPath.row];
     
     if ([row isKindOfClass:[AlphaRow class]]) {
-        AlphaRow *alphaRow = row;
-        
+        AlphaRow *alphaRow = row;        
         NSString *cellId = [NSString stringWithFormat:@"AlphaCellWithStyleId%i",  alphaRow.style];
         
         AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
@@ -166,7 +172,6 @@
         cell.textLabel.text = alphaRow.text;
         cell.detailTextLabel.text = alphaRow.detailText;
         cell.accessoryType = alphaRow.accessoryType;
-//        cell.barColour = alphaRow.barColour;
         
         if (alphaRow.imageResource) {
             cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:alphaRow.imageResource onComplete:^(UIImage *image) {
@@ -189,25 +194,31 @@
     } else if ([row isKindOfClass:[ProgrammeRow class]]) {
         
         ProgrammeRow *programmeRow = row;
-        AlphaCell *cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithColourBar reuseIdentifier:nil];
+        NSString *cellId = @"ProgrammeCell";
+        
+        ProgrammeCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil) {
+            cell = [[ProgrammeCell alloc] initWithReuseIdentifier:cellId];
+            
+            [self.textLabelProperties setPropertiesForLabel:cell.textLabel];
+            [self.detailTextLabelProperties setPropertiesForLabel:cell.detailTextLabel];
+            [self.programmeSpeakerTextLabelProperties setPropertiesForLabel:cell.speakerTextLabel];
+            [self.programmeTimeTextLabelProperties setPropertiesForLabel:cell.timeTextLabel];
+        }
+        
         
         cell.textLabel.text = programmeRow.text;
-        cell.textLabel.font = [UIFont tableCellTitleFont];
-        cell.textLabel.textColor = [UIColor tableCellTitleColour];            
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = 0;
-        
         cell.detailTextLabel.text = programmeRow.detailText;
-        cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
-        cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
-        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.detailTextLabel.numberOfLines = 0;
-        
+        cell.speakerTextLabel.text = programmeRow.speakerText;
+        cell.timeTextLabel.text = programmeRow.dateTimeText;
         cell.accessoryType = programmeRow.accessoryType;
         cell.barColour = programmeRow.barColour;
         
         if (programmeRow.onSelected == nil) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        else {
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         }
         
         return cell;
@@ -271,17 +282,46 @@
         AlphaRow *alphaRow = row;        
         CGSize imageViewSize = alphaRow.imageResource ? alphaRow.imageResource.size : CGSizeZero;
         
-        return [AlphaCell heightForRowWithTableView:tableView tableViewCellAccessoryType:alphaRow.accessoryType labelTextStrings:[NSArray arrayWithObjects:alphaRow.text, alphaRow.detailText, nil] labelTextProperties:[NSArray arrayWithObjects:self.textLabelProperties, self.detailTextLabelProperties, nil] imageSize:imageViewSize];
+        NSMutableArray *labelStrings = [NSMutableArray arrayWithObject:alphaRow.text];
+        NSMutableArray *labelProperties = [NSMutableArray arrayWithObject:self.textLabelProperties];
+        
+        if (alphaRow.detailText.length > 0) {
+            [labelStrings addObject:alphaRow.detailText];
+            [labelProperties addObject:self.detailTextLabelProperties];
+        }        
+        
+        return [AlphaCell heightForRowWithTableView:tableView 
+                         tableViewCellAccessoryType:alphaRow.accessoryType 
+                                   labelTextStrings:labelStrings 
+                                labelTextProperties:labelProperties 
+                                          imageSize:imageViewSize];
         
     } else if ([row isKindOfClass:[ProgrammeRow class]]) {
         
         ProgrammeRow *programmeRow = row;
-        return [AlphaCell heightForRowWithTableView:self.tableView 
-                         tableViewCellAccessoryType:programmeRow.accessoryType
-                            alphaTableViewCellStyle:AlphaTableViewCellWithColourBar
-                                      textLabelText:programmeRow.text
-                                detailTextLabelText:programmeRow.detailText
-                                      imageViewSize:CGSizeZero];
+        
+        NSMutableArray *labelStrings = [NSMutableArray arrayWithObject:programmeRow.text];
+        NSMutableArray *labelProperties = [NSMutableArray arrayWithObject:self.textLabelProperties];
+        
+        if (programmeRow.detailText.length > 0) {
+            [labelStrings addObject:programmeRow.detailText];
+            [labelProperties addObject:self.detailTextLabelProperties];
+        }
+        
+        if (programmeRow.speakerText.length > 0) {
+            [labelStrings addObject:programmeRow.speakerText];
+            [labelProperties addObject:self.programmeSpeakerTextLabelProperties];
+        }
+        
+        if (programmeRow.dateTimeText.length > 0) {
+            [labelStrings addObject:programmeRow.dateTimeText];
+            [labelProperties addObject:self.programmeTimeTextLabelProperties];
+        }           
+        
+        return [ProgrammeCell heightForRowWithTableView:tableView 
+                             tableViewCellAccessoryType:programmeRow.accessoryType 
+                                       labelTextStrings:labelStrings 
+                                    labelTextProperties:labelProperties];
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         

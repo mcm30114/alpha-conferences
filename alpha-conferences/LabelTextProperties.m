@@ -18,8 +18,8 @@
     self = [super init];
     if (self) {
         _font = font;
-        _textColour = _textColour;
-        _lineBreakMode = _lineBreakMode;
+        _textColour = textColour;
+        _lineBreakMode = lineBreakMode;
     }
     return self;
 }

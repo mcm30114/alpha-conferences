@@ -16,6 +16,6 @@
 @property (nonatomic, unsafe_unretained) UILabel *timeTextLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
-+ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)cellAccessoryType labelTextStrings:(NSArray *)labelTextStrings labelTextProperties:(LabelTextProperties *)labelTextProperties;
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)cellAccessoryType labelTextStrings:(NSArray *)labelTextStrings labelTextProperties:(NSArray *)labelTextProperties;
 
 @end

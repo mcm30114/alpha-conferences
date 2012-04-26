@@ -14,31 +14,9 @@
 @synthesize text;
 @synthesize speakerText;
 @synthesize dateTimeText;
-@synthesize venueText;
+@synthesize detailText;
 @synthesize accessoryType;
 @synthesize barColour;
 @synthesize onSelected;
-
-
--(NSString *)detailText {
-    NSMutableString *str = [NSMutableString string];
-    
-    if (venueText) {
-        [str appendString:venueText];
-    }
-    
-    if (speakerText) {
-        if (str.length > 0) [str appendString:@" - "];
-        [str appendString:speakerText];
-    }
-    
-    if (dateTimeText) {
-        if (str.length > 0) [str appendString:@"\n"];
-        [str appendString:dateTimeText];
-    }
-    
-    return str;
-}
-
 
 @end

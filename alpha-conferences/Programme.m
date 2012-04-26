@@ -89,7 +89,7 @@
                     ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
                     programmeRow.text = s.name;
                     programmeRow.speakerText = s.speakerText;
-                    programmeRow.venueText = s.room.venue.name;
+                    programmeRow.detailText = s.room.venue.name;
                     programmeRow.dateTimeText = s.dateTimeText;
                     programmeRow.barColour = s.color;
                     

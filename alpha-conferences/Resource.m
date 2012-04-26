@@ -49,5 +49,13 @@
     }
 }
 
+-(CGFloat)retinaScale {
+    switch (self.type) {            
+        case ResourceTypeTwitterAvatar:
+            return 73.0/48.0;
+        default:
+            return 2.0;
+    }
+}
 
 @end

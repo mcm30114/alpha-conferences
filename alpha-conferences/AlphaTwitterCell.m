@@ -111,17 +111,18 @@
     
     // calculate the left and right outer margin (needed for calculating available content width)
     CGFloat HORIZONTAL_GROUPED_TABLE_OUTER_MARGIN = (tableView.style == UITableViewStyleGrouped ? 10.0 : 0.0);    
-    
+   
     // calculate the available content area width after accomodating for other elements
     int numberOfMargins = (imageSize.width > 0 ? 3 : 2);
     CGFloat contentWidth = (tableView.frame.size.width - (imageSize.width  + (CELL_MARGIN *numberOfMargins) + (HORIZONTAL_GROUPED_TABLE_OUTER_MARGIN * 2)));    
     
     // if cell is displaying an accessory then adjust label to accomodate for it
     if (cellAccessoryType != UITableViewCellAccessoryNone) {
-        contentWidth -= 20 + CELL_MARGIN;
-    }    
+        contentWidth -= 20.0;
+    }
     
     for (int i = 0; i < labelTextStrings.count; i++) {
+        
         NSString *text = (NSString  *)[labelTextStrings objectAtIndex:i];
         LabelTextProperties *textProperties = (LabelTextProperties *)[labelTextProperties objectAtIndex:i];
         

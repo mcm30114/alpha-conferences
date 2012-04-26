@@ -49,11 +49,11 @@
     [super layoutSubviews];
     
     // debug
-    self.textLabel.backgroundColor = [UIColor redColor];
-    self.detailTextLabel.backgroundColor = [UIColor greenColor];
-    self.contentView.backgroundColor = [UIColor yellowColor];
-    self.backgroundView.backgroundColor = [UIColor blueColor];
-    self.cellImageView.backgroundColor = [UIColor purpleColor];         
+//    self.textLabel.backgroundColor = [UIColor redColor];
+//    self.detailTextLabel.backgroundColor = [UIColor greenColor];
+//    self.contentView.backgroundColor = [UIColor yellowColor];
+//    self.backgroundView.backgroundColor = [UIColor blueColor];
+//    self.cellImageView.backgroundColor = [UIColor purpleColor];         
 
     // set ImageView frame
     if (self.cellImageView.image != nil) {
@@ -110,7 +110,7 @@
     
     // if cell is displaying an accessory then adjust label to accomodate for it
     if (cellAccessoryType != UITableViewCellAccessoryNone) {
-        contentWidth -= 20 + CELL_MARGIN;
+        contentWidth -= 20;
     }    
     
     for (int i = 0; i < labelTextStrings.count; i++) {

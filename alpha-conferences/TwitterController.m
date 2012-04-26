@@ -104,7 +104,7 @@
     
     cell.textLabel.text = tweet.displayName;
     cell.detailTextLabel.text = tweet.displayText;
-    cell.dateTextLabel.text = @"abc";
+    cell.dateTextLabel.text = tweet.displayDateTime;
     
     cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:tweet.avatarResource onComplete:^(UIImage *image) {
         cell.cellImageView.image = image;
@@ -128,11 +128,24 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Tweet *tweet = [tweets objectAtIndex:indexPath.row];
     
+    NSMutableArray *labelStrings = [NSMutableArray arrayWithObject:tweet.displayName];
+    NSMutableArray *labelProperties = [NSMutableArray arrayWithObject:self.textLabelProperties];
+    
+    if (tweet.displayText.length > 0) {
+        [labelStrings addObject:tweet.displayText];
+        [labelProperties addObject:self.detailTextLabelProperties];
+    }
+    
+    if (tweet.displayDateTime.length > 0) {
+        [labelStrings addObject:tweet.displayDateTime];
+        [labelProperties addObject:self.twitterDateTextLabelProperties];
+    }
+    
     return [AlphaTwitterCell heightForRowWithTableView:tableView 
                             tableViewCellAccessoryType:UITableViewCellAccessoryDisclosureIndicator 
-                                      labelTextStrings:[NSArray arrayWithObjects:tweet.displayName, tweet.displayText, @"abc", nil] 
-                                   labelTextProperties:[NSArray arrayWithObjects:self.textLabelProperties, self.detailTextLabelProperties, self.twitterDateTextLabelProperties, nil] 
-                                             imageSize:tweet.avatarResource.size];
+                                      labelTextStrings:labelStrings 
+                                   labelTextProperties:labelProperties 
+                                             imageSize:CGSizeMake(48, 48)];
 }
 
 

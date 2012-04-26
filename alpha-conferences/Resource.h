@@ -33,5 +33,6 @@ typedef enum {
 -(id)initWithKey:(NSString *)key type:(ResourceType)type;
 
 -(CGSize)size;
+-(CGFloat)retinaScale;
 
 @end

@@ -63,11 +63,11 @@
     [super layoutSubviews];
     
     // debug
-    self.textLabel.backgroundColor = [UIColor redColor];
-    self.detailTextLabel.backgroundColor = [UIColor greenColor];
-    self.contentView.backgroundColor = [UIColor yellowColor];
-    self.speakerTextLabel.backgroundColor = [UIColor purpleColor];
-    self.timeTextLabel.backgroundColor = [UIColor orangeColor];
+//    self.textLabel.backgroundColor = [UIColor redColor];
+//    self.detailTextLabel.backgroundColor = [UIColor greenColor];
+//    self.contentView.backgroundColor = [UIColor yellowColor];
+//    self.speakerTextLabel.backgroundColor = [UIColor purpleColor];
+//    self.timeTextLabel.backgroundColor = [UIColor orangeColor];
     
     // set colour bar frame
     self.colourBar.frame = CGRectMake(0, 0, COLOUR_BAR_WIDTH, self.contentView.bounds.size.height);
@@ -120,7 +120,7 @@
     
     // if cell is displaying an accessory then adjust label to accomodate for it
     if (cellAccessoryType != UITableViewCellAccessoryNone) {
-        contentWidth -= 20 + CELL_MARGIN;
+        contentWidth -= 20;
     }    
     
     for (int i = 0; i < labelTextStrings.count; i++) {

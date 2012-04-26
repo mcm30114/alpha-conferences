@@ -15,12 +15,10 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *speakerText;
 @property (nonatomic, strong) NSString *dateTimeText;
-@property (nonatomic, strong) NSString *venueText;
+@property (nonatomic, strong) NSString *detailText;
 @property (nonatomic, strong) UIColor *barColour;
 @property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
 @property (nonatomic, copy) void (^onSelected)(StandardController *controller);
-
--(NSString *)detailText;
 
 @end
