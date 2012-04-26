@@ -112,6 +112,7 @@
 		B70A863015457D2C009E5A56 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A861C15457D2C009E5A56 /* twitter@2x.png */; };
 		B70A864615459228009E5A56 /* iPhoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A864515459228009E5A56 /* iPhoneIcon.png */; };
 		B70A86481545922B009E5A56 /* iPhoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */; };
+		B78EFCB515495E8B007CFDAE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78EFCB415495E8B007CFDAE /* AudioToolbox.framework */; };
 		B7C006EC15484F3C00428360 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C006EB15484F3C00428360 /* Default.png */; };
 		B7C006EE15484F4000428360 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B7C006ED15484F4000428360 /* Default@2x.png */; };
 /* End PBXBuildFile section */
@@ -324,6 +325,7 @@
 		B70A861C15457D2C009E5A56 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "alpha-conferences/twitter@2x.png"; sourceTree = SOURCE_ROOT; };
 		B70A864515459228009E5A56 /* iPhoneIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPhoneIcon.png; path = "alpha-conferences/iPhoneIcon.png"; sourceTree = SOURCE_ROOT; };
 		B70A86471545922B009E5A56 /* iPhoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneIcon@2x.png"; path = "alpha-conferences/iPhoneIcon@2x.png"; sourceTree = SOURCE_ROOT; };
+		B78EFCB415495E8B007CFDAE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B7C006EB15484F3C00428360 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		B7C006ED15484F4000428360 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -333,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78EFCB515495E8B007CFDAE /* AudioToolbox.framework in Frameworks */,
 				039848AC15457AFF00151128 /* CoreLocation.framework in Frameworks */,
 				033442BB154570CC00562EEC /* MapKit.framework in Frameworks */,
 				7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */,
@@ -564,6 +567,7 @@
 		7E401EF5153C18FC00DA78D2 = {
 			isa = PBXGroup;
 			children = (
+				B78EFCB415495E8B007CFDAE /* AudioToolbox.framework */,
 				7E401F0A153C18FD00DA78D2 /* alpha-conferences */,
 				03CC4529154081A800737AD1 /* JSONKit */,
 				7E401F03153C18FD00DA78D2 /* Frameworks */,
