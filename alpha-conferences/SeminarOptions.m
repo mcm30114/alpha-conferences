@@ -8,7 +8,7 @@
 
 #import "SeminarOptions.h"
 #import "NSDictionary+Alpha.h"
-#import "AlphaRow.h"
+#import "ProgrammeRow.h"
 #import "StandardController.h"
 #import "SessionDetail.h"
 
@@ -45,19 +45,20 @@
             [sections addObject:section];
             
             for (Session *s in [sessionsKeyedByStreamId objectForKey:streamId]) {
-                AlphaRow *alphaRow = [[AlphaRow alloc] init];
-                alphaRow.style = AlphaTableViewCellWithColourBar;
-                alphaRow.text = s.name;
-                alphaRow.detailText = s.programmeDetailText;
-                alphaRow.barColour = s.stream.color;
-                alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                alphaRow.onSelected = ^(StandardController *controller) {
+                ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
+                programmeRow.text = s.name;
+                programmeRow.speakerText = s.speakerText;
+                programmeRow.venueText = s.room.venue.name;
+                programmeRow.dateTimeText = s.dateTimeText;
+                programmeRow.barColour = s.stream.color;
+                programmeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                programmeRow.onSelected = ^(StandardController *controller) {
                     StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                     childController.title = s.name;
                     childController.model = [[SessionDetail alloc] initWithSession:s data:dataStore];
                     [controller.navigationController pushViewController:childController animated:YES];
                 };
-                [section.rows addObject:alphaRow];
+                [section.rows addObject:programmeRow];
             }
         }
     }

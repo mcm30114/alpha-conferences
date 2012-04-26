@@ -18,6 +18,7 @@
 
 - (NSString *)displayName;
 - (NSString *)displayText;
+- (NSString *)displayDateTime;
 - (NSURL *)URL;
 - (Resource *)avatarResource;
 
