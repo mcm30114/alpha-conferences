@@ -53,9 +53,13 @@
 
 
 - (NSString *)displayText {
-    return [NSString stringWithFormat:@"%@\n%@", self.text, [[NSDateFormatter twitterFormatter] stringFromDate:self.createdAt]];
+    return self.text;
 }
 
+
+- (NSString *)displayDateTime {
+    return [[NSDateFormatter twitterFormatter] stringFromDate:self.createdAt];
+}
 
 - (NSURL *)URL {
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://mobile.twitter.com/%@/status/%@", fromUser, tweetIdStr]];
