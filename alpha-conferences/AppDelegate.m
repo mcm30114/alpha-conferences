@@ -259,9 +259,7 @@
 	// Register the Device Data
 	NSURL *url = [[NSURL alloc] initWithScheme:@"http" host:host path:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
   NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-  
-  NSLog(@"%@", urlString);
+	[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
   
   #endif
 }
