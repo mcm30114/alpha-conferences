@@ -15,6 +15,7 @@
 #import "Constants.h"
 #import "ButtonCell.h"
 #import "ResourceCache.h"
+#import "LabelTextProperties.h"
 
 
 @interface StandardController () {
@@ -25,9 +26,10 @@
 
 @property (nonatomic, unsafe_unretained) UITableView *tableView;
 @property (nonatomic, unsafe_unretained) AlphaPager *pager;
+@property (nonatomic, strong) LabelTextProperties *textLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
-
 - (void)dataWasUpdated:(NSNotification *)n;
 
 @end
@@ -39,6 +41,8 @@
 @synthesize tableView = _tableView;
 @synthesize pager = _pager;
 @synthesize model = _model;
+@synthesize textLabelProperties;
+@synthesize detailTextLabelProperties;
 
 
 - (void)dealloc {
@@ -51,6 +55,10 @@
         tableViewStyle = style;
         showPager = pager;
         selectedPage = 0;
+        
+        // set default styles for cells
+        self.textLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellTitleFont] textColour:[UIColor tableCellTitleColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.detailTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(dataWasUpdated:)
@@ -143,34 +151,36 @@
     id row = [self.model rowForPage:selectedPage section:indexPath.section row:indexPath.row];
     
     if ([row isKindOfClass:[AlphaRow class]]) {
-        
         AlphaRow *alphaRow = row;
-        AlphaCell *cell = [[AlphaCell alloc] initWithStyle:alphaRow.style reuseIdentifier:nil];
-//        cell.debugMode = YES;
+        
+        NSString *cellId = [NSString stringWithFormat:@"AlphaCellWithStyleId%i",  alphaRow.style];
+        
+        AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil) {
+            cell = [[AlphaCell alloc] initWithStyle:alphaRow.style reuseIdentifier:cellId];
+            [self.textLabelProperties setPropertiesForLabel:cell.textLabel];
+            [self.detailTextLabelProperties setPropertiesForLabel:cell.detailTextLabel];            
+        }
         
         cell.textLabel.text = alphaRow.text;
-        cell.textLabel.font = [UIFont tableCellTitleFont];
-        cell.textLabel.textColor = [UIColor tableCellTitleColour];            
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = 0;
-        
         cell.detailTextLabel.text = alphaRow.detailText;
-        cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
-        cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
-        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.detailTextLabel.numberOfLines = 0;
-        
         cell.accessoryType = alphaRow.accessoryType;
-        cell.barColour = alphaRow.barColour;
+//        cell.barColour = alphaRow.barColour;
         
         if (alphaRow.imageResource) {
             cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:alphaRow.imageResource onComplete:^(UIImage *image) {
                 cell.cellImageView.image = image;
             }];
         }
+        else {
+            cell.cellImageView.image = nil;
+        }
 
         if (alphaRow.onSelected == nil) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        else {
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         }
         
         return cell;
@@ -231,14 +241,10 @@
     
     if ([row isKindOfClass:[AlphaRow class]]) {
         
-        AlphaRow *alphaRow = row;
+        AlphaRow *alphaRow = row;        
         CGSize imageViewSize = alphaRow.imageResource ? alphaRow.imageResource.size : CGSizeZero;
-        return [AlphaCell heightForRowWithTableView:self.tableView
-                         tableViewCellAccessoryType:alphaRow.accessoryType
-                            alphaTableViewCellStyle:alphaRow.style
-                                      textLabelText:alphaRow.text
-                                detailTextLabelText:alphaRow.detailText
-                                      imageViewSize:imageViewSize];
+        
+        return [AlphaCell heightForRowWithTableView:tableView tableViewCellAccessoryType:alphaRow.accessoryType labelTextStrings:[NSArray arrayWithObjects:alphaRow.text, alphaRow.detailText, nil] labelTextProperties:[NSArray arrayWithObjects:self.textLabelProperties, self.detailTextLabelProperties, nil] imageSize:imageViewSize];
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         
@@ -310,7 +316,7 @@
     DTAttributedTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone];
-        cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+        cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(5, 10, 10, 10);
     }
     
     NSMutableDictionary *options = [NSMutableDictionary dictionary];

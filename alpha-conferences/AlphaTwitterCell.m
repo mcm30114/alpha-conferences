@@ -1,45 +1,55 @@
 //
-//  AlphaCell.m
-//  alpha-conferences
+//  AlphaTwitterCell.m
+//  AlphaTwitterCell
 //
-//  Created by Cameron Cooke on 17/04/2012.
-//  Copyright (c) 2012 Brightec Ltd. All rights reserved.
+//  Created by Cameron Cooke on 26/04/2012.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "AlphaCell.h"
+#import "AlphaTwitterCell.h"
+#import "LabelTextProperties.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define CELL_MARGIN 10
 #define COLOUR_BAR_WIDTH 10
 
 
-@interface AlphaCell ()
-@property (nonatomic) AlphaTableViewCellStyle cellStyle;
+@interface AlphaTwitterCell ()
 @end
 
 
-@implementation AlphaCell
-@synthesize cellStyle = _cellStyle;
+@implementation AlphaTwitterCell
 @synthesize cellImageView = _cellImageView;
+@synthesize dateTextLabel = _dateTextLabel;
 
 
-- (id)initWithStyle:(AlphaTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _cellStyle = style;
         
-        if (style == AlphaTableViewCellWithImageLeft || style == AlphaTableViewCellWithImageRight) {
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-            imageView.clipsToBounds = YES;
-            imageView.autoresizingMask = UIViewAutoresizingNone;
-            [self.contentView addSubview:imageView];
-            self.cellImageView = imageView;            
-        }
+        // create image view
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageView.clipsToBounds = YES;
+        imageView.autoresizingMask = UIViewAutoresizingNone;
+        imageView.layer.cornerRadius = 5;
+        imageView.layer.borderWidth = 1.0;
+        imageView.layer.borderColor = [UIColor grayColor].CGColor;
+        [self.contentView addSubview:imageView];
+        self.cellImageView = imageView;       
+        
+        // create date label
+        UILabel *dateTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        dateTextLabel.numberOfLines = 0;
+        dateTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        dateTextLabel.highlightedTextColor = [UIColor whiteColor];
+        [self.contentView addSubview:dateTextLabel];
+        self.dateTextLabel = dateTextLabel;
         
         // configure existing label views
         self.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         self.textLabel.numberOfLines = 0;
         self.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-        self.detailTextLabel.numberOfLines = 0;         
+        self.detailTextLabel.numberOfLines = 0;          
     }
     return self;
 }
@@ -49,15 +59,16 @@
     [super layoutSubviews];
     
     // debug
-    self.textLabel.backgroundColor = [UIColor redColor];
-    self.detailTextLabel.backgroundColor = [UIColor greenColor];
-    self.contentView.backgroundColor = [UIColor yellowColor];
-    self.backgroundView.backgroundColor = [UIColor blueColor];
-    self.cellImageView.backgroundColor = [UIColor purpleColor];         
-
+//    self.textLabel.backgroundColor = [UIColor redColor];
+//    self.detailTextLabel.backgroundColor = [UIColor greenColor];
+//    self.dateTextLabel.backgroundColor = [UIColor purpleColor];
+//    self.contentView.backgroundColor = [UIColor yellowColor];
+//    self.backgroundView.backgroundColor = [UIColor blueColor];
+//    self.cellImageView.backgroundColor = [UIColor purpleColor];  
+    
     // set ImageView frame
     if (self.cellImageView.image != nil) {
-        self.cellImageView.frame = CGRectMake(CELL_MARGIN, floor(CGRectGetMidY(self.contentView.bounds)) - floor(self.cellImageView.image.size.height / 2), self.cellImageView.image.size.width, self.cellImageView.image.size.height);
+        self.cellImageView.frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, self.cellImageView.image.size.width, self.cellImageView.image.size.height);
     }
     
     // calculate content width
@@ -67,32 +78,29 @@
     // get the frames
     CGRect textLabelFrame = self.textLabel.frame;
     CGRect detailTextLabelFrame = self.detailTextLabel.frame;    
+    CGRect dateTextLabelFrame = self.dateTextLabel.frame;
     CGRect cellImageViewFrame = self.cellImageView.frame;
     
     // set size of labels
     textLabelFrame.size = [self.textLabel.text sizeWithFont:self.textLabel.font constrainedToSize:CGSizeMake(contentWidth, 999) lineBreakMode:self.textLabel.lineBreakMode];
     detailTextLabelFrame.size = [self.detailTextLabel.text sizeWithFont:self.detailTextLabel.font constrainedToSize:CGSizeMake(contentWidth, 999) lineBreakMode:self.detailTextLabel.lineBreakMode];    
+    dateTextLabelFrame.size = [self.dateTextLabel.text sizeWithFont:self.dateTextLabel.font constrainedToSize:CGSizeMake(contentWidth, 999) lineBreakMode:self.dateTextLabel.lineBreakMode];
     
-    // vertically center labels
-    textLabelFrame.origin.y = floor(CGRectGetMidY(self.contentView.bounds)) - ((textLabelFrame.size.height + detailTextLabelFrame.size.height) / 2);
+    // adjust y coordinate of labels
+    textLabelFrame.origin.y = CELL_MARGIN - 3;
     detailTextLabelFrame.origin.y = textLabelFrame.origin.y + textLabelFrame.size.height;
+    dateTextLabelFrame.origin.y = detailTextLabelFrame.origin.y + detailTextLabelFrame.size.height;
     
     // adjust x coordinate of labels
-    textLabelFrame.origin.x = CELL_MARGIN;
+    textLabelFrame.origin.x =  CGRectGetMinX(cellImageViewFrame) + CGRectGetWidth(cellImageViewFrame) + CELL_MARGIN;
     detailTextLabelFrame.origin.x = textLabelFrame.origin.x;
-    
-    if (self.cellStyle == AlphaTableViewCellWithImageRight) {
-        cellImageViewFrame.origin.x = (self.contentView.bounds.size.width - CGRectGetWidth(cellImageViewFrame)) - CELL_MARGIN;        
-    }
-    else if (self.cellStyle == AlphaTableViewCellWithImageLeft) {
-        textLabelFrame.origin.x =  CGRectGetMinX(cellImageViewFrame) + CGRectGetWidth(cellImageViewFrame) + CELL_MARGIN;
-        detailTextLabelFrame.origin.x = textLabelFrame.origin.x;
-    }
+    dateTextLabelFrame.origin.x = textLabelFrame.origin.x;
     
     // set frames
     self.textLabel.frame = CGRectIntegral(textLabelFrame);
     self.detailTextLabel.frame = CGRectIntegral(detailTextLabelFrame);
-    self.cellImageView.frame = CGRectIntegral(cellImageViewFrame);
+    self.dateTextLabel.frame =  CGRectIntegral(dateTextLabelFrame);
+    self.cellImageView.frame = CGRectIntegral(cellImageViewFrame);    
 }
 
 

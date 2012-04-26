@@ -86,6 +86,9 @@
 		7E4AA47A1545BE44004D198D /* blank-75x75@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4AA4761545BE44004D198D /* blank-75x75@2x.png */; };
 		7E4AA47B1545BE44004D198D /* blank-100x100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4AA4771545BE44004D198D /* blank-100x100@2x.png */; };
 		7E4AA47C1545BE44004D198D /* blank-320x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4AA4781545BE44004D198D /* blank-320x120@2x.png */; };
+		7E503FE71549677D007D98EB /* ProgrammeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E503FE61549677D007D98EB /* ProgrammeCell.m */; };
+		7E503FEA15496787007D98EB /* AlphaTwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E503FE915496787007D98EB /* AlphaTwitterCell.m */; };
+		7E503FEF154967B0007D98EB /* LabelTextProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E503FEE154967B0007D98EB /* LabelTextProperties.m */; };
 		7EF49FDE153D77410038ECBB /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF49FDD153D77410038ECBB /* cell-image.png */; };
 		7EF49FE1153DA67C0038ECBB /* SpeakerDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */; };
 		7EF49FE5153DAD8B0038ECBB /* AlphaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE4153DAD8B0038ECBB /* AlphaCell.m */; };
@@ -292,6 +295,12 @@
 		7E4AA4761545BE44004D198D /* blank-75x75@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-75x75@2x.png"; sourceTree = "<group>"; };
 		7E4AA4771545BE44004D198D /* blank-100x100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-100x100@2x.png"; sourceTree = "<group>"; };
 		7E4AA4781545BE44004D198D /* blank-320x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-320x120@2x.png"; sourceTree = "<group>"; };
+		7E503FE51549677D007D98EB /* ProgrammeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgrammeCell.h; sourceTree = "<group>"; };
+		7E503FE61549677D007D98EB /* ProgrammeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgrammeCell.m; sourceTree = "<group>"; };
+		7E503FE815496787007D98EB /* AlphaTwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaTwitterCell.h; sourceTree = "<group>"; };
+		7E503FE915496787007D98EB /* AlphaTwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaTwitterCell.m; sourceTree = "<group>"; };
+		7E503FED154967B0007D98EB /* LabelTextProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextProperties.h; sourceTree = "<group>"; };
+		7E503FEE154967B0007D98EB /* LabelTextProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextProperties.m; sourceTree = "<group>"; };
 		7EF49FDD153D77410038ECBB /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-image.png"; path = "alpha-conferences/cell-image.png"; sourceTree = SOURCE_ROOT; };
 		7EF49FDF153DA67C0038ECBB /* SpeakerDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerDetailController.h; path = "alpha-conferences/SpeakerDetailController.h"; sourceTree = SOURCE_ROOT; };
 		7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetailController.m; path = "alpha-conferences/SpeakerDetailController.m"; sourceTree = SOURCE_ROOT; };
@@ -634,6 +643,8 @@
 		7E401F35153C1B0400DA78D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7E503FED154967B0007D98EB /* LabelTextProperties.h */,
+				7E503FEE154967B0007D98EB /* LabelTextProperties.m */,
 				7E401F59153C5AEE00DA78D2 /* CGUtils.h */,
 				7E401F5A153C5AEE00DA78D2 /* CGUtils.m */,
 				7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */,
@@ -652,6 +663,8 @@
 		7E401F3D153C1B8F00DA78D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E503FEC15496792007D98EB /* AlphaTwtterCell */,
+				7E503FEB1549678B007D98EB /* ProgrammeCell */,
 				03CC456415419E0300737AD1 /* ButtonCell */,
 				7EF49FE2153DAD060038ECBB /* AlphaCell */,
 				7E401F4D153C557700DA78D2 /* Pager */,
@@ -735,6 +748,24 @@
 				7E401F54153C587400DA78D2 /* right-arrow@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		7E503FEB1549678B007D98EB /* ProgrammeCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E503FE51549677D007D98EB /* ProgrammeCell.h */,
+				7E503FE61549677D007D98EB /* ProgrammeCell.m */,
+			);
+			name = ProgrammeCell;
+			sourceTree = "<group>";
+		};
+		7E503FEC15496792007D98EB /* AlphaTwtterCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E503FE815496787007D98EB /* AlphaTwitterCell.h */,
+				7E503FE915496787007D98EB /* AlphaTwitterCell.m */,
+			);
+			name = AlphaTwtterCell;
 			sourceTree = "<group>";
 		};
 		7EF49FE2153DAD060038ECBB /* AlphaCell */ = {
@@ -945,6 +976,9 @@
 				036F0EF21546B16900647B47 /* Tweet.m in Sources */,
 				03ACBC261546D20C00E62E9F /* TwitterController.m in Sources */,
 				035DB3931548485A00525439 /* AlertPopupController.m in Sources */,
+				7E503FE71549677D007D98EB /* ProgrammeCell.m in Sources */,
+				7E503FEA15496787007D98EB /* AlphaTwitterCell.m in Sources */,
+				7E503FEF154967B0007D98EB /* LabelTextProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

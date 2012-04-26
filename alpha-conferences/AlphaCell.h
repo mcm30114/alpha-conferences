@@ -7,23 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LabelTextProperties.h"
 
 typedef enum {
     AlphaTableViewCellNormal,
     AlphaTableViewCellWithImageLeft,
-    AlphaTableViewCellWithImageRight,    
-    AlphaTableViewCellWithColourBar
+    AlphaTableViewCellWithImageRight
 } AlphaTableViewCellStyle;
 
 
 @interface AlphaCell : UITableViewCell
 
-@property (nonatomic, strong) UIColor *barColour;
 @property (nonatomic, unsafe_unretained) UIImageView *cellImageView;
-@property (nonatomic) BOOL debugMode;
 
 - (id)initWithStyle:(AlphaTableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
-
-+ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)accessoryType alphaTableViewCellStyle:(AlphaTableViewCellStyle)style textLabelText:(NSString *)textLabelText detailTextLabelText:(NSString *)detailTextLabelText imageViewSize:(CGSize)imageViewSize;
++ (CGFloat)heightForRowWithTableView:(UITableView *)tableView tableViewCellAccessoryType:(UITableViewCellAccessoryType)cellAccessoryType labelTextStrings:(NSArray *)labelTextStrings labelTextProperties:(NSArray *)labelTextProperties imageSize:(CGSize)imageSize;
 
 @end

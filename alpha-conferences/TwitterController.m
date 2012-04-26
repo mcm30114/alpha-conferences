@@ -11,12 +11,18 @@
 #import "Constants.h"
 #import "TwitterFeed.h"
 #import "ResourceCache.h"
+#import "LabelTextProperties.h"
+#import "AlphaTwitterCell.h"
 
 
 @interface TwitterController () {
     @private
     NSArray *tweets;
 }
+
+@property (nonatomic, strong) LabelTextProperties *textLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *twitterDateTextLabelProperties;
 
 - (void)tweetsWereUpdated:(NSNotification *)notification;
 
@@ -25,7 +31,9 @@
 
 
 @implementation TwitterController
-
+@synthesize textLabelProperties;
+@synthesize detailTextLabelProperties;
+@synthesize twitterDateTextLabelProperties;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -34,6 +42,12 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        
+        // set default styles for twitter labels
+        self.textLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellTitleFont] textColour:[UIColor tableCellTitleColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.detailTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.twitterDateTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11.0] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap]; 
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(tweetsWereUpdated:)
                                                      name:NOTIFICATION_TWITTER
@@ -77,22 +91,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static NSString *cellIdentifier = @"TwitterCell";
-    AlphaCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    AlphaTwitterCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithImageLeft reuseIdentifier:cellIdentifier];
+        cell = [[AlphaTwitterCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        
+        [self.textLabelProperties setPropertiesForLabel:cell.textLabel];
+        [self.detailTextLabelProperties setPropertiesForLabel:cell.detailTextLabel];
+        [self.twitterDateTextLabelProperties setPropertiesForLabel:cell.dateTextLabel];
     }
     
     Tweet *tweet = [tweets objectAtIndex:indexPath.row];
     
     cell.textLabel.text = tweet.displayName;
-    cell.textLabel.font = [UIFont tableCellTitleFont];
-    cell.textLabel.textColor = [UIColor tableCellTitleColour];            
-    
     cell.detailTextLabel.text = tweet.displayText;
-    cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
-    cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
-    cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.detailTextLabel.numberOfLines = 0;
+    cell.dateTextLabel.text = @"abc";
     
     cell.cellImageView.image = [[ResourceCache defaultResourceCache] imageForResource:tweet.avatarResource onComplete:^(UIImage *image) {
         cell.cellImageView.image = image;
@@ -115,12 +127,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Tweet *tweet = [tweets objectAtIndex:indexPath.row];
-    return [AlphaCell heightForRowWithTableView:tableView
-                     tableViewCellAccessoryType:UITableViewCellAccessoryDisclosureIndicator
-                        alphaTableViewCellStyle:AlphaTableViewCellWithImageLeft
-                                  textLabelText:tweet.displayName
-                            detailTextLabelText:tweet.displayText
-                                  imageViewSize:CGSizeMake(48, 48)];
+    
+    return [AlphaTwitterCell heightForRowWithTableView:tableView 
+                            tableViewCellAccessoryType:UITableViewCellAccessoryDisclosureIndicator 
+                                      labelTextStrings:[NSArray arrayWithObjects:tweet.displayName, tweet.displayText, @"abc", nil] 
+                                   labelTextProperties:[NSArray arrayWithObjects:self.textLabelProperties, self.detailTextLabelProperties, self.twitterDateTextLabelProperties, nil] 
+                                             imageSize:tweet.avatarResource.size];
 }
 
 
