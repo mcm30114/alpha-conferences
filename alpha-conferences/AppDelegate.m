@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Programme.h"
-#import "ProgrammeController.h"
 #import "SpeakerList.h"
-#import "SpeakersController.h"
 #import "StandardController.h"
 #import "VenueListModel.h"
 #import "FAQList.h"

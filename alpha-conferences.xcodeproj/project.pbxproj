@@ -61,13 +61,11 @@
 		03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCEA01541EC4E00F70B00 /* ResourceCache.m */; };
 		03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */; };
 		7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E99153D6AB60094626B /* UIFont+Alpha.m */; };
-		7E264E9E153D6D860094626B /* SpeakersController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E264E9D153D6D860094626B /* SpeakersController.m */; };
 		7E349412153EF37B009E332C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349411153EF37B009E332C /* ImageIO.framework */; };
 		7E349414153EF381009E332C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349413153EF381009E332C /* QuartzCore.framework */; };
 		7E349416153EF38D009E332C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E349415153EF38D009E332C /* libxml2.dylib */; };
 		7E34941D153EF8EA009E332C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E34941C153EF8EA009E332C /* CoreText.framework */; };
 		7E349422153F0B0E009E332C /* libDTCoreText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E34940B153EF2FF009E332C /* libDTCoreText.a */; };
-		7E349426153F1446009E332C /* SeminarOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E349425153F1446009E332C /* SeminarOptionsController.m */; };
 		7E401F05153C18FD00DA78D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F04153C18FD00DA78D2 /* UIKit.framework */; };
 		7E401F07153C18FD00DA78D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F06153C18FD00DA78D2 /* Foundation.framework */; };
 		7E401F09153C18FD00DA78D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E401F08153C18FD00DA78D2 /* CoreGraphics.framework */; };
@@ -75,7 +73,6 @@
 		7E401F11153C18FD00DA78D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F10153C18FD00DA78D2 /* main.m */; };
 		7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F14153C18FD00DA78D2 /* AppDelegate.m */; };
 		7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */; };
-		7E401F44153C235800DA78D2 /* ProgrammeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F43153C235800DA78D2 /* ProgrammeController.m */; };
 		7E401F4C153C557300DA78D2 /* AlphaPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E401F4B153C557300DA78D2 /* AlphaPager.m */; };
 		7E401F55153C587400DA78D2 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F51153C587400DA78D2 /* left-arrow.png */; };
 		7E401F56153C587400DA78D2 /* left-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E401F52153C587400DA78D2 /* left-arrow@2x.png */; };
@@ -87,7 +84,6 @@
 		7E4AA47B1545BE44004D198D /* blank-100x100@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4AA4771545BE44004D198D /* blank-100x100@2x.png */; };
 		7E4AA47C1545BE44004D198D /* blank-320x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4AA4781545BE44004D198D /* blank-320x120@2x.png */; };
 		7EF49FDE153D77410038ECBB /* cell-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EF49FDD153D77410038ECBB /* cell-image.png */; };
-		7EF49FE1153DA67C0038ECBB /* SpeakerDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */; };
 		7EF49FE5153DAD8B0038ECBB /* AlphaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF49FE4153DAD8B0038ECBB /* AlphaCell.m */; };
 		B70A861D15457D2C009E5A56 /* alerts.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860915457D2C009E5A56 /* alerts.png */; };
 		B70A861E15457D2C009E5A56 /* alerts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B70A860A15457D2C009E5A56 /* alerts@2x.png */; };
@@ -254,16 +250,12 @@
 		03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FloorplanController.m; path = "alpha-conferences/FloorplanController.m"; sourceTree = SOURCE_ROOT; };
 		7E264E98153D6AB60094626B /* UIFont+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+Alpha.h"; path = "alpha-conferences/UIFont+Alpha.h"; sourceTree = SOURCE_ROOT; };
 		7E264E99153D6AB60094626B /* UIFont+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+Alpha.m"; path = "alpha-conferences/UIFont+Alpha.m"; sourceTree = SOURCE_ROOT; };
-		7E264E9C153D6D860094626B /* SpeakersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakersController.h; path = "alpha-conferences/SpeakersController.h"; sourceTree = SOURCE_ROOT; };
-		7E264E9D153D6D860094626B /* SpeakersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakersController.m; path = "alpha-conferences/SpeakersController.m"; sourceTree = SOURCE_ROOT; };
 		7E3493D8153ECB46009E332C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = "alpha-conferences/Model.h"; sourceTree = SOURCE_ROOT; };
 		7E3493F9153EF2FF009E332C /* DTCoreText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DTCoreText.xcodeproj; path = DTCoreText/DTCoreText.xcodeproj; sourceTree = "<group>"; };
 		7E349411153EF37B009E332C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7E349413153EF381009E332C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E349415153EF38D009E332C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7E34941C153EF8EA009E332C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		7E349424153F1446009E332C /* SeminarOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeminarOptionsController.h; path = "alpha-conferences/SeminarOptionsController.h"; sourceTree = SOURCE_ROOT; };
-		7E349425153F1446009E332C /* SeminarOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeminarOptionsController.m; path = "alpha-conferences/SeminarOptionsController.m"; sourceTree = SOURCE_ROOT; };
 		7E401F00153C18FD00DA78D2 /* alpha-conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alpha-conferences.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E401F04153C18FD00DA78D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7E401F06153C18FD00DA78D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -276,8 +268,6 @@
 		7E401F14153C18FD00DA78D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "alpha-conferences/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		7E401F36153C1B1B00DA78D2 /* UIColor+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Alpha.h"; path = "alpha-conferences/UIColor+Alpha.h"; sourceTree = SOURCE_ROOT; };
 		7E401F37153C1B1B00DA78D2 /* UIColor+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Alpha.m"; path = "alpha-conferences/UIColor+Alpha.m"; sourceTree = SOURCE_ROOT; };
-		7E401F42153C235800DA78D2 /* ProgrammeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgrammeController.h; path = "alpha-conferences/ProgrammeController.h"; sourceTree = SOURCE_ROOT; };
-		7E401F43153C235800DA78D2 /* ProgrammeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgrammeController.m; path = "alpha-conferences/ProgrammeController.m"; sourceTree = SOURCE_ROOT; };
 		7E401F46153C24D800DA78D2 /* TemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TemplateViewController.h; path = "alpha-conferences/TemplateViewController.h"; sourceTree = SOURCE_ROOT; };
 		7E401F47153C24D800DA78D2 /* TemplateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemplateViewController.m; path = "alpha-conferences/TemplateViewController.m"; sourceTree = SOURCE_ROOT; };
 		7E401F4A153C557300DA78D2 /* AlphaPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaPager.h; sourceTree = "<group>"; };
@@ -293,8 +283,6 @@
 		7E4AA4771545BE44004D198D /* blank-100x100@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-100x100@2x.png"; sourceTree = "<group>"; };
 		7E4AA4781545BE44004D198D /* blank-320x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-320x120@2x.png"; sourceTree = "<group>"; };
 		7EF49FDD153D77410038ECBB /* cell-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cell-image.png"; path = "alpha-conferences/cell-image.png"; sourceTree = SOURCE_ROOT; };
-		7EF49FDF153DA67C0038ECBB /* SpeakerDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpeakerDetailController.h; path = "alpha-conferences/SpeakerDetailController.h"; sourceTree = SOURCE_ROOT; };
-		7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpeakerDetailController.m; path = "alpha-conferences/SpeakerDetailController.m"; sourceTree = SOURCE_ROOT; };
 		7EF49FE3153DAD8B0038ECBB /* AlphaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlphaCell.h; sourceTree = "<group>"; };
 		7EF49FE4153DAD8B0038ECBB /* AlphaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlphaCell.m; sourceTree = "<group>"; };
 		B70A860915457D2C009E5A56 /* alerts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alerts.png; path = "alpha-conferences/alerts.png"; sourceTree = SOURCE_ROOT; };
@@ -529,10 +517,6 @@
 		7E264E9B153D6D650094626B /* Speakers */ = {
 			isa = PBXGroup;
 			children = (
-				7E264E9C153D6D860094626B /* SpeakersController.h */,
-				7E264E9D153D6D860094626B /* SpeakersController.m */,
-				7EF49FDF153DA67C0038ECBB /* SpeakerDetailController.h */,
-				7EF49FE0153DA67C0038ECBB /* SpeakerDetailController.m */,
 				03CC453B154141E400737AD1 /* SpeakerList.h */,
 				03CC453C154141E400737AD1 /* SpeakerList.m */,
 				03CC453E1541561400737AD1 /* SpeakerDetail.h */,
@@ -662,10 +646,6 @@
 		7E401F3E153C1BCC00DA78D2 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
-				7E349424153F1446009E332C /* SeminarOptionsController.h */,
-				7E349425153F1446009E332C /* SeminarOptionsController.m */,
-				7E401F42153C235800DA78D2 /* ProgrammeController.h */,
-				7E401F43153C235800DA78D2 /* ProgrammeController.m */,
 				03CC45551541664800737AD1 /* Programme.h */,
 				03CC45561541664800737AD1 /* Programme.m */,
 				03CC455B15417CE100737AD1 /* SeminarOptions.h */,
@@ -891,12 +871,9 @@
 				7E401F11153C18FD00DA78D2 /* main.m in Sources */,
 				7E401F15153C18FD00DA78D2 /* AppDelegate.m in Sources */,
 				7E401F38153C1B1B00DA78D2 /* UIColor+Alpha.m in Sources */,
-				7E401F44153C235800DA78D2 /* ProgrammeController.m in Sources */,
 				7E401F4C153C557300DA78D2 /* AlphaPager.m in Sources */,
 				7E401F5B153C5AEE00DA78D2 /* CGUtils.m in Sources */,
 				7E264E9A153D6AB60094626B /* UIFont+Alpha.m in Sources */,
-				7E264E9E153D6D860094626B /* SpeakersController.m in Sources */,
-				7EF49FE1153DA67C0038ECBB /* SpeakerDetailController.m in Sources */,
 				7EF49FE5153DAD8B0038ECBB /* AlphaCell.m in Sources */,
 				03C32DC1153EBAD300E1B734 /* Alert.m in Sources */,
 				03C32DC2153EBAD300E1B734 /* Conference.m in Sources */,
@@ -911,7 +888,6 @@
 				03C32DCC153EBAD300E1B734 /* SpecialOffer.m in Sources */,
 				03C32DCD153EBAD300E1B734 /* Stream.m in Sources */,
 				03C32DCE153EBAD300E1B734 /* Venue.m in Sources */,
-				7E349426153F1446009E332C /* SeminarOptionsController.m in Sources */,
 				034A504A1540637D00ADB1C2 /* StandardController.m in Sources */,
 				034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */,
 				034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */,
