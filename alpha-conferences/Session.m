@@ -69,25 +69,20 @@
 }
 
 
--(NSString *)programmeDetailText {
-    NSMutableString *str = [NSMutableString string];
-    
-    Venue *venue = self.room.venue;
-    if (venue) {
-        [str appendString:venue.name];
-    }
-    
+-(NSString *)speakerText {
     Speaker *speaker = [data speakerWithId:((NSNumber *)[self.speakerIds objectAtIndex:0]).intValue];
-    if (speaker) {
-        if (str.length > 0) [str appendString:@" - "];
-        [str appendString:speaker.displayName];
-    }
-    
-    if (str.length > 0) [str appendString:@"\n"];
-    
+    return speaker.displayName;
+}
+
+
+-(NSString *)dateTimeText {
     NSDateFormatter *f = [NSDateFormatter timeFormatter];
-    [str appendFormat:@"%@ - %@", [f stringFromDate:self.startDateTime], [f stringFromDate:self.endDateTime]];
-    return str;
+    return [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:self.startDateTime], [f stringFromDate:self.endDateTime]];
+}
+
+
+-(NSString *)venueText {
+    return self.room.venue.name;
 }
 
 

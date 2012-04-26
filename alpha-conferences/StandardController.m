@@ -12,6 +12,7 @@
 #import "RichTextRow.h"
 #import "ButtonBarRow.h"
 #import "ImageRow.h"
+#import "ProgrammeRow.h"
 #import "Constants.h"
 #import "ButtonCell.h"
 #import "ResourceCache.h"
@@ -174,6 +175,32 @@
         }
         
         return cell;
+    
+    } else if ([row isKindOfClass:[ProgrammeRow class]]) {
+        
+        ProgrammeRow *programmeRow = row;
+        AlphaCell *cell = [[AlphaCell alloc] initWithStyle:AlphaTableViewCellWithColourBar reuseIdentifier:nil];
+        
+        cell.textLabel.text = programmeRow.text;
+        cell.textLabel.font = [UIFont tableCellTitleFont];
+        cell.textLabel.textColor = [UIColor tableCellTitleColour];            
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = 0;
+        
+        cell.detailTextLabel.text = programmeRow.detailText;
+        cell.detailTextLabel.font = [UIFont tableCellSubTitleFont];
+        cell.detailTextLabel.textColor = [UIColor tableSubTitleColour];
+        cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.detailTextLabel.numberOfLines = 0;
+        
+        cell.accessoryType = programmeRow.accessoryType;
+        cell.barColour = programmeRow.barColour;
+        
+        if (programmeRow.onSelected == nil) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        
+        return cell;
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         
@@ -240,6 +267,16 @@
                                 detailTextLabelText:alphaRow.detailText
                                       imageViewSize:imageViewSize];
         
+    } else if ([row isKindOfClass:[ProgrammeRow class]]) {
+        
+        ProgrammeRow *programmeRow = row;
+        return [AlphaCell heightForRowWithTableView:self.tableView 
+                         tableViewCellAccessoryType:programmeRow.accessoryType
+                            alphaTableViewCellStyle:AlphaTableViewCellWithColourBar
+                                      textLabelText:programmeRow.text
+                                detailTextLabelText:programmeRow.detailText
+                                      imageViewSize:CGSizeZero];
+        
     } else if ([row isKindOfClass:[RichTextRow class]]) {
         
         DTAttributedTextCell *cell = [self prepareAttributedTextCellWithMetadata:(RichTextRow *)row tableView:tableView];
@@ -263,10 +300,13 @@
     if ([row isKindOfClass:[AlphaRow class]]) {
         AlphaRow *alphaRow = row;
         if (alphaRow.onSelected) {
-            NSLog(@"alphaRow has an onSelected block");
             alphaRow.onSelected(self);
-        } else {
-            NSLog(@"alphaRow does not have an onSelected block");
+        }
+    }
+    else if ([row isKindOfClass:[ProgrammeRow class]]) {
+        ProgrammeRow *programmeRow = row;
+        if (programmeRow.onSelected) {
+            programmeRow.onSelected(self);
         }
     }
 }

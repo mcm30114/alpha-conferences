@@ -9,7 +9,7 @@
 #import "Programme.h"
 #import "DataStore.h"
 #import "NSDictionary+Alpha.h"
-#import "AlphaRow.h"
+#import "ProgrammeRow.h"
 #import "SeminarOptions.h"
 #import "StandardController.h"
 #import "SessionDetail.h"
@@ -72,30 +72,30 @@
                 }
                 else if (s.type == SessionTypeSeminarSlot) {
                     // seminar slot
-                    AlphaRow *alphaRow = [[AlphaRow alloc] init];
-                    alphaRow.style = AlphaTableViewCellWithColourBar;
-                    alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    alphaRow.text = @"View seminar options available";
-                    alphaRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
-                    alphaRow.onSelected = ^(StandardController *controller) {
+                    ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
+                    programmeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    programmeRow.text = @"View seminar options available";
+                    programmeRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
+                    programmeRow.onSelected = ^(StandardController *controller) {
                         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
                         childController.title = @"Seminar options";
                         childController.model = [[SeminarOptions alloc] initWithSessions:[data sessionsWithGroupId:s.sessionGroupId type:SessionTypeSeminarOption] dataStore:data];
                         [controller.navigationController pushViewController:childController animated:YES];
                     };
-                    [ps.rows addObject:alphaRow];
+                    [ps.rows addObject:programmeRow];
                 }
                 else {
                     // all other sessions
-                    AlphaRow *alphaRow = [[AlphaRow alloc] init];
-                    alphaRow.style = AlphaTableViewCellWithColourBar;
-                    alphaRow.text = s.name;
-                    alphaRow.detailText = s.programmeDetailText;
-                    alphaRow.barColour = s.color;
+                    ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
+                    programmeRow.text = s.name;
+                    programmeRow.speakerText = s.speakerText;
+                    programmeRow.venueText = s.room.venue.name;
+                    programmeRow.dateTimeText = s.dateTimeText;
+                    programmeRow.barColour = s.color;
                     
                     if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
-                        alphaRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                        alphaRow.onSelected = ^(StandardController *controller) {
+                        programmeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                        programmeRow.onSelected = ^(StandardController *controller) {
                             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                             childController.title = s.name;
                             childController.model = [[SessionDetail alloc] initWithSession:s data:data];
@@ -103,7 +103,7 @@
                         };
                     }
                     
-                    [ps.rows addObject:alphaRow];
+                    [ps.rows addObject:programmeRow];
                 }
                 
             }

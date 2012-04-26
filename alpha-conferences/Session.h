@@ -44,7 +44,9 @@ typedef enum {
 -(Stream *)stream;
 
 // suitable for showing on Programme and SeminarOptions screens
--(NSString *)programmeDetailText;
+-(NSString *)speakerText;
+-(NSString *)dateTimeText;
+-(NSString *)venueText;
 
 // suitable for showing on SessionDetail screen
 -(NSString *)detailDetailText;
