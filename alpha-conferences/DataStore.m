@@ -80,7 +80,7 @@ static DataStore *latestAvailableInstance = nil;
         }
 
         // if we get here we potentially have new data
-        [rawData populateWithJSON:data time:[NSDate date]];
+        [rawData populateWithJSON:data];
         [rawData saveToFile:path];
         DataStore *ds = [[DataStore alloc] initWithRawData:rawData];
         latestAvailableInstance = ds;

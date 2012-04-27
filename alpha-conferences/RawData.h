@@ -14,7 +14,7 @@
 @property (nonatomic, strong, readonly) NSMutableDictionary *dictionary;
 @property (nonatomic, strong, readonly) NSDate *time;
 
-- (void)populateWithJSON:(NSData *)json time:(NSDate *)time;
+- (void)populateWithJSON:(NSData *)json;
 
 - (void)saveToFile:(NSString *)path;
 

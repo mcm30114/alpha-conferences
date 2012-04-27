@@ -53,7 +53,7 @@
 }
 
 
-- (void)populateWithJSON:(NSData *)json time:(NSDate *)time {
+- (void)populateWithJSON:(NSData *)json {
     
     NSDictionary *main = [[JSONDecoder decoder] objectWithData:json];
     NSDictionary *body = [main objectForKey:@"body"];
@@ -93,7 +93,7 @@
         }
     }
     
-    _time = time;
+    _time = [NSDate dateWithTimeIntervalSince1970:[[body objectForKey:@"request_timestamp"] intValue]];
 }
 
 
