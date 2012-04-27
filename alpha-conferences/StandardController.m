@@ -32,10 +32,10 @@
 @property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *programmeSpeakerTextLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *programmeTimeTextLabelProperties;
+@property (nonatomic, strong) NSDictionary *attributedStringOptions;
+@property (nonatomic) UIEdgeInsets attributedCellEdgeInsets;
 
-- (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 - (void)dataWasUpdated:(NSNotification *)n;
-- (void)programmeChoiceWasUpdated:(NSNotification *)n;
 
 @end
 
@@ -50,6 +50,8 @@
 @synthesize detailTextLabelProperties;
 @synthesize programmeSpeakerTextLabelProperties;
 @synthesize programmeTimeTextLabelProperties;
+@synthesize attributedStringOptions;
+@synthesize attributedCellEdgeInsets;
 
 
 - (void)dealloc {
@@ -69,13 +71,17 @@
         self.programmeSpeakerTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
         self.programmeTimeTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11] textColour:[UIColor grayColor] lineBreakMode:UILineBreakModeWordWrap];
         
+        NSMutableDictionary *options = [NSMutableDictionary dictionary];
+        [options setObject:[NSNumber numberWithFloat:1.6] forKey:NSTextSizeMultiplierDocumentOption];	
+        [options setObject:[NSNumber numberWithFloat:1.5] forKey:DTDefaultLineHeightMultiplier];
+        [options setObject:@"Helvetica" forKey:DTDefaultFontFamily];
+        [options setObject:@"blue" forKey:DTDefaultLinkColor];  
+        self.attributedStringOptions = options;
+        self.attributedCellEdgeInsets = UIEdgeInsetsMake(10, 15, 20, 15);
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(dataWasUpdated:)
                                                      name:NOTIFICATION_DATA
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(programmeChoiceWasUpdated:)
-                                                     name:NOTIFICATION_PROGRAMME_CHOICE
                                                    object:nil];
     }
     return self;
@@ -229,8 +235,23 @@
         return cell;
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
+        RichTextRow *richTextRow = row;
         
-        DTAttributedTextCell *cell = [self prepareAttributedTextCellWithMetadata:(RichTextRow *)row tableView:tableView];
+        NSString *cellIdentifier = @"AttributedCell";
+        DTAttributedTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if (cell == nil) {
+            cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone];
+            cell.attributedTextContextView.edgeInsets = self.attributedCellEdgeInsets;
+        }
+        
+        if (richTextRow.html) {
+            NSData *data = [richTextRow.html dataUsingEncoding:NSUTF8StringEncoding];
+            NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:self.attributedStringOptions documentAttributes:nil];
+            [cell setAttributedString:string];
+        } else {
+            [cell setHTMLString:@""];
+        }        
+
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
         
@@ -329,9 +350,29 @@
                                     labelTextProperties:labelProperties];
         
     } else if ([row isKindOfClass:[RichTextRow class]]) {
+        RichTextRow *richTextRow = row;
+
+        NSData *data = [richTextRow.html dataUsingEncoding:NSUTF8StringEncoding];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:self.attributedStringOptions documentAttributes:nil];
         
-        DTAttributedTextCell *cell = [self prepareAttributedTextCellWithMetadata:(RichTextRow *)row tableView:tableView];
-        return [cell requiredRowHeightInTableView:tableView];
+        // calculate width to constratin the attributed label to
+        CGFloat constrainedWidth = tableView.frame.size.width;
+        if (tableView.style == UITableViewStyleGrouped) {
+            constrainedWidth -= 19;
+        }
+        
+        constrainedWidth -= (self.attributedCellEdgeInsets.left + self.attributedCellEdgeInsets.right);
+        
+        DTCoreTextLayouter *layouter = [[DTCoreTextLayouter alloc] initWithAttributedString:string];
+        CGSize size = [layouter suggestedFrameSizeToFitEntireStringConstraintedToWidth:constrainedWidth];        
+        
+        // add vertical insets
+        size.height += self.attributedCellEdgeInsets.top + self.attributedCellEdgeInsets.bottom;  
+        
+        NSLog(@"Constrained width: %f", constrainedWidth);
+        NSLog(@"Calculated height: %f", size.height);
+        
+        return size.height;
         
     } else if ([row isKindOfClass:[ButtonBarRow class]]) {
         return 44.0;
@@ -396,36 +437,33 @@
 #pragma mark -
 
 
-- (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView  {
-    NSString *cellIdentifier = @"AttributedCell";
-    DTAttributedTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone];
-        cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 15, 20, 15);
-    }
-    
-    if (md.html) {
-        NSData *data = [[NSString stringWithFormat:@"<div style='font-family: helvetica; font-size: 16px; line-height: 24px;'>%@</div>", md.html] dataUsingEncoding:NSUTF8StringEncoding];
-        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:nil documentAttributes:nil];
-        [cell setAttributedString:string];
-    } else {
-        [cell setHTMLString:@""];
-    }
-    
-    return cell;
-}
+//- (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView  {
+//    NSString *cellIdentifier = @"AttributedCell";
+//    DTAttributedTextCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    if (cell == nil) {
+//        cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone];
+////        cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 15, 20, 15);
+//    }
+//    
+//    NSMutableDictionary *options = [NSMutableDictionary dictionary];
+//    [options setObject:[NSNumber numberWithFloat:1.6] forKey:NSTextSizeMultiplierDocumentOption];	
+//    [options setObject:[NSNumber numberWithFloat:1.5] forKey:DTDefaultLineHeightMultiplier];
+//    [options setObject:@"Helvetica" forKey:DTDefaultFontFamily];
+//    [options setObject:@"blue" forKey:DTDefaultLinkColor];       
+//    
+//    if (md.html) {
+//        NSData *data = [md.html dataUsingEncoding:NSUTF8StringEncoding];
+//        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:nil];
+//        [cell setAttributedString:string];
+//    } else {
+//        [cell setHTMLString:@""];
+//    }
+//    
+//    return cell;
+//}
 
 
 - (void)dataWasUpdated:(NSNotification *)notification {
-    if ([self.model respondsToSelector:@selector(reloadData)]) {
-        [self.model reloadData];
-        [self.tableView reloadData];
-        [self.pager reloadData];
-    }
-}
-
-
-- (void)programmeChoiceWasUpdated:(NSNotification *)notification {
     if ([self.model respondsToSelector:@selector(reloadData)]) {
         [self.model reloadData];
         [self.tableView reloadData];
