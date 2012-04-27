@@ -44,5 +44,9 @@
     [self setObject:object forKey:[NSNumber numberWithInt:key]];
 }
 
+-(void)removeObjectForIntegerKey:(NSInteger)key {
+    [self removeObjectForKey:[NSNumber numberWithInt:key]];
+}
+
 
 @end

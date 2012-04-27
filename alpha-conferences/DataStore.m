@@ -10,6 +10,8 @@
 #import "Constants.h"
 #import "JSONKit.h"
 #import "NSDictionary+Alpha.h"
+#import "NSDateFormatter+Alpha.h"
+#import "RawData.h"
 
 
 @interface DataStore() {
@@ -29,7 +31,7 @@
     __strong NSMutableDictionary *otherConferences;
 }
 
--(id)initWithData:(NSData *)data;
+-(id)initWithRawData:(RawData *)rawData;
 
 @end
 
@@ -48,49 +50,51 @@ static DataStore *latestAvailableInstance = nil;
 +(void)refresh {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
+        // load any cached data we have
+        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"RawData"];
+        RawData *rawData = [RawData rawDataWithContentsOfFile:path];
+        if (rawData == nil) {
+            rawData = [[RawData alloc] init];
+        }
+
+        NSString *timestamp = (rawData.time != nil) ? [[NSDateFormatter iso8601Formatter] stringFromDate:rawData.time] : @"0";
+        
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://acs.alpha.org/api/rest/v1/conferences/getObjects/%d/0", CONFERENCE_ID]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://acs.alpha.org/api/rest/v1/conferences/getObjects/%d/%@", CONFERENCE_ID, timestamp]];
+        NSLog(@"fetching %@", url);
         NSData *data = [NSData dataWithContentsOfURL:url];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
-        NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"data.json"];
-        
-        if (data != nil) {
-            // save file to documents directory
-            [data writeToFile:path atomically:YES];
-        } else {
-            // no data was downloaded, try to read it from file
-            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-                data = [NSData dataWithContentsOfFile:path];
+        if (data == nil) {
+            if (rawData == nil) {
+                // got no data at all, inform the user of this
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+                                                                message:@"Sorry, content could not be downloaded."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
             }
+            return;
         }
-        
-        if (data) {
-            // if there is some data then parse it and notify delegates
-            DataStore *ds = [[DataStore alloc] initWithData:data];
-            latestAvailableInstance = ds;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_DATA object:ds];
-            });
-        } else {
-            // if there is no data at all show an alert
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
-                                                            message:@"Sorry, content could not be downloaded."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
+
+        // if we get here we potentially have new data
+        [rawData populateWithJSON:data time:[NSDate date]];
+        [rawData saveToFile:path];
+        DataStore *ds = [[DataStore alloc] initWithRawData:rawData];
+        latestAvailableInstance = ds;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_DATA object:ds];
+        });
     });
 }
 
 
--(id)initWithData:(NSData *)data {
+-(id)initWithRawData:(RawData *)rawData {
     if (self = [super init]) {
 
-        NSDictionary *main = [[JSONDecoder decoder] objectWithData:data];
-        NSDictionary *body = [main objectForKey:@"body"];
+        NSDictionary *body = rawData.dictionary;
         
         // conference
         Conference *c = [[Conference alloc] initWithDictionary:[body objectForKey:@"conference"]];
@@ -100,7 +104,7 @@ static DataStore *latestAvailableInstance = nil;
 
         // streams
         streams = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"streams"]) {
+        for (NSDictionary *d in [[body objectForKey:@"streams"] allValues]) {
             Stream *s = [[Stream alloc] initWithDictionary:d];
             if (s.active) {
                 [streams setObject:s forIntegerKey:s.streamId];
@@ -109,7 +113,7 @@ static DataStore *latestAvailableInstance = nil;
 
         // speakers
         speakers = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"speakers"]) {
+        for (NSDictionary *d in [[body objectForKey:@"speakers"] allValues]) {
             Speaker *s = [[Speaker alloc] initWithDictionary:d];
             if (s.active) {
                 [speakers setObject:s forIntegerKey:s.speakerId];
@@ -118,7 +122,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // faqs
         faqs = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"faqs"]) {
+        for (NSDictionary *d in [[body objectForKey:@"faqs"] allValues]) {
             FAQ *f = [[FAQ alloc] initWithDictionary:d];
             if (f.active) {
                 [faqs setObject:f forIntegerKey:f.faqId];
@@ -127,7 +131,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // venues
         venues = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"venues"]) {
+        for (NSDictionary *d in [[body objectForKey:@"venues"] allValues]) {
             Venue *v = [[Venue alloc] initWithDictionary:d];
             if (v.active) {
                 [venues setObject:v forIntegerKey:v.venueId];
@@ -136,7 +140,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // rooms
         rooms = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"rooms"]) {
+        for (NSDictionary *d in [[body objectForKey:@"rooms"] allValues]) {
             Room *r = [[Room alloc] initWithDictionary:d data:self];
             if (r.active) {
                 [rooms setObject:r forIntegerKey:r.roomId];
@@ -145,7 +149,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // days
         days = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"days"]) {
+        for (NSDictionary *d in [[body objectForKey:@"days"] allValues]) {
             Day *day = [[Day alloc] initWithDictionary:d];
             if (day.active) {
                 [days setObject:day forIntegerKey:day.dayId];
@@ -154,7 +158,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // session types
         sessionTypes = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"session_types"]) {
+        for (NSDictionary *d in [[body objectForKey:@"session_types"] allValues]) {
             SessionTypeInfo *st = [[SessionTypeInfo alloc] initWithDictionary:d];
             if (st.active) {
                 [sessionTypes setObject:st forIntegerKey:st.sessionTypeId];
@@ -163,7 +167,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // session groups
         sessionGroups = [NSMutableDictionary dictionary];
-        for (NSMutableDictionary *d in [body objectForKey:@"session_groups"]) {
+        for (NSMutableDictionary *d in [[body objectForKey:@"session_groups"] allValues]) {
             SessionGroup *sg = [[SessionGroup alloc] initWithDictionary:d];
             if (sg.active) {
                 [sessionGroups setObject:sg forIntegerKey:sg.sessionGroupId];
@@ -172,7 +176,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // sessions
         sessions = [NSMutableDictionary dictionary];
-        for (NSMutableDictionary *d in [body objectForKey:@"sessions"]) {
+        for (NSMutableDictionary *d in [[body objectForKey:@"sessions"] allValues]) {
             Session *s = [[Session alloc] initWithDictionary:d data:self];
             if (s.active) {
                 [sessions setObject:s forIntegerKey:s.sessionId];
@@ -181,7 +185,7 @@ static DataStore *latestAvailableInstance = nil;
         
         // special offers
         specialOffers = [NSMutableDictionary dictionary];
-        for (NSMutableDictionary *d in [body objectForKey:@"special_offers"]) {
+        for (NSMutableDictionary *d in [[body objectForKey:@"special_offers"] allValues]) {
             SpecialOffer *so = [[SpecialOffer alloc] initWithDictionary:d];
             if (so.active) {
                 [specialOffers setObject:so forIntegerKey:so.specialOfferId];
@@ -190,16 +194,16 @@ static DataStore *latestAvailableInstance = nil;
         
         // alerts
         alerts = [NSMutableDictionary dictionary];
-        for (NSMutableDictionary *d in [body objectForKey:@"alerts"]) {
+        for (NSMutableDictionary *d in [[body objectForKey:@"alerts"] allValues]) {
             Alert *a = [[Alert alloc] initWithDictionary:d];
             if (a.active) {
                 [alerts setObject:a forIntegerKey:a.alertId];
             }
         }
         
-        // conferences
+        // other conferences
         otherConferences = [NSMutableDictionary dictionary];
-        for (NSDictionary *d in [body objectForKey:@"other_conferences"]) {
+        for (NSDictionary *d in [[body objectForKey:@"other_conferences"] allValues]) {
             Conference *c = [[Conference alloc] initWithDictionary:d];
             if (c.active) {
                 [otherConferences setObject:c forIntegerKey:c.conferenceId];
