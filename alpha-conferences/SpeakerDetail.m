@@ -63,9 +63,9 @@
         r.imageResource = [Resource resourceWithKey:self.speaker.imageKey type:ResourceTypeSpeakerImageSmall];
         return r;
     }
-    else if (section == 1 && row == 0) {
+    else if (section == 2 && row == 0) {
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
-        r.button1Title = @"Visit website";
+        r.button1Title = @"Visit Website";
         if (self.speaker.websiteUrl.length > 0) {
             r.onButton1Selected = ^(UIViewController *controller) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.websiteUrl]];
@@ -80,7 +80,7 @@
         }
         return r;
     }
-    else if (section == 2 && row == 0) {
+    else if (section == 1 && row == 0) {
         RichTextRow *r = [[RichTextRow alloc] init];
         r.html = self.speaker.biography;
         return r;
