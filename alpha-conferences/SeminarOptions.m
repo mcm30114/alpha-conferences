@@ -49,13 +49,13 @@
                 programmeRow.text = s.name;
                 programmeRow.speakerText = s.speakerText;
                 programmeRow.detailText = s.room.venue.name;
-                programmeRow.dateTimeText = s.dateTimeText;
+                programmeRow.dateTimeText = s.timeText;
                 programmeRow.barColour = s.stream.color;
                 programmeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 programmeRow.onSelected = ^(StandardController *controller) {
                     StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                     childController.title = s.name;
-                    childController.model = [[SessionDetail alloc] initWithSession:s data:dataStore];
+                    childController.model = [[SessionDetail alloc] initWithSession:s];
                     [controller.navigationController pushViewController:childController animated:YES];
                 };
                 [section.rows addObject:programmeRow];

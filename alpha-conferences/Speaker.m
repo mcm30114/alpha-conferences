@@ -8,9 +8,13 @@
 
 #import "Speaker.h"
 #import "NSDictionary+Alpha.h"
+#import "DataStore.h"
 
 
-@interface Speaker ()
+@interface Speaker () {
+    @private
+    __unsafe_unretained DataStore *data;
+}
 
 @property (nonatomic, strong) NSString *sortableName;
 
@@ -30,11 +34,13 @@
 @synthesize biography;
 @synthesize position;
 @synthesize imageKey;
+@synthesize sessionIds;
 @synthesize sortableName;
 
 
--(id)initWithDictionary:(NSDictionary *)dictionary {
+-(id)initWithDictionary:(NSDictionary *)dictionary data:(DataStore *)d {
     if (self = [super init]) {
+        data = d;
         self.speakerId = [dictionary integerForKey:@"id"];
         self.active = [dictionary activeFlag];
         self.firstName = [dictionary stringForKey:@"first_name"];
@@ -45,6 +51,7 @@
         self.twitterUsername = [dictionary stringForKey:@"twitter_username"];
         self.websiteUrl = [dictionary stringForKey:@"website_url"];
         self.alias = [dictionary stringForKey:@"alias"];
+        self.sessionIds = [dictionary objectForKey:@"sessions"];
         self.sortableName = [NSString stringWithFormat:@"%@ %@", [self.lastName lowercaseString], [self.firstName lowercaseString]];
     }
     return self;
@@ -62,6 +69,16 @@
 
 -(NSString *)indexLetter {
     return [[self.lastName substringWithRange:NSMakeRange(0, 1)] uppercaseString];
+}
+
+
+-(NSArray *)sessions {
+    NSMutableArray *a = [NSMutableArray array];
+    for (NSNumber *sessionId in sessionIds) {
+        [a addObject:[data sessionWithId:sessionId.integerValue]];
+    }
+    [a sortUsingSelector:@selector(compareByStartDateTime:)];
+    return a;
 }
 
 

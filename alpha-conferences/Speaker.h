@@ -20,11 +20,14 @@
 @property (nonatomic, strong) NSString *biography;
 @property (nonatomic, strong) NSString *position;
 @property (nonatomic, strong) NSString *imageKey;
+@property (nonatomic, strong) NSArray *sessionIds;
 
--(id)initWithDictionary:(NSDictionary *)dictionary;
+-(id)initWithDictionary:(NSDictionary *)dictionary data:(DataStore *)data;
 
 -(NSString *)displayName;
 -(NSString *)indexLetter;
+
+-(NSArray *)sessions;
 
 -(NSComparisonResult)compare:(Speaker *)aSpeaker;
 

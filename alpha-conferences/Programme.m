@@ -93,7 +93,7 @@
                     if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
                         programmeRow.detailText = s.room.venue.name;
                     }
-                    programmeRow.dateTimeText = s.dateTimeText;
+                    programmeRow.dateTimeText = s.timeText;
                     
                     programmeRow.barColour = s.color;
                     
@@ -102,7 +102,7 @@
                         programmeRow.onSelected = ^(StandardController *controller) {
                             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                             childController.title = s.name;
-                            childController.model = [[SessionDetail alloc] initWithSession:s data:data];
+                            childController.model = [[SessionDetail alloc] initWithSession:s];
                             [controller.navigationController pushViewController:childController animated:YES];
                         };
                     }

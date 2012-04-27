@@ -114,7 +114,7 @@ static DataStore *latestAvailableInstance = nil;
         // speakers
         speakers = [NSMutableDictionary dictionary];
         for (NSDictionary *d in [[body objectForKey:@"speakers"] allValues]) {
-            Speaker *s = [[Speaker alloc] initWithDictionary:d];
+            Speaker *s = [[Speaker alloc] initWithDictionary:d data:self];
             if (s.active) {
                 [speakers setObject:s forIntegerKey:s.speakerId];
             }

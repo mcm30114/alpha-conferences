@@ -42,15 +42,21 @@ typedef enum {
 
 -(Room *)room;
 -(Stream *)stream;
+-(NSArray *)speakers;
 
 // suitable for showing on Programme and SeminarOptions screens
 -(NSString *)speakerText;
--(NSString *)dateTimeText;
+-(NSString *)timeText;
 -(NSString *)venueText;
+
+// suitable for showing on SessionsBySpeaker screen
+-(NSString *)dateTimeText;
 
 // suitable for showing on SessionDetail screen
 -(NSString *)detailDetailText;
 
 -(UIColor *)color;
+
+-(NSComparisonResult)compareByStartDateTime:(Session *)aSession;
 
 @end

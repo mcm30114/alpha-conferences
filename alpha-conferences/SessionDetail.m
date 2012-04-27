@@ -27,7 +27,7 @@
 @implementation SessionDetail
 
 
--(id)initWithSession:(Session *)session data:(DataStore *)data {
+-(id)initWithSession:(Session *)session {
     if (self = [super init]) {
         sections = [NSMutableArray array];
         
@@ -70,8 +70,7 @@
         SessionDetailSection *speakers = [[SessionDetailSection alloc] init];
         speakers.title = @"Speakers";
         
-        for (NSNumber *speakerId in session.speakerIds) {
-            Speaker *speaker = [data speakerWithId:speakerId.integerValue];
+        for (Speaker *speaker in session.speakers) {
             AlphaRow *speakerRow = [[AlphaRow alloc] init];
             speakerRow.style = AlphaTableViewCellWithImageLeft;
             speakerRow.imageResource = [Resource resourceWithKey:speaker.imageKey type:ResourceTypeSpeakerImageSmall];

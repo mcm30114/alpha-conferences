@@ -60,6 +60,7 @@
 		03CC45601541884500737AD1 /* SessionDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC455F1541884400737AD1 /* SessionDetail.m */; };
 		03CC45631541946700737AD1 /* ButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45621541946700737AD1 /* ButtonCell.m */; };
 		03CC456A1541B0DF00737AD1 /* NSDateFormatter+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */; };
+		03CFECD1154B042A003D2FF1 /* SessionsBySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CFECD0154B042A003D2FF1 /* SessionsBySpeaker.m */; };
 		03EBCE9E1541EB2900F70B00 /* Resource.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCE9D1541EB2900F70B00 /* Resource.m */; };
 		03EBCEA11541EC4E00F70B00 /* ResourceCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03EBCEA01541EC4E00F70B00 /* ResourceCache.m */; };
 		03F1CF0015454A5300AC6EF6 /* FloorplanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F1CEFF15454A5300AC6EF6 /* FloorplanController.m */; };
@@ -257,6 +258,8 @@
 		03CC45621541946700737AD1 /* ButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonCell.m; path = "alpha-conferences/ButtonCell.m"; sourceTree = SOURCE_ROOT; };
 		03CC45681541B0DF00737AD1 /* NSDateFormatter+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDateFormatter+Alpha.h"; path = "alpha-conferences/NSDateFormatter+Alpha.h"; sourceTree = SOURCE_ROOT; };
 		03CC45691541B0DF00737AD1 /* NSDateFormatter+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDateFormatter+Alpha.m"; path = "alpha-conferences/NSDateFormatter+Alpha.m"; sourceTree = SOURCE_ROOT; };
+		03CFECCF154B042A003D2FF1 /* SessionsBySpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SessionsBySpeaker.h; path = "alpha-conferences/SessionsBySpeaker.h"; sourceTree = SOURCE_ROOT; };
+		03CFECD0154B042A003D2FF1 /* SessionsBySpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionsBySpeaker.m; path = "alpha-conferences/SessionsBySpeaker.m"; sourceTree = SOURCE_ROOT; };
 		03EBCE9C1541EB2900F70B00 /* Resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resource.h; path = "alpha-conferences/Resource.h"; sourceTree = SOURCE_ROOT; };
 		03EBCE9D1541EB2900F70B00 /* Resource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resource.m; path = "alpha-conferences/Resource.m"; sourceTree = SOURCE_ROOT; };
 		03EBCE9F1541EC4E00F70B00 /* ResourceCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResourceCache.h; path = "alpha-conferences/ResourceCache.h"; sourceTree = SOURCE_ROOT; };
@@ -688,6 +691,8 @@
 				03CC455F1541884400737AD1 /* SessionDetail.m */,
 				03331D05154AD28B00FE0540 /* ProgrammeChoices.h */,
 				03331D06154AD28B00FE0540 /* ProgrammeChoices.m */,
+				03CFECCF154B042A003D2FF1 /* SessionsBySpeaker.h */,
+				03CFECD0154B042A003D2FF1 /* SessionsBySpeaker.m */,
 			);
 			name = Programme;
 			path = "alpha-conferences";
@@ -985,6 +990,7 @@
 				034D8EA515498A77005ACF31 /* ProgrammeRow.m in Sources */,
 				033E48B6154A7BB600C6A3DA /* RawData.m in Sources */,
 				03331D07154AD28B00FE0540 /* ProgrammeChoices.m in Sources */,
+				03CFECD1154B042A003D2FF1 /* SessionsBySpeaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

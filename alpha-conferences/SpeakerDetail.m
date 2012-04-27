@@ -10,6 +10,8 @@
 #import "AlphaRow.h"
 #import "ButtonBarRow.h"
 #import "RichTextRow.h"
+#import "SessionsBySpeaker.h"
+#import "StandardController.h"
 
 
 @interface SpeakerDetail ()
@@ -34,7 +36,7 @@
 
 
 -(NSInteger)numberOfSectionsInPage:(NSInteger)page {
-    return 3;
+    return 4;
 }
 
 
@@ -85,13 +87,19 @@
         r.html = self.speaker.biography;
         return r;
     }
-//    else if (section == 2 && row == 0) {
-//        AlphaRow *r = [[AlphaRow alloc] init];
-//        r.style = AlphaTableViewCellNormal;
-//        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];
-//        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        return r;
-//    }
+    else if (section == 3 && row == 0) {
+        AlphaRow *r = [[AlphaRow alloc] init];
+        r.style = AlphaTableViewCellNormal;
+        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];
+        r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        r.onSelected = ^(StandardController *controller) {
+            StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
+            childController.model = [[SessionsBySpeaker alloc] initWithSessions:self.speaker.sessions];
+            childController.title = @"Sessions";
+            [controller.navigationController pushViewController:childController animated:YES];
+        };
+        return r;
+    }
     else {
         return nil;
     }

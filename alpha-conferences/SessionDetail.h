@@ -15,7 +15,7 @@
 
 @interface SessionDetail : NSObject <StandardControllerModel>
 
--(id)initWithSession:(Session *)session data:(DataStore *)data;
+-(id)initWithSession:(Session *)session;
 
 @end
 

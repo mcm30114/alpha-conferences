@@ -69,15 +69,34 @@
 }
 
 
+-(NSArray *)speakers {
+    NSMutableArray *a = [NSMutableArray array];
+    for (NSNumber *speakerId in speakerIds) {
+        [a addObject:[data speakerWithId:speakerId.integerValue]];
+    }
+    return a;
+}
+
+
 -(NSString *)speakerText {
     Speaker *speaker = [data speakerWithId:((NSNumber *)[self.speakerIds objectAtIndex:0]).intValue];
     return speaker.displayName;
 }
 
 
--(NSString *)dateTimeText {
+-(NSString *)timeText {
     NSDateFormatter *f = [NSDateFormatter timeFormatter];
     return [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:self.startDateTime], [f stringFromDate:self.endDateTime]];
+}
+
+
+-(NSString *)dateTimeText {
+    NSDateFormatter *df = [NSDateFormatter mediumDateFormatter];
+    NSDateFormatter *tf = [NSDateFormatter timeFormatter];
+    return [NSString stringWithFormat:@"%@ %@ - %@",
+            [df stringFromDate:self.startDateTime],
+            [tf stringFromDate:self.startDateTime],
+            [tf stringFromDate:self.endDateTime]];
 }
 
 
@@ -110,6 +129,11 @@
 -(UIColor *)color {
     UIColor *streamColor = self.stream.color;
     return streamColor ? streamColor : [UIColor colorWithSessionType:self.type];
+}
+
+
+-(NSComparisonResult)compareByStartDateTime:(Session *)aSession {
+    return [startDateTime compare:aSession.startDateTime];
 }
 
 
