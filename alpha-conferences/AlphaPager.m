@@ -133,7 +133,7 @@
         self.strings = a;
     }
     if (self.strings.count > 0) {
-        [self gotoPageAtIndex:0];
+        [self gotoPageAtIndex:self.pageIndex];
     }
 }
 
