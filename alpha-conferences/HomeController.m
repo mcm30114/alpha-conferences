@@ -143,16 +143,11 @@
 + (DTAttributedTextCell *)makeAttributedTextCellWithHTML:(NSString *)html {
 
     DTAttributedTextCell *cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:nil accessoryType:UITableViewCellAccessoryNone];
-    cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    
-    NSMutableDictionary *options = [NSMutableDictionary dictionary];
-    [options setObject:[NSNumber numberWithFloat:1.0] forKey:NSTextSizeMultiplierDocumentOption];
-    [options setObject:@"Helvetica" forKey:DTDefaultFontFamily];
-    [options setObject:@"blue" forKey:DTDefaultLinkColor];
+    cell.attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 15, 20, 15);
     
     if (html) {
-        NSData *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:nil];
+        NSData *data = [[NSString stringWithFormat:@"<div style='font-family: helvetica; font-size: 16px; line-height: 24px;'>%@</div>", html] dataUsingEncoding:NSUTF8StringEncoding];
+        NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:nil documentAttributes:nil];
         [cell setAttributedString:string];
     } else {
         [cell setHTMLString:@""];
