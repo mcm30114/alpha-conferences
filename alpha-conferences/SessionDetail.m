@@ -62,7 +62,8 @@
         for (NSNumber *speakerId in session.speakerIds) {
             Speaker *speaker = [data speakerWithId:speakerId.integerValue];
             AlphaRow *speakerRow = [[AlphaRow alloc] init];
-            speakerRow.style = AlphaTableViewCellWithImageRight;
+            speakerRow.style = AlphaTableViewCellWithImageLeft;
+            speakerRow.imageResource = [Resource resourceWithKey:speaker.imageKey type:ResourceTypeSpeakerImageSmall];
             speakerRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             speakerRow.text = speaker.displayName;
             speakerRow.detailText = speaker.position;
