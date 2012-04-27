@@ -12,6 +12,7 @@
 #import "RichTextRow.h"
 #import "ButtonBarRow.h"
 #import "SpeakerDetail.h"
+#import "ProgrammeChoices.h"
 
 
 @interface SessionDetail () {
@@ -37,11 +38,16 @@
         [top.rows addObject:titleRow];
         [sections addObject:top];
         
-//        ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
-//        buttons.button1Title = @"Bookmark";
-//        SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
-//        [buttonSection.rows addObject:buttons];
-//        [sections addObject:buttonSection];
+        if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0) {
+            ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
+            buttons.button1Title = @"Bookmark";
+            buttons.onButton1Selected = ^(UIViewController *controller) {
+                [ProgrammeChoices setBookmarkedSessionId:session.sessionId forSessionGroupId:session.sessionGroupId];
+            };
+            SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
+            [buttonSection.rows addObject:buttons];
+            [sections addObject:buttonSection];
+        }
         
         if (session.text.length > 0) {
             SessionDetailSection *descriptionSection = [[SessionDetailSection alloc] init];

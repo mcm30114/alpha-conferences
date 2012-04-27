@@ -12,6 +12,7 @@
 		032A8B6C1541F5AE001B55DF /* blank-100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B681541F5AE001B55DF /* blank-100x100.png */; };
 		032A8B6D1541F5AE001B55DF /* blank-320x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 032A8B691541F5AE001B55DF /* blank-320x120.png */; };
 		032A8B71154200CB001B55DF /* ImageRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A8B70154200CB001B55DF /* ImageRow.m */; };
+		03331D07154AD28B00FE0540 /* ProgrammeChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 03331D06154AD28B00FE0540 /* ProgrammeChoices.m */; };
 		033442B91545701D00562EEC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033442B81545701D00562EEC /* MapController.m */; };
 		033442BB154570CC00562EEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033442BA154570CC00562EEC /* MapKit.framework */; };
 		033E48B6154A7BB600C6A3DA /* RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E48B5154A7BB600C6A3DA /* RawData.m */; };
@@ -162,6 +163,8 @@
 		032A8B691541F5AE001B55DF /* blank-320x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blank-320x120.png"; path = "alpha-conferences/blank-320x120.png"; sourceTree = SOURCE_ROOT; };
 		032A8B6F154200CB001B55DF /* ImageRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRow.h; path = "alpha-conferences/ImageRow.h"; sourceTree = SOURCE_ROOT; };
 		032A8B70154200CB001B55DF /* ImageRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRow.m; path = "alpha-conferences/ImageRow.m"; sourceTree = SOURCE_ROOT; };
+		03331D05154AD28B00FE0540 /* ProgrammeChoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgrammeChoices.h; path = "alpha-conferences/ProgrammeChoices.h"; sourceTree = SOURCE_ROOT; };
+		03331D06154AD28B00FE0540 /* ProgrammeChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgrammeChoices.m; path = "alpha-conferences/ProgrammeChoices.m"; sourceTree = SOURCE_ROOT; };
 		033442B71545701D00562EEC /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "alpha-conferences/MapController.h"; sourceTree = SOURCE_ROOT; };
 		033442B81545701D00562EEC /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "alpha-conferences/MapController.m"; sourceTree = SOURCE_ROOT; };
 		033442BA154570CC00562EEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -683,6 +686,8 @@
 				03CC455C15417CE100737AD1 /* SeminarOptions.m */,
 				03CC455E1541884300737AD1 /* SessionDetail.h */,
 				03CC455F1541884400737AD1 /* SessionDetail.m */,
+				03331D05154AD28B00FE0540 /* ProgrammeChoices.h */,
+				03331D06154AD28B00FE0540 /* ProgrammeChoices.m */,
 			);
 			name = Programme;
 			path = "alpha-conferences";
@@ -979,6 +984,7 @@
 				7E503FEF154967B0007D98EB /* LabelTextProperties.m in Sources */,
 				034D8EA515498A77005ACF31 /* ProgrammeRow.m in Sources */,
 				033E48B6154A7BB600C6A3DA /* RawData.m in Sources */,
+				03331D07154AD28B00FE0540 /* ProgrammeChoices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

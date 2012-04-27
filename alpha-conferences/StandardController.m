@@ -35,6 +35,7 @@
 
 - (DTAttributedTextCell *)prepareAttributedTextCellWithMetadata:(RichTextRow *)md tableView:(UITableView *)tableView;
 - (void)dataWasUpdated:(NSNotification *)n;
+- (void)programmeChoiceWasUpdated:(NSNotification *)n;
 
 @end
 
@@ -71,6 +72,10 @@
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(dataWasUpdated:)
                                                      name:NOTIFICATION_DATA
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(programmeChoiceWasUpdated:)
+                                                     name:NOTIFICATION_PROGRAMME_CHOICE
                                                    object:nil];
     }
     return self;
@@ -412,6 +417,15 @@
 
 
 - (void)dataWasUpdated:(NSNotification *)notification {
+    if ([self.model respondsToSelector:@selector(reloadData)]) {
+        [self.model reloadData];
+        [self.tableView reloadData];
+        [self.pager reloadData];
+    }
+}
+
+
+- (void)programmeChoiceWasUpdated:(NSNotification *)notification {
     if ([self.model respondsToSelector:@selector(reloadData)]) {
         [self.model reloadData];
         [self.tableView reloadData];

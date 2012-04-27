@@ -16,6 +16,7 @@
 #import "NSDateFormatter+Alpha.h"
 #import "Room.h"
 #import "Venue.h"
+#import "ProgrammeChoices.h"
 
 
 @interface Programme ()
@@ -67,14 +68,14 @@
 
             for (Session *s in [sessionsKeyedByHour objectForKey:time]) {
                 
-                if (s.type == SessionTypeSeminarOption) {
-                    // seminars are not shown here
+                if (s.type == SessionTypeSeminarOption && ![ProgrammeChoices isSessionBookmarked:s]) {
+                    // don't show a seminar here seminars are not shown here
                 }
                 else if (s.type == SessionTypeSeminarSlot) {
                     // seminar slot
                     ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
                     programmeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    programmeRow.text = @"View seminar options available";
+                    programmeRow.text = [ProgrammeChoices doesSessionGroupHaveBookmark:s.sessionGroupId] ? @"Change seminar choice" : @"View seminar options available";
                     programmeRow.barColour = [UIColor colorWithSessionType:SessionTypeSeminarSlot];
                     programmeRow.onSelected = ^(StandardController *controller) {
                         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];

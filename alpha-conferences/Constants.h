@@ -18,7 +18,10 @@ extern NSString* const CONFERENCE_TITLE;
 extern NSString* const NOTIFICATION_DATA;
 extern NSString* const NOTIFICATION_FILE;
 extern NSString* const NOTIFICATION_TWITTER;
+extern NSString* const NOTIFICATION_PROGRAMME_CHOICE;
 
 extern NSString* const TWITTER_SEARCH_TERM;
+
+extern NSString* const USER_DEFAULTS_CHOICES;
 
 #endif
