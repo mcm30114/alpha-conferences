@@ -90,8 +90,11 @@
                     ProgrammeRow *programmeRow = [[ProgrammeRow alloc] init];
                     programmeRow.text = s.name;
                     programmeRow.speakerText = s.speakerText;
-                    programmeRow.detailText = s.room.venue.name;
+                    if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
+                        programmeRow.detailText = s.room.venue.name;
+                    }
                     programmeRow.dateTimeText = s.dateTimeText;
+                    
                     programmeRow.barColour = s.color;
                     
                     if (s.type != SessionTypeBreak && s.type != SessionTypeAdmin) {
