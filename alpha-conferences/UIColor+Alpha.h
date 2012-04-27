@@ -20,6 +20,9 @@
 // default table cell colour
 + (UIColor *)tableCellTitleColour;
 + (UIColor *)tableSubTitleColour;
++ (UIColor *)programmeCellSpeakerColour;
++ (UIColor *)programmeCellVenueColour;
++ (UIColor *)programmeCellTimeDateColour;
 
 + (UIColor *)colorWithSessionType:(SessionType)type;
 

@@ -33,6 +33,19 @@
 }
 
 
++ (UIColor *)programmeCellSpeakerColour {
+    return [UIColor grayColor];
+}
+
++ (UIColor *)programmeCellVenueColour {
+    return [UIColor grayColor];
+}
+
++ (UIColor *)programmeCellTimeDateColour {
+    return [UIColor grayColor];
+}
+
+
 + (UIColor *)colorWithSessionType:(SessionType)type {
     switch (type) {
         case SessionTypeAdmin:

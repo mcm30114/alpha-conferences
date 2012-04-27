@@ -32,6 +32,7 @@
 @property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *programmeSpeakerTextLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *programmeTimeTextLabelProperties;
+@property (nonatomic, strong) LabelTextProperties *programmeVenueTextLabelProperties;
 @property (nonatomic, strong) NSDictionary *attributedStringOptions;
 @property (nonatomic) UIEdgeInsets attributedCellEdgeInsets;
 
@@ -48,6 +49,7 @@
 @synthesize model = _model;
 @synthesize textLabelProperties;
 @synthesize detailTextLabelProperties;
+@synthesize programmeVenueTextLabelProperties;
 @synthesize programmeSpeakerTextLabelProperties;
 @synthesize programmeTimeTextLabelProperties;
 @synthesize attributedStringOptions;
@@ -68,8 +70,9 @@
         // set default styles for cells
         self.textLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellTitleFont] textColour:[UIColor tableCellTitleColour] lineBreakMode:UILineBreakModeWordWrap];
         self.detailTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
-        self.programmeSpeakerTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor tableSubTitleColour] lineBreakMode:UILineBreakModeWordWrap];
-        self.programmeTimeTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11] textColour:[UIColor grayColor] lineBreakMode:UILineBreakModeWordWrap];
+        self.programmeVenueTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor programmeCellVenueColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.programmeSpeakerTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont tableCellSubTitleFont] textColour:[UIColor programmeCellSpeakerColour] lineBreakMode:UILineBreakModeWordWrap];
+        self.programmeTimeTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11] textColour:[UIColor programmeCellTimeDateColour] lineBreakMode:UILineBreakModeWordWrap];
         
         NSMutableDictionary *options = [NSMutableDictionary dictionary];
         [options setObject:[NSNumber numberWithFloat:1.6] forKey:NSTextSizeMultiplierDocumentOption];	
@@ -212,7 +215,7 @@
             cell = [[ProgrammeCell alloc] initWithReuseIdentifier:cellId];
             
             [self.textLabelProperties setPropertiesForLabel:cell.textLabel];
-            [self.detailTextLabelProperties setPropertiesForLabel:cell.detailTextLabel];
+            [self.programmeVenueTextLabelProperties setPropertiesForLabel:cell.detailTextLabel];
             [self.programmeSpeakerTextLabelProperties setPropertiesForLabel:cell.speakerTextLabel];
             [self.programmeTimeTextLabelProperties setPropertiesForLabel:cell.timeTextLabel];
         }
