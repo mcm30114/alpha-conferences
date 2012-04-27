@@ -570,7 +570,6 @@
 		7E401EF5153C18FC00DA78D2 = {
 			isa = PBXGroup;
 			children = (
-				B78EFCB415495E8B007CFDAE /* AudioToolbox.framework */,
 				7E401F0A153C18FD00DA78D2 /* alpha-conferences */,
 				03CC4529154081A800737AD1 /* JSONKit */,
 				7E401F03153C18FD00DA78D2 /* Frameworks */,
@@ -590,6 +589,7 @@
 		7E401F03153C18FD00DA78D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B78EFCB415495E8B007CFDAE /* AudioToolbox.framework */,
 				039848AB15457AFF00151128 /* CoreLocation.framework */,
 				033442BA154570CC00562EEC /* MapKit.framework */,
 				7E34941C153EF8EA009E332C /* CoreText.framework */,
