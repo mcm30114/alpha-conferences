@@ -49,7 +49,14 @@
                 [controller.navigationController pushViewController:childController animated:YES];
             };
         }
-        buttons.button2Title = @"Bookmark";
+        
+        if ([ProgrammeChoices isSessionBookmarked:session]) {
+          buttons.button2Title = @"Bookmarked";
+        }
+        else {
+          buttons.button2Title = @"Bookmark";
+        }
+        
         if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0 && ![ProgrammeChoices isSessionBookmarked:session]) {
             buttons.onButton2Selected = ^(id sender, UIViewController *controller) {
                 [ProgrammeChoices setBookmarkedSessionId:session.sessionId forSessionGroupId:session.sessionGroupId];
