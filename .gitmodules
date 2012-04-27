@@ -1,3 +1,6 @@
 [submodule "JSONKit"]
 	path = JSONKit
 	url = https://github.com/johnezang/JSONKit.git
+[submodule "DTCoreText"]
+	path = DTCoreText
+	url = git@github.com:brightec/DTCoreText.git
