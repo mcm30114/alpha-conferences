@@ -53,7 +53,7 @@
         if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0 && ![ProgrammeChoices isSessionBookmarked:session]) {
             buttons.onButton2Selected = ^(id sender, UIViewController *controller) {
                 [ProgrammeChoices setBookmarkedSessionId:session.sessionId forSessionGroupId:session.sessionGroupId];
-                ((UIButton *)sender).enabled = NO;
+                [controller.navigationController popToViewController:[[controller.navigationController viewControllers] objectAtIndex:0] animated:YES];
             };
         }
         SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
