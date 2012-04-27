@@ -390,6 +390,7 @@
 - (void)alphaPager:(AlphaPager *)alphaPager didChangePageWithIndex:(NSInteger)index {
     selectedPage = index;
     [self.tableView reloadData];
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
 
