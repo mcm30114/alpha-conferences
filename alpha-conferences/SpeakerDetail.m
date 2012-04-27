@@ -90,7 +90,7 @@
     else if (section == 3 && row == 0) {
         AlphaRow *r = [[AlphaRow alloc] init];
         r.style = AlphaTableViewCellNormal;
-        r.text = [NSString stringWithFormat:@"View sessions with %@", self.speaker.displayName];
+        r.text = @"View their sessions";
         r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         r.onSelected = ^(StandardController *controller) {
             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
