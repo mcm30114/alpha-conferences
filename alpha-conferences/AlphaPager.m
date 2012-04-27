@@ -104,13 +104,16 @@
 }
 
 
+- (void)updateState {
+    self.prevButton.enabled = (self.pageIndex > 0);
+    self.nextButton.enabled = (self.pageIndex < self.strings.count-1);
+    self.titleLabel.text = [self.strings objectAtIndex:self.pageIndex];
+}
+
+
 - (void)gotoPageAtIndex:(NSInteger)index {
-    
-    self.prevButton.enabled = (index > 0);
-    self.nextButton.enabled = (index < self.strings.count-1);
-    
     self.pageIndex = index;
-    self.titleLabel.text = [self.strings objectAtIndex:index];
+    [self updateState];
     
     // inform delegate
     if ([(id)self.delegate respondsToSelector:@selector(alphaPager:didChangePageWithIndex:)]) {
@@ -133,7 +136,7 @@
         self.strings = a;
     }
     if (self.strings.count > 0) {
-        [self gotoPageAtIndex:self.pageIndex];
+        [self updateState];
     }
 }
 
