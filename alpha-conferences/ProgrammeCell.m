@@ -7,12 +7,13 @@
 //
 
 #import "ProgrammeCell.h"
+#import "ResourceCache.h"
 
 #define CELL_MARGIN 10.0
 #define COLOUR_BAR_WIDTH 10.0
 
 @interface ProgrammeCell ()
-@property (nonatomic, unsafe_unretained) UIView *colourBar;
+@property (nonatomic, unsafe_unretained) UIImageView *colourBar;
 @end
 
 
@@ -28,8 +29,8 @@
     if (self) {
         
         // create colour bar
-        UIView *colourBar = [[UIView alloc] initWithFrame:CGRectZero];
-        colourBar.backgroundColor = [UIColor grayColor];
+        UIImageView *colourBar = [[UIImageView alloc] initWithImage:[ResourceCache imageWithColor:[UIColor grayColor] size:CGSizeMake(1, 1) scale:1.0]];
+        colourBar.contentMode = UIViewContentModeScaleToFill;
         colourBar.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleRightMargin;
         [self.contentView addSubview:colourBar];
         self.colourBar = colourBar;
@@ -39,6 +40,7 @@
         speakerLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         speakerLabel.lineBreakMode = UILineBreakModeWordWrap;
         speakerLabel.numberOfLines = 0;        
+        speakerLabel.highlightedTextColor = [UIColor whiteColor];        
         [self.contentView addSubview:speakerLabel];
         self.speakerTextLabel = speakerLabel;
 
@@ -46,6 +48,7 @@
         timeLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         timeLabel.lineBreakMode = UILineBreakModeWordWrap;
         timeLabel.numberOfLines = 0;        
+        timeLabel.highlightedTextColor = [UIColor whiteColor];
         [self.contentView addSubview:timeLabel];
         self.timeTextLabel = timeLabel;        
         
@@ -140,7 +143,7 @@
 
 - (void)setBarColour:(UIColor *)barColour {
     _barColour = barColour;
-    self.colourBar.backgroundColor = barColour;
+    self.colourBar.image = [ResourceCache imageWithColor:barColour size:CGSizeMake(1, 1) scale:1.0];
     [self layoutSubviews];
 }
 

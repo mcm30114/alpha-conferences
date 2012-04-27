@@ -60,9 +60,9 @@
 }
 
 // disabled for now as AlphaCell doesn't take the section index into account when calculating required size
-//-(NSArray *)sectionIndexTitlesForPage:(NSInteger)page {
-//    return sectionTitles;
-//}
+-(NSArray *)sectionIndexTitlesForPage:(NSInteger)page {
+    return sectionTitles;
+}
 
 
 -(NSInteger)numberOfRowsInPage:(NSInteger)page section:(NSInteger)section {
