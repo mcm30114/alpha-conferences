@@ -20,8 +20,6 @@
 -(UIImage *)placeholderImageForResource:(Resource *)resource;
 -(NSString *)cachePathForResource:(Resource *)resource;
 
-+(UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size scale:(CGFloat)scale;
-
 @end
 
 

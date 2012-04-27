@@ -400,7 +400,7 @@
     }
     
     NSMutableDictionary *options = [NSMutableDictionary dictionary];
-    [options setObject:[NSNumber numberWithFloat:1.0] forKey:NSTextSizeMultiplierDocumentOption];
+    [options setObject:[NSNumber numberWithFloat:1.2] forKey:NSTextSizeMultiplierDocumentOption];
     [options setObject:@"Helvetica" forKey:DTDefaultFontFamily];
     [options setObject:@"blue" forKey:DTDefaultLinkColor];
     
