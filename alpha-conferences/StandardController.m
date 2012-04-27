@@ -76,8 +76,8 @@
         self.programmeTimeTextLabelProperties = [[LabelTextProperties alloc] initWithFont:[UIFont systemFontOfSize:11] textColour:[UIColor programmeCellTimeDateColour] lineBreakMode:UILineBreakModeWordWrap];
         
         NSMutableDictionary *options = [NSMutableDictionary dictionary];
-        [options setObject:[NSNumber numberWithFloat:1.6] forKey:NSTextSizeMultiplierDocumentOption];	
-        [options setObject:[NSNumber numberWithFloat:1.5] forKey:DTDefaultLineHeightMultiplier];
+        [options setObject:[NSNumber numberWithFloat:1.3] forKey:NSTextSizeMultiplierDocumentOption];	
+        [options setObject:[NSNumber numberWithFloat:1.3] forKey:DTDefaultLineHeightMultiplier];
         [options setObject:@"Helvetica" forKey:DTDefaultFontFamily];
         [options setObject:@"blue" forKey:DTDefaultLinkColor];  
         self.attributedStringOptions = options;
