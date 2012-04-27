@@ -41,7 +41,14 @@
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = c.name;
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
+    
+    if ([[f stringFromDate:c.startDate] isEqualToString:[f stringFromDate:c.endDate]]) {
+        r.detailText = [NSString stringWithFormat:@"%@", [f stringFromDate:c.startDate]];
+    }
+    else {
+        r.detailText = [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:c.startDate], [f stringFromDate:c.endDate]];
+    }
+    
     r.onSelected = ^(StandardController *controller) {
         HomeController *childController = [[HomeController alloc] initWithConference:c];
         childController.title = c.name;
