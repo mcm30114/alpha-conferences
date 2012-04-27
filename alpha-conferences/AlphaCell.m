@@ -111,7 +111,12 @@
     // if cell is displaying an accessory then adjust label to accomodate for it
     if (cellAccessoryType != UITableViewCellAccessoryNone) {
         contentWidth -= 20;
-    }    
+    }   
+    
+    // if showing index titles accomodate for it
+    if ([tableView.dataSource sectionIndexTitlesForTableView:tableView] != nil) {
+        contentWidth -= 32;
+    }
     
     for (int i = 0; i < labelTextStrings.count; i++) {
         NSString *text = (NSString  *)[labelTextStrings objectAtIndex:i];
