@@ -20,5 +20,6 @@
 @interface NSMutableDictionary (Alpha)
 
 -(void)setObject:(id)object forIntegerKey:(NSInteger)key;
+-(void)removeObjectForIntegerKey:(NSInteger)key;
 
 @end

@@ -14,6 +14,7 @@
 		032A8B71154200CB001B55DF /* ImageRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 032A8B70154200CB001B55DF /* ImageRow.m */; };
 		033442B91545701D00562EEC /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033442B81545701D00562EEC /* MapController.m */; };
 		033442BB154570CC00562EEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033442BA154570CC00562EEC /* MapKit.framework */; };
+		033E48B6154A7BB600C6A3DA /* RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 033E48B5154A7BB600C6A3DA /* RawData.m */; };
 		034A504A1540637D00ADB1C2 /* StandardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A50481540637D00ADB1C2 /* StandardController.m */; };
 		034A504D1540653C00ADB1C2 /* AlphaRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504C1540653C00ADB1C2 /* AlphaRow.m */; };
 		034A5050154065DD00ADB1C2 /* RichTextRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 034A504F154065DD00ADB1C2 /* RichTextRow.m */; };
@@ -161,6 +162,8 @@
 		033442B71545701D00562EEC /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapController.h; path = "alpha-conferences/MapController.h"; sourceTree = SOURCE_ROOT; };
 		033442B81545701D00562EEC /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapController.m; path = "alpha-conferences/MapController.m"; sourceTree = SOURCE_ROOT; };
 		033442BA154570CC00562EEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		033E48B4154A7BB600C6A3DA /* RawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RawData.h; sourceTree = "<group>"; };
+		033E48B5154A7BB600C6A3DA /* RawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RawData.m; sourceTree = "<group>"; };
 		034A50471540637D00ADB1C2 /* StandardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardController.h; path = "alpha-conferences/StandardController.h"; sourceTree = SOURCE_ROOT; };
 		034A50481540637D00ADB1C2 /* StandardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardController.m; path = "alpha-conferences/StandardController.m"; sourceTree = SOURCE_ROOT; };
 		034A50491540637D00ADB1C2 /* StandardControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardControllerModel.h; path = "alpha-conferences/StandardControllerModel.h"; sourceTree = SOURCE_ROOT; };
@@ -393,6 +396,8 @@
 			children = (
 				034A507015407CF600ADB1C2 /* DataStore.h */,
 				034A507115407CF600ADB1C2 /* DataStore.m */,
+				033E48B4154A7BB600C6A3DA /* RawData.h */,
+				033E48B5154A7BB600C6A3DA /* RawData.m */,
 			);
 			name = DataStore;
 			path = "alpha-conferences";
@@ -961,6 +966,7 @@
 				7E503FEA15496787007D98EB /* AlphaTwitterCell.m in Sources */,
 				7E503FEF154967B0007D98EB /* LabelTextProperties.m in Sources */,
 				034D8EA515498A77005ACF31 /* ProgrammeRow.m in Sources */,
+				033E48B6154A7BB600C6A3DA /* RawData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

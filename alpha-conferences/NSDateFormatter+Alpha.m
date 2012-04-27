@@ -37,5 +37,10 @@
     return f;
 }
 
++(NSDateFormatter *)iso8601Formatter {
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    f.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss";
+    return f;
+}
 
 @end
