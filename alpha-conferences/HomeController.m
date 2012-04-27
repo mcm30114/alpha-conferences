@@ -101,6 +101,7 @@
         b.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [b setTitle:@"Book online" forState:UIControlStateNormal];
         [b setTitleColor:[UIColor disabledButtonTextColour] forState:UIControlStateDisabled];
+        [b addTarget:self action:@selector(bookingButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         b.enabled = conference.bookingURL.length > 0;
         [cell.contentView addSubview:b];
         return cell;
@@ -137,6 +138,13 @@
     detailsCell = [HomeController makeAttributedTextCellWithHTML:conference.text];
     detailsCell.selectionStyle = UITableViewCellSelectionStyleNone;
     [((UITableView *)self.view) reloadData];
+}
+
+
+- (void)bookingButtonTapped:(id)sender {
+    if (conference.bookingURL.length > 0) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:conference.bookingURL]];
+    }
 }
 
 
