@@ -66,7 +66,7 @@
     else if (section == 1 && row == 0) {
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
         r.button1Title = @"View map";
-        r.onButton1Selected = ^(UIViewController *controller) {
+        r.onButton1Selected = ^(id sender, UIViewController *controller) {
             NSString *url = [NSString stringWithFormat:@"http://maps.google.co.uk?q=%@@%f,%f",
                              [self.venue.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                              self.venue.latitude,
@@ -74,7 +74,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         };
         r.button2Title = @"View floorplan";
-        r.onButton2Selected = ^(UIViewController *controller) {
+        r.onButton2Selected = ^(id sender, UIViewController *controller) {
             Resource *r = [Resource resourceWithKey:self.venue.floorplanKey type:ResourceTypeVenueFloorplan];
             FloorplanController *childController = [[FloorplanController alloc] initWithResource:r];
             childController.title = @"Floorplan";

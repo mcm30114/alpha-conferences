@@ -67,13 +67,13 @@
         ButtonBarRow *r = [[ButtonBarRow alloc] init];
         r.button1Title = @"Visit Website";
         if (self.speaker.websiteUrl.length > 0) {
-            r.onButton1Selected = ^(UIViewController *controller) {
+            r.onButton1Selected = ^(id sender, UIViewController *controller) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.speaker.websiteUrl]];
             };
         }
         r.button2Title = @"Follow on Twitter";
         if (self.speaker.twitterUsername.length > 0) {
-            r.onButton2Selected = ^(UIViewController *controller) {
+            r.onButton2Selected = ^(id sender, UIViewController *controller) {
                 NSString *twitterUrl = [NSString stringWithFormat:@"http://mobile.twitter.com/%@", self.speaker.twitterUsername];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:twitterUrl]];
             };

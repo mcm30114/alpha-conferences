@@ -42,7 +42,7 @@
         ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
         buttons.button1Title = @"Venue";
         if (session.room.venue) {
-            buttons.onButton1Selected = ^(UIViewController *controller) {
+            buttons.onButton1Selected = ^(id sender, UIViewController *controller) {
                 StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                 childController.title = session.room.venue.name;
                 childController.model = [[VenueDetailModel alloc] initWithVenue:session.room.venue];
@@ -51,8 +51,9 @@
         }
         buttons.button2Title = @"Bookmark";
         if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0 && ![ProgrammeChoices isSessionBookmarked:session]) {
-            buttons.onButton2Selected = ^(UIViewController *controller) {
+            buttons.onButton2Selected = ^(id sender, UIViewController *controller) {
                 [ProgrammeChoices setBookmarkedSessionId:session.sessionId forSessionGroupId:session.sessionGroupId];
+                ((UIButton *)sender).enabled = NO;
             };
         }
         SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];

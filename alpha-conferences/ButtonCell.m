@@ -17,8 +17,8 @@
     __unsafe_unretained UIViewController *controller;
 }
 
-@property (nonatomic, copy) void (^onButton1Selected)();
-@property (nonatomic, copy) void (^onButton2Selected)();
+@property (nonatomic, copy) void (^onButton1Selected)(id sender, UIViewController *controller);
+@property (nonatomic, copy) void (^onButton2Selected)(id sender, UIViewController *controller);
 
 - (void)handleButtonTap:(id)sender;
 
@@ -82,11 +82,11 @@
 - (void)handleButtonTap:(id)sender {
     if (sender == button1) {
         if (self.onButton1Selected) {
-            self.onButton1Selected(controller);
+            self.onButton1Selected(sender, controller);
         }
     } else if (sender == button2) {
         if (self.onButton2Selected) {
-            self.onButton2Selected(controller);
+            self.onButton2Selected(sender, controller);
         }
     }
 }
