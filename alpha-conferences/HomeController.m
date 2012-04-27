@@ -11,6 +11,7 @@
 #import "ResourceCache.h"
 #import "Constants.h"
 #import "DataStore.h"
+#import "UIColor+Alpha.h"
 
 
 @interface HomeController () {
@@ -99,7 +100,7 @@
         b.frame = CGRectMake(10, 10, cell.contentView.bounds.size.width - 20, cell.contentView.bounds.size.height - 20);
         b.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [b setTitle:@"Book online" forState:UIControlStateNormal];
-        [b setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+        [b setTitleColor:[UIColor disabledButtonTextColour] forState:UIControlStateDisabled];
         b.enabled = conference.bookingURL.length > 0;
         [cell.contentView addSubview:b];
         return cell;

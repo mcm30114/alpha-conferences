@@ -23,4 +23,6 @@
 
 + (UIColor *)colorWithSessionType:(SessionType)type;
 
++ (UIColor *)disabledButtonTextColour;
+
 @end
