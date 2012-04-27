@@ -12,6 +12,7 @@
 #import "RichTextRow.h"
 #import "ButtonBarRow.h"
 #import "SpeakerDetail.h"
+#import "VenueDetailModel.h"
 #import "ProgrammeChoices.h"
 
 
@@ -38,16 +39,25 @@
         [top.rows addObject:titleRow];
         [sections addObject:top];
         
-        if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0) {
-            ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
-            buttons.button1Title = @"Bookmark";
+        ButtonBarRow *buttons = [[ButtonBarRow alloc] init];
+        buttons.button1Title = @"Venue";
+        if (session.room.venue) {
             buttons.onButton1Selected = ^(UIViewController *controller) {
+                StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
+                childController.title = session.room.venue.name;
+                childController.model = [[VenueDetailModel alloc] initWithVenue:session.room.venue];
+                [controller.navigationController pushViewController:childController animated:YES];
+            };
+        }
+        buttons.button2Title = @"Bookmark";
+        if (session.type == SessionTypeSeminarOption && session.sessionGroupId > 0 && ![ProgrammeChoices isSessionBookmarked:session]) {
+            buttons.onButton2Selected = ^(UIViewController *controller) {
                 [ProgrammeChoices setBookmarkedSessionId:session.sessionId forSessionGroupId:session.sessionGroupId];
             };
-            SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
-            [buttonSection.rows addObject:buttons];
-            [sections addObject:buttonSection];
         }
+        SessionDetailSection *buttonSection = [[SessionDetailSection alloc] init];
+        [buttonSection.rows addObject:buttons];
+        [sections addObject:buttonSection];
         
         if (session.text.length > 0) {
             SessionDetailSection *descriptionSection = [[SessionDetailSection alloc] init];
