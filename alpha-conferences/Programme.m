@@ -66,7 +66,19 @@
         for (NSDate *time in sessionTimes) {
             ProgrammeSection *ps = [[ProgrammeSection alloc] initWithTime:time];
 
-            for (Session *s in [sessionsKeyedByHour objectForKey:time]) {
+            // within each hour, sort the sessions first by type (seminar slots last), then by start time
+            NSArray *sessionsInThisHour = [sessionsKeyedByHour objectForKey:time];
+            sessionsInThisHour = [sessionsInThisHour sortedArrayUsingComparator:^NSComparisonResult(Session *a, Session *b) {
+                if (a.type == SessionTypeSeminarSlot && b.type != SessionTypeSeminarSlot) {
+                    return NSOrderedDescending;
+                } else if (a.type != SessionTypeSeminarSlot && b.type == SessionTypeSeminarSlot) {
+                    return NSOrderedAscending;
+                } else {
+                    return [a.startDateTime compare:b.startDateTime];
+                }
+            }];
+            
+            for (Session *s in sessionsInThisHour) {
                 
                 if (s.type == SessionTypeSeminarOption && ![ProgrammeChoices isSessionBookmarked:s]) {
                     // don't show a seminar here seminars are not shown here
