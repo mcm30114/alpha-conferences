@@ -13,6 +13,7 @@
 @interface TwitterFeed : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *tweets;
+@property (nonatomic, strong, readonly) NSDate *date;
 
 + (TwitterFeed *)latestAvailableInstance;
 + (void)refresh;

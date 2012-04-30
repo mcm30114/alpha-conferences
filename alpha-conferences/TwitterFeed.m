@@ -13,7 +13,7 @@
 
 @interface TwitterFeed ()
 
-- (id)initWithTweetDictionaries:(NSArray *)tweetDictionaries;
+- (id)initWithTweetDictionaries:(NSArray *)tweetDictionaries date:(NSDate *)date;
 
 @end
 
@@ -22,6 +22,7 @@
 @implementation TwitterFeed
 
 @synthesize tweets = _tweets;
+@synthesize date = _date;
 
 
 static TwitterFeed *latestAvailableInstance = nil;
@@ -74,7 +75,7 @@ static TwitterFeed *latestAvailableInstance = nil;
         // save tweets
         [[allTweets JSONData] writeToFile:fullPath atomically:YES];
         
-        TwitterFeed *feed = [[TwitterFeed alloc] initWithTweetDictionaries:allTweets];
+        TwitterFeed *feed = [[TwitterFeed alloc] initWithTweetDictionaries:allTweets date:[NSDate date]];
         latestAvailableInstance = feed;
         // notify delegates in main thread
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -85,13 +86,14 @@ static TwitterFeed *latestAvailableInstance = nil;
 }
 
 
-- (id)initWithTweetDictionaries:(NSArray *)tweetDictionaries {
+- (id)initWithTweetDictionaries:(NSArray *)tweetDictionaries date:(NSDate *)date {
     if (self = [super init]) {
         NSMutableArray *tweets = [NSMutableArray array];
         for (NSDictionary *d in tweetDictionaries) {
             [tweets addObject:[[Tweet alloc] initWithDictionary:d]];
         }
         _tweets = tweets;
+        _date = date;
     }
     return self;
 }

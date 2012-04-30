@@ -13,6 +13,7 @@
 #import "ResourceCache.h"
 #import "LabelTextProperties.h"
 #import "AlphaTwitterCell.h"
+#import "NSDateFormatter+Alpha.h"
 
 
 @interface TwitterController () {
@@ -20,20 +21,27 @@
     NSArray *tweets;
 }
 
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UILabel *updatedLabel;
 @property (nonatomic, strong) LabelTextProperties *textLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *detailTextLabelProperties;
 @property (nonatomic, strong) LabelTextProperties *twitterDateTextLabelProperties;
 
 - (void)tweetsWereUpdated:(NSNotification *)notification;
+- (void)updateTime:(NSDate *)date;
 
 @end
 
 
 
 @implementation TwitterController
+
+@synthesize tableView = _tableView;
+@synthesize updatedLabel = _updatedLabel;
 @synthesize textLabelProperties;
 @synthesize detailTextLabelProperties;
 @synthesize twitterDateTextLabelProperties;
+
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -52,32 +60,40 @@
                                                  selector:@selector(tweetsWereUpdated:)
                                                      name:NOTIFICATION_TWITTER
                                                    object:nil];
+        
     }
     return self;
 }
 
 
 - (void)loadView {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame style:UITableViewStylePlain];
+    UIView *rootView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, rootView.bounds.size.width, rootView.bounds.size.height-20) style:UITableViewStylePlain];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     tableView.dataSource = self;
     tableView.delegate = self;
-    self.view = tableView;
+    [rootView addSubview:tableView];
+    self.tableView = tableView;
+    
+    UILabel *updatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, rootView.bounds.size.height-20, rootView.bounds.size.width, 20)];
+    updatedLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    updatedLabel.textAlignment = UITextAlignmentCenter;
+    updatedLabel.backgroundColor = [UIColor lightGrayColor];
+    updatedLabel.textColor = [UIColor darkGrayColor];
+    updatedLabel.font = [UIFont systemFontOfSize:11];
+    [rootView addSubview:updatedLabel];
+    self.updatedLabel = updatedLabel;
+    
+    self.view = rootView;
 }
 
 
 -(void)viewDidLoad {
-    tweets = [TwitterFeed latestAvailableInstance].tweets;
+    TwitterFeed *feed = [TwitterFeed latestAvailableInstance];
+    tweets = feed.tweets;
+    [self updateTime:feed.date];
 }
-
-
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    UITableView *tableView = (UITableView *)self.view;
-//    NSLog(@"viewDidAppear tableView=%@ selected=%@", tableView, tableView.indexPathForSelectedRow);
-//    if (tableView.indexPathForSelectedRow) {
-//        [tableView deselectRowAtIndexPath:tableView.indexPathForSelectedRow animated:YES];
-//    }
-//}
 
 
 #pragma mark - UITableViewDataSource
@@ -155,7 +171,19 @@
 - (void)tweetsWereUpdated:(NSNotification *)notification {
     TwitterFeed *feed = notification.object;
     tweets = feed.tweets;
-    [((UITableView *)self.view) reloadData];
+    [self updateTime:feed.date];
+    [self.tableView reloadData];
+}
+
+
+- (void)updateTime:(NSDate *)date {
+    if (date) {
+        self.updatedLabel.text = [NSString stringWithFormat:@"Last updated: %@ - %@",
+                                  [[NSDateFormatter timeFormatter] stringFromDate:date],
+                                  [[NSDateFormatter mediumDateFormatter] stringFromDate:date]];
+    } else {
+        self.updatedLabel.text = @"Twitter feed is not available offline";
+    }
 }
 
 
