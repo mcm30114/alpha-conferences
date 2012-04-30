@@ -54,9 +54,6 @@ static DataStore *latestAvailableInstance = nil;
         NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString *path = [documentsDirectory stringByAppendingPathComponent:@"RawData"];
         RawData *rawData = [RawData rawDataWithContentsOfFile:path];
-        if (rawData == nil) {
-            rawData = [[RawData alloc] init];
-        }
 
         NSString *timestamp = (rawData.time != nil) ? [[NSDateFormatter iso8601Formatter] stringFromDate:rawData.time] : @"0";
         
@@ -66,22 +63,26 @@ static DataStore *latestAvailableInstance = nil;
         NSData *data = [NSData dataWithContentsOfURL:url];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
-        if (data == nil) {
-            if (rawData == nil) {
-                // got no data at all, inform the user of this
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
-                                                                message:@"Sorry, content could not be downloaded."
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
-            }
+        if (data == nil && rawData == nil) {
+            // got no data at all, inform the user of this
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+                                                            message:@"Sorry, content could not be downloaded."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:NO];
             return;
         }
 
         // if we get here we potentially have new data
-        [rawData populateWithJSON:data];
-        [rawData saveToFile:path];
+        
+        if (rawData == nil) {
+            rawData = [[RawData alloc] init];
+        }
+        if (data != nil) {
+            [rawData populateWithJSON:data];
+            [rawData saveToFile:path];
+        }
         DataStore *ds = [[DataStore alloc] initWithRawData:rawData];
         latestAvailableInstance = ds;
         dispatch_async(dispatch_get_main_queue(), ^{
