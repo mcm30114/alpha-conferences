@@ -61,6 +61,11 @@
                 [section.rows addObject:programmeRow];
             }
         }
+        
+        // order streams by name
+        [sections sortUsingComparator:^NSComparisonResult(SeminarOptionsSection *a, SeminarOptionsSection *b) {
+            return [a.stream.name compare:b.stream.name];
+        }];
     }
     return self;
 }
