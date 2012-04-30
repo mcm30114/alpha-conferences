@@ -79,7 +79,7 @@
     UILabel *updatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, rootView.bounds.size.height-20, rootView.bounds.size.width, 20)];
     updatedLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     updatedLabel.textAlignment = UITextAlignmentCenter;
-    updatedLabel.backgroundColor = [UIColor lightGrayColor];
+    updatedLabel.backgroundColor = [UIColor colorWithHex:0xccccccff];
     updatedLabel.textColor = [UIColor darkGrayColor];
     updatedLabel.font = [UIFont systemFontOfSize:11];
     [rootView addSubview:updatedLabel];
