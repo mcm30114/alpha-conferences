@@ -68,7 +68,7 @@ static ResourceCache *_defaultResourceCache = nil;
 -(void)dataForResource:(Resource *)resource onComplete:(void (^)(NSData *))onComplete {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *data = [self synchronousDataForResource:resource];
-        if (data) {
+        if (onComplete) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 onComplete(data);
             });

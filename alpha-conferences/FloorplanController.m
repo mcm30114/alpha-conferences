@@ -40,8 +40,16 @@
 - (void)viewDidLoad {
     UIWebView *wv = (UIWebView *)self.view;
     [[ResourceCache defaultResourceCache] dataForResource:resource onComplete:^(NSData *data) {
+        NSLog(@"resource is %@", data);
         if (data) {
             [wv loadData:data MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Offline"
+                                                            message:@"Sorry, floorplan is not available when offline."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
     }];
 }
