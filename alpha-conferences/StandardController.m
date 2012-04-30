@@ -366,7 +366,7 @@
         // calculate width to constratin the attributed label to
         CGFloat constrainedWidth = tableView.frame.size.width;
         if (tableView.style == UITableViewStyleGrouped) {
-            constrainedWidth -= 19;
+            constrainedWidth -= 20;
         }
         
         constrainedWidth -= (self.attributedCellEdgeInsets.left + self.attributedCellEdgeInsets.right);
