@@ -66,16 +66,18 @@
         for (NSDate *time in sessionTimes) {
             ProgrammeSection *ps = [[ProgrammeSection alloc] initWithTime:time];
 
-            // within each hour, sort the sessions first by type (seminar slots last), then by start time
+            // sessions are sorted by time, but sessions with the same time are sorted with 'seminar slot' type first
             NSArray *sessionsInThisHour = [sessionsKeyedByHour objectForKey:time];
             sessionsInThisHour = [sessionsInThisHour sortedArrayUsingComparator:^NSComparisonResult(Session *a, Session *b) {
-                if (a.type == SessionTypeSeminarSlot && b.type != SessionTypeSeminarSlot) {
-                    return NSOrderedDescending;
-                } else if (a.type != SessionTypeSeminarSlot && b.type == SessionTypeSeminarSlot) {
-                    return NSOrderedAscending;
-                } else {
-                    return [a.startDateTime compare:b.startDateTime];
+                NSComparisonResult r = [a.startDateTime compare:b.startDateTime];
+                if (r == NSOrderedSame) {
+                    if (a.type == SessionTypeSeminarSlot && b.type != SessionTypeSeminarSlot) {
+                        r = NSOrderedAscending;
+                    } else if (a.type != SessionTypeSeminarSlot && b.type == SessionTypeSeminarSlot) {
+                        r = NSOrderedDescending;
+                    }
                 }
+                return r;
             }];
             
             for (Session *s in sessionsInThisHour) {
