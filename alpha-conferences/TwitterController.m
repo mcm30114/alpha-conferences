@@ -179,8 +179,8 @@
 - (void)updateTime:(NSDate *)date {
     if (date) {
         self.updatedLabel.text = [NSString stringWithFormat:@"Last updated: %@ - %@",
-                                  [[NSDateFormatter timeFormatter] stringFromDate:date],
-                                  [[NSDateFormatter mediumDateFormatter] stringFromDate:date]];
+                                  [[NSDateFormatter timeFormatterWithDefaultTimeZone] stringFromDate:date],
+                                  [[NSDateFormatter mediumDateFormatterWithDefaultTimeZone] stringFromDate:date]];
     } else {
         self.updatedLabel.text = @"Twitter feed is not available offline";
     }

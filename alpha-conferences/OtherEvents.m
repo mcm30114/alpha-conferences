@@ -37,7 +37,7 @@
 
 -(id)rowForPage:(NSInteger)page section:(NSInteger)section row:(NSInteger)row {
     Conference *c = [conferences objectAtIndex:row];
-    NSDateFormatter *f = [NSDateFormatter mediumDateFormatter];
+    NSDateFormatter *f = [NSDateFormatter mediumDateFormatterWithUTCTimeZone];
     AlphaRow *r = [[AlphaRow alloc] init];
     r.text = c.name;
     r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

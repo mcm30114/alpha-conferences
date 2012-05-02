@@ -58,7 +58,7 @@
 
 
 - (NSString *)displayDateTime {
-    return [[NSDateFormatter twitterFormatter] stringFromDate:self.createdAt];
+    return [[NSDateFormatter twitterFormatterWithDefaultTimeZone] stringFromDate:self.createdAt];
 }
 
 - (NSURL *)URL {

@@ -85,14 +85,14 @@
 
 
 -(NSString *)timeText {
-    NSDateFormatter *f = [NSDateFormatter timeFormatter];
+    NSDateFormatter *f = [NSDateFormatter timeFormatterWithUTCTimeZone];
     return [NSString stringWithFormat:@"%@ - %@", [f stringFromDate:self.startDateTime], [f stringFromDate:self.endDateTime]];
 }
 
 
 -(NSString *)dateTimeText {
-    NSDateFormatter *df = [NSDateFormatter mediumDateFormatter];
-    NSDateFormatter *tf = [NSDateFormatter timeFormatter];
+    NSDateFormatter *df = [NSDateFormatter mediumDateFormatterWithUTCTimeZone];
+    NSDateFormatter *tf = [NSDateFormatter timeFormatterWithUTCTimeZone];
     return [NSString stringWithFormat:@"%@ %@ - %@",
             [df stringFromDate:self.startDateTime],
             [tf stringFromDate:self.startDateTime],
@@ -119,8 +119,8 @@
     
     if (str.length > 0) [str appendString:@"\n"];
     
-    NSDateFormatter *df = [NSDateFormatter mediumDateFormatter];
-    NSDateFormatter *tf = [NSDateFormatter timeFormatter];
+    NSDateFormatter *df = [NSDateFormatter mediumDateFormatterWithUTCTimeZone];
+    NSDateFormatter *tf = [NSDateFormatter timeFormatterWithUTCTimeZone];
     [str appendFormat:@"%@ - %@, %@", [tf stringFromDate:self.startDateTime], [tf stringFromDate:self.endDateTime], [df stringFromDate:self.startDateTime]];
     return str;
 }

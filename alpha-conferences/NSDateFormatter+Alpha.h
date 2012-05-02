@@ -11,10 +11,13 @@
 
 @interface NSDateFormatter (Alpha)
 
-+(NSDateFormatter *)longDateFormatter;
-+(NSDateFormatter *)mediumDateFormatter;
-+(NSDateFormatter *)timeFormatter;
-+(NSDateFormatter *)twitterFormatter;
-+(NSDateFormatter *)iso8601Formatter;
++(NSDateFormatter *)longDateFormatterWithUTCTimeZone;
++(NSDateFormatter *)longDateFormatterWithDefaultTimeZone;
++(NSDateFormatter *)mediumDateFormatterWithUTCTimeZone;
++(NSDateFormatter *)mediumDateFormatterWithDefaultTimeZone;
++(NSDateFormatter *)timeFormatterWithUTCTimeZone;
++(NSDateFormatter *)timeFormatterWithDefaultTimeZone;
++(NSDateFormatter *)twitterFormatterWithDefaultTimeZone;
++(NSDateFormatter *)iso8601FormatterWithUTCTimeZone;
 
 @end

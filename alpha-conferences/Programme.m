@@ -141,7 +141,7 @@
 
 -(NSString *)pageTitleForPage:(NSInteger)page {
     ProgrammePage *pp = [self.pages objectAtIndex:page];
-    return [[NSDateFormatter longDateFormatter] stringFromDate:pp.day.date];
+    return [[NSDateFormatter longDateFormatterWithUTCTimeZone] stringFromDate:pp.day.date];
 }
 
 
@@ -154,7 +154,7 @@
 -(NSString *)sectionTitleForPage:(NSInteger)page section:(NSInteger)section {
     ProgrammePage *pp = [self.pages objectAtIndex:page];
     ProgrammeSection *ps = [pp.sections objectAtIndex:section];
-    return [[NSDateFormatter timeFormatter] stringFromDate:ps.time];
+    return [[NSDateFormatter timeFormatterWithUTCTimeZone] stringFromDate:ps.time];
 }
 
 

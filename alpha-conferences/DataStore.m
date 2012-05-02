@@ -55,7 +55,7 @@ static DataStore *latestAvailableInstance = nil;
         NSString *path = [documentsDirectory stringByAppendingPathComponent:@"RawData"];
         RawData *rawData = [RawData rawDataWithContentsOfFile:path];
 
-        NSString *timestamp = (rawData.time != nil) ? [[NSDateFormatter iso8601Formatter] stringFromDate:rawData.time] : @"0";
+        NSString *timestamp = (rawData.time != nil) ? [[NSDateFormatter iso8601FormatterWithUTCTimeZone] stringFromDate:rawData.time] : @"0";
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://acs.alpha.org/api/rest/v1/conferences/getObjects/%d/%@", CONFERENCE_ID, timestamp]];
