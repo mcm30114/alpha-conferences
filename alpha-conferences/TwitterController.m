@@ -14,6 +14,7 @@
 #import "LabelTextProperties.h"
 #import "AlphaTwitterCell.h"
 #import "NSDateFormatter+Alpha.h"
+#import <Twitter/Twitter.h>
 
 
 @interface TwitterController () {
@@ -29,6 +30,7 @@
 
 - (void)tweetsWereUpdated:(NSNotification *)notification;
 - (void)updateTime:(NSDate *)date;
+- (void)composeTweet;
 
 @end
 
@@ -60,6 +62,10 @@
                                                  selector:@selector(tweetsWereUpdated:)
                                                      name:NOTIFICATION_TWITTER
                                                    object:nil];
+        
+        if (NSClassFromString(@"TWTweetComposeViewController")) {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(composeTweet)];
+        }
         
     }
     return self;
@@ -183,6 +189,28 @@
                                   [[NSDateFormatter mediumDateFormatterWithDefaultTimeZone] stringFromDate:date]];
     } else {
         self.updatedLabel.text = @"Twitter feed is not available offline";
+    }
+}
+
+
+- (void)composeTweet {
+    if ([TWTweetComposeViewController canSendTweet]) {
+        TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
+        [tweetSheet setInitialText:TWITTER_SEARCH_TERM];
+        tweetSheet.completionHandler = ^(TWTweetComposeViewControllerResult r) {
+            if (r == TWTweetComposeViewControllerResultDone) {
+                self.updatedLabel.text = @"Your tweet has been sent";
+            }
+            [self dismissModalViewControllerAnimated:YES];
+        };
+        [self presentModalViewController:tweetSheet animated:YES];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
+                                                        message:@"You cannot send a tweet, please ensure you have an internet connection and a Twitter account set up"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
