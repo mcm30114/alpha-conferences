@@ -17,6 +17,7 @@
 @interface SpeakerDetail ()
 
 @property (nonatomic, readonly, strong) Speaker *speaker;
+@property (nonatomic, readonly, strong) DataStore *data;
 
 @end
 
@@ -25,11 +26,13 @@
 @implementation SpeakerDetail
 
 @synthesize speaker = _speaker;
+@synthesize data = _data;
 
 
--(id)initWithSpeaker:(Speaker *)speaker {
+-(id)initWithSpeaker:(Speaker *)speaker data:(DataStore *)data {
     if (self = [super init]) {
         _speaker = speaker;
+        _data = data;
     }
     return self;
 }
@@ -94,7 +97,7 @@
         r.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         r.onSelected = ^(StandardController *controller) {
             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStylePlain pager:NO];
-            childController.model = [[SessionsBySpeaker alloc] initWithSessions:self.speaker.sessions];
+            childController.model = [[SessionsBySpeaker alloc] initWithSessions:self.speaker.sessions data:self.data];
             childController.title = @"Sessions";
             [controller.navigationController pushViewController:childController animated:YES];
         };

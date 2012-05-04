@@ -18,6 +18,7 @@
     @private
     NSArray *sectionTitles;
     NSMutableArray *sectionRows;
+    __strong DataStore *data;
 }
 
 @end
@@ -31,7 +32,8 @@
     
     NSMutableDictionary *speakersKeyedByLetter = [NSMutableDictionary dictionary];
     
-    NSArray *speakers = [DataStore latestAvailableInstance].speakers;
+    data = [DataStore latestAvailableInstance];
+    NSArray *speakers = data.speakers;
     for (Speaker *s in speakers) {
         NSString *key = [s indexLetter];
         NSMutableArray *a = [speakersKeyedByLetter objectForKey:key];
@@ -81,7 +83,7 @@
     r.onSelected = ^(StandardController *controller) {
         StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
         childController.title = s.displayName;
-        childController.model = [[SpeakerDetail alloc] initWithSpeaker:s];
+        childController.model = [[SpeakerDetail alloc] initWithSpeaker:s data:data];
         [controller.navigationController pushViewController:childController animated:YES];
     };
     return r;

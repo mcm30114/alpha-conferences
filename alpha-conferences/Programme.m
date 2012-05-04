@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong) NSMutableArray *pages;
 @property (nonatomic, strong) NSMutableDictionary *pagesKeyedByDayId;
+@property (nonatomic, strong) DataStore *data;
 
 @end
 
@@ -32,11 +33,12 @@
 
 @synthesize pages;
 @synthesize pagesKeyedByDayId;
+@synthesize data;
 
 
 -(void)reloadData {
-    DataStore *data = [DataStore latestAvailableInstance];
-    if (data.days.count == 0) {
+    self.data = [DataStore latestAvailableInstance];
+    if (self.data.days.count == 0) {
         return;
     }
     
@@ -116,7 +118,7 @@
                         programmeRow.onSelected = ^(StandardController *controller) {
                             StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                             childController.title = s.name;
-                            childController.model = [[SessionDetail alloc] initWithSession:s];
+                            childController.model = [[SessionDetail alloc] initWithSession:s data:self.data];
                             [controller.navigationController pushViewController:childController animated:YES];
                         };
                     }

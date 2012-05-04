@@ -18,6 +18,7 @@
 
 @interface SessionDetail () {
     NSMutableArray *sections;
+    DataStore *data;
 }
 
 @end
@@ -27,9 +28,10 @@
 @implementation SessionDetail
 
 
--(id)initWithSession:(Session *)session {
+-(id)initWithSession:(Session *)session data:(DataStore *)ds {
     if (self = [super init]) {
         sections = [NSMutableArray array];
+        data = ds;
         
         AlphaRow *titleRow = [[AlphaRow alloc] init];
         titleRow.style = AlphaTableViewCellWithImageRight;
@@ -87,7 +89,7 @@
             speakerRow.onSelected = ^(StandardController *controller) {
                 StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                 childController.title = speaker.displayName;
-                childController.model = [[SpeakerDetail alloc] initWithSpeaker:speaker];
+                childController.model = [[SpeakerDetail alloc] initWithSpeaker:speaker data:data];
                 [controller.navigationController pushViewController:childController animated:YES];
             };
             [speakers.rows addObject:speakerRow];

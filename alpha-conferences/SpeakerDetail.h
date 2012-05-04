@@ -13,6 +13,6 @@
 
 @interface SpeakerDetail : NSObject <StandardControllerModel>
 
--(id)initWithSpeaker:(Speaker *)speaker;
+-(id)initWithSpeaker:(Speaker *)speaker data:(DataStore *)data;
 
 @end

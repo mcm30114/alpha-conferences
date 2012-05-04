@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Session.h"
 #import "StandardControllerModel.h"
+#import "DataStore.h"
 
 
 @interface SessionsBySpeaker : NSObject <StandardControllerModel>
 
-- (id)initWithSessions:(NSArray *)sessions;
+- (id)initWithSessions:(NSArray *)sessions data:(DataStore *)data;
 
 @end

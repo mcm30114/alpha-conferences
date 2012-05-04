@@ -15,6 +15,7 @@
 @interface SessionsBySpeaker () {
     @private
     NSMutableArray *rows;
+    DataStore *data;
 }
 @end
 
@@ -23,8 +24,9 @@
 @implementation SessionsBySpeaker
 
 
-- (id)initWithSessions:(NSArray *)sessions {
+- (id)initWithSessions:(NSArray *)sessions data:(DataStore *)ds {
     if (self = [super init]) {
+        data = ds;
         rows = [NSMutableArray array];
         
         for (Session *s in sessions) {
@@ -38,7 +40,7 @@
             programmeRow.onSelected = ^(StandardController *controller) {
                 StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                 childController.title = s.name;
-                childController.model = [[SessionDetail alloc] initWithSession:s];
+                childController.model = [[SessionDetail alloc] initWithSession:s data:data];
                 [controller.navigationController pushViewController:childController animated:YES];
             };
             [rows addObject:programmeRow];

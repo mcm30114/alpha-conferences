@@ -16,6 +16,7 @@
 @interface SeminarOptions () {
     @private
     NSMutableArray *sections;
+    DataStore *data;
 }
 
 @end
@@ -27,6 +28,7 @@
 
 -(id)initWithSessions:(NSArray *)sessions dataStore:(DataStore *)dataStore {
     if (self = [super init]) {
+        data = dataStore;
         
         NSMutableDictionary *sessionsKeyedByStreamId = [NSMutableDictionary dictionary];
         for (Session *s in sessions) {
@@ -55,7 +57,7 @@
                 programmeRow.onSelected = ^(StandardController *controller) {
                     StandardController *childController = [[StandardController alloc] initWithStyle:UITableViewStyleGrouped pager:NO];
                     childController.title = s.name;
-                    childController.model = [[SessionDetail alloc] initWithSession:s];
+                    childController.model = [[SessionDetail alloc] initWithSession:s data:data];
                     [controller.navigationController pushViewController:childController animated:YES];
                 };
                 [section.rows addObject:programmeRow];
